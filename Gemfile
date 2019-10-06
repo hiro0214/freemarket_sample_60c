@@ -67,3 +67,9 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
+
+
+# 本番環境での設定
+group :production do
+  gem 'unicorn', '5.4.1'
+end
