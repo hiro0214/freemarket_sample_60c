@@ -16,7 +16,6 @@
 |birthday|string|null: false|
 |tel_number|integer|null: false|
 |profile|string|   |
-|credit_card_id|integer|foreign_key: true|
 |avatar|string|   |
 
 ### Association
