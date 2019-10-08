@@ -118,12 +118,12 @@
 
 ### Association
 - belongs_to :item
-- belongs_to :user_comments
+- belongs_to :user_comment
 - has_many :users, through: :user_comments
 
 
 
-## user_commentsテーブル
+## user_commentテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
