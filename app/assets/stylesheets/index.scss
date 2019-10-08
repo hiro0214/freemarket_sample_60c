@@ -1,0 +1,144 @@
+*{
+  box-sizing: border-box;
+}
+
+header{
+  border:1px solid;
+}
+
+.top_image{
+  height:390px;
+  width:100vw;
+}
+
+.main_contents{
+  // background: mediumaquamarine;
+  background:rgb(239, 239, 239);
+  &__box{
+    // background: springgreen;
+    width:100vw;
+    // margin:60px 0 100px;
+
+    &__header{
+      background:white;
+      height:170px;
+      padding: 56px 0 30px;
+      &_tittle{
+        // background: red;
+        margin-bottom:16px;
+        text-align: center;
+        font-size: 28px;
+        font-weight:600;
+        line-height: 28px;
+      }
+      &_category{
+        // text-align: center;
+        // justify-content:center;
+        &_list{
+          // background: skyblue;       
+          display:flex;
+          justify-content: center;
+          &_num{
+          background: rgb(239, 239, 239);
+          font-size: 14px;
+          font-weight: 600;
+          border-radius: 15px;
+          padding: 8px 16px;
+          margin:10px 0 0 10px;
+          cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+    //--新着アイテムたち  ここから--//
+.main_contents__box__contents{
+  background: rgb(239, 239, 239);  
+  width: 1020px;
+  // height: 100vh;  
+  height: 642px;   
+  margin:42px auto 18px;
+  // padding: 42px 0 18px;
+  
+  &__title_box{
+    // background: pink;
+    
+    width: 100%;
+    height: 33px;
+
+    display: flex;
+    justify-content: space-between; 
+
+    &__title{
+      // background: gold;
+      // line-height:26px;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.4em;
+    }
+    &__motto{
+      width: 100px;
+      padding:5px 16px 5px 5px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgb(0, 149,238);
+      text-decoration: none;
+    }
+  }        
+}
+
+
+.main_contents__box__contents__items{
+  // background:tomato;
+  height:600px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  margin-bottom: 18px;
+  // align-content: space-btween;
+
+  &__one{
+    background:white;   
+    width:188px;
+    height:252px;
+    position: relative;
+    
+    &__image{
+      background:goldenrod;
+      height:188px;
+      width:188px;
+      // position: relative;
+      &__price{
+        background:goldenrod;
+        // display: block;
+        padding: 0 12px;
+        position: absolute;
+        bottom: 80px;
+        border-radius:0 14px 14px 0;
+        color:#fff;
+        background-color:rgba(0, 0, 0,0.25);
+        font-size:17px;
+      }
+    
+    }       
+    &__tittle{
+      height: 62px;
+    }
+  
+  }
+}
+
+
+.link{
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(0, 149,238);
+  text-decoration: none;
+}
+
+
+
+
+
