@@ -34,6 +34,7 @@
 ## user_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
 |postal_code|integer|null: false|
 |area|string|null: false|
 |city|string|null: false|
@@ -62,6 +63,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
 |card_name|string|null: false|
 |number|integer|null: false|
 |pin|integer|null: false|
@@ -69,6 +71,7 @@
 
 ### Association
 - belongs_to :user
+
 
 #### メモ
 - uniqueキー :card_name, number
@@ -128,8 +131,7 @@
 
 ### Association
 - belongs_to :item
-- belongs_to :user_comment
-- has_many :users, through: :user_comments
+- belongs_to :user
 
 
 
@@ -152,16 +154,7 @@
 |------|----|-------|
 |id|integer|null: false|
 |item_id|integer|null: false, foreign_key: true|
-|url_1|string|   |
-|url_2|string|   |
-|url_3|string|   |
-|url_4|string|   |
-|url_5|string|   |
-|url_6|string|   |
-|url_7|string|   |
-|url_8|string|   |
-|url_9|string|   |
-|url_10|string|   |
+|url|string|   |
 
 
 ### Association
