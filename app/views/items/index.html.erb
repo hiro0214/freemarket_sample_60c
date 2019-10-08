@@ -1,1 +1,195 @@
-hey
+<div class="detail">
+
+  <%# 上の商品名と説明 %>
+  <div class="detail_container">
+    <h1 class="item_name">
+      アニエスベー トートバッグ
+    </h1>
+    <p class="item_about">
+      『アニエスベー トートバッグ』は、45回の取引実績を持つasaさんから出品されました。アニエスベー（トートバッグ/レディース）の商品で、東京都から4~7日で発送されます。
+    </p>
+  <div class = "container_wrap">
+  <%# 商品イメージと詳細リスト %>
+    <div class="item_container">
+      <%= image_tag 'bag_image.jpg' ,class: "item_container__image"%>
+      <ul class ="item_container__list">
+        <li>画1</li><%# ここに画像入れる %>
+        <li>画2</li><%# ここに画像入れる %>
+        <li>画3</li><%# ここに画像入れる %>
+        <li>画4</li><%# ここに画像入れる %>
+        <li>画5</li><%# ここに画像入れる %>
+      </ul>
+    </div>
+
+      <table class = "item_table">       
+        <tr>
+          <th>出品者</th>
+              <td >
+              <%=link_to 'timothy', " ",class:"owner_name" %>
+              <div class ="evaluation">
+              <%= image_tag 'logo_smile.png' ,class: "face"%>
+              <span class="btn_smile_num">
+              117
+              </span> 
+              <%= image_tag 'logo_normal.png' ,class: "face"%>
+              <span class="btn_normal_num">
+              0
+              </span>
+              <%= image_tag 'logo_sad.png',class: "face"%>
+              <span class ="butn_sad_num">
+              0
+              </span>
+              </div>
+              </td>
+        </tr>
+        <tr>
+          <th>カテゴリー</th> <td>レディース　バッグ　トートバッグ</td>
+        </tr>
+        <tr>
+          <th>ブランド</th> 
+          <td>
+          <%=link_to 'オーチバル', " ",class:"table" %>
+          </td>
+        </tr>
+        <tr>
+          <th>商品の状態</th> <td>新品、未使用</td>
+        </tr>
+        <tr>
+          <th>配送料の負担</th> <td>送料込み(出品者負担)</td>
+        </tr>
+        <tr>
+          <th>配送の方法</th> <td>らくらくメルカリ便</td>
+        </tr>
+        <tr>
+          <th>配送元地域</th> 
+            <td>
+            <%=link_to '東京都(都道府県が入る)', " ",class:"table" %>
+            </td>
+        </tr>
+        <tr>
+          <th>発送日の目安</th> <td>４〜７日で発送</td>
+        </tr>
+      </table>
+  </div>
+
+    <div class="item_pricebox">
+      <span class="item_pricebox__price">
+      ¥14,000
+      </span>
+      <span class="item_pricebox__tax">
+      (税込)
+      </span> 
+      <span class="item_pricebox__fee">
+      送料込み
+      </span>
+    </div>
+
+    <div class="item_buy">
+    購入画面に進む
+    </div>
+
+    <%# <div class="buy_by_app">
+    アプリで購入
+    </div> %>
+
+
+    <div class="item_description">
+    ブランド/アニエスベー <br>
+    <br>
+    カラー/ブラック <br>
+    <br>
+    サイズ/38.5cm × 37.5cm 持ち手 53.7cm <br>
+    <br>
+    バーティカルなビックロゴをプリントしたキャッチーなナイロントートバック。 <br>
+    ブラックxホワイトのモノトーンカラーはお洋服を選ばずお使い頂けます。 <br>
+    A4サイズも楽々入ります。 <br>
+    <br>
+    現在完売中の商品 <br>
+    新品未使用で布袋もおつけします。 <br>
+    </div>
+
+    <div class="item_btn_container">
+        <div class="item_btn_container__btn_like">
+          <span class="item_btn_like__icon_heart">
+          ♡
+          </span>
+          <span class="item_btn_like__btn_like">
+          いいね
+          </span> 
+          <span class="item_btn_like__like_num">
+          46
+          </span>
+        </div>
+
+        <div class="item_btn_container__btn_report">
+          <span class="item_btn_report__icon_flag">
+          ▷
+          </span>
+          <span class="item_btn_report__btn_report">
+          不適切な商品の報告
+          </span> 
+        </div>
+
+        <div class="item_btn_container__btn_declaration">
+          <span class="item_btn_declaration__icon_lock">
+          ◇
+          </span>
+          <span class="item_btn_declaration__btn_lock">
+          あんしん・あんぜんへの取り組み
+          </span> 
+        </div>
+    </div>
+
+  <div class="nav_item_link">
+    <span class="nav_item_link__icon_left">
+    ＜
+    <%# <i class=“fa fa-chevron-right “></i> %>
+    </span>
+    <span class="nav_item_link__left_item">
+    <%=link_to 'スウェット裏起毛トレーナー', " ",class:"link" %>
+    </span> 
+    <span class="nav_item_link__icon_right">
+    ＞
+    </span>
+    <span class="nav_item_link__right_item">
+    <%=link_to 'ベルト付きワンピース', " ",class:"link" %>
+    </span>
+  </div>
+
+  <div class="media_box">
+    <ul class="media_box__center">
+      <li class="icon_facebook">
+        <%=link_to 'facebook',"https://www.facebook.com/", class: "contents__btn"%>
+          <%# = fa_icon 'facebook' %>
+      </li>
+      <li class="icon_twitter">
+        <%# =link_to "https://twitter.com/", class: "contents__btn" do %>
+          = fa_icon 'twitter'
+      </li> 
+      <li class="icon_line">
+        <%# =link_to "https://line.me/ja/", class: "contents__btn" do %>
+          = fa_icon 'instagram'
+      </li>
+      <li class="icon_pinterest">
+        <%# =link_to "https://www.pinterest.jp/", class: "contents__btn" do %>
+          = fa_icon 'instagram'
+      </li>
+    </ul>
+  </div>
+
+  <div class="other_item_container">
+    <%=link_to 'timothyさんのその他の商品', " ",class:"other_item_title" %>
+    <div class ="other_item_content__other_item">
+      <%= image_tag 'bag_image.jpg' ,class: "other_item__image"%>
+      </div>
+        <div class="other_item_container__other_item__price">
+        ¥4,000
+        <span class="other_item_container__icon_heart">
+        ♡
+        </span> 
+        <span class="other_item_container__like_num">
+        46
+        </span>
+      </div>
+
+  </div>

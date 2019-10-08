@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+}
+
+.detail {
+  background:#f5f5f5;
+  width:100vw;
+  height: 100%;
+  margin:0 auto;
+  padding:40px 0;
+} 
+
+//--アイテム ここから--//
+.detail_container {
+    background: white;
+    width:700px;
+    height: 100%;
+    margin:40px auto;
+    padding: 24px 40px 40px; 
+  
+    .item_name {
+      background: white;
+      font-size: 24px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    .item_about {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: #888;
+    line-height: 1.5;
+    }
+
+
+//--アイテム  ここから--//
+  .container_wrap{
+    display:flex;
+      .item_container{
+      width: 300px;
+      display: flex;
+      flex-direction:column;
+
+      &__image{
+        background-color: #fafafa;
+        width: 100%;
+        height: 300px;
+        position: relative;
+        margin: 0 auto;
+        float: left;
+        // justify-content: flex-start;
+      }
+      &__list{
+        width: 100%;
+        height: 30px;
+        // background: #888;
+        display:flex;
+        li{
+          // flex-direction: row;
+          background:#f5f5f5;
+          width: 60px;
+          height:60px;
+        }
+      }
+    }
+  
+    .item_table{
+      display:flex;
+      width: 50%;
+      height:50%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      border: 1px solid #f5f5f5;
+      border-spacing: 0;
+      font-size :14px;
+      justify-content: flex-end;
+
+      th{
+        width: 39%;
+        text-align: left;
+        font-weight: 400;
+        background: #fafafa;
+      }
+      td{
+        width: 70%;
+        a {
+          color: #0099e8;
+        }
+          .evaluation{
+            margin-top:8px;
+            .face{
+              width: 16px;
+              height:16px;
+            }
+          
+        }
+      }
+      th,td{
+        border:solid 1px #aaaaaa;
+        padding : 20px 10px;
+      }
+    }
+  } 
+  .item_pricebox{
+    margin: 24px 0 0;
+    text-align: center;
+      &__price{
+      font-weight: 600;
+      margin: 0 16px 0 0;
+      font-size: 50px;
+      }
+      &__tax{
+      font-size: 10px;
+      }
+      &__fee{
+      font-size: 16px;
+      }
+  }
+
+  .item_buy{
+    background: #ea352d;
+    width:600px;
+    height: 60px;
+    color: #fff;
+    line-height: 56px;
+    text-align: center;
+    margin: 16px auto;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  // .buy_by_app{
+  //   background: skyblue;
+  // }
+
+  .item_description{
+    width:700px;
+    margin:32px auto;
+  }
+
+  .item_btn_container{
+    background:white;
+    width: 620px;
+    height: 33px;
+    color: #333;
+    margin:16px auto;
+    display: flex;
+    font-size: 14px;
+    display: flex;
+      &__btn_like{
+        background:#f5f5f5;
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 40px;
+      }
+      &__btn_report{
+      background: #f5f5f5;
+      display: inline-block;
+      margin-left: 16px;
+      padding: 8px 16px;
+      border-radius: 40px;
+      }
+      &__btn_declaration{
+      color: #0099e8;
+      display: inline-block;
+      margin-left: 45px;
+      padding: 8px 16px;
+    }
+  }
+}
+
+.nav_item_link{
+  background:olive;
+  width: 700px;
+  height: 14px;
+  color: #0099e8;
+  margin: 24px 248px 0;
+  display: flex;
+  justify-content:space-between;
+  font-size: 14px;
+  a {
+    color: #0099e8;
+  }
+    &__icon_left{
+      display: inline-block;
+      padding: 8px 16px;
+    }
+    &__icon_right{
+    background: #f5f5f5;
+    display: inline-block;
+    margin-left: 16px;
+    padding: 8px 16px;
+    border-radius: 40px;
+    }
+    &__btn_declaration{
+    color: #0099e8;
+    display: inline-block;
+    margin-left: 45px;
+    padding: 8px 16px;
+  }
+}
+
+
+.media_box {
+  background:white;
+  width: 700px;
+  margin: 24px auto;
+  padding: 32px 0 24px;
+  &__center{
+    display: flex;
+    justify-content: center;
+    .icon_facebook{
+      background:#385185;
+      width: 44px;
+      height: 44px;
+      margin:8px;
+      border-radius: 4px;
+    }
+    .icon_twitter{
+      background:#5D9DC9;
+      width: 44px;
+      height: 44px;
+      margin:8px;
+      border-radius: 4px;
+    }
+    .icon_line{
+      background:#00C137;
+      width: 44px;
+      height: 44px;
+      margin:8px;
+      border-radius: 4px;
+    }
+    .icon_pinterest{
+      background:#AA262A;
+      width: 44px;
+      height: 44px;
+      margin:8px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.other_item_container {
+  width:700px;
+  a {
+    color: #0099e8;
+    font-size: 22px;
+  }
+
+  &__other_item_{
+    &__image{
+    }
+    &__other_item__price{
+
+    }
+  }
+  content{
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
