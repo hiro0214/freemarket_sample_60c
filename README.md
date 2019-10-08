@@ -28,7 +28,7 @@
 - has_many :reviews
 - has_many :tradings
 - belongs_to :credit_card
-- has_many :comments, through: :users_comments
+- has_many :comments, through: :user_comments
 
 #### メモ
 - uniqueキー :tel_number, credit_card_id
@@ -55,7 +55,7 @@
 |card_name|string|null: false|
 |number|integer|null: false|
 |pin|integer|null: false|
-|company|srring|nill: false|
+|company|srring|null: false|
 
 ### Association
 - has_one :user
@@ -76,7 +76,7 @@
 
 ### Association
 - has_many :users
-- has_many :items
+- has_one :items
 
 
 
@@ -98,12 +98,12 @@
 
 
 ### Association
-- belongs_to :trading
 - belongs_to :brand
 - belongs_to :category
-- has_many :comments
-- has_many :shippings
-- has_many :images
+- has_many :comments , dependent: :delete
+- has_many :shippings, dependent: :delete
+- has_many :images, dependent: :delete
+- has_one :trading
 
 
 
@@ -118,12 +118,12 @@
 
 ### Association
 - belongs_to :item
-- belongs_to :users_comments
-- has_many :users, through: :users_comments
+- belongs_to :user_comments
+- has_many :users, through: :user_comments
 
 
 
-## users_commentsテーブル
+## user_commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
@@ -163,7 +163,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|item_id|integer|null: false, foreign_key: true|
 |name|string|null: false|
 
 
