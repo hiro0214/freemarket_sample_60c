@@ -16,23 +16,33 @@
 |birthday|string|null: false|
 |tel_number|integer|null: false|
 |profile|string|   |
-|area|string|null: false|
-|address_1|string|null: false|
-|address_2|string|null: false|
-|address_3|string|null: false|
-|address_4|string|   |
 |credit_card_id|integer|foreign_key: true|
 |avatar|string|   |
 
 ### Association
 - has_many :reviews
 - has_many :tradings
-- belongs_to :credit_card
 - has_many :comments, through: :user_comments
+- has_one :credit_card
+- has_one :user_address
 
 #### メモ
 - uniqueキー :tel_number, credit_card_id
 
+
+
+## user_addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false|
+|area|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building|string|   |
+
+
+### Association
+- belongs_to :user
 
 
 
@@ -55,10 +65,10 @@
 |card_name|string|null: false|
 |number|integer|null: false|
 |pin|integer|null: false|
-|company|srring|null: false|
+|company|string|null: false|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 #### メモ
 - uniqueキー :card_name, number
