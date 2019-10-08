@@ -1,0 +1,57 @@
+header {
+  width:100vw;
+  height:100px;
+  > div {
+    width:1020px;
+    margin:0 auto;
+  }
+}
+
+.header{
+  &_top {
+    display:flex;
+  }
+  &_logo {
+    width:150px;
+    height:40px;
+    margin-right:45px;
+  }
+  &_search {
+    background:rgb(245,245,245);
+    width:100%;
+  }
+  &_bottom {
+    margin-top:8px;
+    display:flex;
+    justify-content: space-between;
+  }
+  &_nav {
+    display:flex;
+    font-size:14px;
+    font-weight:bold;
+    &_category {
+      margin-right:20px;
+    }
+  }
+  &_ragistration {
+    display:flex;
+  }
+  &_sign_up {
+    background:red;
+    color:white;
+    border-radius:5px;
+    border:none;
+  }
+  &__sign_in {
+    background:white;
+    color:rgb(0, 149, 238);
+    border:solid 1px rgb(0, 149, 238);
+    border-radius:5px;
+    text-decoration:none;
+  &:hover {
+    background:rgb(0, 149, 238);
+    color:white;
+    transition: .4s;
+    }
+  }
+}

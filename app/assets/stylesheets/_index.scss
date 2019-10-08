@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 header{
   border:1px solid;
 }
@@ -15,16 +19,13 @@ header{
   // background: mediumaquamarine;
   background:rgb(239, 239, 239);
   &__box{
-    // background: springgreen;
     width:100vw;
     // margin:60px 0 100px;
-
     &__header{
       background:white;
       height:170px;
       padding: 56px 0 30px;
       &_tittle{
-        // background: red;
         margin-bottom:16px;
         text-align: center;
         font-size: 28px;
@@ -35,7 +36,6 @@ header{
         // text-align: center;
         // justify-content:center;
         &_list{
-          // background: skyblue;       
           display:flex;
           justify-content: center;
           &_num{
@@ -60,18 +60,12 @@ header{
   height: 642px;   
   margin:42px auto 18px;
   // padding: 42px 0 18px;
-  
   &__title_box{
-    // background: pink;
-    
     width: 100%;
     height: 33px;
-
     display: flex;
     justify-content: space-between; 
-
     &__title{
-      // background: gold;
       // line-height:26px;
       font-size: 24px;
       font-weight: 600;
@@ -88,9 +82,7 @@ header{
   }        
 }
 
-
 .main_contents__box__contents__items{
-  // background:tomato;
   height:600px;
   display:flex;
   flex-wrap: wrap;
@@ -98,13 +90,11 @@ header{
   align-content: space-around;
   margin-bottom: 18px;
   // align-content: space-btween;
-
   &__one{
     background:white;   
     width:188px;
     height:252px;
     position: relative;
-    
     &__image{
       background:goldenrod;
       height:188px;
@@ -121,12 +111,10 @@ header{
         background-color:rgba(0, 0, 0,0.25);
         font-size:17px;
       }
-    
     }       
     &__tittle{
       height: 62px;
     }
-  
   }
 }
 

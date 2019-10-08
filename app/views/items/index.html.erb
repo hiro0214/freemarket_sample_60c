@@ -1,5 +1,28 @@
-<header>header</header>
-<%= image_tag "top-banner-super-exhibition-fes.jpg", class:"top_image" %>
+<header>
+  <div>
+    <div class="header_top">
+      <p class="header_logo">ロゴ</p>
+      <input class="header_search" type="text" placeholder="何をお探しですか？">
+    </div>
+
+    <div class="header_bottom">
+      <div class="header_nav">
+        <div class="header_nav_category">カテゴリーから探す</div>
+        <div class="header_nav_brand">ブランドから探す</div>
+      </div>
+      <div class="header_ragistration">
+        <button class="header_sign_up">新規会員登録</button>
+        <%= link_to "ログイン", new_user_session_path, class: "header__sign_in" %>
+      </div>
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<%# <%= image_tag "top-banner-super-exhibition-fes.jpg", class:"top_image" %>
 <div class="main_contents">  
 
   <div class="main_contents__box">
@@ -28,14 +51,14 @@
         </div>
       </div>
       
-      <%# 商品１０個をまとまルための箱 %>
+      <%# 商品１０個をまとめるための箱 %>
       <div class="main_contents__box__contents__items">
         <%# 10個のうちの1個 %>
         <div class="main_contents__box__contents__items__one">        
           <img src="/assets/ladies" class="main_contents__box__contents__items__one__image">
             <div class="main_contents__box__contents__items__one__image__price" >￥1,000</div>
           <div class="main_contents__box__contents__items__one__tittle">
-            <span >商品タイトル</span>
+            <span ><%= link_to "商品タイトル", "item_path", method: :get %></span>
           </div>
         </div>
         <%# ２個目 %>
@@ -117,7 +140,7 @@
         </div>
       </div>
       
-      <%# 商品１０個をまとまルための箱 %>
+      <%# 商品１０個をまとめるための箱 %>
       <div class="main_contents__box__contents__items">
         <%# 10個のうちの1個 %>
         <div class="main_contents__box__contents__items__one">        
@@ -206,7 +229,7 @@
         </div>
       </div>
       
-      <%# 商品１０個をまとまルための箱 %>
+      <%# 商品１０個をまとめるための箱 %>
       <div class="main_contents__box__contents__items">
         <%# 10個のうちの1個 %>
         <div class="main_contents__box__contents__items__one">        
@@ -295,7 +318,7 @@
         </div>
       </div>
       
-      <%# 商品１０個をまとまルための箱 %>
+      <%# 商品１０個をまとめるための箱 %>
       <div class="main_contents__box__contents__items">
         <%# 10個のうちの1個 %>
         <div class="main_contents__box__contents__items__one">        
@@ -403,7 +426,7 @@
         </div>
       </div>
       
-      <%# 商品１０個をまとまルための箱 %>
+      <%# 商品１０個をまとめるための箱 %>
       <div class="main_contents__box__contents__items">
         <%# 10個のうちの1個 %>
         <div class="main_contents__box__contents__items__one">        
@@ -491,7 +514,7 @@
         </div>
       </div>
       
-      <%# 商品１０個をまとまルための箱 %>
+      <%# 商品１０個をまとめるための箱 %>
       <div class="main_contents__box__contents__items">
         <%# 10個のうちの1個 %>
         <div class="main_contents__box__contents__items__one">        
@@ -580,7 +603,7 @@
         </div>
       </div>
       
-      <%# 商品１０個をまとまルための箱 %>
+      <%# 商品１０個をまとめるための箱 %>
       <div class="main_contents__box__contents__items">
         <%# 10個のうちの1個 %>
         <div class="main_contents__box__contents__items__one">        
@@ -669,7 +692,7 @@
         </div>
       </div>
       
-      <%# 商品１０個をまとまルための箱 %>
+      <%# 商品１０個をまとめるための箱 %>
       <div class="main_contents__box__contents__items">
         <%# 10個のうちの1個 %>
         <div class="main_contents__box__contents__items__one">        

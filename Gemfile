@@ -72,6 +72,8 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
+gem "haml-rails"
+gem 'ancestry'
 
 
 # 本番環境での設定
