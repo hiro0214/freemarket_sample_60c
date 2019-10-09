@@ -74,6 +74,8 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem "haml-rails"
 gem 'ancestry'
+gem "font-awesome-rails"
+gem "wicked"
 
 
 # 本番環境での設定
