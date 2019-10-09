@@ -19,8 +19,18 @@
             = render "items/purudown"
             .header_nav_brand ブランドから探す
           .header_ragistration
-            = link_to "新規会員登録", new_user_registration_path, class: "header_sign_up"
-            = link_to "ログイン", new_user_session_path, class: "header__sign_in"
+            -# = link_to "新規会員登録", new_user_registration_path, class: "header_sign_up"
+            -# = link_to "ログイン", new_user_session_path, class: "header__sign_in"
+            - if user_signed_in? 
+              = link_to "マイページ", "#", class: ""
+              = link_to "ログアウト", destroy_user_session_path, method: :delete 
+            - else 
+              = link_to "新規会員登録", new_user_registration_path, class: 'header_sign_up' 
+              = link_to "ログイン", new_user_session_path, class: 'header__sign_in' 
+
+
+-# ヘッダーここまで
+
     = yield
 %footer
   .footer
