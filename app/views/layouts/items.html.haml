@@ -21,62 +21,55 @@
             = link_to "新規会員登録", new_user_registration_path, class: "header_sign_up"
             = link_to "ログイン", new_user_session_path, class: "header__sign_in"
     = yield
-    %footer
-      .footer
+%footer
+  .footer
+    .footer__upper
+    -# 画像をいれる
+    .footer__mid
+      .footer__list__about
+        %h2 メルカリについて
+        %ul.no_circle
+          %li 会社概要（運営会社）
+          %li 採用情報
+          %li プレスリリース
+          %li 公式ブログ
+          %li メルカリロゴ利用ガイドライン
+          %li ツイッター/フェイスブック
+      ​
+      .footer__list__guide
+        %h2 ヘルプ＆ガイド
+        %ul.no_circle
+          %li メルカリガイド
+          %li らくらくメルカリ便
+          %li ゆうゆうメルカリ便
+          %li 大型メルカリ便
+          %li 車体取引ガイド
+          %li メルカリあんしん・あんぜん宣言！
+          %li 偽ブランド品撲滅への取り組み
+          %li メルカリボックス
+      ​
+      .footer__list__privacy_and_rule
+        %h2 プライバシーと利用規約
+        .footer__list__privacy
+          %ul.no_circle
+            %li プライバシーポリシー
+            %li メルカリ利用規約
+            %li あんしんスマホサポート制度に関する利用特約
+            %li コンプライアンスポリシー
         ​
-        .footer__upper
-          ​
+      .footer__list__rule
+        %h2{ style: "color:rgb(40,40,40)" }٩(๑❛ᴗ❛๑)۶
+        %ul.no_circle
+          %li 個人データの安全管理に係る基本方針
+          %li 特定商取引に関する表記
+          %li 資金決済法に基づく表示
+          %li 法令順守と犯罪抑止のために
         ​
-        .footer__mid
-          ​
-          .footer__list__about
-            %h2 メルカリについて
-            %ul.no_circle
-              %li 会社概要（運営会社）
-              %li 採用情報
-              %li プレスリリース
-              %li 公式ブログ
-              %li メルカリロゴ利用ガイドライン
-              %li ツイッター/フェイスブック
-          ​
-          .footer__list__guide
-            %h2 ヘルプ＆ガイド
-            %ul.no_circle
-              %li メルカリガイド
-              %li らくらくメルカリ便
-              %li ゆうゆうメルカリ便
-              %li 大型メルカリ便
-              %li 車体取引ガイド
-              %li メルカリあんしん・あんぜん宣言！
-              %li 偽ブランド品撲滅への取り組み
-              %li メルカリボックス
-          ​
-          %h2 プライバシーと利用規約
-          .footer__list__privacy_and_rule
-            .footer__list__privacy
-              %ul.no_circle
-                %li プライバシーポリシー
-                %li メルカリ利用規約
-                %li あんしんスマホサポート制度に関する利用特約
-                %li コンプライアンスポリシー
-            ​
-            .footer__list__rule
-              %ul.no_circle
-                %li 個人データの安全管理に係る基本方針
-                %li 特定商取引に関する表記
-                %li 資金決済法に基づく表示
-                %li 法令順守と犯罪抑止のために
-            ​
-          ​
-          ​
-          .footer__list__country
-            ​
-            %h2 国
-            ​
-            %ul.no_circle
-              %li 日本
-              %li United States
-            ​
-          ​
-      .footer__lower
-        %span.footer__copyright © 2019 Mercari
+      .footer__list__country
+        %h2 国
+        %ul.no_circle
+          %li 日本
+          %li United States
+      ​
+    .footer__lower
+      %span.footer__copyright © 2019 Mercari

@@ -1,30 +1,27 @@
 .footer{
-  background: #000000;
-  /* font-family:; */
+  background: rgb(40,40,40);
   color: #ffffff;
-  /* display: flex; */
-}
-.footer h2{
-  font-size:16px;
-}
-.footer__upper{
-  // background-image: url("../assets/images/download_app_bg.jpg");
-}
-​
-// .footer__mid{
-  /* display: flex; */
-// ​}
-
-.footer__lower{
-  /* display: flex; */
-}
-​
-.footer__list__privacy_and_rule {
-  display: flex;
-}
-​
-.no_circle{
-  list-style-type: none;
-  opacity: 0.7;
-  font-size:12px;
+  h2{
+    font-size:16px;
+  }
+  &__mid {
+    width:1000px;
+    display:flex;
+    margin:0 auto;
+    padding-top:20px;
+  }
+  & ul {
+    margin:10px 10px 0;
+  }
+  & li {
+    font-size:12px;
+    opacity: 0.7;
+    padding:10px 0;
+  }
+  &__lower {
+    text-align:center;
+  }
+  span {
+    font-size:12px;
+  }
 }

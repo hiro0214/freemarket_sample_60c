@@ -6,6 +6,20 @@ html{
 	color:#000;
 	background:#FFF;
 }
+
+body {
+	font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
 /*
 	TODO remove settings on BODY since we can't namespace it.
 */
