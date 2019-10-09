@@ -1,3 +1,5 @@
+-# アイコン入れ替えと位置の微調整必要。
+-# %other_itemの７番と８番boxの中の調整必要
 .detail
   .detail_container
     %h1.item_name
@@ -6,6 +8,7 @@
       『アニエスベー トートバッグ』は、45回の取引実績を持つasaさんから出品されました。アニエスベー（トートバッグ/レディース）の商品で、東京都から4~7日で発送されます。
     .container_wrap
       .item_container
+        .item_container__image
         %ul.item_container__list
           %li 画1
           %li 画2
@@ -18,10 +21,13 @@
           %td
             = link_to 'timothy', " ",class:"owner_name"
             .evaluation
+              = fa_icon ' ', class: 'smile'
               %span.btn_smile_num
                 117
+              = fa_icon ' ', class: 'nomal'
               %span.btn_normal_num
                 0
+              = fa_icon ' ', class: 'sad'
               %span.butn_sad_num
                 0
         %tr
@@ -100,24 +106,144 @@
         ＜
       %span.nav_item_link__left_item
         = link_to 'スウェット裏起毛トレーナー', " ",class:"link"
-      %span.nav_item_link__icon_right
-        ＞
       %span.nav_item_link__right_item
         = link_to 'ベルト付きワンピース', " ",class:"link"
+      %span.nav_item_link__icon_right
+        ＞
     .media_box
       %ul.media_box__center
         %li.icon_facebook
           = link_to 'facebook',"https://www.facebook.com/", class: "contents__btn"
         %li.icon_twitter
-          \= fa_icon 'twitter'
+          = fa_icon 'twitter'
         %li.icon_line
-          \= fa_icon 'instagram'
+          = fa_icon 'instagram'
         %li.icon_pinterest
-          \= fa_icon 'instagram'
-    .other_item_container
-      = link_to 'timothyさんのその他の商品', " ",class:"other_item_title"
-      .other_item_content__other_item
-      .other_item_container__other_item__price
-        ¥4,000
-        %span.other_item_container__like_num
-          46
+          = fa_icon 'instagram'
+
+    .other_item_container_big
+      = link_to 'timothyさんのその他の商品', " ",class:"other_item_user"
+      .other_item_container
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+    .other_item_container_big
+      = link_to 'オーチバルのトートバッグ その他の商品', " ",class:"other_item_title"
+      .other_item_container
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item_name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item_name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
+        .other_item_container__other_item
+          .other_item__image
+          .other_item__contents
+            .other_item__contents__other_item__name
+            トートバッグ
+            .other_item__contents__price
+            ¥4,000
+            %i.fa.fa-heart
+            %span.other_item__contents__like_num
+              46
