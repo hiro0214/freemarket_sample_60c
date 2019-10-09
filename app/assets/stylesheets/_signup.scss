@@ -1,3 +1,22 @@
+//サインインページより
+.sign_in {
+  &__page {
+    background:rgb(240, 240, 240);
+    width:100vw;
+    height:100vh;
+  }
+  &__header {
+    text-align:center;
+  }
+  &__logo {
+    margin:20px 0;
+  }
+  &__main {
+    text-align:center;
+  }
+}
+//サインインページより
+
 .registration__contents__title{
   background-color: white;
   width: 700px;
@@ -45,3 +64,31 @@
   height: 50px;
   margin: 16px auto;
 }
+
+
+
+//サインインページより
+
+.sign_in__footer {
+  width:456px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size:10px;
+  text-align:center;
+  & > ul {
+    display:flex;
+    list-style:none;
+  }
+  & li {
+    margin:0 15px;
+  }
+  & a {
+    color: #333;
+    text-decoration: none;
+  }
+  & p {
+    font-size:13px;
+  }
+}
+
+//サインインページより
