@@ -239,32 +239,28 @@
   }
 }
 
+.other_item_title {
+  color: #0099e8;
+  font-size: 22px;
+}
 .other_item_container {
   width:700px;
-  a {
-    color: #0099e8;
-    font-size: 22px;
+  display:flex;
+}
+.other_item{
+  width:33%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: space-between;
+  &__image{
+    width:206px;
+    height:206px;
+    display:flex;
   }
-
-  &__other_item_{
-    &__image{
-    }
-    &__other_item__price{
-
-    }
-  }
-  content{
-
-  }
-
-
-
-
-
-
-
-
-
-
-
+  &__contents{
+    background:green;
+    display:flex;
+    // flex-direction:column;
+  }  
 }

@@ -110,9 +110,7 @@
 
     <div class="item_btn_container">
         <div class="item_btn_container__btn_like">
-          <span class="item_btn_like__icon_heart">
-          ♡
-          </span>
+          <i class=“icon_heart “>♡</i>
           <span class="item_btn_like__btn_like">
           いいね
           </span> 
@@ -122,18 +120,14 @@
         </div>
 
         <div class="item_btn_container__btn_report">
-          <span class="item_btn_report__icon_flag">
-          ▷
-          </span>
+          <i class=“icon_flag “>▷</i>
           <span class="item_btn_report__btn_report">
           不適切な商品の報告
           </span> 
         </div>
 
         <div class="item_btn_container__btn_declaration">
-          <span class="item_btn_declaration__icon_lock">
-          ◇
-          </span>
+          <i class=“icon_lock “>◇</i>
           <span class="item_btn_declaration__btn_lock">
           あんしん・あんぜんへの取り組み
           </span> 
@@ -141,15 +135,13 @@
     </div>
 
   <div class="nav_item_link">
-    <span class="nav_item_link__icon_left">
-    ＜
-    <%# <i class=“fa fa-chevron-right “></i> %>
-    </span>
+    <%# <span class="nav_item_link__icon_left">
+    ＜ %>
+    <i class=“fa fa-chevron-left “>＜</i>
     <span class="nav_item_link__left_item">
     <%=link_to 'スウェット裏起毛トレーナー', " ",class:"link" %>
     </span> 
-    <span class="nav_item_link__icon_right">
-    ＞
+    <i class=“fa fa-chevron-right “>＞</i>
     </span>
     <span class="nav_item_link__right_item">
     <%=link_to 'ベルト付きワンピース', " ",class:"link" %>
@@ -159,37 +151,108 @@
   <div class="media_box">
     <ul class="media_box__center">
       <li class="icon_facebook">
-        <%=link_to 'facebook',"https://www.facebook.com/", class: "contents__btn"%>
+        <%=link_to 'facebook',"https://www.facebook.com/"%>
           <%# = fa_icon 'facebook' %>
       </li>
       <li class="icon_twitter">
-        <%# =link_to "https://twitter.com/", class: "contents__btn" do %>
-          = fa_icon 'twitter'
+        <%=link_to "https://twitter.com/"%>
+          <%# = fa_icon 'twitter' %>
       </li> 
       <li class="icon_line">
-        <%# =link_to "https://line.me/ja/", class: "contents__btn" do %>
-          = fa_icon 'instagram'
+        <%=link_to "https://line.me/ja/"%>
+          <%# = fa_icon 'line' %>
       </li>
       <li class="icon_pinterest">
-        <%# =link_to "https://www.pinterest.jp/", class: "contents__btn" do %>
-          = fa_icon 'instagram'
+        <%=link_to "https://www.pinterest.jp/"%>
+          <%# = fa_icon 'pinterest' %>
       </li>
     </ul>
   </div>
 
+  <%=link_to 'timothyさんのその他の商品', " ",class:"other_item_title" %>
   <div class="other_item_container">
-    <%=link_to 'timothyさんのその他の商品', " ",class:"other_item_title" %>
-    <div class ="other_item_content__other_item">
+    <div class ="other_item">
       <%= image_tag 'bag_image.jpg' ,class: "other_item__image"%>
-      </div>
-        <div class="other_item_container__other_item__price">
+      <div class ="other_item__contents">
+        <h2 class="other_item__contents__other_item__name">
+        トートバッグ
+        </h2>
+        <div class="other_item__price">
         ¥4,000
-        <span class="other_item_container__icon_heart">
-        ♡
-        </span> 
+        <i class=“icon_heart “>♡</i>
         <span class="other_item_container__like_num">
         46
         </span>
       </div>
-
+    </div>
+    <div class ="other_item">
+      <%= image_tag 'bag_image.jpg' ,class: "other_item__image"%>
+      <div class ="other_item__contents">
+        <h2 class="other_item__contents__other_item_name">
+        トートバッグ
+        </h2>
+        <div class="other_item__price">
+        ¥4,000
+        <i class="icon_heart">♡</i>
+        <span class="other_item_contents__like_num">
+        46
+        </span>
+      </div>
+    </div>
+    <div class ="other_item">
+      <%= image_tag 'bag_image.jpg' ,class: "other_item__image"%>
+      <div class ="other_item__contents">
+        <h2 class="other_item__contents__other_item__name">
+        トートバッグ
+        </h2>
+        <div class="other_item__price">
+        ¥4,000
+        <i class=“icon_heart “>♡</i>
+        <span class="other_item_container__like_num">
+        46
+        </span>
+      </div>
+    </div>
+    <div class ="other_item">
+      <%= image_tag 'bag_image.jpg' ,class: "other_item__image"%>
+      <div class ="other_item__contents">
+        <h2 class="other_item__contents__other_item__name">
+        トートバッグ
+        </h2>
+        <div class="other_item__price">
+        ¥4,000
+        <i class=“icon_heart “>♡</i>
+        <span class="other_item_container__like_num">
+        46
+        </span>
+      </div>
+    </div>
+    <div class ="other_item">
+      <%= image_tag 'bag_image.jpg' ,class: "other_item__image"%>
+      <div class ="other_item__contents">
+        <h2 class="other_item__contents__other_item__name">
+        トートバッグ
+        </h2>
+        <div class="other_item__price">
+        ¥4,000
+        <i class=“icon_heart “>♡</i>
+        <span class="other_item_container__like_num">
+        46
+        </span>
+      </div>
+    </div>
+    <div class ="other_item">
+      <%= image_tag 'bag_image.jpg' ,class: "other_item__image"%>
+      <div class ="other_item__contents">
+        <h2 class="other_item__contents__other_item__name">
+        トートバッグ
+        </h2>
+        <div class="other_item__price">
+        ¥4,000
+        <i class=“icon_heart “>♡</i>
+        <span class="other_item_container__like_num">
+        46
+        </span>
+      </div>
+    </div>
   </div>
