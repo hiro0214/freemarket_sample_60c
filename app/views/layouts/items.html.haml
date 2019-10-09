@@ -16,6 +16,7 @@
         .header_bottom
           .header_nav
             .header_nav_category カテゴリーから探す
+            = render "items/purudown"
             .header_nav_brand ブランドから探す
           .header_ragistration
             = link_to "新規会員登録", new_user_registration_path, class: "header_sign_up"
