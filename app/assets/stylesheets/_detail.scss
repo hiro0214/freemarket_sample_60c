@@ -5,30 +5,26 @@
   margin:0 auto;
   padding:40px 0;
 } 
-
 //--アイテム ここから--//
 .detail_container {
+  background: white;
+  width:700px;
+  height: 100%;
+  margin:40px auto;
+  padding: 24px 40px 40px; 
+  .item_name {
     background: white;
-    width:700px;
-    height: 100%;
-    margin:40px auto;
-    padding: 24px 40px 40px; 
-
-    .item_name {
-      background: white;
-      font-size: 24px;
-      text-align: center;
-      font-weight: bold;
-      line-height: 1.4;
-    }
-    .item_about {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  .item_about {
     margin: 8px 0 0;
     font-size: 14px;
     color: #888;
     line-height: 1.5;
-    }
-
-
+  }
 //--アイテム  ここから--//
   .container_wrap{
     display:flex;
@@ -36,9 +32,8 @@
       width: 300px;
       display: flex;
       flex-direction:column;
-
       &__image{
-        background-color: #fafafa;
+        background-color:khaki;
         width: 100%;
         height: 300px;
         position: relative;
@@ -59,7 +54,6 @@
         }
       }
     }
-
     .item_table{
       display:flex;
       width: 50%;
@@ -70,7 +64,6 @@
       border-spacing: 0;
       font-size :14px;
       justify-content: flex-end;
-
       th{
         width: 39%;
         text-align: left;
@@ -88,7 +81,6 @@
               width: 16px;
               height:16px;
             }
-
         }
       }
       th,td{
@@ -112,7 +104,6 @@
       font-size: 16px;
       }
   }
-
   .item_buy{
     background: #ea352d;
     width:600px;
@@ -127,12 +118,10 @@
   // .buy_by_app{
   //   background: skyblue;
   // }
-
   .item_description{
     width:700px;
     margin:32px auto;
   }
-
   .item_btn_container{
     background:white;
     width: 620px;
@@ -163,13 +152,10 @@
     }
   }
 }
-
 .nav_item_link{
-  background:olive;
-  width: 700px;
-  height: 14px;
+  background:#f5f5f5;
+  height: 60px;
   color: #0099e8;
-  margin: 24px 248px 0;
   display: flex;
   justify-content:space-between;
   font-size: 14px;
@@ -181,24 +167,18 @@
       padding: 8px 16px;
     }
     &__icon_right{
-    background: #f5f5f5;
-    display: inline-block;
     margin-left: 16px;
     padding: 8px 16px;
-    border-radius: 40px;
     }
     &__btn_declaration{
     color: #0099e8;
-    display: inline-block;
     margin-left: 45px;
     padding: 8px 16px;
   }
 }
-
-
 .media_box {
   background:white;
-  width: 700px;
+  // width: 700px;
   margin: 24px auto;
   padding: 32px 0 24px;
   &__center{
@@ -234,33 +214,41 @@
     }
   }
 }
-
-.other_item_container {
-  width:700px;
+.other_item_container_big{
+  background:#f5f5f5;
   a {
     color: #0099e8;
     font-size: 22px;
+    font-weight: 400;
   }
-
-  &__other_item_{
-    &__image{
+}
+.other_item {
+  &_container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    &__other_item{
+      height:330px;
+      width:195px;
     }
-    &__other_item__price{
-
+  }
+  &__image{
+    background: khaki;
+    width:195px;
+    height:180px;
+    display:flex;
+    border:solid 1px;
+  }
+  &__contents{
+    background:white;
+    height: 100px;
+    &__other_item_name {
+      width:188px;
+      height:48px;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    &__price{
     }
   }
-  content{
-
-  }
-
-
-
-
-
-
-
-
-
-
-
 }
