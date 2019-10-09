@@ -18,7 +18,7 @@
             .header_nav_category カテゴリーから探す
             .header_nav_brand ブランドから探す
           .header_ragistration
-            %button.header_sign_up 新規会員登録
+            = link_to "新規会員登録", new_user_registration_path, class: "header_sign_up"
             = link_to "ログイン", new_user_session_path, class: "header__sign_in"
     = yield
     %footer
