@@ -9,13 +9,18 @@ header {
   }
 }
 
+// #header_logo {
+//   width:
+// }
+
 .header {
   &_top {
     display:flex;
+    margin-top:10px;
   }
   &_logo {
     width:150px;
-    height:40px;
+    height:40px; 
     margin-right:45px;
   }
   &_search {

@@ -11,8 +11,8 @@
     %header
       %div
         .header_top
-          %p.header_logo ロゴ
-          %input.header_search{:placeholder => "何をお探しですか？", :type => "text"}/
+          %img.header_logo{src: "/assets/header_logo.png"}
+          %input.header_search{placeholder: "何をお探しですか？", type: "text"}
         .header_bottom
           .header_nav
             .header_nav_category カテゴリーから探す
@@ -35,7 +35,7 @@
 %footer
   .footer
     .footer__upper
-    -# 画像をいれる
+      %img.footer__img{src: "/assets/footer_img.png"}
     .footer__mid
       .footer__list__about
         %h2 メルカリについて
