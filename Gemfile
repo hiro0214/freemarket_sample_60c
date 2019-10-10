@@ -77,6 +77,8 @@ gem 'ancestry'
 gem "font-awesome-rails"
 gem "wicked"
 
+gem 'fog-aws'
+
 
 # 本番環境での設定
 group :production do
