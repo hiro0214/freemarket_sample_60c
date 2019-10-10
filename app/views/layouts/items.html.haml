@@ -11,7 +11,8 @@
     %header
       %div
         .header_top
-          %img.header_logo{src: "/assets/header_logo.png"}
+          =link_to "/" do
+            %img.header_logo{src: "/assets/header_logo.png"}
           %input.header_search{placeholder: "何をお探しですか？", type: "text"}
         .header_bottom
           .header_nav
