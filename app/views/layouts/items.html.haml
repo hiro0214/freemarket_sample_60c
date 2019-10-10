@@ -16,7 +16,9 @@
           %input.header_search{placeholder: "何をお探しですか？", type: "text"}
         .header_bottom
           .header_nav
-            .header_nav_category カテゴリーから探す
+            .header_nav_category
+              %i.fa.fa-th-list.header__icon__left
+              %span カテゴリーから探す
             = render "items/purudown"
             .header_nav_brand ブランドから探す
           .header_ragistration
