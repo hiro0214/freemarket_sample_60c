@@ -1,4 +1,6 @@
 .sign_in {
+  widows: 100%;
+  height:100%;
   &__page {
     background:rgb(240, 240, 240);
     width:100vw;
@@ -55,9 +57,9 @@
       }
     }
     &_form {
-      > div {
+      > form {
         padding:24px 64px 32px;
-        > div {
+        .no_robot {
           width:100%;
           height:40px;
           border:solid 1px;
@@ -70,40 +72,44 @@
         border-radius: 5px;
         margin-bottom:20px;
       }
-      & button {
-        background:#ea352d;
-        color:#fff;
-        border:solid 1px #ea352d;
-        width:100%;
-        height:40px;
-        margin-bottom:20px;
-      }
-      & p {
+      & .pass_forbidden {
         color: #0099e8;
         font-size:12px;
         float:left;
       }
     }
   }
-  &__footer {
-    width:456px;
-    margin: 0 auto;
-    padding: 20px 0;
-    font-size:10px;
-    text-align:center;    
-    & > ul {
-      display:flex;
-      list-style:none;
-    }
-    & li {
-      margin:0 15px;
-    }
-    & a {
-      color: #333;
-      text-decoration: none;
-    }
-    & p {
-      font-size:13px;
-    }
+}
+
+// ! だれかたのむby山田
+form .actions {
+  background:$red2;
+  color:#fff;
+  border:solid 1px $red2;
+  width:100%;
+  height:40px;
+  margin-bottom:20px;
+}
+
+
+.sign_in__footer {
+  width:456px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size:10px;
+  text-align:center;
+  & > ul {
+    display:flex;
+    list-style:none;
+  }
+  & li {
+    margin:0 15px;
+  }
+  & a {
+    color: #333;
+    text-decoration: none;
+  }
+  & p {
+    font-size:13px;
   }
 }

@@ -46,17 +46,17 @@ header{
 }
     //--新着アイテムたち  ここから--//
 .main_contents__box__contents{
-  background: rgb(239, 239, 239);  
+  background: rgb(239, 239, 239);
   width: 1020px;
-  // height: 100vh;  
-  height: 642px;   
+  // height: 100vh;
+  height: 642px;
   margin:42px auto 0px;
   // padding: 42px 0 18px;
   &__title_box{
     width: 100%;
     height: 33px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     &__title{
       // line-height:26px;
       font-size: 24px;
@@ -71,7 +71,7 @@ header{
       color: rgb(0, 149,238);
       text-decoration: none;
     }
-  }        
+  }
 }
 
 .main_contents__box__contents__items{
