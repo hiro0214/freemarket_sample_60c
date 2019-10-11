@@ -59,7 +59,7 @@
         bottom:0px;
         border:solid 1px rgb(230, 230, 230);
         > li:hover {
-          background:#ea352d;
+          background:#eee;
           display:block;
           + ul {
             display:block;
@@ -83,7 +83,7 @@
           > li:hover {
             width:320px;
             display:block;
-            background:#ea352d;
+            background:#eee;
           }
         }
       }

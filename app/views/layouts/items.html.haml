@@ -20,7 +20,16 @@
               %i.fa.fa-th-list.header__icon__left
               %span カテゴリーから探す
             = render "items/purudown"
-            .header_nav_brand ブランドから探す
+            .header_nav_brand
+              %span ブランドから探す
+            .header_nav_brand_lists
+              %ul
+                %li シャネル
+                %li ナイキ
+                %li ルイ ヴィトン
+                %li シュプリーム
+                %li アティダス
+                %li ブランド一覧
           .header_ragistration
             -# = link_to "新規会員登録", new_user_registration_path, class: "header_sign_up"
             -# = link_to "ログイン", new_user_session_path, class: "header__sign_in"

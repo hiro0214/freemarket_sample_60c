@@ -35,9 +35,35 @@ header {
   &_nav {
     display:flex;
     font-size:14px;
-    font-weight:bold;
+      span {
+        font-weight:bold;
+      }
     &_category {
       margin-right:20px;
+    }
+    &_brand:hover + .header_nav_brand_lists {
+      display:block;
+    }
+    &_brand_lists {
+      display:none;
+      background:#fff;
+      width:200px;
+      border:solid 1px rgb(230, 230, 230);
+      position:relative;
+      top:35px;
+      right:114px;
+      z-index:5;
+      &:hover {
+        display:block;
+      }
+      li {
+        padding:15px 0px;
+        &:hover {
+          background:#ea352d;
+          color:#fff;
+          display:block;
+        }
+      }
     }
   }
   &__icon__left {
@@ -74,3 +100,6 @@ header {
     }
   }
 }
+
+
+
