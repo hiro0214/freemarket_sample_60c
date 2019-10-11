@@ -1,0 +1,306 @@
+.exhibit {
+  &__main {
+    background:#f5f5f5;
+    height: 100vh;
+    overflow: scroll;
+  }
+  &__contents {
+    background: white;
+    margin: 0 auto;
+    // height: 100%;
+    width: 700px;
+  }
+  // 商品の情報
+  &__infomation {
+    height: 96px;
+    border-width: 0;
+    > p {
+      text-align: center;
+      font-size: 22px;
+      line-height: 96px;
+      font-weight: bold;
+    }
+  }
+  // 商品のアップロード２段目
+  &__upload{
+    // background: pink;
+    height: 301px;
+    padding: 40px;
+    border-top: solid 1px;
+    &_head{
+      display: flex;
+      // background: red;
+    }
+    &_image{
+      width: 100%;
+      height: calc(100% - 84px);
+      background: #f5f5f5;
+      padding: 40px;
+      border:dotted 2px;
+      > p {
+        text-align:center;
+
+      }
+    }
+  }
+  // 商品の説明３段目
+  &__explanation{
+    // background:blueviolet;
+    height: 352px;
+    padding: 40px;
+    border-top: solid 1px;
+    &__title{
+      // background:pink;
+      &_head{
+        display:flex;
+        font-size: 14px;
+      }
+      &_field{
+        // background: springgreen;
+        height: 48px;
+        margin-top: 8px;
+        padding:10px 16px 8px;
+        border-radius: 4px;
+        > p {
+          font-size: 16px;
+        }
+      }
+    }
+    &__detail{
+      // background:pink;
+      margin-top: 40px;
+      &_head{
+        display:flex;
+        font-size: 14px;
+      }
+      &_field{
+        // background: springgreen;
+        height: 127px;
+        margin-top: 8px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        > p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  // 商品の詳細４段目
+  &__detail{
+  // background:blueviolet;
+  // height: 261px;
+  padding: 40px;
+  border-top: solid 1px;
+    &__container{
+      // background:red;
+      // height: 180px;
+      width: 400px;
+      float: right;
+      &__title{
+        // background:pink;
+        &_head{
+          display:flex;
+          font-size: 14px;
+        }
+        &_field{
+          // background: springgreen;
+          height: 48px;
+          margin-top: 8px;
+          padding:10px 16px 8px;
+          border-radius: 4px;
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+      &__detail{
+        // background:pink;
+        margin-top: 40px;
+        &_head{
+          display:flex;
+          font-size: 14px;
+        }
+        &_field{
+          // background: springgreen;
+          height: 48px;
+          margin-top: 8px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  
+  // 商品の配送方法について 5段目
+  &__delivery{
+  // background:blueviolet;
+  // height: 100%;
+  padding: 40px;
+  border-top: solid 1px;
+  // clear: right;
+    &__container{
+      // background:red;
+      width: 400px;
+      float: right;
+      &__fee{
+        // background:pink;
+        &_head{
+          display:flex;
+          font-size: 14px;
+        }
+        &_field{
+          // background: springgreen;
+          height: 48px;
+          margin-top: 8px;
+          padding:10px 16px 8px;
+          border-radius: 4px;
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+      &__shipping_region{
+        // background:pink;
+        margin-top: 40px;
+        &_head{
+          display: flex;
+          font-size: 14px;
+        }
+        &_field{
+          // background: springgreen;
+          height: 48px;
+          margin-top: 8px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+        &__day{
+        // background:pink;
+        margin-top: 40px;
+        &_head{
+          display:flex;
+          font-size: 14px;
+        }
+        &_field{
+          // background: springgreen;
+          height: 48px;
+          margin-top: 8px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  // 商品の価格設定
+  &__price{
+  // background:blueviolet;
+  padding: 40px;
+  border-top: solid 1px;
+  // height:100%;
+    &__container{
+      // background:red;
+      width: 400px;
+      float: right;
+      &__fee{
+        // background:pink;
+        // ここの配置要検討 綺麗なコードを書きたい
+        display: flex;
+        justify-content: flex-end;
+        &_head{
+          font-size: 14px;
+        }
+        &_field{
+          // background: springgreen;
+          height: 48px;
+          margin-top: 8px;
+          padding:10px 16px 8px;
+          border-radius: 4px;
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+      &__sale_fee{
+        // background:pink;
+        margin-top: 40px;
+        display: flex;
+        justify-content: end;
+
+        &_head{
+          font-size: 14px;
+        }
+        &_field{
+          // background: springgreen;
+          height: 48px;
+          margin-top: 8px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+      &__sale_profit{
+        // background:pink;
+        margin-top: 40px;
+        display: flex;
+        justify-content: end;
+        &_head{
+          display:flex;
+          font-size: 14px;
+        }
+        &_field{
+          // background: springgreen;
+          height: 48px;
+          margin-top: 8px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          > p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &__confirmation{
+    // background:blueviolet;
+    padding: 40px;
+    border-top: solid 1px;
+    &__article{
+    
+    }
+    &__button__display{
+      margin: auto;
+      border: solid 1px;
+    }
+    &__button__back{
+      margin: auto;
+      border: solid 1px;
+    }
+  }
+}
+
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+// .clearfix::after {
+//   // content: "";
+//   display: block;
+//   clear: both;
+//   // background:red;
+// }

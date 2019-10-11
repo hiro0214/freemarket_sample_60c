@@ -1,0 +1,106 @@
+.exhibit__main
+  .exhibit__contents
+    .exhibit__infomation
+      %p 商品の情報を入力
+    
+    .exhibit__upload
+      .exhibit__upload_head
+        %div 出品画像
+        %div 必須
+      %p 最大10枚までアップロードできます
+      .exhibit__upload_image
+        %p ドラッグアンドドロップ
+        %p またはクリックしてファイルをアップロード
+    
+    .exhibit__explanation
+      .exhibit__explanation__title
+        .exhibit__explanation__title_head
+          %p  商品名
+          %p  必須
+        .exhibit__explanation__title_field
+          %p  商品名（必須 40文字まで)
+      .exhibit__explanation__detail
+        .exhibit__explanation__detail_head
+          %p  商品の説明
+          %p  必須
+        .exhibit__explanation__detail_field
+          %p  商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
+    
+    .exhibit__detail.clearfix
+      %span 商品の詳細
+      .exhibit__detail__container
+        .exhibit__detail__container__title
+          .exhibit__detail__container__title_head
+            %p  カテゴリー
+            %p  必須
+          .exhibit__detail__container__title_field
+        .exhibit__detail__container__detail
+          .exhibit__detail__container__detail_head
+            %p  商品の状態
+            %p  必須
+          .exhibit__detail__container__detail_field
+    
+    .exhibit__delivery.clearfix
+      %span 配送について
+      .exhibit__delivery__container
+        .exhibit__delivery__container__fee
+          .exhibit__delivery__container__fee_head
+            %p  配送料の負担
+            %p  必須
+          .exhibit__delivery__container__fee_field
+        .exhibit__delivery__container__shipping_region
+          .exhibit__delivery__container__shipping_region_head
+            %p  発送元の地域
+            %p  必須
+          .exhibit__delivery__container__shipping_region_field
+        .exhibit__delivery__container__day
+          .exhibit__delivery__container__day_head
+            %p  発送までの日数
+            %p  必須
+          .exhibit__delivery__container__day_field
+
+    .exhibit__price.clearfix
+      %span 販売価格(300~9,999,999)
+      .exhibit__price__container
+        .exhibit__price__container__fee
+          .exhibit__price__container__fee_head
+            %p  価格
+            %p  必須
+          .exhibit__price__container__fee_field
+            %p  ￥
+        .exhibit__price__container__sale_fee
+          .exhibit__price__container__sale_fee_head
+            %p  販売手数料(10%)
+          .exhibit__price__container__sale_fee_field
+        .exhibit__price__container__sale_profit
+          .exhibit__price__container__sale_prpfit_head
+            %p  販売利益
+          .exhibit__price__container__sale_profit_field
+            %p  ￥
+
+    .exhibit__confirmation
+      .exhibit__confirmation__article
+        %p 禁止されている出品、行為を必ずご確認ください。
+        %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+        %p また、出品をもちまして加盟店規約に同意したことになります。
+      .exhibit__confirmation__button__display
+        %p 出品する
+      .exhibit__confirmation__button__back
+        %p 戻る
+
+
+    -# 商品の詳細
+    -# カテゴリー必須
+
+    -# 商品の状態必須
+
+    -# 配送について?
+    -# 配送料の負担必須
+
+    -# 発送元の地域必須
+
+    -# 発送までの日数必須
+
+
+    -# 出品する
+    -# もどる

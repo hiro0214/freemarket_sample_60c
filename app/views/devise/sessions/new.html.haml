@@ -1,0 +1,30 @@
+.sign_in__page
+  .sign_in__header
+    %p.sign_in__logo ロゴ
+  .sign_in__main
+    .sign_in__main__panel
+      .sign_in__main__panel__acount
+        %p アカウントをお持ちでない方はこちら
+        %a{:href => "#"} 新規会員登録
+      .sign_in__main__panel__other
+        %button.sign_in__main__panel__other__fb Facebookでログイン
+        %button.sign_in__main__panel__other__go Googleでログイン
+      %form.sign_in__main__panel_form
+        %div
+          %input{:placeholder => "メールアドレス", :type => "text"}/
+          %br/
+          %input{:placeholder => "パスワード", :type => "text"}/
+          %div 私はロボットではありません
+          %button ログイン
+          %a{:href => "#"}
+            %p パスワードをお忘れの方
+  .sign_in__footer
+    %ul
+      %li
+        %a{:href => "#"} プライバシーポリシー
+      %li
+        %a{:href => "#"} メルカリ利用規約
+      %li
+        %a{:href => "#"} 特定商取引に関数表記
+    %p ロゴ
+    %p © 2019 Mercari
