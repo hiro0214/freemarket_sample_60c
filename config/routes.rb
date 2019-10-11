@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "items#index"
   resources :items 
   get "detail" => "items#detail"
+  get "mypage" => "items#mypage"
 end
