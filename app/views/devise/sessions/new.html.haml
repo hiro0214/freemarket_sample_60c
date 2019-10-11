@@ -9,16 +9,26 @@
       .sign_in__main__panel__other
         %button.sign_in__main__panel__other__fb Facebookでログイン
         %button.sign_in__main__panel__other__go Googleでログイン
-      %form.sign_in__main__panel_form
+
+      //入力フォーム
       .sign_in__main__panel_form
-        %div
-          %input{:placeholder => "メールアドレス", :type => "text"}/
-          %br/
-          %input{:placeholder => "パスワード", :type => "text"}/
-          %div 私はロボットではありません
-          %button ログイン
-          %a{:href => "#"}
-            %p パスワードをお忘れの方
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            -# .field-label
+              -# = f.label :email
+            .field-input
+              = f.email_field :email, autofocus: true, placeholder: 'メールアドレス'
+            .field
+              -# .field-label
+                -# %i
+              .field-input
+                = f.password_field :password, autocomplete: "off", placeholder: 'パスワード'
+            .no_robot 私はロボットではありません
+            .actions
+              = f.submit "ログイン", class: 'button'
+            = link_to "パスワードをお忘れの方", "#", class: "pass_forbidden"
+
+
   .sign_in__footer
     %ul
       %li
