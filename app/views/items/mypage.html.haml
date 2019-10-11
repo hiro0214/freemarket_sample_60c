@@ -1,0 +1,112 @@
+.wrapper_mypage
+  .wrapper_box
+    .side_bar
+      .side_bar__main
+        %ul
+          -# =link_to "", class: "side_menu_content" do
+          -#   .side_bar_box
+          -#     %li.side_bar_box__name マイページ
+          -#     = fa_icon 'chevron-right',class:"migi"
+          %li マイページ
+          %li お知らせ
+          %li やることリスト
+          %li いいね！一覧
+          %li 出品する
+          %li 出品した商品 - 出品中
+          %li 出品した商品 - 取引中
+          %li 出品した商品 - 売却済み
+          %li 購入した商品 - 取引中
+          %li 購入した商品 - 過去の取引
+          %li ニュース一覧
+          %li 評価一覧
+          %li ガイド
+          %li お問い合わせ
+          
+      %p メルペイ
+      .side_bar__middle
+        %ul
+          %li 売上・振込申請
+          %li ポイント
+      %p 設定
+      .side_bar__bottom
+        %ul
+          %li プロフィール
+          %li 発送元・お届け先住所変更
+          %li 支払い方法
+          %li メール/パスワード
+          %li 本人情報
+          %li 電話番号の確認
+          %li ログアウト
+    .main
+      .main__top_contents
+        .main__top_contents__box
+          .main__top_contents__box__image
+            img
+          .main__top_contents__box__nickname
+            ニックネーム
+          .main__top_contents__box__status
+            .main__top_contents__box__status__evaluation
+              評価
+              %span
+                33
+            .main__top_contents__box__status__exhibits
+              出品数
+              %span
+                58
+      .main__middle_menu
+        .main__middle_menu__tabs
+          %p.infomation
+            お知らせ
+          %p.to_do
+            やることリスト
+        .main__middle_menu__list
+          %ul
+            %li.main__middle_menu__list__content
+              .main__middle_menu__list__mercari_logo
+              .main__middle_menu__list__box
+                .main__middle_menu__list__message
+                  事務局から個別メッセージ「Googleログイン通知」
+                .main__middle_menu__list__time
+                  5 時間前
+            %li.main__middle_menu__list__content
+              .main__middle_menu__list__mercari_logo
+              .main__middle_menu__list__box
+                .main__middle_menu__list__message
+                  事務局から個別メッセージ「Googleログイン通知」
+                .main__middle_menu__list__time
+                  5 時間前
+            %li.main__middle_menu__list__content
+              .main__middle_menu__list__mercari_logo
+              .main__middle_menu__list__box
+                .main__middle_menu__list__message
+                  事務局から個別メッセージ「Googleログイン通知」
+                .main__middle_menu__list__time
+                  5 時間前
+            %li.main__middle_menu__list__content
+              .main__middle_menu__list__mercari_logo
+              .main__middle_menu__list__box
+                .main__middle_menu__list__message
+                  事務局から個別メッセージ「Googleログイン通知」
+                .main__middle_menu__list__time
+                  5 時間前
+            %li.main__middle_menu__list__content
+              .main__middle_menu__list__mercari_logo
+              .main__middle_menu__list__box
+                .main__middle_menu__list__message
+                  事務局から個別メッセージ「Googleログイン通知」
+                .main__middle_menu__list__time
+                  5 時間前
+            
+            %li.go_mypage_list
+              %p
+                一覧を見る
+      .main__bottom_menu
+        .main__bottom_menu__title
+          購入した商品
+        .main__bottom_menu__tabs
+          %p.transaction_now
+            取引中
+          %p.transaction_before
+            過去の取引
+      -# = fa_icon 'fa-chevron-right',class:"side_bar_icon"
+      -# %i.fa.fa-chevron-right
