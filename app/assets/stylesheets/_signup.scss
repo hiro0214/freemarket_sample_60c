@@ -1,48 +1,56 @@
-.registration__contents__title{
-  background-color: white;
-  width: 700px;
-  height: 97px;
-  text-align: center;
-  margin: auto;
-  font-size: 22px;
-  padding: 32px;
-  border-bottom: ridge;
-}
-
-.registration__contents__lists{
-  background-color: white;
-  width: 700px;
-  height: 247px;
-  text-align: center;
-  font-size: 14px;
-  margin: auto;
-  padding: 24px 16px 40px;
-}
-
-.registration__contents__contents__lists__list__mail{
-  width: 343px;
-  height: 50px;
-  background-color: red;
-  color:white;
-  border-radius: 5px;
-  margin: 16px auto;
-  padding:13px 88px;
-}
-
-.registration__contents__contents__lists__list__facebook{
-  background-color: blue;
-  color: white;
-  border-radius: 5px;
-  width: 343px;
-  height: 50px;
-  margin: 16px auto;
-}
-
-.registration__contents__contents__lists__list__google{
-  background-color: white;
-  border-radius: 5px;
-  border: solid;
-  width: 343px;
-  height: 50px;
-  margin: 16px auto;
+.registration {
+  &__sign_up {
+    width:100vw;
+    height:100vh;
+    background:rgb(240, 240, 240);
+  }
+  &__header__logo{
+    text-align:center;
+    button {
+      background:rgb(240, 240, 240);
+      border:none;
+    }
+    img {
+      width:230px;
+      margin:20px 0;
+    }
+  }
+  &__first__box__middle__input {
+    > ul {
+      margin: 0 auto;
+      button {
+        width: 343px;
+        height: 50px;
+        font-size: 14px;
+        margin-top: 16px;
+        border-radius:5px;
+      }
+    }
+  } 
+  &_icon {
+    float:left;
+    font-size:20px !important;
+    position:relative;
+    left:10px;
+  }
+  &__mail {
+    background: #ea352d;
+    color: #fff;
+    border:none;
+    &:hover {
+      opacity:0.8;
+      transition: .4s;
+    }
+  }
+  &__fb {
+    background: #385185;
+    color: #fff;
+    border:none;
+  }
+  &__go {
+    background: #fff;
+    color: #333;
+    border: #979797 solid 1px;
+    margin-bottom:60px;
+  }
 }

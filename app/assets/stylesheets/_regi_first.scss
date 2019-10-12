@@ -13,9 +13,14 @@
     }
     &__middle {
       padding:40px 40px 64px;
+      border-bottom:solid 1px rgb(236, 236, 236);
       &__input {
         width:343px;
-        margin:32px auto 0px;
+        margin:32px auto 20px;
+        > p {
+          // margin-top:20px;
+          font-size:14px;
+        }
         &__name {
           font-size:14px;
           margin-bottom:5px;
@@ -31,6 +36,7 @@
         > input {
           width:100%;
           height:50px;
+          margin-bottom:20px;
         }
         &__double > input {
           width:calc(50% - 6px);
@@ -58,18 +64,31 @@
           height:50px;
           font-size:14px;
           border:none;
-          margin-bottom:30px;
+          margin-top:20px;
+          margin-bottom:10px;
         }
         > a {
           color: #0099e8;
           font-size:14px;
+          margin-top:20px;
           float:right;
+        }
+      }
+      &__info {
+        > a {
+          color: #0099e8;
+          font-size:14px;
+          margin-top:20px;
+
         }
       }
     }
   }
 }
 
+button {
+  cursor:pointer;
+}
 
 .robot {
   border:solid 1px;

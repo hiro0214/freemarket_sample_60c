@@ -1,0 +1,21 @@
+.registration__first
+  .registration__first__box
+    %h2.registration__first__box__top 電話番号認証
+    %form.registration__first__box__middle
+      .registration__first__box__middle__input
+        .registration__first__box__middle__input__name 認証番号
+        %input{placeholder: "　認証番号を入力"}
+        %p SMSで届いた認証番号を入力してください
+        %button{type: "submit"} 認証して完了
+
+    %form.registration__first__box__middle
+      .registration__first__box__middle__input
+        .registration__first__box__middle__input__name 30秒たっても認証番号が届かない方へ
+        %p 電話で認証番号を聞くこともできます。
+        %button{type: "submit"} 電話で認証番号を聞く（通話無料）
+
+    .registration__first__box__middle__input
+      .registration__first__box__middle__input__name 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+      .registration__first__box__middle__info
+        %a{href: "#"} 電話番号を再度入力する
+      %p ※SMSが届かない場合はSMS受信設定を確認して、もう一度電話番号を入力してください。

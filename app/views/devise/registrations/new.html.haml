@@ -1,5 +1,22 @@
-.registration__contents__title 新規会員登録
-.registration__contents__lists
-  = link_to "メールアドレスで登録する", "/regi_first", class: "registration__contents__contents__lists__list__mail"
-  .registration__contents__contents__lists__list__facebook フェイスブックで登録する
-  .registration__contents__contents__lists__list__google グーグルで登録する
+.registration__sign_up
+  .registration__header__logo
+    %button{onclick: "location.href='/'"}
+      %img{src: "/assets/header_logo.png"}/
+
+  .registration__first
+    .registration__first__box
+      %h2.registration__first__box__top 新規会員登録
+      .registration__first__box__middle__input
+        %ul
+          %li
+            %button{onclick: "location.href='/regi_first'", class: "registration__mail"}
+              %i.fa.fa-envelope.registration_icon
+              メールアドレスで登録する
+          %li
+            %button{onclick: "location.href='#'", class: "registration__fb"}
+              %i.fa.fa-facebook-square.registration_icon
+              Facebookで登録する
+          %li
+            %button{onclick: "location.href='#'", class: "registration__go"} 
+              %i.fa.fa-google-plus-square.registration_icon
+              Googleで登録する
