@@ -1,7 +1,7 @@
 .registration__sign_up
   .registration__header__logo
-    %button{onclick: "location.href='/'"}
-      %img{src: "/assets/header_logo.png"}/
+    =link_to "/" do
+      =image_tag "header_logo.png"
 
   .registration__first
     .registration__first__box
@@ -31,6 +31,6 @@
         %a{:href => "#"} メルカリ利用規約
       %li
         %a{:href => "#"} 特定商取引に関数表記
-    %button{onclick: "location.href='/'"}
-      %img{src: "/assets/footer_logo.png"}/
+    =link_to "/" do
+      =image_tag "footer_logo.png"
     %p © 2019 Mercari

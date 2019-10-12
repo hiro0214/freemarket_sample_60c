@@ -12,7 +12,7 @@
       %div
         .header_top
           =link_to "/" do
-            %img.header_logo{src: "/assets/header_logo.png"}
+            =image_tag "header_logo.png", class: "header_logo"
           %input.header_search{placeholder: "何をお探しですか？", type: "text"}
         .header_bottom
           .header_nav
@@ -45,7 +45,7 @@
 %footer
   .footer
     .footer__upper
-      %img.footer__img{src: "/assets/footer_img.png"}
+      =image_tag "footer_img.png", class: "footer__img"
     .footer__mid
       .footer__list__about
         %h2 メルカリについて
