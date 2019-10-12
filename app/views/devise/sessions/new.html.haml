@@ -1,14 +1,22 @@
 .sign_in__page
-  .sign_in__header
-    %p.sign_in__logo ロゴ
+  .registration__header__logo
+    %button{onclick: "location.href='/'"}
+      %img{src: "/assets/header_logo.png"}/
   .sign_in__main
     .sign_in__main__panel
       .sign_in__main__panel__acount
         %p アカウントをお持ちでない方はこちら
-        %a{:href => "#"} 新規会員登録
-      .sign_in__main__panel__other
-        %button.sign_in__main__panel__other__fb Facebookでログイン
-        %button.sign_in__main__panel__other__go Googleでログイン
+        %a{href: "/users/sign_up"} 新規会員登録
+      .registration__first__box__middle__input
+        %ul
+          %li
+            %button{onclick: "location.href='#'", class: "registration__fb"}
+              %i.fa.fa-facebook-square.registration_icon
+              Facebookでログイン
+          %li
+            %button{onclick: "location.href='#'", class: "registration__go"} 
+              %i.fa.fa-google-plus-square.registration_icon
+              Googleでログイン
 
       //入力フォーム
       .sign_in__main__panel_form
@@ -25,17 +33,18 @@
                 = f.password_field :password, autocomplete: "off", placeholder: 'パスワード'
             .no_robot 私はロボットではありません
             .actions
-              = f.submit "ログイン", class: 'button'
+              = f.submit "ログイン", class: 'sign_in__button'
             = link_to "パスワードをお忘れの方", "#", class: "pass_forbidden"
 
 
-  .sign_in__footer
+  .registration__footer
     %ul
       %li
-        %a{:href => "#"} プライバシーポリシー
+        %a{href: "#"} プライバシーポリシー
       %li
-        %a{:href => "#"} メルカリ利用規約
+        %a{href: "#"} メルカリ利用規約
       %li
-        %a{:href => "#"} 特定商取引に関数表記
-    %p ロゴ
+        %a{href: "#"} 特定商取引に関数表記
+    %button{onclick: "location.href='/'"}
+      %img{src: "/assets/footer_logo.png"}/
     %p © 2019 Mercari

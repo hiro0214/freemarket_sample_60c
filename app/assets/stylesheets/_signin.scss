@@ -1,10 +1,10 @@
 .sign_in {
-  widows: 100%;
+  width:100%;
   height:100%;
   &__page {
-    background:rgb(240, 240, 240);
-    width:100vw;
-    height:100vh;
+    background:rgb(246, 246, 246);
+    width:100%;
+    height:100%;
   }
   &__header {
     text-align:center;
@@ -79,37 +79,39 @@
       }
     }
   }
+  &__button {
+    background:#ea352d;
+    color:#fff;
+    font-size:14px;
+    border:none;
+  }
 }
 
-// ! だれかたのむby山田
-form .actions {
-  background:$red2;
-  color:#fff;
-  border:solid 1px $red2;
-  width:100%;
-  height:40px;
-  margin-bottom:20px;
-}
-
-
-.sign_in__footer {
+.registration__footer {
   width:456px;
-  margin: 0 auto;
-  padding: 20px 0;
-  font-size:10px;
+  margin: 15px auto 10px;
+  padding: 20px 0px 0px;
   text-align:center;
   & > ul {
     display:flex;
-    list-style:none;
   }
   & li {
-    margin:0 15px;
+    font-size:12px;
+    margin:0 auto;
   }
   & a {
     color: #333;
     text-decoration: none;
   }
+  & button {
+    background:rgb(246, 246, 246);
+    border:none;
+  }
+  & img {
+    margin:40px 0 5px;
+    width:70px;
+  }
   & p {
-    font-size:13px;
+    font-size:12px;
   }
 }
