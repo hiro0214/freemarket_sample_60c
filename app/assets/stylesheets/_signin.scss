@@ -37,25 +37,6 @@
         line-height:40px;
       }
     }
-    &__other {
-      padding:32px 64px;
-      &__fb {
-        background:#385185;
-        color:#fff;
-        width:100%;
-        margin-bottom:10px;
-        text-decoration: none;
-        padding:13px 80px;
-      }
-      &__go {
-        background:#fff;
-        color:#000;
-        width:100%;
-        text-decoration: none;
-        padding:13px 80px;
-        border:solid 1px gray;
-      }
-    }
     &_form {
       > form {
         padding:24px 64px 32px;
@@ -90,7 +71,7 @@
 .registration__footer {
   width:456px;
   margin: 15px auto 10px;
-  padding: 20px 0px 0px;
+  padding: 20px 0px 30px;
   text-align:center;
   & > ul {
     display:flex;

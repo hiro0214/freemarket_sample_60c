@@ -1,3 +1,5 @@
+.registration__header
+
 .registration__first
   .registration__first__box
     %h2.registration__first__box__top 会員情報登録
@@ -225,3 +227,16 @@
       .registration__first__box__middle__input
         %button{type: "submit", onclick: "location.href='/regi_second"} 次へ進む
         %a{href: "#"} 本人情報の登録について＞
+  
+  .registration__footer
+    %ul
+      %li
+        %a{href: "#"} プライバシーポリシー
+      %li
+        %a{href: "#"} メルカリ利用規約
+      %li
+        %a{href: "#"} 特定商取引に関数表記
+    %button{onclick: "location.href='/'"}
+      %img{src: "/assets/footer_logo.png"}/
+    %p © 2019 Mercari
+

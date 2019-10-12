@@ -1,4 +1,99 @@
 .registration {
+  &__header {
+    width:100%;
+    height:128px;
+    background:rgb(223, 223, 223);
+  }
+  &__first {
+    background:rgb(246, 246, 246);
+    &__box {
+      background:#fff;
+      width:700px;
+      margin:0 auto;
+      &__top {
+        font-size:22px;
+        padding:32px;
+        font-family:bold;
+        text-align:center;
+        border-bottom:solid 1px rgb(236, 236, 236);
+      }
+      &__middle {
+        padding:40px 40px 64px;
+        border-bottom:solid 1px rgb(236, 236, 236);
+        &__input {
+          width:343px;
+          margin:32px auto 20px;
+          > p {
+            font-size:14px;
+          }
+          &__name {
+            font-size:14px;
+            margin-bottom:5px;
+            font-family:bold;
+            > span {
+              background:#ea352d;
+              color:#fff;
+              font-size:12px;
+              padding:2px 5px 0px;
+              border-radius:2px;
+            }
+          }
+          > input {
+            width:100%;
+            height:50px;
+            margin-bottom:20px;
+          }
+          &__double > input {
+            width:calc(50% - 6px);
+            height:50px;
+          }
+          &__birth > select {
+            background:#fff;
+            height:50px;
+          }
+          &__birth > span {
+            font-size: 14px;
+          }
+          &__birth > p {
+            font-size:14px;
+            color:rgb(170, 170, 170);
+            margin-top: 5px;
+          }
+          &__info {
+            font-size:14px;
+          }
+          > button{
+            background:#ea352d;
+            color:#fff;
+            width:100%;
+            height:50px;
+            font-size:14px;
+            border:none;
+            margin-top:20px;
+            margin-bottom:10px;
+          }
+          > a {
+            color: #0099e8;
+            font-size:14px;
+            margin-top:20px;
+            float:right;
+          }
+        }
+        &__info {
+          padding-bottom:40px;
+          > a {
+            color: #0099e8;
+            font-size:14px;
+            margin-top:20px;
+          }
+          > p {
+            font-size:14px;
+          }
+        }
+      }
+    }
+  }
+
   &__sign_up {
     width:100vw;
     height:100vh;
@@ -53,4 +148,13 @@
     border: #979797 solid 1px;
     margin-bottom:60px;
   }
+}
+
+button {
+  cursor:pointer;
+}
+
+.robot {
+  border:solid 1px;
+  height:50px;
 }
