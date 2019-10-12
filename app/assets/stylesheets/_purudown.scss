@@ -1,11 +1,13 @@
 .header {
   &__menu {
     width:130px;
-    height:20px;
+    height:44px;
     position:absolute;
     right:30px;
-    &:hover +.header__puru {
-      display:block;
+    &:hover {
+      +.header__puru {
+        display:block;
+      }
     }
   }
   &__nav {
@@ -25,11 +27,14 @@
     display:none;
     z-index:1;
     position:absolute;
-    top:20px;
+    top:41px;
     right:-65px;
     border:solid 1px rgb(230, 230, 230);
     &:hover {
       display:block;
+    }
+    li {
+      padding:8px 0px;
     }
     > ul {
       width:224px;

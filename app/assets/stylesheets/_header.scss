@@ -1,8 +1,7 @@
 header {
-  width:100vw;
-  height:110px;
-  border:none;
-  border-bottom:solid 1px rgb(240, 240, 240);
+  width:100%;
+  height:90px;
+  border-bottom:solid 1px rgb(224, 224, 224);
   > div {
     width:1020px;
     margin:0 auto;
@@ -11,26 +10,33 @@ header {
 
 .header {
   &_top {
+    height:40px;
     display:flex;
     margin-top:10px;
   }
   &_logo {
-    width:150px;
-    height:40px; 
-    margin-right:45px;
+    width:170px;
+    height:50px; 
+    margin-right:20px;
+    position:relative;
+    right:15px;
+    bottom:5px;
   }
   &_search {
     background:rgb(245,245,245);
     width:100%;
   }
   &_bottom {
-    margin-top:18px;
+    width:100%;
+    height:44px;
+    margin-top:8px;
     display:flex;
     justify-content: space-between;
   }
   &_nav {
     display:flex;
     font-size:14px;
+    line-height:30px;
       span {
         font-weight:bold;
       }
@@ -44,16 +50,22 @@ header {
       display:none;
       background:#fff;
       width:200px;
-      border:solid 1px rgb(230, 230, 230);
       position:relative;
-      top:35px;
+      top:41px;
       right:114px;
       z-index:5;
       &:hover {
         display:block;
+        
+      }
+      ul {
+        border:solid 1px rgb(230, 230, 230);
       }
       li {
-        padding:15px 0px;
+        background:#fff;
+        padding:8px 0px;
+        // border:solid 1px rgb(230, 230, 230);
+
         &:hover {
           background:#ea352d;
           color:#fff;
@@ -63,7 +75,7 @@ header {
     }
   }
   &__icon__left {
-    color:red;
+    color:#ea352d;
   }
   &_ragistration {
     display:flex;
@@ -71,8 +83,8 @@ header {
   &_sign_up {
     background: rgb(234, 53, 45);
     height:30px;
-    line-height:30px;
-    padding:0 5px;
+    line-height:20px;
+    padding:6px 10px;
     font-size:14px;
     color:white;
     border-radius:5px;
@@ -83,12 +95,11 @@ header {
     background:white;
     color:rgb(0, 149, 238);
     height:30px;
-    line-height:30px;
-    padding:0 5px;
+    line-height:20px;
+    padding:6px 10px;
     font-size:14px;
     border:solid 1px rgb(0, 149, 238);
     border-radius:5px;
-    text-decoration:none;
   &:hover {
     background:rgb(0, 149, 238);
     color:white;

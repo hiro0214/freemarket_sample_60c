@@ -13,7 +13,7 @@
         .header_top
           =link_to "/" do
             =image_tag "header_logo.png", class: "header_logo"
-          %input.header_search{placeholder: "何をお探しですか？", type: "text"}
+          %input.header_search{placeholder: "何かお探しですか？", type: "text"}
         .header_bottom
           .header_nav
             .header_nav_category
@@ -55,7 +55,12 @@
           %li プレスリリース
           %li 公式ブログ
           %li メルカリロゴ利用ガイドライン
-          %li ツイッター/フェイスブック
+          .footer__logo__sns
+            =link_to "https://twitter.com/mercari_jp" do
+              %i.fa.fa-twitter
+            =link_to "https://www.facebook.com/mercarijp" do
+              %i.fa.fa-facebook-square
+
       ​
       .footer__list__guide
         %h2 ヘルプ＆ガイド
@@ -79,7 +84,7 @@
             %li コンプライアンスポリシー
         ​
       .footer__list__rule
-        %h2{ style: "color:rgb(40,40,40)" }٩(๑❛ᴗ❛๑)۶
+        %h2{ style: "color:rgb(34,34,34)" }٩(๑❛ᴗ❛๑)۶
         %ul.no_circle
           %li 個人データの安全管理に係る基本方針
           %li 特定商取引に関する表記
@@ -91,6 +96,8 @@
         %ul.no_circle
           %li 日本
           %li United States
-      ​
+      
     .footer__lower
+      =link_to "/" do
+        =image_tag "top_footer_logo.png", class: "footer__logo"
       %span.footer__copyright © 2019 Mercari
