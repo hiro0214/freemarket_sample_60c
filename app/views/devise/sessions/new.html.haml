@@ -1,7 +1,8 @@
 .sign_in__page
   .registration__header__logo
-    %button{onclick: "location.href='/'"}
-      %img{src: "/assets/header_logo.png"}/
+    =link_to "/" do
+      =image_tag "header_logo.png"
+
   .sign_in__main
     .sign_in__main__panel
       .sign_in__main__panel__acount
