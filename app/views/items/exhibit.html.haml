@@ -9,8 +9,13 @@
         %div 必須
       %p 最大10枚までアップロードできます
       .exhibit__upload_image
-        %p ドラッグアンドドロップ
-        %p またはクリックしてファイルをアップロード
+        -# %input{:name => "image", :placeholder => "Image Url", :type => "text"}/
+        %label
+          %div.exhibit__upload_image_field
+            %p ドラッグアンドドロップ
+            %p またはクリックしてファイルをアップロード
+          %input.sell-upload-drop-file{:multiple => "", :name => "image1", :type => "file"}/
+        
     
     .exhibit__explanation
       .exhibit__explanation__title
@@ -18,14 +23,13 @@
           %p  商品名
           %p  必須
         .exhibit__explanation__title_field
-          %p  商品名（必須 40文字まで)
+          %input{ :placeholder => "商品名（必須 40文字まで)", :maxlength => "40", :name => "text", :type => "text", :value => ""}/
       .exhibit__explanation__detail
         .exhibit__explanation__detail_head
           %p  商品の説明
           %p  必須
         .exhibit__explanation__detail_field
-          %p  商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。
-    
+          %textarea{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text"}
     .exhibit__detail.clearfix
       %span 商品の詳細
       .exhibit__detail__container
@@ -34,12 +38,34 @@
             %p  カテゴリー
             %p  必須
           .exhibit__detail__container__title_field
+            %select.select-default
+              %option{:value => ""} ---
+              %option{:value => "1"} レディース
+              %option{:value => "2"} メンズ
+              %option{:value => "3"} ベビー・キッズ
+              %option{:value => "4"} インテリア・住まい・小物
+              %option{:value => "5"} 本・音楽・ゲーム
+              %option{:value => "1328"} おもちゃ・ホビー・グッズ
+              %option{:value => "6"} コスメ・香水・美容
+              %option{:value => "7"} 家電・スマホ・カメラ
+              %option{:value => "8"} スポーツ・レジャー
+              %option{:value => "9"} ハンドメイド
+              %option{:value => "1027"} チケット
+              %option{:value => "1318"} 自動車・オートバイ
+              %option{:value => "10"} その他
         .exhibit__detail__container__detail
           .exhibit__detail__container__detail_head
             %p  商品の状態
             %p  必須
           .exhibit__detail__container__detail_field
-    
+            %select.select-default
+              %option{:value => ""} ---
+              %option{:value => "1"} 新品、未使用
+              %option{:value => "2"} 未使用に近い
+              %option{:value => "3"} 目立った傷や汚れなし
+              %option{:value => "4"} やや傷や汚れあり
+              %option{:value => "5"} 傷や汚れあり
+              %option{:value => "6"} 全体的に状態が悪い
     .exhibit__delivery.clearfix
       %span 配送について
       .exhibit__delivery__container
@@ -48,43 +74,103 @@
             %p  配送料の負担
             %p  必須
           .exhibit__delivery__container__fee_field
+            %select.select-default
+              %option{:value => ""} ---
+              %option{:value => "2"} 送料込み(出品者負担)
+              %option{:value => "1"} 着払い(購入者負担)
         .exhibit__delivery__container__shipping_region
           .exhibit__delivery__container__shipping_region_head
             %p  発送元の地域
             %p  必須
           .exhibit__delivery__container__shipping_region_field
+            %select.select-default
+              %option{:value => ""} ---
+              %option{:value => "1"} 北海道
+              %option{:value => "2"} 青森県
+              %option{:value => "3"} 岩手県
+              %option{:value => "4"} 宮城県
+              %option{:value => "5"} 秋田県
+              %option{:value => "6"} 山形県
+              %option{:value => "7"} 福島県
+              %option{:value => "8"} 茨城県
+              %option{:value => "9"} 栃木県
+              %option{:value => "10"} 群馬県
+              %option{:value => "11"} 埼玉県
+              %option{:value => "12"} 千葉県
+              %option{:value => "13"} 東京都
+              %option{:value => "14"} 神奈川県
+              %option{:value => "15"} 新潟県
+              %option{:value => "16"} 富山県
+              %option{:value => "17"} 石川県
+              %option{:value => "18"} 福井県
+              %option{:value => "19"} 山梨県
+              %option{:value => "20"} 長野県
+              %option{:value => "21"} 岐阜県
+              %option{:value => "22"} 静岡県
+              %option{:value => "23"} 愛知県
+              %option{:value => "24"} 三重県
+              %option{:value => "25"} 滋賀県
+              %option{:value => "26"} 京都府
+              %option{:value => "27"} 大阪府
+              %option{:value => "28"} 兵庫県
+              %option{:value => "29"} 奈良県
+              %option{:value => "30"} 和歌山県
+              %option{:value => "31"} 鳥取県
+              %option{:value => "32"} 島根県
+              %option{:value => "33"} 岡山県
+              %option{:value => "34"} 広島県
+              %option{:value => "35"} 山口県
+              %option{:value => "36"} 徳島県
+              %option{:value => "37"} 香川県
+              %option{:value => "38"} 愛媛県
+              %option{:value => "39"} 高知県
+              %option{:value => "40"} 福岡県
+              %option{:value => "41"} 佐賀県
+              %option{:value => "42"} 長崎県
+              %option{:value => "43"} 熊本県
+              %option{:value => "44"} 大分県
+              %option{:value => "45"} 宮崎県
+              %option{:value => "46"} 鹿児島県
+              %option{:value => "47"} 沖縄県
+              %option{:value => "99"} 未定
         .exhibit__delivery__container__day
           .exhibit__delivery__container__day_head
             %p  発送までの日数
             %p  必須
           .exhibit__delivery__container__day_field
+            %select.select-default
+              %option{:value => ""} ---
+              %option{:value => "1"} 1~2日で発送
+              %option{:value => "2"} 2~3日で発送
+              %option{:value => "3"} 4~7日で発送
     .exhibit__price.clearfix
       %span 販売価格(300~9,999,999)
       .exhibit__price__container
-        .exhibit__price__container__fee
+        .exhibit__price__container__fee.clearfix
           .exhibit__price__container__fee_head
             %p  価格
             %p  必須
           .exhibit__price__container__fee_field
-            %p  ￥
-        .exhibit__price__container__sale_fee
+            %span ￥
+            %input{:placeholder => "例）300", :value => ""}/
+        .exhibit__price__container__sale_fee.clearfix
           .exhibit__price__container__sale_fee_head
-            %p  販売手数料(10%)
+            %span  販売手数料(10%)
           .exhibit__price__container__sale_fee_field
-        .exhibit__price__container__sale_profit
-          .exhibit__price__container__sale_prpfit_head
-            %p  販売利益
+        .exhibit__price__container__sale_profit.clearfix
+          .exhibit__price__container__sale_profit_head
+            %span  販売利益
           .exhibit__price__container__sale_profit_field
-            %p  ￥
     .exhibit__confirmation
       .exhibit__confirmation__article
         %p 禁止されている出品、行為を必ずご確認ください。
         %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
         %p また、出品をもちまして加盟店規約に同意したことになります。
       .exhibit__confirmation__button__display
-        %p 出品する
+        -# %p 出品する
+        %a( href='')出品する
       .exhibit__confirmation__button__back
-        %p 戻る
+        %a( href='')戻る
     -# 商品の詳細
     -# カテゴリー必須
     -# 商品の状態必須
