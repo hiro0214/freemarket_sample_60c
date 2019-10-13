@@ -17,6 +17,9 @@
       font-size: 16px;
       font-weight: bold;
     }
+    a {
+      color: #333;
+    }
   &__main{
     background: #fff; 
     // height:685px;
@@ -35,7 +38,12 @@
         height:7.14%;
         border-bottom:solid 1px #f5f5f5; 
         padding:16px;
-        
+        display:flex;
+        justify-content: space-between;
+        >i{
+          font-size:15px;
+          color: #c9c5c5;
+        }
       }
     }
   }
@@ -54,6 +62,12 @@
         height:7.14%;
         border-bottom:solid 1px #f5f5f5; 
         padding:16px; 
+        display:flex;
+        justify-content: space-between;
+        >i{
+          font-size:15px;
+          color: #c9c5c5;
+        }
       }
     }
   }
@@ -72,6 +86,12 @@
         height:7.14%;
         border-bottom:solid 1px #f5f5f5; 
         padding:16px; 
+        display:flex;
+        justify-content: space-between;
+        >i{
+          font-size:15px;
+          color: #c9c5c5;
+        }
       }
     }
   }
@@ -85,6 +105,9 @@
     background:rgba(240, 214, 240, 0.769);
     height:200px;
     position: relative;
+    > :hover{
+      color: rgba(48, 46, 46, 0.461);
+    }
     &__box{
       width:700px;
       height:111px;
@@ -107,6 +130,9 @@
       &__nickname{
         padding-top:16px;
         font-weight: bold;
+        >:hover {
+          text-decoration: underline;
+          }          
       }
       &__status{
         height:16px;
@@ -169,14 +195,18 @@
           border-bottom: solid 1px #eee;
           display:block;
           display:flex;
+          justify-content:space-between;
+          >i{
+            margin:auto 0;
+            font-size:18px;
+          }
         }
         > .go_mypage_list{
-          height:88px;
+          height:93px;
           padding:16px;
-          border-bottom: solid 1px #eee;
           display:block;
           > :hover{
-            background: rgba(199, 196, 196, 0.173);
+            background: rgba(199, 196, 196, 0.139);
           }
           > p{
             background:#eee;
@@ -191,6 +221,17 @@
         width:48px;
         height:48px;
         display: inline-block;
+      }
+      &__box{
+        width:560px;
+        height:39px;
+        & i{
+          font-size:16px;
+          color:rgb(151, 150, 150);
+        }
+        & span{
+          color:rgb(151, 150, 150);
+        }
       }
     }
   } 
