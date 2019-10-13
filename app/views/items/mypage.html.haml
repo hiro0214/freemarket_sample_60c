@@ -83,7 +83,7 @@
             =link_to'電話番号の確認'," "
             %i.fa.fa-chevron-right
           %li
-            =link_to'ログアウト'," "
+            = link_to "ログアウト", destroy_user_session_path, method: :delete 
             %i.fa.fa-chevron-right
     .main
       .main__top_contents

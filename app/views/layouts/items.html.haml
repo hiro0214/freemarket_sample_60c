@@ -32,8 +32,19 @@
                 %li ブランド一覧
           .header_ragistration
             - if user_signed_in? 
-              = link_to "マイページ", "/mypage", class: ""
-              = link_to "ログアウト", destroy_user_session_path, method: :delete 
+              .header_ragistration_banner
+                = link_to "/" do
+                  %i.fa.fa-heart-o 
+                  %span いいね！一覧 
+                = link_to "/" do
+                  %i.fa.fa-bell-o
+                  %span お知らせ
+                = link_to "/" do
+                  %i.fa.fa-check 
+                  %span やることリスト
+                = link_to "/mypage" do
+                  %i.fa.fa-circle-thin
+                  %span マイページ 
             - else 
               = link_to "新規会員登録", new_user_registration_path, class: 'header_sign_up' 
               = link_to "ログイン", new_user_session_path, class: 'header__sign_in' 
