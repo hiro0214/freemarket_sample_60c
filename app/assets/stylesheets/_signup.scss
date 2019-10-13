@@ -153,6 +153,12 @@
     position:relative;
     left:10px;
   }
+  &_go_icon {
+    width:35px;
+    position:absolute;
+    left:5px;
+    top:8px;
+  }
   &__mail {
     background: #ea352d;
     color: #fff;
@@ -172,6 +178,7 @@
     color: #333;
     border: #979797 solid 1px;
     margin-bottom:60px;
+    position:relative;
   }
 }
 
