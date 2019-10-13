@@ -74,8 +74,10 @@ header {
       }
     }
   }
-  &__icon__left {
-    color:#ea352d;
+  &__icon {
+    width:24px;
+    position:relative;
+    top:3px;
   }
   &_ragistration {
     display:flex;

@@ -228,15 +228,4 @@
         %button{type: "submit", onclick: "location.href='/regi_second"} 次へ進む
         %a{href: "#"} 本人情報の登録について＞
   
-  .registration__footer
-    %ul
-      %li
-        %a{href: "#"} プライバシーポリシー
-      %li
-        %a{href: "#"} メルカリ利用規約
-      %li
-        %a{href: "#"} 特定商取引に関数表記
-    =link_to "/" do
-      =image_tag "footer_logo.png"
-    %p © 2019 Mercari
-
+  = render partial: "devise/layout/footer"

@@ -22,14 +22,4 @@
         %a{href: "#"} 電話番号を再度入力する
         %p ※SMSが届かない場合はSMS受信設定を確認して、もう一度電話番号を入力してください。
 
-  .registration__footer
-    %ul
-      %li
-        %a{href: "#"} プライバシーポリシー
-      %li
-        %a{href: "#"} メルカリ利用規約
-      %li
-        %a{href: "#"} 特定商取引に関数表記
-    =link_to "/" do
-      =image_tag "footer_logo.png"
-    %p © 2019 Mercari
+  = render partial: "devise/layout/footer"

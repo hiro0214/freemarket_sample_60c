@@ -1,0 +1,41 @@
+%header
+  %div
+    .header_top
+      =link_to "/" do
+        =image_tag "header_logo.png", class: "header_logo"
+      %input.header_search{placeholder: "何かお探しですか？", type: "text"}
+    .header_bottom
+      .header_nav
+        .header_nav_category
+          =image_tag "tag1.png", class: "header__icon"
+          %span カテゴリーから探す
+        = render "items/purudown"
+        .header_nav_brand
+          =image_tag "tag2.png", class: "header__icon"
+          %span ブランドから探す
+        .header_nav_brand_lists
+          %ul
+            %li シャネル
+            %li ナイキ
+            %li ルイ ヴィトン
+            %li シュプリーム
+            %li アティダス
+            %li ブランド一覧
+      .header_ragistration
+        - if user_signed_in? 
+          .header_ragistration_banner
+            = link_to "/" do
+              %i.fa.fa-heart-o 
+              %span いいね！一覧 
+            = link_to "/" do
+              %i.fa.fa-bell-o
+              %span お知らせ
+            = link_to "/" do
+              %i.fa.fa-check 
+              %span やることリスト
+            = link_to "/mypage" do
+              %i.fa.fa-circle-thin
+              %span マイページ 
+        - else 
+          = link_to "新規会員登録", new_user_registration_path, class: 'header_sign_up' 
+          = link_to "ログイン", new_user_session_path, class: 'header__sign_in' 

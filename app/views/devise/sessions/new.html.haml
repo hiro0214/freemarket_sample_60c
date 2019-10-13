@@ -37,15 +37,4 @@
               = f.submit "ログイン", class: 'sign_in__button'
             = link_to "パスワードをお忘れの方", "#", class: "pass_forbidden"
 
-
-  .registration__footer
-    %ul
-      %li
-        %a{href: "#"} プライバシーポリシー
-      %li
-        %a{href: "#"} メルカリ利用規約
-      %li
-        %a{href: "#"} 特定商取引に関数表記
-    =link_to "/" do
-      =image_tag "footer_logo.png"
-    %p © 2019 Mercari
+  = render partial: "devise/layout/footer"

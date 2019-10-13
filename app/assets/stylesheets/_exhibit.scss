@@ -2,7 +2,6 @@
   &__main {
     background:#f5f5f5;
     height: 100%;
-    // overflow: scroll;
   }
   &__contents {
     background: white;
@@ -23,13 +22,11 @@
   }
   // 商品のアップロード２段目
   &__upload{
-    // background: pink;
     height: 301px;
     padding: 40px;
-    border-top: solid 1px;
+    border-top: solid 1px rgb(236, 236, 236);
     &_head{
       display: flex;
-      // background: red;
     }
     &_image{
       width: 100%;
@@ -39,7 +36,6 @@
       border:dotted 2px;
       >label{
         > div{
-          // background:red;
           width:100%;
           height:100%;
           cursor: pointer;
@@ -55,18 +51,15 @@
   }
   // 商品の説明３段目
   &__explanation{
-    // background:blueviolet;
     height: 352px;
     padding: 40px;
-    border-top: solid 1px;
+    border-top: solid 1px rgb(236, 236, 236);
     &__title{
-      // background:pink;
       &_head{
         display:flex;
         font-size: 14px;
       }
       &_field{
-        // background: springgreen;
         // height: 48px;
         // margin-top: 8px;
         // padding:10px 16px 8px;
@@ -83,21 +76,19 @@
       }
     }
     &__detail{
-      // background:pink;
       margin-top: 40px;
       &_head{
         display:flex;
         font-size: 14px;
       }
       &_field{
-        // background: springgreen;
         > textarea {
           font-size: 16px;
           height: 127px;
           width: 100%;
           margin-top: 8px;
           padding: 10px;
-          border: 1px solid #ccc;
+          border: 1px solid #ccc ;
         }
       }
     }
@@ -106,7 +97,7 @@
   &__detail{
   // height: 261px;
   padding: 40px;
-  border-top: solid 1px;
+  border-top: solid 1px rgb(236, 236, 236);
     &__container{
       // height: 180px;
       width: 400px;
@@ -125,14 +116,12 @@
         }
       }
       &__detail{
-        // background:pink;
         margin-top: 40px;
         &_head{
           display:flex;
           font-size: 14px;
         }
         &_field{
-          // background: springgreen;
           height: 48px;
           margin-top: 8px;
           padding: 10px;
@@ -147,23 +136,19 @@
   
   // 商品の配送方法について 5段目
   &__delivery{
-  // background:blueviolet;
   // height: 100%;
   padding: 40px;
-  border-top: solid 1px;
+  border-top: solid 1px rgb(236, 236, 236);
   // clear: right;
     &__container{
-      // background:red;
       width: 400px;
       float: right;
       &__fee{
-        // background:pink;
         &_head{
           display:flex;
           font-size: 14px;
         }
         &_field{
-          // background: springgreen;
           height: 48px;
           margin-top: 8px;
           padding:10px 16px 8px;
@@ -175,14 +160,12 @@
         }
       }
       &__shipping_region{
-        // background:pink;
         margin-top: 40px;
         &_head{
           display: flex;
           font-size: 14px;
         }
         &_field{
-          // background: springgreen;
           height: 48px;
           margin-top: 8px;
           padding: 10px;
@@ -193,14 +176,12 @@
         }
       }
         &__day{
-        // background:pink;
         margin-top: 40px;
         &_head{
           display:flex;
           font-size: 14px;
         }
         &_field{
-          // background: springgreen;
           height: 48px;
           margin-top: 8px;
           padding: 10px;
@@ -214,16 +195,13 @@
   }
   // 商品の価格設定
   &__price{
-  // background:blueviolet;
   padding: 40px;
-  border-top: solid 1px;
+  border-top: solid 1px rgb(236, 236, 236);
   // height:100%;
     &__container{
-      // background:red;
       width: 400px;
       float: right;
       &__fee{
-        // background:pink;
         // ここの配置要検討 綺麗なコードを書きたい
         // display: flex;
         // justify-content: flex-end;
@@ -233,7 +211,6 @@
           float: left;
         }
         &_field{
-          // background: springgreen;
           float: right;
           height: 48px;
           width: 200px;
@@ -266,7 +243,6 @@
           }
         }
         &_field{
-          // background: springgreen;
           float: right;
           width:160px;
           height: 48px;
@@ -286,7 +262,6 @@
           }
         }
         &_field{
-          // background: springgreen;
           float: right;
           width:160px;
           height: 48px;
@@ -298,12 +273,10 @@
     }
   }
   &__confirmation{
-    // background:blueviolet;
     padding: 40px;
-    border-top: solid 1px;
+    border-top: solid 1px rgb(236, 236, 236);
     
     &__article{
-    
     }
     &__button__display{
       margin: 40px auto 0;
