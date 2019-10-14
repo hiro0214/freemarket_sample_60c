@@ -1,0 +1,80 @@
+.wrapper_mypage{
+  background:#f5f5f5;
+  color: #333;
+  margin: 0 auto;
+}
+
+.wrapper_box{
+  width:1020px;
+  margin:0 auto;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.profile_main{
+  width:700px;
+  height:568px;
+  margin:40px 0;
+  cursor: pointer;
+  &__top{
+    background:white;
+    height:50px;
+    padding:8px 24px;
+    font-size:24px;
+    font-weight:bold;
+    text-align: center;
+  }
+  &__middle{
+    background:rgba(240, 214, 240, 0.769);
+    width:700px;
+    height:156px;
+    padding:72px 16px 24px;
+    display:block;
+    display:flex;
+    justify-content: center;
+    &__image{
+      background:ivory;
+      width:60px;
+      height:60px;
+      border-radius: 50%;
+      text-align: center;
+    }
+    &__nickname{
+      background:white;
+      width:220px;
+      height:48px;
+      padding-top:10px 16px 8px;
+      margin:8px;
+      border: #ccc solid 1px;
+      border-radius: 4px;        
+    }
+  }
+  
+  &__bottom{
+    background:white;
+    height:362px;
+    padding:40px 16px;
+    cursor: pointer;
+    &__introduce{
+      width:668px;
+      height:216px;
+      padding:10px;
+      border: #ccc solid 1px;
+      font-size:16px;
+    }
+    &__btn{
+      background: #ea352d;
+      color: #fff;
+      width:668px;
+      height:50px;
+      margin-top:16px;
+      display:block;
+      line-height: 50px;
+      text-align: center;
+      a{
+        color:#fff;
+      }
+    }
+  }
+}
