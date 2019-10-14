@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :items 
   get "detail" => "items#detail"
   get "mypage" => "items#mypage"
+  get "logout" => "items#logout"
+  get "profile"  => "items#profile"
 end
