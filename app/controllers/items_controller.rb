@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.find(1)
-    
+    @items = Item.limit(10).order("created_at desc")
   end
 
-  def detail
-    @items = Item.find(1)
+  def show
+    @item = Item.find(params[:id])
   end
 
 end

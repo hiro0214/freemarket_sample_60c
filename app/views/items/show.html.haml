@@ -5,7 +5,7 @@
 .detail
   .detail_container
     %h1.item_name
-      = @items.item_name
+      = @item.item_name
     %p.item_about
     -#   『アニエスベー トートバッグ』は、45回の取引実績を持つasaさんから出品されました。アニエスベー（トートバッグ/レディース）の商品で、東京都から4~7日で発送されます。
     .container_wrap
@@ -23,14 +23,16 @@
           %td
             = link_to 'timothy', " ",class:"owner_name"
             .evaluation
-              = fa_icon ' ', class: 'smile'
-              %span.btn_smile_num
+              %span.user_smile
+                =image_tag "logo_smile.png", class: "user_smile"
                 117
               = fa_icon ' ', class: 'nomal'
-              %span.btn_normal_num
+              %span.user_smile
+                =image_tag "logo_normal.png", class: "user_smile"
                 0
               = fa_icon ' ', class: 'sad'
-              %span.butn_sad_num
+              %span
+                =image_tag "logo_sad.png", class: "user_smile"
                 0
         %tr
           %th カテゴリー
@@ -42,7 +44,7 @@
         %tr
           %th 商品の状態
           %td
-            = @items.state
+            = @item.state
         %tr
           %th 配送料の負担
           %td 送料込み(出品者負担)
@@ -53,14 +55,14 @@
           %th 配送元地域
           %td
             = link_to "#", class:"table" do
-              = @items.region
+              = @item.region
         %tr
           %th 発送日の目安
           %td
-            = @items.delivery_date
+            = @item.delivery_date
     .item_pricebox
       %span.item_pricebox__price 
-        = "¥#{@items.price}"
+        = "¥#{@item.price}"
       %span.item_pricebox__tax
         (税込)
       %span.item_pricebox__fee
@@ -68,27 +70,7 @@
     .item_buy
       購入画面に進む
     .item_description
-      = @items.description
-      -# ブランド/アニエスベー
-      -# %br/
-      -# %br/
-      -# カラー/ブラック
-      -# %br/
-      -# %br/
-      -# サイズ/38.5cm × 37.5cm 持ち手 53.7cm
-      -# %br/
-      -# %br/
-      -# バーティカルなビックロゴをプリントしたキャッチーなナイロントートバック。
-      -# %br/
-      -# ブラックxホワイトのモノトーンカラーはお洋服を選ばずお使い頂けます。
-      -# %br/
-      -# A4サイズも楽々入ります。
-      -# %br/
-      -# %br/
-      -# 現在完売中の商品
-      -# %br/
-      -# 新品未使用で布袋もおつけします。
-      -# %br/
+      = safe_join(@item.description.split("\n"), tag(:br))
     .item_btn_container
       .item_btn_container__btn_like
         %span.item_btn_like__icon_heart
@@ -195,7 +177,7 @@
         .other_item_container__other_item
           .other_item__image
           .other_item__contents
-            .other_item__contents__other_item_name
+            .other_item__contents__other_item__name
             トートバッグ
             .other_item__contents__price
             ¥4,000
@@ -205,7 +187,7 @@
         .other_item_container__other_item
           .other_item__image
           .other_item__contents
-            .other_item__contents__other_item_name
+            .other_item__contents__other_item__name
             トートバッグ
             .other_item__contents__price
             ¥4,000

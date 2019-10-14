@@ -91,8 +91,11 @@
         font-size:17px;
       }
     }       
-    &__tittle{
+    &__title{
       height: 62px;
+      span {
+        padding:12px;
+      }
     }
   }
 }

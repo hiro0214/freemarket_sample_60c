@@ -8,14 +8,15 @@
         %h2 人気のカテゴリー
       .main_contents__box__header_category
         %ul.main_contents__box__header_category_list
-          %li.main_contents__box__header_category_list_num
-            %a{href: "#1"}レディース
-          %li.main_contents__box__header_category_list_num 
-            %a{href: "#2"}メンズ
-          %li.main_contents__box__header_category_list_num
-            %a{href: "#3"}家電・スマホ・カメラ
-          %li.main_contents__box__header_category_list_num 
-            %a{href: "#4"}おもちゃ・ホビー・グッズ
+          = link_to "#1", class: "main_contents__box__header_category_list_num" do
+            レディース
+          = link_to "#2", class: "main_contents__box__header_category_list_num" do
+            メンズ
+          = link_to "#3", class: "main_contents__box__header_category_list_num" do
+            家電・スマホ・カメラ
+          = link_to "#4", class: "main_contents__box__header_category_list_num" do
+            おもちゃ・ホビー・グッズ
+
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
@@ -23,59 +24,16 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price
-            = "¥#{@items.price}"
-          .main_contents__box__contents__items__one__tittle
-            %span
-              = link_to "/detail", method: :get do
-                = @items.item_name
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
+        - @items.each do |item| 
+          .main_contents__box__contents__items__one
+            %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.id}", method: :get do
+                  = item.item_name
+
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
@@ -83,56 +41,16 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price ￥1,000
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
+        - @items.each do |item| 
+          .main_contents__box__contents__items__one
+            %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.id}", method: :get do
+                  = item.item_name
+
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
@@ -140,56 +58,16 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price ￥1,000
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
+        - @items.each do |item| 
+          .main_contents__box__contents__items__one
+            %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.id}", method: :get do
+                  = item.item_name
+
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
@@ -197,70 +75,31 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price ￥1,000
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
+        - @items.each do |item| 
+          .main_contents__box__contents__items__one
+            %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.id}", method: :get do
+                  = item.item_name
+
   .main_contents__box
     .main_contents__box__header
       .main_contents__box__header_tittle
         %h2 人気のブランド
       .main_contents__box__header_category
         %ul.main_contents__box__header_category_list
-          %li.main_contents__box__header_category_list_num
-            %a{href: "#5"} シャネル
-          %li.main_contents__box__header_category_list_num
-            %a{href: "#6"} ルイヴィトン
-          %li.main_contents__box__header_category_list_num 
-            %a{href: "#7"}シュプリーム
-          %li.main_contents__box__header_category_list_num
-            %a{href: "#8"}ナイキ
+          = link_to "#5", class: "main_contents__box__header_category_list_num" do
+            シャネル
+          = link_to "#6", class: "main_contents__box__header_category_list_num" do
+            ルイヴィトン
+          = link_to "#7", class: "main_contents__box__header_category_list_num" do
+            シュプリーム
+          = link_to "#8", class: "main_contents__box__header_category_list_num" do
+            ナイキ
+
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
@@ -268,57 +107,16 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price ￥1,000
-          = succeed "\u30B7\u30E3\u30CD\u30EB" do
-            .main_contents__box__contents__items__one__tittle
-              %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
+        - @items.each do |item| 
+          .main_contents__box__contents__items__one
+            %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.id}", method: :get do
+                  = item.item_name
+
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
@@ -326,56 +124,16 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price ￥1,000
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
+        - @items.each do |item| 
+          .main_contents__box__contents__items__one
+            %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.id}", method: :get do
+                  = item.item_name
+
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
@@ -383,56 +141,16 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price ￥1,000
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
+        - @items.each do |item| 
+          .main_contents__box__contents__items__one
+            %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.id}", method: :get do
+                  = item.item_name
+
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
@@ -440,56 +158,15 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price ￥1,000
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
-        .main_contents__box__contents__items__one
-          %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price price
-          .main_contents__box__contents__items__one__tittle
-            %span 商品タイトル
+        - @items.each do |item| 
+          .main_contents__box__contents__items__one
+            %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.id}", method: :get do
+                  = item.item_name
 
 .exhibit__btn
   = link_to "/exhibit" do
