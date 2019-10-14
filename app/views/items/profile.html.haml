@@ -1,0 +1,23 @@
+= render "header"
+
+.wrapper_mypage
+  .wrapper_box
+    = render 'side_bar'
+    
+    .profile_main
+      .profile_main__top
+        プロフィール
+      .profile_main__middle
+        .profile_main__middle__image
+          img
+        .profile_main__middle__nickname
+          ニックネーム
+      .profile_main__bottom
+        .profile_main__bottom__introduce
+          こんにちは！メリカリはまだ始めたばかりですが心をこめてご対応いたします。
+          あなたの探し物やお気に入りが見つかりますように☆   
+          すみません！「コメントをいただいてから」とか「早い者勝ち」などのシステムを知りませんでした!なかなか返信できないこともあるのでメルカリ慣れるまではコメントなし購入可能といたします。
+        .profile_main__bottom__btn
+          =link_to '変更する'
+
+= render "footer"

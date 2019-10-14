@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get "regi_fifth" => "items#regi_fifth"
   get "exhibit" => "items#exhibit"
   get "mypage" => "items#mypage"
+  get "logout" => "items#logout"
+  get "profile" => "items#profile"
 end

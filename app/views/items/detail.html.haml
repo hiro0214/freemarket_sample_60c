@@ -5,9 +5,9 @@
 .detail
   .detail_container
     %h1.item_name
-      アニエスベー トートバッグ
+      = @items.item_name
     %p.item_about
-      『アニエスベー トートバッグ』は、45回の取引実績を持つasaさんから出品されました。アニエスベー（トートバッグ/レディース）の商品で、東京都から4~7日で発送されます。
+    -#   『アニエスベー トートバッグ』は、45回の取引実績を持つasaさんから出品されました。アニエスベー（トートバッグ/レディース）の商品で、東京都から4~7日で発送されます。
     .container_wrap
       .item_container
         .item_container__image
@@ -41,7 +41,8 @@
             = link_to 'オーチバル', " ",class:"table"
         %tr
           %th 商品の状態
-          %td 新品、未使用
+          %td
+            = @items.state
         %tr
           %th 配送料の負担
           %td 送料込み(出品者負担)
@@ -51,13 +52,15 @@
         %tr
           %th 配送元地域
           %td
-            = link_to '東京都(都道府県が入る)', " ",class:"table"
+            = link_to "#", class:"table" do
+              = @items.region
         %tr
           %th 発送日の目安
-          %td ４〜７日で発送
+          %td
+            = @items.delivery_date
     .item_pricebox
-      %span.item_pricebox__price
-        ¥14,000
+      %span.item_pricebox__price 
+        = "¥#{@items.price}"
       %span.item_pricebox__tax
         (税込)
       %span.item_pricebox__fee
@@ -65,26 +68,27 @@
     .item_buy
       購入画面に進む
     .item_description
-      ブランド/アニエスベー
-      %br/
-      %br/
-      カラー/ブラック
-      %br/
-      %br/
-      サイズ/38.5cm × 37.5cm 持ち手 53.7cm
-      %br/
-      %br/
-      バーティカルなビックロゴをプリントしたキャッチーなナイロントートバック。
-      %br/
-      ブラックxホワイトのモノトーンカラーはお洋服を選ばずお使い頂けます。
-      %br/
-      A4サイズも楽々入ります。
-      %br/
-      %br/
-      現在完売中の商品
-      %br/
-      新品未使用で布袋もおつけします。
-      %br/
+      = @items.description
+      -# ブランド/アニエスベー
+      -# %br/
+      -# %br/
+      -# カラー/ブラック
+      -# %br/
+      -# %br/
+      -# サイズ/38.5cm × 37.5cm 持ち手 53.7cm
+      -# %br/
+      -# %br/
+      -# バーティカルなビックロゴをプリントしたキャッチーなナイロントートバック。
+      -# %br/
+      -# ブラックxホワイトのモノトーンカラーはお洋服を選ばずお使い頂けます。
+      -# %br/
+      -# A4サイズも楽々入ります。
+      -# %br/
+      -# %br/
+      -# 現在完売中の商品
+      -# %br/
+      -# 新品未使用で布袋もおつけします。
+      -# %br/
     .item_btn_container
       .item_btn_container__btn_like
         %span.item_btn_like__icon_heart

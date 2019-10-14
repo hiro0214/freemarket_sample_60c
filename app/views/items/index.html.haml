@@ -25,9 +25,12 @@
       .main_contents__box__contents__items
         .main_contents__box__contents__items__one
           %img.main_contents__box__contents__items__one__image{:src => ""}/
-          .main_contents__box__contents__items__one__image__price ￥1,000
+          .main_contents__box__contents__items__one__image__price
+            = "¥#{@items.price}"
           .main_contents__box__contents__items__one__tittle
-            %span= link_to "商品タイトル", "/detail", method: :get
+            %span
+              = link_to "/detail", method: :get do
+                = @items.item_name
         .main_contents__box__contents__items__one
           %img.main_contents__box__contents__items__one__image{:src => ""}/
           .main_contents__box__contents__items__one__image__price price
@@ -490,7 +493,8 @@
 
 .exhibit__btn
   = link_to "/exhibit" do
-    %p.exhibit__btn__name 出品
-    %i.exhibit__btn__icon.fa.fa-camera
+    .exhibit__btn__box
+      %p.exhibit__btn__name 出品
+      %i.exhibit__btn__icon.fa.fa-camera
 
 = render "footer"
