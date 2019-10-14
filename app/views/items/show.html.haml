@@ -100,14 +100,15 @@
         ＞
     .media_box
       %ul.media_box__center
-        %li.icon_facebook
-          = link_to 'facebook',"#", class: "contents__btn"
-        %li.icon_twitter
-          = fa_icon 'twitter'
-        %li.icon_line
-          = fa_icon 'instagram'
-        %li.icon_pinterest
-          = fa_icon 'instagram'
+        = link_to "#" do
+          %li.icon_facebook
+            %i.fa.fa-facebook-square
+        = link_to "#" do
+          %li.icon_twitter
+            %i.fa.fa-twitter
+        = link_to "#" do
+          %li.icon_pinterest
+            %i.fa.fa-pinterest-square
     .other_item_container_big
       = link_to 'timothyさんのその他の商品', " ",class:"other_item_user"
       .other_item_container

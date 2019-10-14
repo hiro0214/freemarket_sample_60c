@@ -115,9 +115,6 @@
     font-weight: 600;
     font-size: 24px;
   }
-  // .buy_by_app{
-  //   background: skyblue;
-  // }
   .item_description{
     width:620px;
     margin:32px auto;
@@ -184,6 +181,12 @@
   &__center{
     display: flex;
     justify-content: center;
+    i {
+      font-size:35px;
+      color:#fff;
+      padding-top:4px;
+      padding-left:6px;
+    }
     .icon_facebook{
       background:#385185;
       width: 44px;
@@ -193,13 +196,6 @@
     }
     .icon_twitter{
       background:#5D9DC9;
-      width: 44px;
-      height: 44px;
-      margin:8px;
-      border-radius: 4px;
-    }
-    .icon_line{
-      background:#00C137;
       width: 44px;
       height: 44px;
       margin:8px;
