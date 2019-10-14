@@ -1,6 +1,9 @@
-= render "header"
-
 .exhibit__main
+
+  .registration__header__logo
+    =link_to "/" do
+      =image_tag "header_logo.png"
+
   .exhibit__contents
     .exhibit__infomation
       %p 商品の情報を入力
@@ -183,4 +186,4 @@
     -# 出品する
     -# もどる
 
-= render "footer"
+  = render partial: "devise/layout/footer"
