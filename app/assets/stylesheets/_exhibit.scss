@@ -195,13 +195,15 @@
   }
   // 商品の価格設定
   &__price{
-  padding: 40px;
+  padding: 40px 40px 10px;
   border-top: solid 1px rgb(236, 236, 236);
   // height:100%;
     &__container{
       width: 400px;
       float: right;
       &__fee{
+        padding-bottom:20px;
+        border-bottom:solid 1px rgb(219, 219, 219);
         // ここの配置要検討 綺麗なコードを書きたい
         // display: flex;
         // justify-content: flex-end;
@@ -213,7 +215,7 @@
         &_field{
           float: right;
           height: 48px;
-          width: 200px;
+          width: 170px;
           // margin-top: 8px;
           // padding:10px 16px 8px;
           // padding:10px 0 8px;
@@ -234,7 +236,10 @@
         }
       }
       &__sale_fee{
-        margin-top: 40px;
+        margin-top: 10px;
+        padding-bottom:10px;
+        border-bottom:solid 1px rgb(219, 219, 219);
+
         &_head{
           > span{
             line-height: 48px;
@@ -253,7 +258,7 @@
       }
       
       &__sale_profit{
-        margin-top: 40px;
+        margin-top: 15px;
         &_head{
           > span{
             line-height: 48px;
@@ -302,6 +307,17 @@
       }
     }
   }
+  &_tax {
+    float:right;
+    position:relative;
+    top:18px;
+  }
+  &_profit {
+    float:right;
+    position:relative;
+    top:12px;
+    font-size:30px;
+  }
 }
 .clearfix:after {
   content: '';
@@ -327,3 +343,12 @@
 //   clear: both;
 //   // background:red;
 // }
+
+.exhibit_span {
+  background:#ea352d;
+  color:#fff;
+  font-size:12px;
+  padding:2px 5px 0px;
+  margin-left:5px;
+  border-radius:2px;
+}

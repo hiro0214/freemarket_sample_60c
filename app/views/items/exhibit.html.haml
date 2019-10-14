@@ -10,8 +10,8 @@
     
     .exhibit__upload
       .exhibit__upload_head
-        %div 出品画像
-        %div 必須
+        %p 出品画像
+        %span.exhibit_span 必須
       %p 最大10枚までアップロードできます
       .exhibit__upload_image
         -# %input{:name => "image", :placeholder => "Image Url", :type => "text"}/
@@ -26,22 +26,22 @@
       .exhibit__explanation__title
         .exhibit__explanation__title_head
           %p  商品名
-          %p  必須
+          %span.exhibit_span 必須
         .exhibit__explanation__title_field
           %input{ :placeholder => "商品名（必須 40文字まで)", :maxlength => "40", :name => "text", :type => "text", :value => ""}/
       .exhibit__explanation__detail
         .exhibit__explanation__detail_head
           %p  商品の説明
-          %p  必須
+          %span.exhibit_span 必須
         .exhibit__explanation__detail_field
           %textarea{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :type => "text"}
     .exhibit__detail.clearfix
-      %span 商品の詳細
+      %p 商品の詳細
       .exhibit__detail__container
         .exhibit__detail__container__title
           .exhibit__detail__container__title_head
             %p  カテゴリー
-            %p  必須
+            %span.exhibit_span 必須
           .exhibit__detail__container__title_field
             %select.select-default
               %option{:value => ""} ---
@@ -61,7 +61,7 @@
         .exhibit__detail__container__detail
           .exhibit__detail__container__detail_head
             %p  商品の状態
-            %p  必須
+            %span.exhibit_span 必須
           .exhibit__detail__container__detail_field
             %select.select-default
               %option{:value => ""} ---
@@ -72,12 +72,12 @@
               %option{:value => "5"} 傷や汚れあり
               %option{:value => "6"} 全体的に状態が悪い
     .exhibit__delivery.clearfix
-      %span 配送について
+      %p 配送について
       .exhibit__delivery__container
         .exhibit__delivery__container__fee
           .exhibit__delivery__container__fee_head
             %p  配送料の負担
-            %p  必須
+            %span.exhibit_span 必須
           .exhibit__delivery__container__fee_field
             %select.select-default
               %option{:value => ""} ---
@@ -86,7 +86,7 @@
         .exhibit__delivery__container__shipping_region
           .exhibit__delivery__container__shipping_region_head
             %p  発送元の地域
-            %p  必須
+            %span.exhibit_span 必須
           .exhibit__delivery__container__shipping_region_field
             %select.select-default
               %option{:value => ""} ---
@@ -141,7 +141,7 @@
         .exhibit__delivery__container__day
           .exhibit__delivery__container__day_head
             %p  発送までの日数
-            %p  必須
+            %span.exhibit_span 必須
           .exhibit__delivery__container__day_field
             %select.select-default
               %option{:value => ""} ---
@@ -154,18 +154,18 @@
         .exhibit__price__container__fee.clearfix
           .exhibit__price__container__fee_head
             %p  価格
-            %p  必須
+            %span.exhibit_span 必須
           .exhibit__price__container__fee_field
-            %span ￥
+            %span ¥
             %input{:placeholder => "例）300", :value => ""}/
         .exhibit__price__container__sale_fee.clearfix
           .exhibit__price__container__sale_fee_head
             %span  販売手数料(10%)
-          .exhibit__price__container__sale_fee_field
+            %p.exhibit_tax -
         .exhibit__price__container__sale_profit.clearfix
           .exhibit__price__container__sale_profit_head
             %span  販売利益
-          .exhibit__price__container__sale_profit_field
+            %p.exhibit_profit -
     .exhibit__confirmation
       .exhibit__confirmation__article
         %p 禁止されている出品、行為を必ずご確認ください。
@@ -186,4 +186,4 @@
     -# 出品する
     -# もどる
 
-  = render partial: "devise/layout/footer"
+  = render partial: "devise/layout/footer"  
