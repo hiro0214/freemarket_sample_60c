@@ -1,0 +1,8 @@
+.wrapper_mypage
+  .wrapper_box
+    = render 'side_bar'
+    
+    .main_box
+      .main_box__container
+        .main_box__container__btn
+          =link_to 'ログアウト',destroy_user_session_path, method: :delete
