@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "regi_fourth" => "items#regi_fourth"
   get "regi_fifth" => "items#regi_fifth"
   get "exhibit" => "items#exhibit"
+  get "exhibit_after" => "items#exhibit_after"
   get "mypage" => "items#mypage"
   get "logout" => "items#logout"
   get "profile" => "items#profile"
