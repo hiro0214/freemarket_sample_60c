@@ -1,5 +1,5 @@
-$(function(){
-  $(".exhibit__price__container__fee_field > input").keyup(function(){
+$(document).on('turbolinks:load', function() {
+    $(".exhibit__price__container__fee_field > input").keyup(function(){
     var input = $(this).val()
     if (300 < input && input <= 9999999) {
       var tax = Math.floor(input / 10)
