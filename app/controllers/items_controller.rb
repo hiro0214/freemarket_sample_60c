@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_name: item_params[:item_name], 
+    @item = Item.new(item_name: item_params[:item_name],
                 description: item_params[:description],
                 price: item_params[:price],
                 state: item_params[:state],
