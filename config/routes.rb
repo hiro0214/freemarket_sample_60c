@@ -1,16 +1,23 @@
 Rails.application.routes.draw do
   devise_for :users
   root "items#index"
-  resources :items 
+  resources :items
   get "detail" => "items#detail"
-  get "regi_first" => "items#regi_first"
-  get "regi_second" => "items#regi_second"
-  get "regi_third" => "items#regi_third"
-  get "regi_fourth" => "items#regi_fourth"
-  get "regi_fifth" => "items#regi_fifth"
   get "exhibit" => "items#exhibit"
   get "exhibit_after" => "items#exhibit_after"
   get "mypage" => "items#mypage"
   get "logout" => "items#logout"
   get "profile" => "items#profile"
+
+  resources :signup do
+    collection do
+      get 'step1'
+      get 'step2'
+      # get 'step3'
+      # get 'step4'
+      # get 'step5'
+      get 'done'
+    end
+  end
 end
+

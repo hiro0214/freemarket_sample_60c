@@ -1,0 +1,284 @@
+.registration__header
+
+.registration__first
+  .registration__first__box
+    %h2.registration__first__box__top 会員情報登録
+
+    = form_for @user, url: step2_signup_index_path, method: :get, html: {class: ".registration__first__box__middle"} do |f|
+      -# = devise_error_messages!
+      .registration__first__box__middle__input
+        .field-label.registration__first__box__middle__input__name
+          = f.label :ニックネーム
+          %span 必須
+        = f.text_field :name, autofocus: true,class:"aaaa", placeholder: " 例)メルカリ太郎"
+      .registration__first__box__middle__input
+        .field-label.registration__first__box__middle__input__name
+          = f.label :メールアドレス
+          %span 必須
+        = f.email_field :email,class:"aaaa", placeholder: " PC・携帯どちらでも可"
+      .registration__first__box__middle__input
+        .field-label.registration__first__box__middle__input__name
+          = f.label :パスワード
+          %span 必須
+        = f.password_field :password, autocomplete: "off",class:"aaaa", placeholder:" 英数字7文字以上"
+      .registration__first__box__middle__input
+        .field-label.registration__first__box__middle__input__name
+          = f.label :パスワード（確認）
+          %span 必須
+          = f.password_field :password_confirmation, autocomplete: "off",class:"aaaa", placeholder:" 英数字7文字以上"
+          %p ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      .registration__first__box__middle__input
+        .field-label.registration__first__box__middle__input__name
+          = f.label :お名前（全角）
+          %span 必須
+        .registration__first__box__middle__input__double
+          -# -# = f.text_field :last_name, autofocus: true, class:"aaaa", placeholder: "谷口"
+          -# = f.text_field :first_name, autofocus: true, class:"aaaa", placeholder: "寛人"
+      .registration__first__box__middle__input
+        .field-label.registration__first__box__middle__input__name
+          = f.label :お名前カナ（全角）
+          %span 必須
+        .registration__first__box__middle__input__double
+          -# = f.text_field :last_name_kana, autofocus: true, class:"aaaa", placeholder: "タニグチ"
+          -# = f.text_field :first_name_kana, autofocus: true, class:"aaaa", placeholder: "ヒロト"
+      .registration__first__box__middle__input
+        %p.robot
+          私はロボットではありません。
+
+      .registration__first__box__middle__input
+        %p.registration__first__box__middle__input__info
+          「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+      .registration__first__box__middle__input
+        .actions
+          = f.submit "次へ進む", class: 'last_submit'
+
+
+
+
+
+    -# %form.registration__first__box__middle{action: "/regi_second"}
+    -#   .registration__first__box__middle__input
+    -#     .registration__first__box__middle__input__name 
+    -#       ニックネーム
+    -#       %span 必須
+    -#     %input{placeholder: "  例)メルカリ太郎"}
+    -#   .registration__first__box__middle__input
+    -#     .registration__first__box__middle__input__name
+    -#       メールアドレス
+    -#       %span 必須
+    -#     %input{placeholder: "  PC・携帯どちらでも可"}
+    -#   .registration__first__box__middle__input
+    -#     .registration__first__box__middle__input__name
+    -#       パスワード
+    -#       %span 必須
+    -#     %input{placeholder: "  7文字以上"}
+    -#   .registration__first__box__middle__input
+    -#     .registration__first__box__middle__input__name 
+    -#       パスワード（確認）
+    -#       %span 必須
+    -#     %input{placeholder: "  7文字以上"}
+    -#   .registration__first__box__middle__input
+    -#     .registration__first__box__middle__input__name 本人確認
+    -#     %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+    -#   .registration__first__box__middle__input
+    -#     .registration__first__box__middle__input__name
+    -#       お名前（全角）
+    -#       %span 必須
+    -#     .registration__first__box__middle__input__double
+    -#       %input{placeholder: "  例) 谷口"}
+    -#       %input{placeholder: "  例) 寛人"}
+    -#   .registration__first__box__middle__input
+    -#     .registration__first__box__middle__input__name 
+    -#       お名前カナ（全角）
+    -#       %span 必須
+    -#     .registration__first__box__middle__input__double
+    -#       %input{placeholder: "  例) タニグチ"}
+    -#       %input{placeholder: "  例) ヒロト"}
+    -#   .registration__first__box__middle__input
+    -#     .registration__first__box__middle__input__name 
+    -#       生年月日
+    -#       %span 必須
+    -#     .registration__first__box__middle__input__birth
+    -#       %select{name: "year"}
+    -#         %option --
+    -#         %option 2019
+    -#         %option 2018
+    -#         %option 2017
+    -#         %option 2016
+    -#         %option 2015
+    -#         %option 2014
+    -#         %option 2013
+    -#         %option 2012
+    -#         %option 2011
+    -#         %option 2010
+    -#         %option 2009
+    -#         %option 2008
+    -#         %option 2007
+    -#         %option 2006
+    -#         %option 2005
+    -#         %option 2004
+    -#         %option 2003
+    -#         %option 2002
+    -#         %option 2001
+    -#         %option 2000
+    -#         %option 1999
+    -#         %option 1998
+    -#         %option 1997
+    -#         %option 1996
+    -#         %option 1995
+    -#         %option 1994
+    -#         %option 1993
+    -#         %option 1992
+    -#         %option 1991
+    -#         %option 1990
+    -#         %option 1989
+    -#         %option 1988
+    -#         %option 1987
+    -#         %option 1986
+    -#         %option 1985
+    -#         %option 1984
+    -#         %option 1983
+    -#         %option 1982
+    -#         %option 1981
+    -#         %option 1980
+    -#         %option 1979
+    -#         %option 1978
+    -#         %option 1977
+    -#         %option 1976
+    -#         %option 1975
+    -#         %option 1974
+    -#         %option 1973
+    -#         %option 1972
+    -#         %option 1971
+    -#         %option 1970
+    -#         %option 1969
+    -#         %option 1968
+    -#         %option 1967
+    -#         %option 1966
+    -#         %option 1965
+    -#         %option 1964
+    -#         %option 1963
+    -#         %option 1962
+    -#         %option 1961
+    -#         %option 1960
+    -#         %option 1959
+    -#         %option 1958
+    -#         %option 1957
+    -#         %option 1956
+    -#         %option 1955
+    -#         %option 1954
+    -#         %option 1953
+    -#         %option 1952
+    -#         %option 1951
+    -#         %option 1950
+    -#         %option 1949
+    -#         %option 1948
+    -#         %option 1947
+    -#         %option 1946
+    -#         %option 1945
+    -#         %option 1944
+    -#         %option 1943
+    -#         %option 1942
+    -#         %option 1941
+    -#         %option 1940
+    -#         %option 1939
+    -#         %option 1938
+    -#         %option 1937
+    -#         %option 1936
+    -#         %option 1935
+    -#         %option 1934
+    -#         %option 1933
+    -#         %option 1932
+    -#         %option 1931
+    -#         %option 1930
+    -#         %option 1929
+    -#         %option 1928
+    -#         %option 1927
+    -#         %option 1926
+    -#         %option 1925
+    -#         %option 1924
+    -#         %option 1923
+    -#         %option 1922
+    -#         %option 1921
+    -#         %option 1920
+    -#         %option 1919
+    -#         %option 1918
+    -#         %option 1917
+    -#         %option 1916
+    -#         %option 1915
+    -#         %option 1914
+    -#         %option 1913
+    -#         %option 1912
+    -#         %option 1911
+    -#         %option 1910
+    -#         %option 1909
+    -#         %option 1908
+    -#         %option 1907
+    -#         %option 1906
+    -#         %option 1905
+    -#         %option 1904
+    -#         %option 1903
+    -#         %option 1902
+    -#         %option 1901
+    -#         %option 1900
+
+    -#       %span  年 
+    -#       %select{name: "birth"}
+    -#         %option --
+    -#         %option 1
+    -#         %option 2
+    -#         %option 3
+    -#         %option 4
+    -#         %option 5
+    -#         %option 6
+    -#         %option 7
+    -#         %option 8
+    -#         %option 9
+    -#         %option 10
+    -#         %option 11
+    -#         %option 12
+    -#       %span  月
+    -#       %select{name: "day"}
+    -#         %option --
+    -#         %option 1
+    -#         %option 2
+    -#         %option 3
+    -#         %option 4
+    -#         %option 5
+    -#         %option 6
+    -#         %option 7
+    -#         %option 8
+    -#         %option 9
+    -#         %option 10
+    -#         %option 11
+    -#         %option 12
+    -#         %option 13
+    -#         %option 14
+    -#         %option 15
+    -#         %option 16
+    -#         %option 17
+    -#         %option 18
+    -#         %option 19
+    -#         %option 20
+    -#         %option 21
+    -#         %option 22
+    -#         %option 23
+    -#         %option 24
+    -#         %option 25
+    -#         %option 26
+    -#         %option 27
+    -#         %option 28
+    -#         %option 29
+    -#         %option 30
+    -#         %option 31
+    -#       %span  日
+    -#       %p ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+    -#   .registration__first__box__middle__input
+    -#     %p.robot 私はロボットではありません。
+    -#   .registration__first__box__middle__input
+    -#     %p.registration__first__box__middle__input__info「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+    -#   .registration__first__box__middle__input
+    -#     %button{type: "submit", onclick: "location.href='/regi_second"} 次へ進む
+    -#     %a{href: "#"} 本人情報の登録について＞
+
+  = render partial: "devise/layout/footer"
