@@ -22,9 +22,11 @@ class ItemsController < ApplicationController
                 delivery_date: item_params[:delivery_date])
     if @item.save
       redirect_to exhibit_after_path
+    
+    else
+      render "exhibit"
     end
   end
-
 
 
   private
@@ -33,7 +35,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:item_name, :description, :price, :state, :fee_size, :region, :delivery_date)
   end
 
-
 end
+
 
 
