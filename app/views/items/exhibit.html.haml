@@ -43,27 +43,30 @@
               %p  カテゴリー
               %span.exhibit_span 必須
             .exhibit__detail__container__title_field
-              -# %select.select-default
-              -#   %option{:value => ""} ---
-              -#   %option{:value => "1"} レディース
-              -#   %option{:value => "2"} メンズ
-              -#   %option{:value => "3"} ベビー・キッズ
-              -#   %option{:value => "4"} インテリア・住まい・小物
-              -#   %option{:value => "5"} 本・音楽・ゲーム
-              -#   %option{:value => "1328"} おもちゃ・ホビー・グッズ
-              -#   %option{:value => "6"} コスメ・香水・美容
-              -#   %option{:value => "7"} 家電・スマホ・カメラ
-              -#   %option{:value => "8"} スポーツ・レジャー
-              -#   %option{:value => "9"} ハンドメイド
-              -#   %option{:value => "1027"} チケット
-              -#   %option{:value => "1318"} 自動車・オートバイ
-              -#   %option{:value => "10"} その他
+              %select.select-default
+                %option{:value => ""} ---
+                %option{:value => "1"} レディース
+                %option{:value => "2"} メンズ
+                %option{:value => "3"} ベビー・キッズ
+                %option{:value => "4"} インテリア・住まい・小物
+                %option{:value => "5"} 本・音楽・ゲーム
+                %option{:value => "1328"} おもちゃ・ホビー・グッズ
+                %option{:value => "6"} コスメ・香水・美容
+                %option{:value => "7"} 家電・スマホ・カメラ
+                %option{:value => "8"} スポーツ・レジャー
+                %option{:value => "9"} ハンドメイド
+                %option{:value => "1027"} チケット
+                %option{:value => "1318"} 自動車・オートバイ
+                %option{:value => "10"} その他
           .exhibit__detail__container__detail
             .exhibit__detail__container__detail_head
               %p  商品の状態
               %span.exhibit_span 必須
             .exhibit__detail__container__detail_field
-              = f.select :state, [["---",""],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]] ,class: "select-default"
+              = f.select :state, [["---",""],["新品、未使用", "新品、未使用"],
+                                  ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],
+                                  ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"],
+                                  ["全体的に状態が悪い", "全体的に状態が悪い"]],{}, {class: "select-default"}
       .exhibit__delivery.clearfix
         %p 配送について
         .exhibit__delivery__container
@@ -72,19 +75,21 @@
               %p  配送料の負担
               %span.exhibit_span 必須
             .exhibit__delivery__container__fee_field
-              = f.select :fee_size, [["---",""], ["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]], class: "select-default"
+              = f.select :fee_size, [["---",""], ["送料込み(出品者負担)", "送料込み(出品者負担)"],
+                                    ["着払い(購入者負担)", "着払い(購入者負担)"]],{}, {class: "select-default"}
           .exhibit__delivery__container__shipping_region
             .exhibit__delivery__container__shipping_region_head
               %p  発送元の地域
               %span.exhibit_span 必須
             .exhibit__delivery__container__shipping_region_field
-              = f.select :region, [["---",""], ["北海道", "北海道"], ["青森県", "青森県"]], class: "select-default" 
+              = f.select :region, [["---",""], ["北海道", "北海道"], ["青森県", "青森県"]],{}, {class: "select-default"}
           .exhibit__delivery__container__day
             .exhibit__delivery__container__day_head
               %p  発送までの日数
               %span.exhibit_span 必須
             .exhibit__delivery__container__day_field
-              = f.select :delivery_date, [["---", ""], ["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]], class: "select-default"
+              = f.select :delivery_date, [["---", ""], ["1~2日で発送", "1~2日で発送"],
+                                          ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]],{}, {class: "select-default"}
       .exhibit__price.clearfix
         %span 販売価格(300~9,999,999)
         .exhibit__price__container
@@ -122,4 +127,4 @@
       -# 出品する
       -# もどる
 
-  = render partial: "devise/layout/footer"  
+  = render partial: "devise/layout/footer"
