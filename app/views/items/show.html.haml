@@ -61,14 +61,14 @@
           %td
             = @item.delivery_date
     .item_pricebox
-      %span.item_pricebox__price 
+      %span.item_pricebox__price
         = "¥#{@item.price}"
       %span.item_pricebox__tax
         (税込)
       %span.item_pricebox__fee
         送料込み
     .item_buy
-      購入画面に進む
+      = link_to "購入画面に進む", "/items/#{@item.id}/edit"
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
     .item_btn_container
