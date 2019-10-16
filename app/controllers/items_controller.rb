@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @items = Item.limit(10).order("created_at desc")
   end
@@ -9,6 +11,7 @@ class ItemsController < ApplicationController
   end
 
   def exhibit
+    # @trading = Trading.new
     @item = Item.new
   end
 
@@ -20,6 +23,7 @@ class ItemsController < ApplicationController
                 fee_size: item_params[:fee_size],
                 region: item_params[:region],
                 delivery_date: item_params[:delivery_date])
+    @item.build_trading(saler_id: current_user.id)
     if @item.save
       redirect_to exhibit_after_path
     end
@@ -33,6 +37,9 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:item_name, :description, :price, :state, :fee_size, :region, :delivery_date)
   end
 
+  def move_to_index
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 
 end
 
