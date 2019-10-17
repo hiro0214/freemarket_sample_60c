@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   get "detail" => "items#detail"
   get "exhibit" => "items#exhibit"
   get "exhibit_after" => "items#exhibit_after"
-  get "mypage" => "items#mypage"
+  # get "mypage" => "items#mypage"
   get "logout" => "items#logout"
   get "profile" => "items#profile"
   get "more" => "items#more"
+
+  resources :users
 
   resources :signup do
     collection do
