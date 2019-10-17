@@ -3,8 +3,9 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @items = Item.limit(10).order("created_at desc")
-    # @trading = Trading.where.not(sale_state: "exhibit")
+    # @items = Item.limit(10).order("created_at desc")
+    query =  "select * from items where id in (select item_id from tradings limit10 where sale_state = 'exhibit') group by id order by created_at desc;"
+    @items = Item.find_by_sql(query)
   end
 
   def edit
