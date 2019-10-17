@@ -5,6 +5,7 @@
 
 .main_contents{
   background:rgb(239, 239, 239);
+  height:100%;
   &__box{
     width:100vw;
     &__header{
@@ -72,7 +73,7 @@
   align-content: space-around;
   margin-bottom: 18px;
   &__one{
-    background:white;   
+    background:white;
     width:188px;
     height:252px;
     position: relative;
@@ -90,7 +91,7 @@
         background-color:rgba(0, 0, 0,0.25);
         font-size:17px;
       }
-    }       
+    }
     &__title{
       height: 62px;
       span {
@@ -133,5 +134,19 @@
   &__icon {
     color:#fff;
     font-size:60px !important;
+  }
+}
+
+.sold_item {
+  background:red;
+  width:188px;
+  height:30px;
+  position:absolute;
+  top:20px;
+  p {
+    color:#fff;
+    font-size:24px;
+    text-align:center;
+    line-height:30px;
   }
 }

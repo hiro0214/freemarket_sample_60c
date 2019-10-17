@@ -1,0 +1,25 @@
+= render "header"
+
+.main_contents
+  .main_contents__box
+    .main_contents__box__contents
+      .main_contents__box__contents__title_box
+        .main_contents__box__contents__title_box__title
+          %h2#1 レディース新着アイテム
+      .main_contents__box__contents__items
+        - @items.each do |item|
+          .main_contents__box__contents__items__one
+            - if item.sale_state == "trade"
+              .sold_item
+                %p SOLD
+              %img.main_contents__box__contents__items__one__image{:src => ""}/
+            -else
+              %img.main_contents__box__contents__items__one__image{:src => ""}/
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item.item_id}", method: :get do
+                  = item.item_name
+
+= render "footer"

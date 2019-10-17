@@ -255,3 +255,17 @@
 .user_smile {
   width:25px;
 }
+
+.sold_item__btn {
+  width:600px;
+  height: 60px;
+  line-height: 56px;
+  text-align: center;
+  margin: 16px auto;
+  font-weight: 600;
+  font-size: 24px;
+  background:gray;
+  p {
+    color:#fff;
+  }
+}

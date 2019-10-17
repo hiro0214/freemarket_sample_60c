@@ -22,9 +22,9 @@
         .main_contents__box__contents__title_box__title
           %h2#1 レディース新着アイテム
         .main_contents__box__contents__title_box__motto
-          = link_to "もっとみる", "",class:"link"
+          = link_to "もっとみる", "/more",class:"link"
       .main_contents__box__contents__items
-        - @items.each do |item| 
+        - @items.each do |item|
           .main_contents__box__contents__items__one
             %img.main_contents__box__contents__items__one__image{:src => ""}/
             .main_contents__box__contents__items__one__image__price

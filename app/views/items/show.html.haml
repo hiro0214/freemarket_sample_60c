@@ -67,8 +67,12 @@
         (税込)
       %span.item_pricebox__fee
         送料込み
-    .item_buy
-      = link_to "購入画面に進む", "/items/#{@item.id}/edit"
+    - if @trading.sale_state == "exhibit"
+      .item_buy
+        = link_to "購入画面に進む", "/items/#{@item.id}/edit"
+    - else
+      .sold_item__btn
+        %p 売り切れました
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
     .item_btn_container

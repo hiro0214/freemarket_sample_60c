@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
 
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :more]
 
   def index
     # @items = Item.limit(10).order("created_at desc")
-    query =  "select * from items where id in (select item_id from tradings limit10 where sale_state = 'exhibit') group by id order by created_at desc;"
+    query =  "select * from items where id in (select item_id from tradings limit10 where sale_state = 'exhibit') order by created_at desc;"
     @items = Item.find_by_sql(query)
   end
 
@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @trading = Trading.find_by(item_id: params[:id])
   end
 
 
@@ -48,6 +49,10 @@ class ItemsController < ApplicationController
   end
 
 
+  def more
+    query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"
+    @items = Item.find_by_sql(query)
+  end
 
   private
 
