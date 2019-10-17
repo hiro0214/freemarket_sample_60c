@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @trading = Trading.find_by(item_id: "#{params[:id]}")
     @user = User.find(current_user.id)
+    redirect_to edit_after_path
   end
 
   def update

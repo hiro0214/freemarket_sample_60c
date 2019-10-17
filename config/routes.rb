@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "logout" => "items#logout"
   get "profile" => "items#profile"
   get "more" => "items#more"
+  get "edit_after" => "items#edit_after"
 
   resources :signup do
     collection do
