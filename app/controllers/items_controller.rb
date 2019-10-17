@@ -18,8 +18,9 @@ class ItemsController < ApplicationController
     if @trading.sale_state == "exhibit"
       @trading.update(sale_state: "trade", buyer_id: current_user.id)
     else
-      redirect_to root_path
+      # redirect_to root_path
       # エラーメッセージを出したい
+      render "exhibit"
     end
   end
 
