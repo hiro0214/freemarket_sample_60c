@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @trading = Trading.find_by(item_id: "#{params[:id]}")
+    @user = User.find(current_user.id)
   end
 
   def update
