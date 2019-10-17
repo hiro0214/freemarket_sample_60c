@@ -1,15 +1,9 @@
-$(function(){
-  $('a[href^=#]').click(function(){
-    var adjust = 0;
-    var speed = 800;
+$(document).on('turbolinks:load', function() {
+  $('a[href^="#"]').click(function(){
     var href= $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
-    var position = target.offset().top + adjust;
-    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    var position = target.offset().top - 30;
+    $('body,html').animate({scrollTop:position}, 500, 'swing');
     return false;
   });
 });
-
-
-
-

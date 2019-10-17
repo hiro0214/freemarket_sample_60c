@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
 
-  before_action :move_to_index, except: [:index, :show, :more]
+  before_action :authenticate_user!, except: [:index, :show, :more]
 
   def index
     # @items = Item.limit(10).order("created_at desc")
-    query =  "select * from items where id in (select item_id from tradings limit10 where sale_state = 'exhibit') order by created_at desc;"
+    query =  "select * from items where id in (select item_id from tradings where sale_state = 'exhibit') order by created_at desc limit 10"
     @items = Item.find_by_sql(query)
   end
 
@@ -12,13 +12,13 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @trading = Trading.find_by(item_id: "#{params[:id]}")
     @user = User.find(current_user.id)
-    redirect_to edit_after_path
   end
 
   def update
     @trading = Trading.find_by(item_id: "#{params[:id]}")
     if @trading.sale_state == "exhibit"
       @trading.update(sale_state: "trade", buyer_id: current_user.id)
+      redirect_to edit_after_path
     else
       redirect_to root_path
       # エラーメッセージを出したい
@@ -60,10 +60,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:item_name, :description, :price, :state, :fee_size, :region, :delivery_date)
-  end
-
-  def move_to_index
-    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end
