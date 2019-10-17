@@ -1,0 +1,6 @@
+= @item.item_name
+
+= "#{@item.price}円"
+
+= form_for @trading, url: "/items/#{@item.id}" ,method: :patch do |f|
+  = f.submit "購入する"

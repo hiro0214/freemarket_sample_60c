@@ -3,17 +3,35 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @items = Item.limit(10).order("created_at desc")
+    # @items = Item.limit(10).order("created_at desc")
+    query =  "select * from items where id in (select item_id from tradings limit10 where sale_state = 'exhibit') group by id order by created_at desc;"
+    @items = Item.find_by_sql(query)
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+    @trading = Trading.find_by(item_id: "#{params[:id]}")
+  end
+
+  def update
+    @trading = Trading.find_by(item_id: "#{params[:id]}")
+    if @trading.sale_state == "exhibit"
+      @trading.update(sale_state: "trade", buyer_id: current_user.id)
+    else
+      redirect_to root_path
+      # エラーメッセージを出したい
+    end
   end
 
   def show
     @item = Item.find(params[:id])
   end
 
+
   def exhibit
-    # @trading = Trading.new
     @item = Item.new
   end
+
 
   def create
     @item = Item.new(item_name: item_params[:item_name],
