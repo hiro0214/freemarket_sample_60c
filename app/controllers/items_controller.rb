@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
     # @items = Item.limit(10).order("created_at desc")
     query =  "select * from items where id in (select item_id from tradings limit10 where sale_state = 'exhibit') order by created_at desc;"
     @items = Item.find_by_sql(query)
+    # @user = User.find(current_user.id)←ログアウトの時に邪魔してたのでコメントアウトしました。
   end
 
   def edit
@@ -17,10 +18,6 @@ class ItemsController < ApplicationController
     @trading = Trading.find_by(item_id: "#{params[:id]}")
     if @trading.sale_state == "exhibit"
       @trading.update(sale_state: "trade", buyer_id: current_user.id)
-    else
-      # redirect_to root_path
-      # エラーメッセージを出したい
-      render "exhibit"
     end
   end
 
@@ -30,8 +27,8 @@ class ItemsController < ApplicationController
   end
 
 
-  def exhibit
-    @item = Item.new
+  def exhibiting
+    @items = Item.new
   end
 
 
@@ -46,6 +43,8 @@ class ItemsController < ApplicationController
     @item.build_trading(saler_id: current_user.id)
     if @item.save
       redirect_to exhibit_after_path
+    else
+      render "exhibit"
     end
   end
 

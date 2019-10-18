@@ -1,4 +1,4 @@
-= render "header"
+= render "/items/header"
 
 .wrapper_mypage
   .wrapper_box
@@ -11,7 +11,7 @@
         .profile_main__middle__image
           img
         .profile_main__middle__nickname
-          ニックネーム
+          = current_user.name
       .profile_main__bottom
         .profile_main__bottom__introduce
           こんにちは！メリカリはまだ始めたばかりですが心をこめてご対応いたします。
@@ -20,4 +20,4 @@
         .profile_main__bottom__btn
           =link_to '変更する'
 
-= render "footer"
+= render "/items/footer" 

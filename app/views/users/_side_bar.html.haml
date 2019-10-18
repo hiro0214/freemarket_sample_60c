@@ -2,7 +2,7 @@
   .side_bar__main 
     %ul 
       %li
-        = link_to 'マイページ', "/mypage"
+        = link_to 'マイページ', "/users/#{@user.id}"
         %i.fa.fa-chevron-right
       %li 
         = link_to 'お知らせ', " "
@@ -17,7 +17,7 @@
         =link_to '出品する', " "
         %i.fa.fa-chevron-right
       %li 
-        =link_to '出品した商品 - 出品中', " "
+        =link_to '出品した商品 - 出品中',"/users/#{@user.id}/exhibiting"
         %i.fa.fa-chevron-right
       %li 
         =link_to '出品した商品 - 取引中', " "
@@ -57,7 +57,7 @@
   .side_bar__bottom
     %ul
       %li
-        =link_to'プロフィール',"/profile"
+        =link_to'プロフィール',"/users/#{@user.id}/profile"
         %i.fa.fa-chevron-right
       %li
         =link_to'発送元・お届け先住所変更'," "
@@ -75,5 +75,5 @@
         =link_to'電話番号の確認'," "
         %i.fa.fa-chevron-right
       %li
-        =link_to'ログアウト',"/logout"
+        =link_to'ログアウト',"/users/#{@user.id}/logout"
         %i.fa.fa-chevron-right
