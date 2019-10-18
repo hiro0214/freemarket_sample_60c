@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root "items#index"
-  resources :items
+  resources :items do
+    get "buy" => "items#buy"
+  end
   get "detail" => "items#detail"
   get "exhibit" => "items#exhibit"
   get "exhibit_after" => "items#exhibit_after"
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   get "logout" => "items#logout"
   get "profile" => "items#profile"
   get "more" => "items#more"
-  get "edit_after" => "items#edit_after"
+  get "buy_after" => "items#buy_after"
 
   resources :signup do
     collection do

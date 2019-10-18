@@ -69,7 +69,7 @@
         送料込み
     - if @trading.sale_state == "exhibit"
       .item_buy
-        = link_to "購入画面に進む", "/items/#{@item.id}/edit"
+        = link_to "購入画面に進む", item_buy_path(@item), class: ""
     - else
       .sold_item__btn
         %p 売り切れました

@@ -8,9 +8,9 @@ class ItemsController < ApplicationController
     @items = Item.find_by_sql(query)
   end
 
-  def edit
-    @item = Item.find(params[:id])
-    @trading = Trading.find_by(item_id: "#{params[:id]}")
+  def buy
+    @item = Item.find(params[:item_id])
+    @trading = Trading.find_by(item_id: "#{params[:item_id]}")
     @user = User.find(current_user.id)
   end
 
@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     @trading = Trading.find_by(item_id: "#{params[:id]}")
     if @trading.sale_state == "exhibit"
       @trading.update(sale_state: "trade", buyer_id: current_user.id)
-      redirect_to edit_after_path
+      redirect_to buy_after_path
     else
       redirect_to root_path
       # エラーメッセージを出したい
