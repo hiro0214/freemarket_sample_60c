@@ -21,7 +21,7 @@
         %tr
           %th 出品者
           %td
-            = link_to 'timothy', " ",class:"owner_name"
+            = link_to "#{@user.name}", "#",class:"owner_name"
             .evaluation
               %span.user_smile
                 =image_tag "logo_smile.png", class: "user_smile"
@@ -114,7 +114,7 @@
           %li.icon_pinterest
             %i.fa.fa-pinterest-square
     .other_item_container_big
-      = link_to 'timothyさんのその他の商品', " ",class:"other_item_user"
+      = link_to "#{@user.name}さんのその他の商品", " ",class:"other_item_user"
       .other_item_container
         .other_item_container__other_item
           .other_item__image

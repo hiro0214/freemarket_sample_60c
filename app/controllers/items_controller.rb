@@ -3,16 +3,16 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :more]
 
   def index
-    # @tradings = Trading.where(sale_state: "exhibit")
-    # @items = Item.limit(10).order("created_at desc").where(id: @trading.item_id)
-    query =  "select * from items where id in (select item_id from tradings where sale_state = 'exhibit') order by created_at desc limit 10"
-    @items = Item.find_by_sql(query)
+    tradings = Trading.where(sale_state: "exhibit")
+    trading = tradings.map {|t| t[:item_id]}
+    @items = Item.limit(10).order("created_at desc").where(id: trading)
+    # query =  "select * from items where id in (select item_id from tradings where sale_state = 'exhibit') order by created_at desc limit 10"
+    # @items = Item.find_by_sql(query)
   end
 
   def buy
     @item = Item.find(params[:item_id])
     @trading = Trading.find_by(item_id: "#{params[:item_id]}")
-    @user = User.find(current_user.id)
   end
 
   def update
@@ -29,6 +29,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @trading = Trading.find_by(item_id: params[:id])
+    @user = User.find(@trading.saler_id)
   end
 
 
