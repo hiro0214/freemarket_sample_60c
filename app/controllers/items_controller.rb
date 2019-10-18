@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :more]
 
   def index
-    # @items = Item.limit(10).order("created_at desc")
+    # @tradings = Trading.where(sale_state: "exhibit")
+    # @items = Item.limit(10).order("created_at desc").where(id: @trading.item_id)
     query =  "select * from items where id in (select item_id from tradings where sale_state = 'exhibit') order by created_at desc limit 10"
     @items = Item.find_by_sql(query)
   end
