@@ -43,7 +43,6 @@ class ItemsController < ApplicationController
     @user = User.find(@trading.saler_id)
   end
 
-
   def create
     @item = Item.new(item_name: item_params[:item_name],
                 description: item_params[:description],
@@ -65,6 +64,7 @@ class ItemsController < ApplicationController
     query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"
     @items = Item.find_by_sql(query)
   end
+
 
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
