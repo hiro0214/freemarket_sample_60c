@@ -1,4 +1,4 @@
-= render "header"
+= render "/items/header"
 
 -# 以下、細かい未処理カ所
 -# サイドバーにhoverした時の＞の動き
@@ -16,7 +16,7 @@
         .main__top_contents__box
           .main__top_contents__box__image
           .main__top_contents__box__nickname
-            ニックネーム
+            = current_user.name
           .main__top_contents__box__status
             .main__top_contents__box__status__evaluation
               評価
@@ -91,6 +91,7 @@
       .main__bottom_menu
         .main__bottom_menu__title
           購入した商品
+          -# = @items.Item.find(current_user.id)
         .main__bottom_menu__tabs
           %p.transaction_now
             取引中
@@ -103,4 +104,4 @@
           -#     %li.side_bar_box__name マイページ
           -#     = fa_icon 'chevron-right',class:"migi"
 
-= render "footer"
+= render "/items/footer" 

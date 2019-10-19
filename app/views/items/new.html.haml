@@ -29,12 +29,18 @@
             %span.exhibit_span 必須
           .exhibit__explanation__title_field
             = f.text_field :item_name, placeholder: "商品名（必須 40文字まで)", maxlength: 40
+
+            = render partial: 'error_messages', locals: {item: @item, column: "item_name"}
+
         .exhibit__explanation__detail
           .exhibit__explanation__detail_head
             %p  商品の説明
             %span.exhibit_span 必須
           .exhibit__explanation__detail_field
             = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+
+            = render partial: 'error_messages', locals: {item: @item, column: "description"}
+
       .exhibit__detail.clearfix
         %p 商品の詳細
         .exhibit__detail__container
@@ -44,6 +50,9 @@
               %span.exhibit_span 必須
             .exhibit__detail__container__title_field
               = f.select :category, @category_array, {}, {class: "select-default", id: "chose-category"}
+
+              = render partial: 'error_messages', locals: {item: @item, column: "description"}
+
           .exhibit__detail__container__detail
             .exhibit__detail__container__detail_head
               %p  商品の状態
@@ -86,6 +95,9 @@
             .exhibit__price__container__fee_field
               %span ¥
               = f.text_field :price, placeholder: "例）300"
+
+              = render partial: 'error_messages', locals: {item: @item, column: "price"}
+
           .exhibit__price__container__sale_fee.clearfix
             .exhibit__price__container__sale_fee_head
               %span  販売手数料(10%)

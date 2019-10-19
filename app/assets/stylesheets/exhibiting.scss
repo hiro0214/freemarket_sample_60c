@@ -1,0 +1,94 @@
+.exhibiting_main{
+  width:700px;
+  height:1187px;
+  margin:40px 0;
+  cursor: pointer;
+  &__title{
+    background:white;
+    height:71px;
+    line-height: 71px;
+    font-size:16px;
+    font-weight: bold;
+    padding:0 16px;
+  }
+  &__middle_menu{
+    background: #fff;
+    height:567px;
+    &__tabs{
+      height:74px;
+      display:flex;
+      > :hover{
+        color: rgba(48, 46, 46, 0.461);
+      }
+      > .infomation{
+        width:33%;
+        font-size:16px;
+        font-weight: bold;
+        line-height: 72px;
+        text-align: center;
+        display:block;
+        border-top:solid 2px red;
+      }
+      > .to_do{
+        background:gainsboro;
+        width:33%;
+        font-size:16px;
+        font-weight: bold;
+        line-height: 72px;
+        text-align: center;
+        display:block;
+      }
+    }
+    &__list{
+      // display:flex;
+      // flex-direction:column;
+      > ul{
+        background:ivory;
+        > :hover{
+          background:#f5f5f580;
+        }
+        > li{
+          height:80px;
+          padding:16px;
+          border-bottom: solid 1px #eee;
+          display:block;
+          display:flex;
+          justify-content:space-between;
+          >i{
+            margin:auto 0;
+            font-size:18px;
+          }
+        }
+        > .go_mypage_list{
+          height:93px;
+          padding:16px;
+          display:block;
+          > :hover{
+            background: rgba(199, 196, 196, 0.139);
+          }
+          > p{
+            background:#eee;
+            height:56px;
+            line-height: 56px;
+            text-align: center;
+          }
+        }
+      }
+      &__mercari_logo {
+        width:48px;
+        height:48px;
+      }
+      &__box{
+        width:560px;
+        height:39px;
+        & i{
+          font-size:16px;
+          color:rgb(151, 150, 150);
+        }
+        & span{
+          color:rgb(151, 150, 150);
+        }
+      }
+    }
+  } 
+}

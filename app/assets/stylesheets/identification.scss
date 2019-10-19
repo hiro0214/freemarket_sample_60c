@@ -1,0 +1,70 @@
+.identification_main{
+  background:white;
+  width:700px;
+  height:1204px;
+  margin:40px 0;
+  cursor: pointer;
+  &__top{
+    height:50px;
+    padding:8px,24px;
+    font-size:24px;
+    line-height: 50px;
+    font-weight:bold;
+    text-align: center;
+    border:solid 1px #ebebeb;
+  }
+  &__middle{
+    width:700px;
+    height:1155px;
+    padding:64px;
+    font-size:14px;
+    display:block;
+    
+    &__info{
+      width:572px;
+      height:40px;
+      text-align: left;
+    }
+    > p{
+      float:right;
+      color: #0099e8;
+    }
+
+    &__form{
+      background:white;
+      width:572px;
+      height:72px;
+      padding-top:8px;
+      margin-top:40px;
+        >input{
+          width:572px;
+          height:48px;
+          margin-top:8px;
+        }
+        & span{
+          background: #cccccc;
+          color:white;
+          font-size:12px;
+          padding:2px 4px;
+        }
+      }       
+    
+    >span{
+      background: #ccc;
+      font-weight:bold;
+    }
+    &__btn{
+      background: #ea352d;
+      color: #fff;
+      width:572px;
+      height:50px;
+      margin:40px auto;
+      display:block;
+      line-height: 50px;
+      text-align: center;
+      a{
+        color:#fff;
+      }
+    }
+  }
+}

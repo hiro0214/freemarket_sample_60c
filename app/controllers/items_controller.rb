@@ -9,9 +9,9 @@ class ItemsController < ApplicationController
     @items = Item.limit(10).order("created_at desc").where(id: trading)
     # query =  "select * from items where id in (select item_id from tradings where sale_state = 'exhibit') order by created_at desc limit 10"
     # @items = Item.find_by_sql(query)
+
     @categories = Category.where(ancestry: nil)
   end
-
 
   def new
     @item = Item.new
@@ -19,7 +19,6 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_array << parent.name
     end
-
   end
 
   def buy
@@ -55,6 +54,8 @@ class ItemsController < ApplicationController
     @item.build_trading(saler_id: current_user.id)
     if @item.save
       redirect_to exhibit_after_path
+    else
+      render "exhibit"
     end
   end
 
