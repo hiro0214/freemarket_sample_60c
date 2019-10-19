@@ -6,36 +6,86 @@ $(document).on('turbolinks:load', function() {
   }
 
   function appendChildrenBox(insertHTML){
-    var childSelectHtml = '';
-    childSelectHtml =  111
+    var childSelectHtml = "";
+    childSelectHtml =　`<div class="exhibit__detail__container__title_field" id="child_wrapper">
+                          <div id="children_chose">
+                            <select class="select-default" id="child_category" name="category_id">
+                              <option value="---" data-category="---">---</option>
+                              ${insertHTML}
+                            </select>
+                          </div>
+                        </div>`;
+    $('.exhibit__detail__container__title').append(childSelectHtml);
   }
 
-
-
-
-
-
+  function appendGrandchidrenBox(insertHTML){
+    var grandchildSelectHtml = '';
+    grandchildSelectHtml =　`<div class="exhibit__detail__container__title_field" id="grandchild_wrapper">
+                              <div id="children_chose">
+                                <select class="select-default" id="grandchild_category" name="category_id">
+                                  <option value="---" data-category="---">---</option>
+                                  ${insertHTML}
+                                </select>
+                              </div>
+                            </div>`;
+    $('.exhibit__detail__container__title').append(grandchildSelectHtml);
+  }
 
   $(".exhibit__detail__container__title_field").on("change", function(){
     var parentcategory = $("#chose-category").val()
     if (parentcategory != "---"){
       $.ajax({
-        url: 'get_category_children',
+        url: 'category_children',
         type: 'GET',
         data: { parent_name: parentcategory },
         dataType: 'json'
       })
 
       .done(function(children){
+        $('#child_wrapper').remove();
+        $("#grandchild_wrapper").remove()
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);
         });
-        appendChidrenBox(insertHTML);
+        appendChildrenBox(insertHTML);
       })
 
       .fail(function(){
+        alert('カテゴリー取得に失敗しました');
       })
+    } else {
+      $('#child_wrapper').remove();
+      $("#grandchild_wrapper").remove()
+    }
+  })
+
+  $(".exhibit__detail__container__title").on("change", "#child_category", function(){
+    var childId = $('#child_category option:selected').data('category');
+    if (childId != "---"){
+      $.ajax({
+        url: 'category_grandchildren',
+        type: 'GET',
+        data: { child_id: childId },
+        dataType: 'json'
+      })
+
+      .done(function(grandchildren){
+        if (grandchildren.length != 0){
+          $("#grandchild_wrapper").remove()
+          var insertHTML = '';
+          grandchildren.forEach(function(grandchild){
+            insertHTML += appendOption(grandchild);
+          });
+          appendGrandchidrenBox(insertHTML);
+        }
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
+
+    } else {
+      $("#child_wrapper").remove()
     }
   })
 });

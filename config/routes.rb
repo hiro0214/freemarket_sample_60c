@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :items do
     get "buy" => "items#buy"
     collection do
-      get 'get_category_children', defaults: { format: 'json' }
+      get 'category_children', defaults: { format: 'json' }
+      get "category_grandchildren", defaults: { format: "json"}
     end
   end
 
