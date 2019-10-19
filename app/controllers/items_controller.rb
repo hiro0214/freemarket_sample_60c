@@ -50,12 +50,14 @@ class ItemsController < ApplicationController
                 state: item_params[:state],
                 fee_size: item_params[:fee_size],
                 region: item_params[:region],
-                delivery_date: item_params[:delivery_date])
+                delivery_date: item_params[:delivery_date]
+                )
+                # category_index: item_params[:category_index]
     @item.build_trading(saler_id: current_user.id)
     if @item.save
-      redirect_to exhibit_after_path
+      redirect_to new_after_path
     else
-      render "exhibit"
+      render action: :new
     end
   end
 
