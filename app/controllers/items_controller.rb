@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show, :more]
+  before_action :puru
 
   def index
     tradings = Trading.where(sale_state: "exhibit")
@@ -8,6 +9,16 @@ class ItemsController < ApplicationController
     @items = Item.limit(10).order("created_at desc").where(id: trading)
     # query =  "select * from items where id in (select item_id from tradings where sale_state = 'exhibit') order by created_at desc limit 10"
     # @items = Item.find_by_sql(query)
+
+    @categories = Category.where(ancestry: nil)
+  end
+
+  def new
+    @item = Item.new
+    @category_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_array << parent.name
+    end
   end
 
   def buy
@@ -33,11 +44,6 @@ class ItemsController < ApplicationController
   end
 
 
-  def exhibiting
-    @items = Item.new
-  end
-
-
   def create
     @item = Item.new(item_name: item_params[:item_name],
                 description: item_params[:description],
@@ -60,10 +66,20 @@ class ItemsController < ApplicationController
     @items = Item.find_by_sql(query)
   end
 
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:item_name, :description, :price, :state, :fee_size, :region, :delivery_date)
+  end
+
+  def puru
+    # @parents = Category.where(ancestry: nil)
+    # @ladies_c = Category.where(ancestry: "1")
+    # @ladies_gc = Category.where(ancestry: "1/2")
   end
 
 end
