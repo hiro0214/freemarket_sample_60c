@@ -1,4 +1,4 @@
-= render "header"
+= render "/items/header"
 
 .wrapper_mypage
   .wrapper_box
@@ -9,4 +9,4 @@
         .main_box__container__btn
           =link_to 'ログアウト', destroy_user_session_path, method: :delete
 
-= render "footer"
+= render "/items/footer" 

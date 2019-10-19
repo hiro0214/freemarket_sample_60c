@@ -7,11 +7,17 @@ Rails.application.routes.draw do
   get "detail" => "items#detail"
   get "exhibit" => "items#exhibit"
   get "exhibit_after" => "items#exhibit_after"
-  get "mypage" => "items#mypage"
-  get "logout" => "items#logout"
-  get "profile" => "items#profile"
+
+
   get "more" => "items#more"
   get "buy_after" => "items#buy_after"
+
+  resources :users do
+  get "logout" => "users#logout"
+  get "profile" => "users#profile"
+  get "exhibiting" => "users#exhibiting"
+  get "identification" => "users#identification"
+  end
 
   resources :signup do
     collection do

@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
   end
 
 
-  def exhibit
-    @item = Item.new
+  def exhibiting
+    @items = Item.new
   end
 
 
@@ -49,6 +49,8 @@ class ItemsController < ApplicationController
     @item.build_trading(saler_id: current_user.id)
     if @item.save
       redirect_to exhibit_after_path
+    else
+      render "exhibit"
     end
   end
 

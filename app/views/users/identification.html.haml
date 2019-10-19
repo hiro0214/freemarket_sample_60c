@@ -1,0 +1,75 @@
+= render "/items/header"
+
+.wrapper_mypage
+  .wrapper_box
+    = render 'side_bar'
+    
+    .identification_main
+
+      .identification_main__top
+        本人情報の登録
+      .identification_main__middle
+        .identification_main__middle__info
+          お客さまの本人情報をご登録ください。
+          %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        %p
+          本人確認書類のアップロードについて >
+        .identification_main__middle__form
+          .identification_main__middle__form__label
+            お名前
+          %p
+            川俣寿子
+
+        .identification_main__middle__form
+          .label
+            お名前カナ
+          %p
+            カワマタヒサコ
+
+        .identification_main__middle__form
+          .label
+            生年月日
+          %p
+            1982/06/30
+        
+
+        .identification_main__middle__form
+          .label
+            郵便番号
+            %span
+              任意
+          %input
+            
+        .identification_main__middle__form
+          .label
+            都道府県
+            %span
+              任意
+          %input
+            
+        .identification_main__middle__form
+          .label
+            地区町村
+            %span
+              任意
+          %input
+            
+        .identification_main__middle__form
+          .label
+            番地
+            %span
+              任意
+          %input
+
+        .identification_main__middle__form
+          .label
+            建物名
+            %span
+              任意
+          %input
+
+        .identification_main__middle__btn
+          =link_to '登録する'
+
+= render "/items/footer" 
+
