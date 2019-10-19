@@ -46,7 +46,7 @@
               %span.exhibit_span 必須
             .exhibit__detail__container__title_field
               = f.select :category, @category_array, {}, {class: "select-default", id: "chose-category"}
-              -# = render partial: 'error_messages', locals: {item: @item, column: "description"}
+              = render partial: 'error_messages', locals: {item: @item, column: "description"}
           .exhibit__detail__container__detail
             .exhibit__detail__container__detail_head
               %p  商品の状態
