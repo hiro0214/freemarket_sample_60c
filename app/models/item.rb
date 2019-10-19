@@ -1,5 +1,4 @@
 class Item < ApplicationRecord
-
   has_one :trading
   belongs_to :category
 
@@ -12,4 +11,5 @@ class Item < ApplicationRecord
   validates :fee_size, presence: true
   validates :region, presence: true
   validates :delivery_date, presence: true
+
 end

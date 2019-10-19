@@ -1,4 +1,3 @@
-
     class SignupController < ApplicationController
 
       # ウィザードフォーム用コントローラー
@@ -21,13 +20,13 @@
         # session[:first_name_kana] = user_params[:first_name_kana]
         @user = User.new # 新規インスタンス作成
       end
-    
+
       # def step3
         # step2で入力された値をsessionに保存
-
         # @user = User.new # 新規インスタンス作成
       # end
-    
+
+
       # def step4
         # step2で入力された値をsessionに保存
 
@@ -35,9 +34,7 @@
         # @user = User.new # 新規インスタンス作成
       # end
 
-    # -step4 action-
 
-    
     # 最後にcreate
     def create
       @user = User.new(
@@ -53,15 +50,13 @@
       if @user.save
         # ログインするための情報を保管
         session[:id] = @user.id
+        sign_in User.find(session[:id]) unless user_signed_in?
         redirect_to root_path #ログイン後の遷移
       # else
       #   render '/signup/' #ログインできなかった場合の遷移
       end
     end
 
-    def done
-      sign_in User.find(session[:id]) unless user_signed_in?
-    end
 
 
       private

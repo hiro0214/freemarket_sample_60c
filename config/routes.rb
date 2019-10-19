@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   root "items#index"
-  resources :items
+  resources :items do
+    get "buy" => "items#buy"
+  end
   get "detail" => "items#detail"
   get "exhibit" => "items#exhibit"
   get "exhibit_after" => "items#exhibit_after"
 
 
   get "more" => "items#more"
+  get "buy_after" => "items#buy_after"
 
   resources :users do
   get "logout" => "users#logout"
