@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
 
   has_one :trading
+  belongs_to :category
 
   validates :item_name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length:{maximum: 1000 , message: "must be given please" }
