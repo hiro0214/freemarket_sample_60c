@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  @@category = 0
+
   before_action :authenticate_user!, except: [:index, :show, :more]
   before_action :puru
 
@@ -50,10 +52,15 @@ class ItemsController < ApplicationController
                 state: item_params[:state],
                 fee_size: item_params[:fee_size],
                 region: item_params[:region],
-                delivery_date: item_params[:delivery_date]
-                )
-                # category_index: item_params[:category_index]
+                delivery_date: item_params[:delivery_date])
+
+    if @@category
+      @item[:category_index] = @@category
+    else
+      @item[:category_index] = "その他"
+    end
     @item.build_trading(saler_id: current_user.id)
+    binding.pry
     if @item.save
       redirect_to new_after_path
     else
@@ -70,10 +77,13 @@ class ItemsController < ApplicationController
 
   def category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @@category = @category_children.map{ |c| c[:ancestry]}.first
+
   end
 
   def category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
+    @@category = @category_grandchildren.map{ |c| c[:ancestry]}.first
   end
 
   private

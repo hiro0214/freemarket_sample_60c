@@ -8,27 +8,23 @@ $(document).on('turbolinks:load', function() {
   function appendChildrenBox(insertHTML){
     var childSelectHtml = "";
     childSelectHtml =　`<div class="exhibit__detail__container__title_field" id="child_wrapper">
-                          <div id="children_chose">
-                            <select class="select-default" id="child_category" name="category_id">
-                              <option value="---" data-category="---">---</option>
-                              ${insertHTML}
-                            </select>
-                          </div>
+                          <select class="select-default" id="child_category" name="category_id">
+                            <option value="---" data-category="---">---</option>
+                            ${insertHTML}
+                          </select>
                         </div>`;
-    $('.exhibit__detail__container__title').append(childSelectHtml);
+    $('.exhibit__detail__container__title__category').append(childSelectHtml);
   }
 
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml =　`<div class="exhibit__detail__container__title_field" id="grandchild_wrapper">
-                              <div id="children_chose">
-                                <select class="select-default" id="grandchild_category" name="category_id">
-                                  <option value="---" data-category="---">---</option>
-                                  ${insertHTML}
-                                </select>
-                              </div>
+                              <select class="select-default" id="grandchild_category" name="category_id">
+                                <option value="---" data-category="---">---</option>
+                                ${insertHTML}
+                              </select>
                             </div>`;
-    $('.exhibit__detail__container__title').append(grandchildSelectHtml);
+    $('.exhibit__detail__container__title__category').append(grandchildSelectHtml);
   }
 
   $(".exhibit__detail__container__title_field").on("change", function(){
@@ -83,9 +79,9 @@ $(document).on('turbolinks:load', function() {
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
       })
-
     } else {
       $("#child_wrapper").remove()
+      $("#grandchild_wrapper").remove()
     }
   })
 });
