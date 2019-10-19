@@ -45,15 +45,13 @@
         %p 商品の詳細
         .exhibit__detail__container
           .exhibit__detail__container__title
-            .exhibit__detail__container__title_head
-              %p カテゴリー
-              %span.exhibit_span 必須
             .exhibit__detail__container__title__category
-              = f.label :category_id do
-                .exhibit__detail__container__title_field
-                  = f.select :category_index, @category_array, {}, {class: "select-default", id: "chose-category"}
+              = f.label "カテゴリー"
+              %span.exhibit_span 必須
+              .exhibit__detail__container__title_field
+                = f.select :category_index, @category_array, {}, {class: "select-default", id: "chose-category"}
 
-                  = render partial: 'error_messages', locals: {item: @item, column: "description"}
+                = render partial: 'error_messages', locals: {item: @item, column: "description"}
 
           .exhibit__detail__container__detail
             .exhibit__detail__container__detail_head

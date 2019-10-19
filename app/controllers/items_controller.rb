@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
 
-  @@category = 0
-
   before_action :authenticate_user!, except: [:index, :show, :more]
   before_action :puru
 
@@ -12,7 +10,10 @@ class ItemsController < ApplicationController
     # query =  "select * from items where id in (select item_id from tradings where sale_state = 'exhibit') order by created_at desc limit 10"
     # @items = Item.find_by_sql(query)
 
-    @categories = Category.where(ancestry: nil)
+    la_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index like '1/%' order by items.created_at desc limit 10"
+    @ladies_item = Item.find_by_sql(la_query)
+    me_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index like '138%' order by items.created_at desc limit 10"
+    @menz_item = Item.find_by_sql(me_query)
   end
 
   def new
@@ -52,15 +53,9 @@ class ItemsController < ApplicationController
                 state: item_params[:state],
                 fee_size: item_params[:fee_size],
                 region: item_params[:region],
-                delivery_date: item_params[:delivery_date])
-
-    if @@category
-      @item[:category_index] = @@category
-    else
-      @item[:category_index] = "その他"
-    end
+                delivery_date: item_params[:delivery_date],
+                category_index: item_params[:category_index])
     @item.build_trading(saler_id: current_user.id)
-    binding.pry
     if @item.save
       redirect_to new_after_path
     else
@@ -77,19 +72,17 @@ class ItemsController < ApplicationController
 
   def category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
-    @@category = @category_children.map{ |c| c[:ancestry]}.first
 
   end
 
   def category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
-    @@category = @category_grandchildren.map{ |c| c[:ancestry]}.first
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :description, :price, :state, :fee_size, :region, :delivery_date)
+    params.require(:item).permit(:item_name, :description, :price, :state, :fee_size, :region, :delivery_date, :category_index)
   end
 
   def puru

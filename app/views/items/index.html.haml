@@ -24,7 +24,7 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "/more",class:"link"
       .main_contents__box__contents__items
-        - @items.each do |item|
+        - @ladies_item.each do |item|
           .main_contents__box__contents__items__one
             %img.main_contents__box__contents__items__one__image{:src => ""}/
             .main_contents__box__contents__items__one__image__price
@@ -41,7 +41,7 @@
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
       .main_contents__box__contents__items
-        - @items.each do |item| 
+        - @menz_item.each do |item| 
           .main_contents__box__contents__items__one
             %img.main_contents__box__contents__items__one__image{:src => ""}/
             .main_contents__box__contents__items__one__image__price
