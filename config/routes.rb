@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   root "items#index"
   resources :items do
     get "buy" => "items#buy"
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+    end
   end
-  get "detail" => "items#detail"
-  get "exhibit" => "items#exhibit"
-  get "exhibit_after" => "items#exhibit_after"
+
+  get "new_after" => "items#new_after"
   get "mypage" => "items#mypage"
   get "logout" => "items#logout"
   get "profile" => "items#profile"
