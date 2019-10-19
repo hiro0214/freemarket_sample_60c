@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   get "more" => "items#more"
 
   resources :users do
-    get "logout" => "users#logout"
-    get "profile" => "users#profile"
-    get "exhibiting" => "users#exhibiting"
+  get "logout" => "users#logout"
+  get "profile" => "users#profile"
+  get "exhibiting" => "users#exhibiting"
+  get "identification" => "users#identification"
   end
 
   resources :signup do

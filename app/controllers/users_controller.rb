@@ -12,11 +12,15 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
   end
 
+  def identification
+    @user = User.find(current_user.id)
+  end
+
   def exhibiting
     @user = User.find(current_user.id)
-    @trading = Trading.where(saler_id: current_user.id).order("created_at DESC")
-
-    # @item = Item.where(id: @trading) 
+    tradings = Trading.where(saler_id: current_user.id, sale_state: "exhibit")
+    trading = tradings.map {|t| t[:item_id]}
+    @items = Item.where(id: trading)
   end
 
 end
