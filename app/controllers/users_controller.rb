@@ -26,7 +26,6 @@ class UsersController < ApplicationController
   def edit_item
     @user = User.find(current_user.id)
     @item = Item.find(params[:id])
-    
   end
 
 end

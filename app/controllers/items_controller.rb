@@ -61,6 +61,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find_by(id: params[:id])
+    @item.destroy
+  end
+
 
   def more
     query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"

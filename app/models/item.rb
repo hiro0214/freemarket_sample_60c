@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  has_one :trading
+  has_one :trading,　dependent: :destroy
   # belongs_to :category
 
   validates :item_name, presence: true, length: { maximum: 40 }

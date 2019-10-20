@@ -80,8 +80,8 @@
       %li
         =link_to "商品の出品を一旦停止する",""
       %li
-        =link_to"この商品を削除する","tweets/#{tweet.id}", method: :delete
-
+        -# =if user_signed_in? && current_user.id == item.user_id
+        =link_to "この商品を削除する","/items/#{@item.id}",method: :delete
 
     -#ここ後でform_forで書く部分
     .item_edit_container_line
