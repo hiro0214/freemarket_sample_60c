@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
-  has_one :trading
-  has_many :categories
+
+  has_one :trading, dependent: :destroy
+  has_one :categories
 
   validates :item_name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length:{maximum: 1000 , message: "must be given please" }
@@ -11,8 +12,6 @@ class Item < ApplicationRecord
   validates :fee_size, presence: true
   validates :region, presence: true
   validates :delivery_date, presence: true
-
-
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture

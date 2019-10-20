@@ -72,6 +72,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find_by(id: params[:id])
+    @item.destroy
+    redirect_to "/users/#{current_user.id}/delete_after"
+  end
+
 
   def more
     query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"

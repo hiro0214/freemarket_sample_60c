@@ -24,7 +24,8 @@
                 =image_tag "mypage_logo.png", class: "exhibiting_main__middle_menu__list__mercari_logo"
                 .exhibiting_main__middle_menu__list__box
                   .exhibiting_main__middle_menu__list__message
-                    = item.item_name
+                    = link_to "edit_item/#{item.id}", method: :get do
+                      = item.item_name
                   .exhibiting_main__middle_menu__list__time_box
                     %i.fa.fa-heart-o
                     %span

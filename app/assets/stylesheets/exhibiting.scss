@@ -40,8 +40,6 @@
       }
     }
     &__list{
-      // display:flex;
-      // flex-direction:column;
       > ul{
         background:ivory;
         > :hover{
@@ -58,19 +56,9 @@
             margin:auto 0;
             font-size:18px;
           }
-        }
-        > .go_mypage_list{
-          height:93px;
-          padding:16px;
-          display:block;
-          > :hover{
-            background: rgba(199, 196, 196, 0.139);
-          }
-          > p{
-            background:#eee;
-            height:56px;
-            line-height: 56px;
-            text-align: center;
+          >a{
+            width:100%;
+            display:block;
           }
         }
       }
