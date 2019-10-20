@@ -5,7 +5,8 @@
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
-          %h2#1 レディース新着アイテム
+          %h2#1
+            = "#{@category.name}新着アイテム"
       .main_contents__box__contents__items
         - @items.each do |item|
           .main_contents__box__contents__items__one

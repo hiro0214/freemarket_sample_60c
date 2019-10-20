@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
     @machine_items = Item.find_by_sql(ma_query)
     ho_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index between 576 and 682 order by items.created_at desc limit 10"
     @hobby_items = Item.find_by_sql(ho_query)
+
   end
 
   def new
@@ -76,6 +77,7 @@ class ItemsController < ApplicationController
   def more
     query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"
     @items = Item.find_by_sql(query)
+    @category = Category.find(params[:id])
   end
 
 
@@ -91,7 +93,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index)
-    binding.pry
   end
 
   def puru
