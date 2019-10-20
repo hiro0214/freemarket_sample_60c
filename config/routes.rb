@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get "profile" => "users#profile"
     get "exhibiting" => "users#exhibiting"
     get "identification" => "users#identification"
+    get "delete_after" => "users#delete_after"
   end
 
   resources :signup do

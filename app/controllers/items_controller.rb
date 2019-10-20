@@ -64,6 +64,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find_by(id: params[:id])
     @item.destroy
+    redirect_to "/users/#{current_user.id}/delete_after"
   end
 
 

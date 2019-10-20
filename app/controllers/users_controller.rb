@@ -28,4 +28,8 @@ class UsersController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def delete_after
+    @user = User.find(current_user.id)
+  end
+
 end
