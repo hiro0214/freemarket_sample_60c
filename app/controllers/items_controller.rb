@@ -75,9 +75,16 @@ class ItemsController < ApplicationController
 
 
   def more
-    query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"
-    @items = Item.find_by_sql(query)
+    # query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"
+    # @items = Item.find_by_sql(query)
+    # @qqq = @items.where(category_index: params[:id])
     @category = Category.find(params[:id])
+    @items = Item.where(category_index: @category)
+    item_id = @items.map{|dd| dd[:id]}
+    @trade = Trading.where(item_id: item_id)
+    # query = 'select * from items join tradings on items.id = item_id where category_index = #{@category.id} order by items.created_at desc'
+    # @items = Item.find_by_sql(query)
+
   end
 
 

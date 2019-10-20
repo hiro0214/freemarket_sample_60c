@@ -8,9 +8,9 @@
           %h2#1
             = "#{@category.name}新着アイテム"
       .main_contents__box__contents__items
-        - @items.each do |item|
+        - @items.zip(@trade).each do |item,trade|
           .main_contents__box__contents__items__one
-            - if item.sale_state == "trade"
+            - if trade.sale_state == "trade"
               .sold_item
                 %p SOLD
               %img.main_contents__box__contents__items__one__image{:src => ""}/
@@ -20,7 +20,7 @@
               = "¥#{item.price}"
             .main_contents__box__contents__items__one__title
               %span
-                = link_to "items/#{item.item_id}", method: :get do
+                = link_to "/items/#{item.id}", method: :get do
                   = item.item_name
 
 = render "footer"
