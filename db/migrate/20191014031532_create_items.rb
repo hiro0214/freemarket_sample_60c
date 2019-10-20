@@ -10,9 +10,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :region, null: false
       t.string :delivery_date, null: false
       t.timestamps
-
-      # saller_id あとでカラムの追加
-
     end
   end
 end

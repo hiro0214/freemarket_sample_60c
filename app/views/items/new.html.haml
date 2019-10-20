@@ -7,7 +7,7 @@
   .exhibit__contents
     .exhibit__infomation
       %p 商品の情報を入力
-    
+
     = form_for [@item] do |f|
       .exhibit__upload
         .exhibit__upload_head
@@ -21,7 +21,7 @@
               %p ドラッグアンドドロップ
               %p またはクリックしてファイルをアップロード
             -# %input.sell-upload-drop-file{:multiple => "", :name => "image1", :type => "file"}/
-      
+
       .exhibit__explanation
         .exhibit__explanation__title
           .exhibit__explanation__title_head
@@ -29,35 +29,30 @@
             %span.exhibit_span 必須
           .exhibit__explanation__title_field
             = f.text_field :item_name, placeholder: "商品名（必須 40文字まで)", maxlength: 40
+
+            = render partial: 'error_messages', locals: {item: @item, column: "item_name"}
+
         .exhibit__explanation__detail
           .exhibit__explanation__detail_head
             %p  商品の説明
             %span.exhibit_span 必須
           .exhibit__explanation__detail_field
             = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+
+            = render partial: 'error_messages', locals: {item: @item, column: "description"}
+
       .exhibit__detail.clearfix
         %p 商品の詳細
         .exhibit__detail__container
           .exhibit__detail__container__title
-            .exhibit__detail__container__title_head
-              %p  カテゴリー
+            .exhibit__detail__container__title__category
+              = f.label "カテゴリー"
               %span.exhibit_span 必須
-            .exhibit__detail__container__title_field
-              %select.select-default
-                %option{:value => ""} ---
-                %option{:value => "1"} レディース
-                %option{:value => "2"} メンズ
-                %option{:value => "3"} ベビー・キッズ
-                %option{:value => "4"} インテリア・住まい・小物
-                %option{:value => "5"} 本・音楽・ゲーム
-                %option{:value => "1328"} おもちゃ・ホビー・グッズ
-                %option{:value => "6"} コスメ・香水・美容
-                %option{:value => "7"} 家電・スマホ・カメラ
-                %option{:value => "8"} スポーツ・レジャー
-                %option{:value => "9"} ハンドメイド
-                %option{:value => "1027"} チケット
-                %option{:value => "1318"} 自動車・オートバイ
-                %option{:value => "10"} その他
+              .exhibit__detail__container__title_field
+                = f.select :category_index, @category_array, {}, {class: "select-default", id: "chose-category"}
+
+                = render partial: 'error_messages', locals: {item: @item, column: "description"}
+
           .exhibit__detail__container__detail
             .exhibit__detail__container__detail_head
               %p  商品の状態
@@ -100,6 +95,9 @@
             .exhibit__price__container__fee_field
               %span ¥
               = f.text_field :price, placeholder: "例）300"
+
+              = render partial: 'error_messages', locals: {item: @item, column: "price"}
+
           .exhibit__price__container__sale_fee.clearfix
             .exhibit__price__container__sale_fee_head
               %span  販売手数料(10%)

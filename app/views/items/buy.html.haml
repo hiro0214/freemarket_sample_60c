@@ -1,0 +1,50 @@
+.sign_in__page
+  .registration__header__logo
+    =link_to "/" do
+      =image_tag "header_logo.png"
+
+.registration__first
+  .registration__first__box
+    %h2.registration__first__box__top
+      %p.edit__top__title 購入内容の確認
+    .edit__top
+      .edit__top__box
+        .edit__top__box__detail
+          .edit__top__box__detail__img
+          %p
+            = @item.item_name
+        .edit__top__box__price
+          %p
+            = "¥#{@item.price}"
+            %span
+              送料込み
+        .edit__top__box__point
+          %p ポイントはありません
+        .edit__top__box__pay
+          %p 支払い金額
+          %p
+            = "¥#{@item.price}"
+        .edit__top__box__buy
+          = form_for @trading, url: "/items/#{@item.id}" ,method: :patch do |f|
+            = f.submit "購入する"
+
+    .edit__middle
+      .edit__middle__box
+        %p 配送先
+        .edit__middle__box__address
+          %p 〒150-0041
+          %p 東京都 渋谷区 神南1丁目18-2
+          %p
+            = @user.name
+        = link_to "変更する >", "#"
+
+    .edit__bottom
+      .edit__bottom__box
+        %p 支払い方法
+        .edit__bottom__box__pay
+          %p **********1234
+          %p 08/22
+          %p VISA
+        = link_to "変更する >", "#"
+
+  = render partial: "devise/layout/footer"

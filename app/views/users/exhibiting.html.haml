@@ -1,0 +1,36 @@
+= render "/items/header"
+
+.wrapper_mypage
+  .wrapper_box
+    = render 'side_bar'
+    
+    .exhibiting_main
+      .exhibiting_main__title
+        出品した商品
+      .exhibiting_main__middle_menu
+        .exhibiting_main__middle_menu__tabs
+          %p.infomation
+            出品中
+          %p.to_do
+            取引中
+          %p.to_do
+            売却済
+
+        .exhibiting_main__middle_menu__list
+          %ul
+            - @items.each do |item|
+              %li.exhibiting_main__middle_menu__list__content
+                //ここに商品イメージが入る。↓のロゴは仮置き。
+                =image_tag "mypage_logo.png", class: "exhibiting_main__middle_menu__list__mercari_logo"
+                .exhibiting_main__middle_menu__list__box
+                  .exhibiting_main__middle_menu__list__message
+                    = item.item_name
+                  .exhibiting_main__middle_menu__list__time_box
+                    %i.fa.fa-heart-o
+                    %span
+                      5 時間前
+                    %i.fa.fa-comment-o
+                %i.fa.fa-chevron-right
+            
+
+= render "/items/footer" 

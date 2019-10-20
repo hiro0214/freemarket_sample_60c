@@ -1,4 +1,3 @@
-
     class SignupController < ApplicationController
       # コメントアウトしている箇所は、userテーブルに保存するカラム名を作成したら外していきます。無い状態だとエラーがでるため
       # ウィザードフォーム用コントローラー
@@ -22,7 +21,17 @@
         @user = User.new # 新規インスタン作成
       end
 
-      def step3
+
+
+
+      # def step3
+        # step2で入力された値をsessionに保存
+        # @user = User.new # 新規インスタンス作成
+      # end
+
+
+      # def step4
+
         # step2で入力された値をsessionに保存
         @user = User.new
         # session[:tel_number] = user_params[:tel_number]
@@ -35,7 +44,7 @@
         @user = User.new # 新規インスタンス作成
       end
 
-    # -step4 action-
+
 
     def step5
       # step2で入力された値をsessionに保存
@@ -43,6 +52,7 @@
       # session[:birthday] = user_params[:birthday]
       @user = User.new # 新規インスタンス作成
     end
+
     # 最後にcreate
     def create
       @user = User.new(
@@ -65,8 +75,7 @@
       end
     end
 
-    def done
-    end
+
 
 
       private

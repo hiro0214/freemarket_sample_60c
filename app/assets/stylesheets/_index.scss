@@ -5,6 +5,7 @@
 
 .main_contents{
   background:rgb(239, 239, 239);
+  height:100%;
   &__box{
     width:100vw;
     &__header{
@@ -40,14 +41,15 @@
 .main_contents__box__contents{
   background: rgb(239, 239, 239);
   width: 1020px;
-  // height: 100vh;
-  height: 642px;
-  margin:42px auto 0px;
+  height: 100%;
+  padding-top:30px;
+  margin:0 auto 50px;
   &__title_box{
     width: 100%;
     height: 33px;
     display: flex;
     justify-content: space-between;
+    margin-bottom:15px;
     &__title{
       font-size: 24px;
       font-weight: 600;
@@ -65,17 +67,19 @@
 }
 
 .main_contents__box__contents__items{
-  height:600px;
+  height:100%;
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-around;
+  // justify-content: space-between;
+  // align-content: space-around;
   margin-bottom: 18px;
   &__one{
-    background:white;   
+    background:white;
     width:188px;
     height:252px;
+    margin:0 8px 15px;
     position: relative;
+    overflow:hidden;
     &__image{
       background:goldenrod;
       height:188px;
@@ -90,7 +94,7 @@
         background-color:rgba(0, 0, 0,0.25);
         font-size:17px;
       }
-    }       
+    }
     &__title{
       height: 62px;
       span {
@@ -133,5 +137,23 @@
   &__icon {
     color:#fff;
     font-size:60px !important;
+  }
+}
+
+.sold_item {
+  width:140px;
+  height:140px;
+  background:#ea352d;
+  transform:rotate(315deg);
+  position:absolute;
+  top:-70px;
+  left:-70px;
+    p {
+    color:#fff;
+    font-size:22px;
+    text-align:center;
+    line-height:240px;
+    font-weight:600;
+    letter-spacing: 2px;
   }
 }

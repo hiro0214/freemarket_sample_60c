@@ -21,7 +21,7 @@
         %tr
           %th 出品者
           %td
-            = link_to 'timothy', " ",class:"owner_name"
+            = link_to "#{@user.name}", "/users/#{@user.id}",class:"owner_name"
             .evaluation
               %span.user_smile
                 =image_tag "logo_smile.png", class: "user_smile"
@@ -36,7 +36,13 @@
                 0
         %tr
           %th カテゴリー
-          %td レディース　バッグ　トートバッグ
+          %td
+            %p
+              = link_to "#{@category.name}", "#"
+            %p
+              = link_to ">#{@category_c.name}", "#"
+            %p
+              = link_to ">#{@category_gc.name}", "#"
         %tr
           %th ブランド
           %td
@@ -61,14 +67,18 @@
           %td
             = @item.delivery_date
     .item_pricebox
-      %span.item_pricebox__price 
+      %span.item_pricebox__price
         = "¥#{@item.price}"
       %span.item_pricebox__tax
         (税込)
       %span.item_pricebox__fee
         送料込み
-    .item_buy
-      購入画面に進む
+    - if @trading.sale_state == "exhibit"
+      .item_buy
+        = link_to "購入画面に進む", item_buy_path(@item), class: ""
+    - else
+      .sold_item__btn
+        %p 売り切れました
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
     .item_btn_container
@@ -110,7 +120,7 @@
           %li.icon_pinterest
             %i.fa.fa-pinterest-square
     .other_item_container_big
-      = link_to 'timothyさんのその他の商品', " ",class:"other_item_user"
+      = link_to "#{@user.name}さんのその他の商品", " ",class:"other_item_user"
       .other_item_container
         .other_item_container__other_item
           .other_item__image
