@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :items do
     get "buy" => "items#buy"
     collection do
-      get 'get_category_children', defaults: { format: 'json' }
+      get 'category_children', defaults: { format: 'json' }
+      get "category_grandchildren", defaults: { format: "json"}
     end
   end
 
@@ -30,9 +31,9 @@ Rails.application.routes.draw do
     collection do
       get 'step1'
       get 'step2'
-      # get 'step3'
-      # get 'step4'
-      # get 'step5'
+      get 'step3'
+      get 'step4'
+      get 'step5'
       get 'done'
     end
   end

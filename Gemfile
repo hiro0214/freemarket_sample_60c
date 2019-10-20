@@ -78,8 +78,8 @@ gem 'mini_magick'
 gem 'jquery-rails'
 gem "haml-rails"
 gem 'ancestry'
-gem "font-awesome-rails"
 gem "wicked"
+gem "active_hash"
 
 gem 'fog-aws'
 

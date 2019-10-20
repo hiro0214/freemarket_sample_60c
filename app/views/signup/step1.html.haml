@@ -1,9 +1,10 @@
+-# コメントアウトしている箇所に関しては、保存するカラム名をuserテーブルに追加した後、外していきます
+
 .registration__header
 
 .registration__first
   .registration__first__box
     %h2.registration__first__box__top 会員情報登録
-
     = form_for @user, url: step2_signup_index_path, method: :get, html: {class: ".registration__first__box__middle"} do |f|
       -# = devise_error_messages!
       .registration__first__box__middle__input
@@ -32,15 +33,20 @@
           = f.label :お名前（全角）
           %span 必須
         .registration__first__box__middle__input__double
-          -# -# = f.text_field :last_name, autofocus: true, class:"aaaa", placeholder: "谷口"
+          %input.aaaa{placeholder: " 谷口"}
+          %input.aaaa{placeholder: " 寛人"}
+          -# = f.text_field :last_name, autofocus: true, class:"aaaa", placeholder: "谷口"
           -# = f.text_field :first_name, autofocus: true, class:"aaaa", placeholder: "寛人"
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label :お名前カナ（全角）
           %span 必須
         .registration__first__box__middle__input__double
+          %input.aaaa{placeholder: " タニグチ"}
+          %input.aaaa{placeholder: " ヒロト"}
+          
           -# = f.text_field :last_name_kana, autofocus: true, class:"aaaa", placeholder: "タニグチ"
-          -# = f.text_field :first_name_kana, autofocus: true, class:"aaaa", placeholder: "ヒロト"
+          -# = f.text_fie class:"aaaa", placeholder: "ヒロト"
       .registration__first__box__middle__input
         %p.robot
           私はロボットではありません。
@@ -58,7 +64,7 @@
 
     -# %form.registration__first__box__middle{action: "/regi_second"}
     -#   .registration__first__box__middle__input
-    -#     .registration__first__box__middle__input__name 
+    -#     .registration__first__box__middle__input__name
     -#       ニックネーム
     -#       %span 必須
     -#     %input{placeholder: "  例)メルカリ太郎"}
@@ -73,7 +79,7 @@
     -#       %span 必須
     -#     %input{placeholder: "  7文字以上"}
     -#   .registration__first__box__middle__input
-    -#     .registration__first__box__middle__input__name 
+    -#     .registration__first__box__middle__input__name
     -#       パスワード（確認）
     -#       %span 必須
     -#     %input{placeholder: "  7文字以上"}
@@ -88,14 +94,14 @@
     -#       %input{placeholder: "  例) 谷口"}
     -#       %input{placeholder: "  例) 寛人"}
     -#   .registration__first__box__middle__input
-    -#     .registration__first__box__middle__input__name 
+    -#     .registration__first__box__middle__input__name
     -#       お名前カナ（全角）
     -#       %span 必須
     -#     .registration__first__box__middle__input__double
     -#       %input{placeholder: "  例) タニグチ"}
     -#       %input{placeholder: "  例) ヒロト"}
     -#   .registration__first__box__middle__input
-    -#     .registration__first__box__middle__input__name 
+    -#     .registration__first__box__middle__input__name
     -#       生年月日
     -#       %span 必須
     -#     .registration__first__box__middle__input__birth
@@ -222,7 +228,7 @@
     -#         %option 1901
     -#         %option 1900
 
-    -#       %span  年 
+    -#       %span  年
     -#       %select{name: "birth"}
     -#         %option --
     -#         %option 1

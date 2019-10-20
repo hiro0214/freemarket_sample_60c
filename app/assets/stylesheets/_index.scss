@@ -157,3 +157,19 @@
     letter-spacing: 2px;
   }
 }
+
+
+.fadeout {
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1.3s;
+  transform: translate3d(100px, 0, 0);
+}
+
+.fadein {
+  opacity: 1.0;
+  transform: translate3d(0,0,0);
+}
