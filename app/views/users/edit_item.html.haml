@@ -1,0 +1,95 @@
+=@item.item_name
+
+
+= render "/items/header"
+
+.detail
+  .detail_container
+    %h1.item_name
+      = @item.item_name
+    %p.item_about
+    -#   『アニエスベー トートバッグ』は、45回の取引実績を持つasaさんから出品されました。アニエスベー（トートバッグ/レディース）の商品で、東京都から4~7日で発送されます。
+    .container_wrap
+      .item_container
+        .item_container__image
+        %ul.item_container__list
+          %li 画1
+          %li 画2
+          %li 画3
+          %li 画4
+          %li 画5
+      %table.item_table
+        %tr
+          %th 出品者
+          %td
+            -# = link_to "#{@user.name}", "#",class:"owner_name"
+            .evaluation
+              %span.user_smile
+                =image_tag "logo_smile.png", class: "user_smile"
+                117
+              = fa_icon ' ', class: 'nomal'
+              %span.user_smile
+                =image_tag "logo_normal.png", class: "user_smile"
+                0
+              = fa_icon ' ', class: 'sad'
+              %span
+                =image_tag "logo_sad.png", class: "user_smile"
+                0
+        %tr
+          %th カテゴリー
+          %td レディース　バッグ　トートバッグ
+        %tr
+          %th ブランド
+          %td
+            = link_to 'オーチバル', " ",class:"table"
+        %tr
+          %th 商品の状態
+          %td
+            = @item.state
+        %tr
+          %th 配送料の負担
+          %td 送料込み(出品者負担)
+        %tr
+          %th 配送の方法
+          %td らくらくメルカリ便
+        %tr
+          %th 配送元地域
+          %td
+            = link_to "#", class:"table" do
+              = @item.region
+        %tr
+          %th 発送日の目安
+          %td
+            = @item.delivery_date
+    .item_pricebox
+      %span.item_pricebox__price
+        = "¥#{@item.price}"
+      %span.item_pricebox__tax
+        (税込)
+      %span.item_pricebox__fee
+        送料込み
+    .item_description
+      = safe_join(@item.description.split("\n"), tag(:br))
+    
+      -#ここからitem_editページのみの表示
+    .item_edit_container_line
+    %ul.item_edit_container
+      %li.edit
+        =link_to "商品の編集","/users/#{@user.id}"
+      %p or
+      %li
+        =link_to "商品の出品を一旦停止する",""
+      %li
+        =link_to"この商品を削除する","tweets/#{tweet.id}", method: :delete
+
+
+    -#ここ後でform_forで書く部分
+    .item_edit_container_line
+    .item_comment_container
+      .item_comment_container__info
+        相手のことを考え丁寧なコメントを心がけましょう。
+        %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %input
+      .item_comment_container__btn
+        コメントする
+= render "/items/footer"

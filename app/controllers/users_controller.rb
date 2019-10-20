@@ -23,4 +23,10 @@ class UsersController < ApplicationController
     @items = Item.where(id: trading)
   end
 
+  def edit_item
+    @user = User.find(current_user.id)
+    @item = Item.find(params[:id])
+    
+  end
+
 end

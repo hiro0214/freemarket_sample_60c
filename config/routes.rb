@@ -18,10 +18,11 @@ Rails.application.routes.draw do
   get "buy_after" => "items#buy_after"
 
   resources :users do
-  get "logout" => "users#logout"
-  get "profile" => "users#profile"
-  get "exhibiting" => "users#exhibiting"
-  get "identification" => "users#identification"
+    get "edit_item/:id" => "users#edit_item" 
+    get "logout" => "users#logout"
+    get "profile" => "users#profile"
+    get "exhibiting" => "users#exhibiting"
+    get "identification" => "users#identification"
   end
 
   resources :signup do
