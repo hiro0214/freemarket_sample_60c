@@ -77,7 +77,7 @@
               %p  発送元の地域
               %span.exhibit_span 必須
             .exhibit__delivery__container__shipping_region_field
-              = f.select :region, [["---",""], ["北海道", "北海道"], ["青森県", "青森県"]],{}, {class: "select-default"}
+              = f.collection_select :region, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
           .exhibit__delivery__container__day
             .exhibit__delivery__container__day_head
               %p  発送までの日数

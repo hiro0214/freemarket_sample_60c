@@ -12,4 +12,11 @@ class Item < ApplicationRecord
   validates :region, presence: true
   validates :delivery_date, presence: true
 
+
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
+  # 上記の２行は、prefectureモデルを使用するための記述、
+  # 関連付けたいテーブルに対応するモデルに記入
+
 end
