@@ -23,7 +23,7 @@
           %h2#1 レディース新着アイテム
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "/more",class:"link"
-      .main_contents__box__contents__items
+      .main_contents__box__contents__items.fadeout
         - @ladies_items.each do |item|
           .main_contents__box__contents__items__one
             %img.main_contents__box__contents__items__one__image{:src => ""}/
@@ -40,7 +40,7 @@
           %h2#2 メンズ新着アイテム
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
-      .main_contents__box__contents__items
+      .main_contents__box__contents__items.fadeout
         - @mens_items.each do |item|
           .main_contents__box__contents__items__one
             %img.main_contents__box__contents__items__one__image{:src => ""}/
@@ -57,7 +57,7 @@
           %h2#3 家電・スマホ・カメラ新着アイテム
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
-      .main_contents__box__contents__items
+      .main_contents__box__contents__items.fadeout
         - @machine_items.each do |item|
           .main_contents__box__contents__items__one
             %img.main_contents__box__contents__items__one__image{:src => ""}/
@@ -74,7 +74,7 @@
           %h2#4 おもちゃ・ホビー・グッズ新着アイテム
         .main_contents__box__contents__title_box__motto
           = link_to "もっとみる", "",class:"link"
-      .main_contents__box__contents__items
+      .main_contents__box__contents__items.fadeout
         - @hobby_items.each do |item|
           .main_contents__box__contents__items__one
             %img.main_contents__box__contents__items__one__image{:src => ""}/
