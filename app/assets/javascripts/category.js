@@ -28,6 +28,8 @@ $(document).on('turbolinks:load', function() {
   }
 
   $(".exhibit__detail__container__title_field").on("change", function(){
+    $(".exhibit__detail__container__title__clothes").css("display", "none")
+    $(".exhibit__detail__container__title__shoes").css("display", "none")
     var parentcategory = $("#chose-category").val()
     if (parentcategory != "---"){
       $.ajax({
@@ -56,7 +58,10 @@ $(document).on('turbolinks:load', function() {
     }
   })
 
+
   $(".exhibit__detail__container__title").on("change", "#child_category", function(){
+    $(".exhibit__detail__container__title__clothes").css("display", "none")
+    $(".exhibit__detail__container__title__shoes").css("display", "none")
     var childId = $('#child_category option:selected').data('category');
     if (childId != "---"){
       $.ajax({
@@ -75,6 +80,20 @@ $(document).on('turbolinks:load', function() {
           });
           appendGrandchidrenBox(insertHTML);
         }
+
+        $("#grandchild_category").change(function(){
+          var chose = $("option:selected").val()
+          if ( chose != "---") {
+            var clothes = [2,17,32,51,67,139,152,167,199,244];
+            var shoes = [56,177];
+            if ($.inArray(childId, clothes) >= 0) {
+              $(".exhibit__detail__container__title__clothes").css("display", "block")
+            } else if ($.inArray(childId, shoes) >= 0){
+              $(".exhibit__detail__container__title__shoes").css("display", "block")
+            }
+          }
+        })
+
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
@@ -84,4 +103,5 @@ $(document).on('turbolinks:load', function() {
       $("#grandchild_wrapper").remove()
     }
   })
+
 });

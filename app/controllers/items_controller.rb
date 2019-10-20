@@ -59,11 +59,11 @@ class ItemsController < ApplicationController
                 description: item_params[:description],
                 price: item_params[:price],
                 state: item_params[:state],
+                size: item_params[:size],
                 fee_size: item_params[:fee_size],
                 region: item_params[:region],
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
-
     @item.build_trading(saler_id: current_user.id)
     if @item.save
       redirect_to new_after_path
@@ -90,7 +90,8 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :description, :price, :state, :fee_size, :region, :delivery_date, :category_index)
+    params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index)
+    binding.pry
   end
 
   def puru
