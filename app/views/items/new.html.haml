@@ -52,14 +52,6 @@
                 = f.select :category_index, @category_array, {}, {class: "select-default", id: "chose-category"}
                 = render partial: 'error_messages', locals: {item: @item, column: "description"}
 
-            .exhibit__detail__container__title__clothes
-              = f.label "サイズ"
-              %span.exhibit_span 必須
-              .exhibit__detail__container__title__clothes__chose
-                = f.select :size, [["---",""], ["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"],
-                                  ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"],
-                                  ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], {}, {class: "select-default"}
-
             .exhibit__detail__container__title__shoes
               = f.label "サイズ"
               %span.exhibit_span 必須
@@ -69,6 +61,13 @@
                                   ["23.5cm", "23.5cm"], ["24cm", "24cm"], ["24.5cm", "24.5cm"], ["25cm", "25cm"],
                                   ["25.5cm", "25.5cm"], ["26cm", "26cm"], ["26.5cm", "26.5cm"], ["27cm", "27cm"], ["27.5cm以上", "27.5cm以上"]], {}, {class: "select-default"}
 
+            .exhibit__detail__container__title__clothes
+              = f.label "サイズ"
+              %span.exhibit_span 必須
+              .exhibit__detail__container__title__clothes__chose
+                = f.select :size, [["---",""], ["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"],
+                                  ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"],
+                                  ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], {}, {class: "select-default"}
 
           .exhibit__detail__container__detail
             .exhibit__detail__container__detail_head
