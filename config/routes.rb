@@ -9,6 +9,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :items ,only: [:edit] do
+    member do
+      get 'category_children', defaults: { format: 'json' }
+      get "category_grandchildren", defaults: { format: "json"}
+    end
+    patch "edit_update" => "items#edit_update"
+  end
+
   get "new_after" => "items#new_after"
 
   get "mypage" => "items#mypage"
@@ -19,7 +27,7 @@ Rails.application.routes.draw do
   get "buy_after" => "items#buy_after"
 
   resources :users do
-    get "edit_item/:id" => "users#edit_item" 
+    get "edit_item/:id" => "users#edit_item"
     get "logout" => "users#logout"
     get "profile" => "users#profile"
     get "exhibiting" => "users#exhibiting"

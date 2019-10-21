@@ -75,7 +75,8 @@
     .item_edit_container_line
     %ul.item_edit_container
       %li.edit
-        =link_to "商品の編集","/users/#{@user.id}"
+        -# =link_to "商品の編集","/users/#{@user.id}/edit_content"
+        =link_to "商品の編集","/items/#{@item.id}/edit"
       %p or
       %li
         =link_to "商品の出品を一旦停止する",""
