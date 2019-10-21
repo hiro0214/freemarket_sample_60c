@@ -78,6 +78,29 @@ class ItemsController < ApplicationController
     redirect_to "/users/#{current_user.id}/delete_after"
   end
 
+  def edit
+    @user = User.find(current_user.id)
+    @item = Item.find(params[:id])
+    
+    @category_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_array << parent.name
+    end
+  end
+
+  def edit_update
+    @item = Item.find(params[:item_id])
+    @item.update(item_name: item_params[:item_name], description: item_params[:description],
+                price: item_params[:price], state: item_params[:state],
+                size:item_params[:size], fee_size: item_params[:fee_size],
+                region: item_params[:region],
+                delivery_date: item_params[:delivery_date],
+                category_index: item_params[:category_index])
+    # redirect_to root_path
+    redirect_to "/users/#{current_user.id}"
+    # ここ↑今はマイページに飛ぶが後で訂正する。「変更しました」を挟むか、商品編集ページに飛ぶようにする。
+  end
+
 
   def more
     query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"
