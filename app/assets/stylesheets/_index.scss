@@ -201,3 +201,23 @@
     }
   }
 }
+
+.categories {
+  width:100vw;
+  height:80px;
+  background:rgb(239, 239, 239);
+  ul {
+    width: 1020px;
+    margin:0 auto;
+    padding-top: 30px;
+    line-height:30px;
+    font-size:14px;
+    display:flex;
+    flex-wrap: wrap;
+    a {
+      color: rgb(0, 149,238);
+      width:50px;
+      margin-right:20px;
+    }
+  }
+}

@@ -99,6 +99,13 @@ class ItemsController < ApplicationController
       @category_gc = nil
       @items = Item.where(category_index: @category_c)
     end
+
+    if (@category_gc == nil) && (@category_c != nil)
+      @category_list = @category_c.children
+    elsif (@category_gc == nil) && (@category_c == nil)
+      @category_list = @parent.children
+    end
+
     item_id = @items.map{|dd| dd[:id]}
     @trade = Trading.where(item_id: item_id)
     # query = 'select * from items join tradings on items.id = item_id where category_index = #{@category.id} order by items.created_at desc'

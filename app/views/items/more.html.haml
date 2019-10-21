@@ -12,13 +12,20 @@
         %span >
         = link_to "#{@parent.name}", "/more/#{@parent.id}"
     %li
-      -if (@category_c != nil) ? (c_name = "> #{@category_c.name}", c_link = "/more/#{@category_c.id}") : (c_name = "");
-        = link_to "#{c_name}", "#{c_link}"
+      -if (@category_c != nil)
+        %span >
+        = link_to "#{@category_c.name}", "/more/#{@category_c.id}"
     %li
-      -if (@category_gc != nil) ? (gc_name = "> #{@category_gc.name}", gc_link = "/more/#{@category_gc.id}") : (gc_name = "");
-        = link_to "#{gc_name}", "#{gc_link}"
+      -if (@category_gc != nil)
+        %span >
+        = link_to "#{@category_gc.name}", "/more/#{@category_gc.id}"
 
-
+- if @category_list
+  .categories
+    %ul
+      - @category_list.each do |list|
+        %li
+          = link_to "#{list.name}", "/more/#{list.id}"
 
 .main_contents
   .main_contents__box
