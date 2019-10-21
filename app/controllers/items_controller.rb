@@ -78,13 +78,40 @@ class ItemsController < ApplicationController
     # query = "select * from items join tradings on items.id = item_id order by tradings.created_at desc"
     # @items = Item.find_by_sql(query)
     # @qqq = @items.where(category_index: params[:id])
-    @category = Category.find(params[:id])
-    @items = Item.where(category_index: @category)
+
+    @category_gc = Category.find(params[:id])
+    @category_c = ""
+    @parent = ""
+
+    if (@category_gc[:ancestry] == nil)       #第１世代を引いた時
+      @parent = @category_gc
+      @category_c = nil
+      @category_gc = nil
+      @items = Item.where(category_index: @parent)
+    elsif (@category_gc[:ancestry].match("\/"))       #第３世代を引いたとき
+      @category_gc = Category.find(params[:id])
+      @category_c = @category_gc.parent
+      @parent = @category_c.parent
+      @items = Item.where(category_index: @category_gc)
+    elsif (@category_gc.children != nil) && (@category_gc.parent != nil)   #第２世代を引いた時
+      @category_c = @category_gc
+      @parent = @category_gc.parent
+      @category_gc = nil
+      @items = Item.where(category_index: @category_c)
+    end
     item_id = @items.map{|dd| dd[:id]}
     @trade = Trading.where(item_id: item_id)
     # query = 'select * from items join tradings on items.id = item_id where category_index = #{@category.id} order by items.created_at desc'
     # @items = Item.find_by_sql(query)
+  end
 
+
+  def puru
+    # @parents = Category.where(id: [1,138,259,387,517,576,683,781,867,976,1027,1086,1146])
+    # @child = @parents.map{|a| a.id}
+    # @childs = Category.where(ancestry: @child)
+    # @childs = @parents.map{|c| c.children}
+    # @grandchilds = @childs.map{|g| g.map{|gc| gc.children}}
   end
 
 
@@ -100,12 +127,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index)
-  end
-
-  def puru
-    # @parents = Category.where(ancestry: nil)
-    # @ladies_c = Category.where(ancestry: "1")
-    # @ladies_gc = Category.where(ancestry: "1/2")
   end
 
 end

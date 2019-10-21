@@ -1,12 +1,37 @@
 = render "header"
 
+.breadcrumb
+  %ul
+    %li
+      = link_to "メルカリ", "/"
+      %span >
+    %li
+      = link_to "カテゴリー一覧", "#"
+    %li
+      -if @parent != nil
+        %span >
+        = link_to "#{@parent.name}", "/more/#{@parent.id}"
+    %li
+      -if (@category_c != nil) ? (c_name = "> #{@category_c.name}", c_link = "/more/#{@category_c.id}") : (c_name = "");
+        = link_to "#{c_name}", "#{c_link}"
+    %li
+      -if (@category_gc != nil) ? (gc_name = "> #{@category_gc.name}", gc_link = "/more/#{@category_gc.id}") : (gc_name = "");
+        = link_to "#{gc_name}", "#{gc_link}"
+
+
+
 .main_contents
   .main_contents__box
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
           %h2#1
-            = "#{@category.name}新着アイテム"
+            - if @category_gc != nil
+              = "#{@category_gc.name}の商品一覧"
+            - elsif (@category_gc == nil) && (@category_c != nil)
+              = "#{@category_c.name}の商品一覧"
+            -else
+              = "#{@parent.name}の商品一覧"
       .main_contents__box__contents__items
         - @items.zip(@trade).each do |item,trade|
           .main_contents__box__contents__items__one
