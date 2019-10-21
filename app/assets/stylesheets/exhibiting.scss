@@ -42,8 +42,11 @@
     &__list{
       // display:flex;
       // flex-direction:column;
+      height:1120px;
+      overflow:scroll;
+
       > ul{
-        background:ivory;
+        background:#fff;
         > :hover{
           background:#f5f5f580;
         }

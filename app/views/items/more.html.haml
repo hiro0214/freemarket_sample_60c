@@ -40,7 +40,7 @@
             -else
               = "#{@parent.name}の商品一覧"
       .main_contents__box__contents__items
-        - @items.zip(@trade).each do |item,trade|
+        - @item_list.zip(@trade).each do |item,trade|
           .main_contents__box__contents__items__one
             - if trade.sale_state == "trade"
               .sold_item
