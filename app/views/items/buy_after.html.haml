@@ -4,6 +4,6 @@
       %p 購入が完了しました
     .exhibit__after__box__text
       %p あなたが購入した商品は「購入した商品一覧」からいつでも見る事ができます。
-      =link_to "/mypage", class: "exhibit__after__box__next" do
+      =link_to "/users/#{current_user.id}", class: "exhibit__after__box__next" do
         %p 取引画面へ
       %p 商品ページへ行ってシェアする
