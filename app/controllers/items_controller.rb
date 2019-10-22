@@ -97,7 +97,12 @@ class ItemsController < ApplicationController
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
     # redirect_to root_path
-    redirect_to "/users/#{current_user.id}"
+    if @item.save
+      redirect_to "/users/#{current_user.id}"
+    else
+      render action: :edit
+    end
+    # redirect_to "/users/#{current_user.id}"
     # ここ↑今はマイページに飛ぶが後で訂正する。「変更しました」を挟むか、商品編集ページに飛ぶようにする。
   end
 

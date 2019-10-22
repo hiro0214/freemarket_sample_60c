@@ -3,11 +3,12 @@ class Item < ApplicationRecord
   has_one :trading, dependent: :destroy
   has_one :categories
 
-  validates :item_name, presence: true, length: { maximum: 40 }
+  validates :item_name, presence: true, length: { in: 1..40 }
   validates :description, presence: true, length:{maximum: 1000 , message: "must be given please" }
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to:300 }
   validates :price, numericality: { only_integer: true, less_than:9999999 }
-  validates :state, presence: true
+  # validates_presence_of :category_index => "Should be present"
+  validates :category_index,presence:true
   validates :state, presence: true
   validates :fee_size, presence: true
   validates :region, presence: true
