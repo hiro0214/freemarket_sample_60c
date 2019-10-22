@@ -4,17 +4,18 @@ Rails.application.routes.draw do
   resources :items do
     get "buy" => "items#buy"
     collection do
+      get 'drop_child', defaults: { format: 'json' }
       get 'category_children', defaults: { format: 'json' }
       get "category_grandchildren", defaults: { format: "json"}
     end
   end
 
   resources :items ,only: [:edit] do
+    patch "edit_update" => "items#edit_update"
     member do
       get 'category_children', defaults: { format: 'json' }
       get "category_grandchildren", defaults: { format: "json"}
     end
-    patch "edit_update" => "items#edit_update"
   end
 
   get "new_after" => "items#new_after"

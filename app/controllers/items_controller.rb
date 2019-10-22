@@ -75,7 +75,7 @@ class ItemsController < ApplicationController
   def edit
     @user = User.find(current_user.id)
     @item = Item.find(params[:id])
-    
+
     @category_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_array << parent.name
@@ -132,8 +132,12 @@ class ItemsController < ApplicationController
 
   def puru
     # [1,138,259,387,517,576,683,781,867,976,1027,1086,1146]
+    @parent_list = Category.where(ancestry: nil)
   end
 
+  def drop_child
+    @drop_children = Category.find_by(ancestry: "#{params[:parent]}").children
+  end
 
   def category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
@@ -148,10 +152,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index)
 
-  end
-
-  def puru
-   
   end
 
 end
