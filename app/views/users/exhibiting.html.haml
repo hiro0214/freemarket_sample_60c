@@ -24,13 +24,16 @@
                 =image_tag "mypage_logo.png", class: "exhibiting_main__middle_menu__list__mercari_logo"
                 .exhibiting_main__middle_menu__list__box
                   .exhibiting_main__middle_menu__list__message
-                    = link_to "edit_item/#{item.id}", method: :get do
-                      = item.item_name
+                    = link_to "#{item.item_name}", "edit_item/#{item.id}"
                   .exhibiting_main__middle_menu__list__time_box
                     %i.fa.fa-heart-o
                     %span
-                      5 時間前
+                      30
                     %i.fa.fa-comment-o
+                    %span
+                      6
+                    %span.blue_message
+                      出品中
                 %i.fa.fa-chevron-right
             
 
