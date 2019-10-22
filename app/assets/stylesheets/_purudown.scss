@@ -17,9 +17,7 @@
     position: relative;
     z-index: 3;
     li {
-      font-size:14px;
       display:list-item;
-      padding:13px 0px;
     }
   }
   &__puru {
@@ -33,64 +31,74 @@
     &:hover {
       display:block;
     }
-    li {
-      padding:8px 0px;
-    }
-    > ul {
+    .parent_box {
       width:224px;
       height:100%;
-      > li {
+      > .parent_list {
         width:224px;
+        height:45px;
+        line-height:45px;
+        font-size:14px;
         &:hover {
           background:#ea352d;
           color:#fff;
           display:block;
-          + ul {
+          .children_box {
             display:block;
             background:#fff;
           }
-        }
-        + ul:hover {
-          display:block;
+          > .children_box:hover {
+            display:block;
+          }
         }
       }
-      > ul {
-        background:#fff;
-        width:226px;
-        display:none;
-        position:absolute;
-        top:0px;
-        left:224px;
-        bottom:0px;
-        border:solid 1px rgb(230, 230, 230);
-        > li:hover {
-          background:#eee;
-          display:block;
-          + ul {
-            display:block;
-            background:#fff;
-            height:auto;
-          }
-        }
-        > li + ul:hover {
+    }
+    .children_box {
+      background:#fff;
+      width:226px;
+      display:none;
+      position:absolute;
+      top:0px;
+      left:224px;
+      bottom:0px;
+      border:solid 1px rgb(230, 230, 230);
+      .children_list {
+        font-size:13px;
+        height:40px;
+        line-height:40px;
+      }
+      .children_list:hover {
+        background:#eee;
+        display:block;
+        > .grandchildren_box {
           display:block;
           background:#fff;
-          border:solid 1px rgb(230, 230, 230);
+          height:auto;
         }
-        > ul {
-          width:320px;
-          display:none;
-          position:absolute;
-          top:0px;
-          left:224px;
-          bottom:0px; 
-          border:solid 1px rgb(230, 230, 230);
-          > li:hover {
-            width:320px;
-            display:block;
-            background:#eee;
-          }
-        }
+      }
+      > .children_list > .grandchildren_box:hover {
+        display:block;
+        background:#fff;
+        border:solid 1px rgb(230, 230, 230);
+      }
+    }
+    .grandchildren_box {
+      width:320px;
+      display:none;
+      position:absolute;
+      top:0px;
+      left:224px;
+      bottom:0px;
+      border:solid 1px rgb(230, 230, 230);
+      .grandchildren_list {
+        font-size:13px;
+        height:40px;
+        line-height:40px;
+      }
+      > .grandchildren_list:hover {
+        width:320px;
+        display:block;
+        background:#eee;
       }
     }
   }
