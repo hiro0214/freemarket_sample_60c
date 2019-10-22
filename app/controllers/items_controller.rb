@@ -101,13 +101,8 @@ class ItemsController < ApplicationController
 
   end
 
-
   def puru
-    # @parents = Category.where(id: [1,138,259,387,517,576,683,781,867,976,1027,1086,1146])
-    # @child = @parents.map{|a| a.id}
-    # @childs = Category.where(ancestry: @child)
-    # @childs = @parents.map{|c| c.children}
-    # @grandchilds = @childs.map{|g| g.map{|gc| gc.children}}
+    # [1,138,259,387,517,576,683,781,867,976,1027,1086,1146]
   end
 
 
