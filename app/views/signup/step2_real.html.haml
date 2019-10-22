@@ -1,0 +1,30 @@
+-# .registration__first
+-#   .registration__first__box
+-# = form_for @user, url: signup_index_path, method: :post, html: {class: 'step2_kari'} do |f|
+-#       .field.registration__first__box__middle__input
+-#         .field-label.registration__first__box__middle__input__name
+-#           = f.submit "次へ進む", class: "last_submit"
+
+.registration__header
+
+.registration__first
+  .registration__first__box
+    -# = form_for @user, url: step3_signup_index_path, method: :get, html: {class: ".registration__first__box__middle"} do |f|
+    -# ユーザーの登録情報を保存するテーブルに、追加するためのカラムがないなめ "" 空のカラム名を指定してあげています
+    %h2.registration__first__box__top 電話番号の確認
+    = form_for "", url: step3_signup_index_path, method: :get, html: {class: ".registration__first__box__middle"} do |f|
+      .registration__first__box__middle__input
+        .registration__first__box__middle__input__name
+          = f.label :携帯電話の番号
+          %span 必須
+        = f.telephone_field :phone, autocomplete: "off",class:"aaaa", placeholder:" 電話番号を入力してください"
+
+      .registration__first__box__middle__input
+        %button.last_submit{type: "submit"} SMSを送信する
+        %p ＊電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        %a{href: "#"} 電話番号の確認が必要な理由＞
+      -# .registration__first__box__middle__input
+      -#   .actions
+      -#     = f.submit "次へ進む", class: 'last_submit'
+
+  = render partial: "devise/layout/footer"

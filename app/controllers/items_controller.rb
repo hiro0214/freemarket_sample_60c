@@ -87,6 +87,18 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+    # # payjp 購入画面より
+    # def pay
+    #   Payjp.api_key = 'sk_test_f98999ddca480c61d3498ee7'
+    #   charge = Payjp::Charge.create(
+    #   # amount: @items.price,
+    #   amount: 1000,
+    #   card: params['payjp-token'],
+    #   currency: 'jpy',
+    #   )
+    # end
+
+
   private
 
   def item_params

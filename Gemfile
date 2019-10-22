@@ -48,6 +48,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
+
+
 end
 
 group :development do
@@ -82,9 +84,10 @@ gem "wicked"
 gem "active_hash"
 
 gem 'fog-aws'
-
+gem 'payjp'# Pay.jp決済
 
 # 本番環境での設定
 group :production do
   gem 'unicorn', '5.4.1'
 end
+

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'purchase/index'
+  get 'purchase/done'
   devise_for :users
   root "items#index"
   resources :items do
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
     collection do
       get 'category_children', defaults: { format: 'json' }
       get "category_grandchildren", defaults: { format: "json"}
+
+      # post 'items/:id' => 'items#pay', as: :pay#Pay.jp
     end
   end
 
@@ -35,5 +39,22 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-end
 
+  resources :credit_cards do
+    collection do
+      post 'show', to: 'credit_cards#show'
+      post 'pay', to: 'credit_cards#pay'
+      post 'delete', to: 'credit_cards#delete'
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      get 'index', to: 'purchase#index'
+      post 'pay', to: 'purchase#pay'
+      get 'done', to: 'purchase#done'
+    end
+  end
+
+
+end
