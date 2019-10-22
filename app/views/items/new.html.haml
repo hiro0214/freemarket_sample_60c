@@ -50,7 +50,7 @@
               %span.exhibit_span 必須
               .exhibit__detail__container__title_field
                 = f.select :category_index, @category_array, {}, {class: "select-default", id: "chose-category"}
-                = render partial: 'error_messages', locals: {item: @item, column: "description"}
+                = render partial: 'error_messages', locals: {item: @item, column: "category_index"}
 
             .exhibit__detail__container__title__shoes
               = f.label "サイズ"
@@ -78,6 +78,8 @@
                                   ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],
                                   ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"],
                                   ["全体的に状態が悪い", "全体的に状態が悪い"]],{}, {class: "select-default"}
+              = render partial: 'error_messages', locals: {item: @item, column: "state"}
+
       .exhibit__delivery.clearfix
         %p 配送について
         .exhibit__delivery__container
@@ -88,12 +90,16 @@
             .exhibit__delivery__container__fee_field
               = f.select :fee_size, [["---",""], ["送料込み(出品者負担)", "送料込み(出品者負担)"],
                                     ["着払い(購入者負担)", "着払い(購入者負担)"]],{}, {class: "select-default"}
+              = render partial: 'error_messages', locals: {item: @item, column: "fee_size"}
+
           .exhibit__delivery__container__shipping_region
             .exhibit__delivery__container__shipping_region_head
               %p  発送元の地域
               %span.exhibit_span 必須
             .exhibit__delivery__container__shipping_region_field
               = f.collection_select :region, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
+              = render partial: 'error_messages', locals: {item: @item, column: "region"}
+
           .exhibit__delivery__container__day
             .exhibit__delivery__container__day_head
               %p  発送までの日数
@@ -101,6 +107,8 @@
             .exhibit__delivery__container__day_field
               = f.select :delivery_date, [["---", ""], ["1~2日で発送", "1~2日で発送"],
                                           ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]],{}, {class: "select-default"}
+              = render partial: 'error_messages', locals: {item: @item, column: "delivery_date"}
+
       .exhibit__price.clearfix
         %span 販売価格(300~9,999,999)
         .exhibit__price__container
