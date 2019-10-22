@@ -1,0 +1,145 @@
+.exhibit__main
+
+  .registration__header__logo
+    =link_to "/" do
+      =image_tag "header_logo.png"
+
+  .exhibit__contents
+    .exhibit__infomation
+      %p 商品の情報を入力
+
+    -# = form_for [@item] do |f|
+    = form_for(@item, url: item_edit_update_path(@item)) do |f|
+      .exhibit__upload
+        .exhibit__upload_head
+          %p 出品画像
+          %span.exhibit_span 必須
+        %p 最大10枚までアップロードできます
+        .exhibit__upload_image
+          -# %input{:name => "image", :placeholder => "Image Url", :type => "text"}/
+          %label
+            %div.exhibit__upload_image_field
+              %p ドラッグアンドドロップ
+              %p またはクリックしてファイルをアップロード
+            -# %input.sell-upload-drop-file{:multiple => "", :name => "image1", :type => "file"}/
+
+      .exhibit__explanation
+        .exhibit__explanation__title
+          .exhibit__explanation__title_head
+            %p  商品名
+            %span.exhibit_span 必須
+          .exhibit__explanation__title_field
+            = f.text_field :item_name, placeholder: "商品名（必須 40文字まで)", maxlength: 40
+
+            -# = render partial: 'error_messages', locals: {item: @item, column: "item_name"}
+
+        .exhibit__explanation__detail
+          .exhibit__explanation__detail_head
+            %p  商品の説明
+            %span.exhibit_span 必須
+          .exhibit__explanation__detail_field
+            = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+
+            -# = render partial: 'error_messages', locals: {item: @item, column: "description"}
+
+      .exhibit__detail.clearfix
+        %p 商品の詳細
+        .exhibit__detail__container
+          .exhibit__detail__container__title
+            .exhibit__detail__container__title__category
+              = f.label "カテゴリー"
+              %span.exhibit_span 必須
+              .exhibit__detail__container__title_field
+                = f.select :category_index, @category_array, {}, {class: "select-default", id: "chose-category"}
+                -# = render partial: 'error_messages', locals: {item: @item, column: "description"}
+
+            .exhibit__detail__container__title__shoes
+              = f.label "サイズ"
+              %span.exhibit_span 必須
+              .exhibit__detail__container__title__shoes__chose
+                = f.select :size, [["---",""], ["20cm以下", "20cm以下"], ["20.5cm", "20.5cm"], ["21cm", "21cm"],
+                                  ["21.5cm", "21.5cm"], ["22cm", "22cm"], ["22.5cm", "22.5cm"], ["23cm", "23cm"],
+                                  ["23.5cm", "23.5cm"], ["24cm", "24cm"], ["24.5cm", "24.5cm"], ["25cm", "25cm"],
+                                  ["25.5cm", "25.5cm"], ["26cm", "26cm"], ["26.5cm", "26.5cm"], ["27cm", "27cm"], ["27.5cm以上", "27.5cm以上"]], {}, {class: "select-default"}
+
+            -# .exhibit__detail__container__title__clothes
+            -#   = f.label "サイズ"
+            -#   %span.exhibit_span 必須
+            -#   .exhibit__detail__container__title__clothes__chose
+            -#     = f.select :size, [["---",""], ["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"],
+            -#                       ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"],
+            -#                       ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], {}, {class: "select-default"}
+
+          .exhibit__detail__container__detail
+            .exhibit__detail__container__detail_head
+              %p  商品の状態
+              %span.exhibit_span 必須
+            .exhibit__detail__container__detail_field
+              = f.select :state, [["---",""],["新品、未使用", "新品、未使用"],
+                                  ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],
+                                  ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"],
+                                  ["全体的に状態が悪い", "全体的に状態が悪い"]],{}, {class: "select-default"}
+      .exhibit__delivery.clearfix
+        %p 配送について
+        .exhibit__delivery__container
+          .exhibit__delivery__container__fee
+            .exhibit__delivery__container__fee_head
+              %p  配送料の負担
+              %span.exhibit_span 必須
+            .exhibit__delivery__container__fee_field
+              = f.select :fee_size, [["---",""], ["送料込み(出品者負担)", "送料込み(出品者負担)"],
+                                    ["着払い(購入者負担)", "着払い(購入者負担)"]],{}, {class: "select-default"}
+          .exhibit__delivery__container__shipping_region
+            .exhibit__delivery__container__shipping_region_head
+              %p  発送元の地域
+              %span.exhibit_span 必須
+            .exhibit__delivery__container__shipping_region_field
+              = f.collection_select :region, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
+          .exhibit__delivery__container__day
+            .exhibit__delivery__container__day_head
+              %p  発送までの日数
+              %span.exhibit_span 必須
+            .exhibit__delivery__container__day_field
+              = f.select :delivery_date, [["---", ""], ["1~2日で発送", "1~2日で発送"],
+                                          ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]],{}, {class: "select-default"}
+      .exhibit__price.clearfix
+        %span 販売価格(300~9,999,999)
+        .exhibit__price__container
+          .exhibit__price__container__fee.clearfix
+            .exhibit__price__container__fee_head
+              %p  価格
+              %span.exhibit_span 必須
+            .exhibit__price__container__fee_field
+              %span ¥
+              = f.text_field :price, placeholder: "例）300"
+
+              -# = render partial: 'error_messages', locals: {item: @item, column: "price"}
+
+          .exhibit__price__container__sale_fee.clearfix
+            .exhibit__price__container__sale_fee_head
+              %span  販売手数料(10%)
+              %p.exhibit_tax -
+          .exhibit__price__container__sale_profit.clearfix
+            .exhibit__price__container__sale_profit_head
+              %span  販売利益
+              %p.exhibit_profit -
+      .exhibit__confirmation
+        .exhibit__confirmation__article
+          %p 禁止されている出品、行為を必ずご確認ください。
+          %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+          %p また、出品をもちまして加盟店規約に同意したことになります。
+        .exhibit__confirmation__button__display
+          = f.submit "変更する"
+        .exhibit__confirmation__button__back
+          %a( href='')戻る
+      -# 商品の詳細
+      -# カテゴリー必須
+      -# 商品の状態必須
+      -# 配送について?
+      -# 配送料の負担必須
+      -# 発送元の地域必須
+      -# 発送までの日数必須
+      -# 出品する
+      -# もどる
+
+  = render partial: "devise/layout/footer"
