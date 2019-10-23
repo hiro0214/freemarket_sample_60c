@@ -38,11 +38,11 @@
           %th カテゴリー
           %td
             %p
-              = link_to "#{@category.name}", "#"
+              = link_to "#{@category.name}", "/more/#{@category.id}"
             %p
-              = link_to ">#{@category_c.name}", "#"
+              = link_to ">#{@category_c.name}", "/more/#{@category_c.id}"
             %p
-              = link_to ">#{@category_gc.name}", "#"
+              = link_to ">#{@category_gc.name}", "/more/#{@category_gc.id}"
         %tr
           %th ブランド
           %td
