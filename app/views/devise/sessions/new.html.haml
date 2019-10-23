@@ -11,14 +11,13 @@
       .registration__first__box__middle__input
         %ul
           %li
-            %button{onclick: "location.href='#'", class: "registration__fb"}
+            = button_to user_facebook_omniauth_authorize_path, class: "registration__fb" do
               %i.fa.fa-facebook-square.registration_icon
               Facebookでログイン
           %li
-            %button{onclick: "location.href='#'", class: "registration__go"} 
+            = button_to user_google_oauth2_omniauth_authorize_path, class: "registration__go" do
               =image_tag "go_icon.png", class: "registration_go_icon"
               Googleでログイン
-
       //入力フォーム
       .sign_in__main__panel_form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
