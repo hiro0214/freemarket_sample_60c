@@ -1,3 +1,9 @@
+- if flash[:buy_alert]
+  .header_alert
+    .header_alert_text
+      %p
+        = flash[:buy_alert]
+
 = render "header"
 
 =image_tag "top_img1.jpg", class: ".main_contents__img"

@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function() {
     })
   }
 
-  $(window).bind("load", function(){
+  $(window).on("load", function(){
     if(document.URL.match("/step2")) {
       step1()
     }

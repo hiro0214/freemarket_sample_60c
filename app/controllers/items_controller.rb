@@ -30,12 +30,11 @@ class ItemsController < ApplicationController
 
   def update
     @trading = Trading.find_by(item_id: "#{params[:id]}")
-    if @trading.sale_state == "exhibit"
+    if @trading.sale_state == "exhibit" && @trading.saler_id != current_user.id
       @trading.update(sale_state: "trade", buyer_id: current_user.id)
       redirect_to buy_after_path
     else
-      redirect_to root_path
-      # エラーメッセージを出したい
+      redirect_to root_path, flash: {buy_alert: "購入出来ませんでした"}
     end
   end
 
@@ -75,7 +74,7 @@ class ItemsController < ApplicationController
   def edit
     @user = User.find(current_user.id)
     @item = Item.find(params[:id])
-    
+
     @category_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_array << parent.name
