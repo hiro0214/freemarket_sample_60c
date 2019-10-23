@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :puru
+
   def show
     @user = User.find(current_user.id)
   end
@@ -31,5 +33,10 @@ class UsersController < ApplicationController
   def delete_after
     @user = User.find(current_user.id)
   end
+
+  def puru
+    @parents = Category.where(ancestry: nil)
+  end
+
 
 end
