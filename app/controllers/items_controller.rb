@@ -45,9 +45,11 @@ class ItemsController < ApplicationController
     @category = @category_c.parent
     @trading = Trading.find_by(item_id: params[:id])
     @user = User.find(@trading.saler_id)
+    @image = Image.find_by(item_id: params[:id]).url
   end
 
   def create
+
     @item = Item.new(item_name: item_params[:item_name],
                 description: item_params[:description],
                 price: item_params[:price],
@@ -58,6 +60,7 @@ class ItemsController < ApplicationController
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
     @item.build_trading(saler_id: current_user.id)
+    @item.images.build(url: item_params[:url])
     if @item.save
       redirect_to new_after_path
     else
@@ -89,7 +92,6 @@ class ItemsController < ApplicationController
                 region: item_params[:region],
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
-    # redirect_to root_path
     if @item.save
       redirect_to "/users/#{current_user.id}"
     else
@@ -150,8 +152,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index)
-
+    params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index, :url)
   end
 
 
