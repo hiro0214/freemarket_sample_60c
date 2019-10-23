@@ -26,6 +26,11 @@ class UsersController < ApplicationController
   def edit_item
     @user = User.find(current_user.id)
     @item = Item.find(params[:id])
+    @category_gc= Category.find(@item[:category_index])
+    @category_c = @category_gc.parent
+    @category = @category_c.parent
+    # @trading = Trading.find_by(item_id: params[:id])
+    # @user = User.find(@trading.saler_id)
   end
 
   def delete_after

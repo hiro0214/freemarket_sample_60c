@@ -19,7 +19,7 @@
         %tr
           %th 出品者
           %td
-            -# = link_to "#{@user.name}", "#",class:"owner_name"
+            = link_to "#{@user.name}", "#",class:"owner_name"
             .evaluation
               %span.user_smile
                 =image_tag "logo_smile.png", class: "user_smile"
@@ -34,7 +34,13 @@
                 0
         %tr
           %th カテゴリー
-          %td レディース　バッグ　トートバッグ
+          %td 
+            %p
+              = link_to "#{@category.name}", "#"
+            %p
+              = link_to ">#{@category_c.name}", "#"
+            %p
+              = link_to ">#{@category_gc.name}", "#"
         %tr
           %th ブランド
           %td
