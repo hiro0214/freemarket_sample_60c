@@ -2,10 +2,12 @@ class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show, :more]
   before_action :puru
+  before_action :set_item, only: [:show, :edit, :destroy]
 
   def index
     la_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index between 1 and 137 order by items.created_at desc limit 10"
     @ladies_items = Item.find_by_sql(la_query)
+    image = Image.where()
     me_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index between 138 and 258 order by items.created_at desc limit 10"
     @mens_items = Item.find_by_sql(me_query)
     ma_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index between 781 and 866 order by items.created_at desc limit 10"
@@ -39,17 +41,21 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @category_gc= Category.find(@item[:category_index])
     @category_c = @category_gc.parent
     @category = @category_c.parent
     @trading = Trading.find_by(item_id: params[:id])
     @user = User.find(@trading.saler_id)
-    @image = Image.find_by(item_id: params[:id]).url
+
+    if Image.find_by(item_id: @item) != nil
+      @image = Image.find_by(item_id: params[:id]).url
+    else
+      @image = nil
+    end
+
   end
 
   def create
-
     @item = Item.new(item_name: item_params[:item_name],
                 description: item_params[:description],
                 price: item_params[:price],
@@ -69,14 +75,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find_by(id: params[:id])
     @item.destroy
     redirect_to "/users/#{current_user.id}/delete_after"
   end
 
   def edit
     @user = User.find(current_user.id)
-    @item = Item.find(params[:id])
 
     @category_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
@@ -136,17 +140,20 @@ class ItemsController < ApplicationController
 
   end
 
-  def puru
-    @parents = Category.where(ancestry: nil)
-  end
-
-
   def category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
 
   def category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  def puru
+    @parents = Category.where(ancestry: nil)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   private
