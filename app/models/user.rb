@@ -16,21 +16,21 @@ class User < ApplicationRecord
     # snscredential = SnsCredential.where(uid: uid, provider: provider).first
     snscredential = SnsCredential.find_by(uid: uid, provider: provider)
 
-
-    # binding.pry
-
     if snscredential.present? #sns登録のみ完了してるユーザー
       user = User.find_by(id: snscredential.user_id)
       unless user.present? #ユーザーが存在しないなら
+        password = Devise.friendly_token[0, 20]
         user = User.new(
           # snsの情報を取ってくる
           name: auth.info.name,
-          email: auth.info.email
-        )
-      # binding.pry# auth.infoとかで確認
-      end
-      sns = snscredential
-      #binding.pry
+          email: auth.info.email,
+          password: password,
+          password_confirmation: password
+          )
+          # return { user: user , sns_id: sns.id }
+          # binding.pry
+    end
+    sns = snscredential
 
     else #sns登録 未
       user = User.find_by(email: auth.info.email)
