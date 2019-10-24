@@ -19,7 +19,7 @@ class User < ApplicationRecord
     if snscredential.present? #sns登録のみ完了してるユーザー
       user = User.find_by(id: snscredential.user_id)
       unless user.present? #ユーザーが存在しないなら
-        password = Devise.friendly_token[0, 20]
+        password = Devise.friendly_token[0, 8]
         user = User.new(
           # snsの情報を取ってくる
           name: auth.info.name,
