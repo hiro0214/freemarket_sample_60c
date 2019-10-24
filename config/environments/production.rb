@@ -1,6 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+
+  #本番環境ではmaster keyの指定漏れを防ぐため下記の記述
+  config.require_master_key = true
+
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
