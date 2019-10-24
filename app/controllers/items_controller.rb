@@ -149,6 +149,7 @@ class ItemsController < ApplicationController
 
     item_id = @item_list.map{|dd| dd[:id]}
     @trade = Trading.where(item_id: item_id)
+    @image = Image.where(item_id: item_id)
 
   end
 
