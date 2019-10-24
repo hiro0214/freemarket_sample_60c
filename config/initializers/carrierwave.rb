@@ -9,8 +9,8 @@ CarrierWave.configure do |config|
     provider: 'AWS',
     # aws_access_key_id: Rails.application.credentials.aws[:key],
     # aws_secret_access_key: Rails.application.credentials.aws[:secret],
-    aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"]
-    aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+    aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
     region: 'ap-northeast-1'
   }
 
