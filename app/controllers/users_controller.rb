@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   def edit_item
     @item = Item.find(params[:id])
+    @image = Image.find_by(item_id: @item.id).url
   end
 
   def delete_after

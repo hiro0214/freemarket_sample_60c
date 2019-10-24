@@ -7,13 +7,24 @@ class ItemsController < ApplicationController
   def index
     la_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index between 1 and 137 order by items.created_at desc limit 10"
     @ladies_items = Item.find_by_sql(la_query)
-    image = Image.where()
+    la_item_id = Trading.where(id: @ladies_items.map{|a| a[:id]}).map{|a| a[:item_id]}
+    @la_image = Image.where(item_id: la_item_id).order("created_at desc")
+
     me_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index between 138 and 258 order by items.created_at desc limit 10"
     @mens_items = Item.find_by_sql(me_query)
+    me_item_id = Trading.where(id: @mens_items.map{|a| a[:id]}).map{|a| a[:item_id]}
+    @me_image = Image.where(item_id: me_item_id).order("created_at desc")
+
     ma_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index between 781 and 866 order by items.created_at desc limit 10"
     @machine_items = Item.find_by_sql(ma_query)
+    ma_item_id = Trading.where(id: @machine_items.map{|a| a[:id]}).map{|a| a[:item_id]}
+    @ma_image = Image.where(item_id: ma_item_id).order("created_at desc")
+
     ho_query = "select * from items join tradings on items.id = item_id where tradings.sale_state = 'exhibit' and category_index between 576 and 682 order by items.created_at desc limit 10"
     @hobby_items = Item.find_by_sql(ho_query)
+    ho_item_id = Trading.where(id: @hobby_items.map{|a| a[:id]}).map{|a| a[:item_id]}
+    @ho_image = Image.where(item_id: ho_item_id).order("created_at desc")
+
   end
 
   def new
@@ -28,6 +39,7 @@ class ItemsController < ApplicationController
     @user = User.find(current_user.id)
     @item = Item.find(params[:item_id])
     @trading = Trading.find_by(item_id: "#{params[:item_id]}")
+    @image = Image.find_by(item_id: @item.id).url
   end
 
   def update
