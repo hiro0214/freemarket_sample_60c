@@ -59,6 +59,11 @@ class ItemsController < ApplicationController
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
     @item.build_trading(saler_id: current_user.id)
+    @category_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_array << parent.name
+    end
+
     if @item.save
       redirect_to new_after_path
     else
@@ -91,6 +96,10 @@ class ItemsController < ApplicationController
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
     # redirect_to root_path
+    @category_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_array << parent.name
+    end
     if @item.save
       redirect_to "/users/#{current_user.id}"
     else

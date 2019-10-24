@@ -29,7 +29,7 @@
             %p  商品名
             %span.exhibit_span 必須
           .exhibit__explanation__title_field
-            = f.text_field :item_name, placeholder: "商品名（必須 40文字まで)", maxlength: 40
+            = f.text_field :item_name, placeholder: "商品名（必須 40文字まで)", maxlength: 40, class: "item_name_form"
             = render partial: 'error_messages', locals: {item: @item, column: "item_name"}
 
         .exhibit__explanation__detail
@@ -37,7 +37,7 @@
             %p  商品の説明
             %span.exhibit_span 必須
           .exhibit__explanation__detail_field
-            = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            = f.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "description_name_form"
             = render partial: 'error_messages', locals: {item: @item, column: "description"}
 
       .exhibit__detail.clearfix
@@ -77,6 +77,7 @@
                                   ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"],
                                   ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"],
                                   ["全体的に状態が悪い", "全体的に状態が悪い"]],{}, {class: "select-default"}
+              %br
               = render partial: 'error_messages', locals: {item: @item, column: "state"}
 
       .exhibit__delivery.clearfix
@@ -89,6 +90,7 @@
             .exhibit__delivery__container__fee_field
               = f.select :fee_size, [["---",""], ["送料込み(出品者負担)", "送料込み(出品者負担)"],
                                     ["着払い(購入者負担)", "着払い(購入者負担)"]],{}, {class: "select-default"}
+              %br
               = render partial: 'error_messages', locals: {item: @item, column: "fee_size"}
 
           .exhibit__delivery__container__shipping_region
@@ -97,6 +99,7 @@
               %span.exhibit_span 必須
             .exhibit__delivery__container__shipping_region_field
               = f.collection_select :region, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
+              %br
               = render partial: 'error_messages', locals: {item: @item, column: "region"}
 
           .exhibit__delivery__container__day
@@ -106,6 +109,7 @@
             .exhibit__delivery__container__day_field
               = f.select :delivery_date, [["---", ""], ["1~2日で発送", "1~2日で発送"],
                                           ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]],{}, {class: "select-default"}
+              %br
               = render partial: 'error_messages', locals: {item: @item, column: "delivery_date"}
 
       .exhibit__price.clearfix
@@ -115,9 +119,11 @@
             .exhibit__price__container__fee_head
               %p  価格
               %span.exhibit_span 必須
+              %br
             .exhibit__price__container__fee_field
               %span ¥
-              = f.text_field :price, placeholder: "例）300"
+              = f.text_field :price, placeholder: "例）300",class:"price_form"
+              %br
               = render partial: 'error_messages', locals: {item: @item, column: "price"}
 
           .exhibit__price__container__sale_fee.clearfix
