@@ -205,3 +205,10 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  models:
+    items:
+      item_name: 商品名
+      description: 商品の説明
+      item_name: 金額
+
