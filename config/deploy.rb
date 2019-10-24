@@ -64,3 +64,6 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+#s3で追加記述
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
