@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       get 'step3'
       get 'step4'
       get 'step5'
+      get 'set'
       get 'done'
     end
   end

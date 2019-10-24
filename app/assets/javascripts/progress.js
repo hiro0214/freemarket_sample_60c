@@ -53,6 +53,20 @@ $(document).on('turbolinks:load', function() {
       $("#step3_text").css("color", "#ea352d")
       step3()
     }
+    if(document.URL.match("/set")) {
+      $(".step1_bar").css("width","106px")
+      $("#step2_circle").css("background", "#ea352d")
+      $("#step2_text").css("color", "#ea352d")
+
+      $(".step2_bar").css("width","99px")
+      $("#step3_circle").css("background", "#ea352d")
+      $("#step3_text").css("color", "#ea352d")
+
+      $(".step3_bar").css("width","99px")
+      $("#step4_circle").css("background", "#ea352d")
+      $("#step4_text").css("color", "#ea352d")
+      step4()
+    }
   })
 
 });
