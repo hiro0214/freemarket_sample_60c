@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def exhibiting
     @user = User.find(current_user.id)
-    tradings = Trading.where(saler_id: current_user.id, sale_state: "exhibit")
+    tradings = Trading.where(saler_id: current_user.id, sale_state: "trade")
     trading = tradings.map {|t| t[:item_id]}
     @items = Item.where(id: trading)
   end
