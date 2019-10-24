@@ -67,3 +67,11 @@ end
 
 #s3で追加記述
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
+
+#s3で追加記述
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+}
