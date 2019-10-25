@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function() {
 
   function appendChildrenBox(insertHTML){
     var childSelectHtml = "";
-    childSelectHtml =　`<div class="exhibit__detail__container__title_field" id="child_wrapper">
+    childSelectHtml =`<div class="exhibit__detail__container__title_field" id="child_wrapper">
                           <select class="select-default" id="child_category" name="item[category_index]">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
@@ -18,7 +18,7 @@ $(document).on('turbolinks:load', function() {
 
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
-    grandchildSelectHtml =　`<div class="exhibit__detail__container__title_field" id="grandchild_wrapper">
+    grandchildSelectHtml =`<div class="exhibit__detail__container__title_field" id="grandchild_wrapper">
                               <select class="select-default" id="grandchild_category" name="item[category_index]">
                                 <option value="---" data-category="---">---</option>
                                 ${insertHTML}
@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', function() {
     var parentcategory = $("#chose-category").val()
     if (parentcategory != "---"){
       $.ajax({
-        url: 'category_children',
+        url: '/items/category_children',
         type: 'GET',
         data: { parent_name: parentcategory },
         dataType: 'json'
@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', function() {
     var childId = $('#child_category option:selected').data('category');
     if (childId != "---"){
       $.ajax({
-        url: 'category_grandchildren',
+        url: '/items/category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType: 'json'
