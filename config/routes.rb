@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
 
   devise_for :users,
-  controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
-                registrations: 'users/registrations' }
+  # controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
+  #               registrations: 'users/registrations' }
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root "items#index"
+  resources :signup do
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'step3'
+      get 'step4'
+      get 'step5'
+      get 'done'
+    end
+  end
+
+
   resources :items do
     get "buy" => "items#buy"
     collection do
@@ -38,17 +51,5 @@ Rails.application.routes.draw do
     get "delete_after" => "users#delete_after"
   end
 
-  resources :signup do
-    collection do
-      get 'step1'
-      get 'step2'
-      get 'step3'
-      get 'step4'
-      get 'step5'
-      get 'done'
-    end
-  end
-
 
 end
-

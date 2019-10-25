@@ -25,7 +25,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else #userが存在しなかったら
 
       # session["devise.sns_id"] = sns_id #sns_credentialのid devise.他のアクションに持ち越せる(少し難)
-      session["devise.sns_id"] = info #sns_credentialのid devise.他のアクションに持ち越せる(少し難)
+      session["devise.sns_id"] = info #sns_credentialのデータをsessionに格納し他のアクションに持ち越す
 # binding.pry
       # @user = User.new
       render template: "/signup/step1" #redirect_to だと更新してしまうのでrenderで
