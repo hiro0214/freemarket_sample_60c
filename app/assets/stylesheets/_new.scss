@@ -51,7 +51,7 @@
   }
   // 商品の説明３段目
   &__explanation{
-    height: 352px;
+    min-height: 352px;
     padding: 40px;
     border-top: solid 1px rgb(236, 236, 236);
     &__title{
@@ -225,7 +225,8 @@
         }
         &_field{
           float: right;
-          height: 48px;
+          // height: 48px;
+          min-height: 48px;
           width: 170px;
           // margin-top: 8px;
           // padding:10px 16px 8px;
@@ -411,4 +412,23 @@
   padding:2px 5px 0px;
   margin-left:5px;
   border-radius:2px;
+}
+
+.alert_new {
+  color:red;
+}
+
+.item_name_form {
+  width:600px;
+  height:50px;
+}
+
+.description_name_form {
+  width:620px;
+  height:127px;
+}
+
+.price_form{
+  width:160px;
+  height:48px;
 }

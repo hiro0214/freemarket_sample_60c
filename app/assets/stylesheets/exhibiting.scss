@@ -44,6 +44,10 @@
       // flex-direction:column;
       height:1120px;
       overflow:scroll;
+      & a{
+        display:block;
+      }
+
 
       > ul{
         background:#fff;
@@ -74,12 +78,23 @@
       &__box{
         width:560px;
         height:39px;
+        display:block;
         & i{
           font-size:16px;
           color:rgb(151, 150, 150);
         }
         & span{
+          padding:5px;
           color:rgb(151, 150, 150);
+        }
+        & .blue_message{
+          background:#0099e8;
+          width:38px;
+          height:12px;
+          padding:5px 6px;
+          color:white;
+          font-weight: bold;
+          border-radius: 2px;
         }
       }
     }

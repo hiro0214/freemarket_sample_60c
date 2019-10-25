@@ -24,6 +24,11 @@ class UsersController < ApplicationController
 
   def edit_item
     @item = Item.find(params[:id])
+    @category_gc= Category.find(@item[:category_index])
+    @category_c = @category_gc.parent
+    @category = @category_c.parent
+    # @trading = Trading.find_by(item_id: params[:id])
+    # @user = User.find(@trading.saler_id)
     @image = Image.find_by(item_id: @item.id).url
   end
 
