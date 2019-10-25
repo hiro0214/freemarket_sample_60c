@@ -11,6 +11,7 @@
       .edit__top__box
         .edit__top__box__detail
           .edit__top__box__detail__img
+            = image_tag @image.url, class: "buy_image"
           %p
             = @item.item_name
         .edit__top__box__price

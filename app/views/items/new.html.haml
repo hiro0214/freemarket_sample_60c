@@ -18,6 +18,7 @@
           -# %input{:name => "image", :placeholder => "Image Url", :type => "text"}/
           %label
             %div.exhibit__upload_image_field
+              = f.file_field :url
               %p ドラッグアンドドロップ
               %p またはクリックしてファイルをアップロード
             -# %input.sell-upload-drop-file{:multiple => "", :name => "image1", :type => "file"}/
@@ -147,7 +148,7 @@
         .exhibit__confirmation__button__display
           = f.submit "出品する"
         .exhibit__confirmation__button__back
-          %a( href='')戻る
+          = link_to "戻る", "/"
       -# 商品の詳細
       -# カテゴリー必須
       -# 商品の状態必須

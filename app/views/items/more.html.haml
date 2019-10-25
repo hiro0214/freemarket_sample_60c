@@ -40,14 +40,14 @@
             -else
               = "#{@parent.name}の商品一覧"
       .main_contents__box__contents__items
-        - @item_list.zip(@trade).each do |item,trade|
+        - @item_list.zip(@trade,@image).each do |item,trade,image|
           .main_contents__box__contents__items__one
             - if trade.sale_state == "trade"
               .sold_item
                 %p SOLD
-              %img.main_contents__box__contents__items__one__image{:src => ""}/
+              = image_tag image.url.url, class: "index_image"
             -else
-              %img.main_contents__box__contents__items__one__image{:src => ""}/
+              = image_tag image.url.url, class: "index_image"
             .main_contents__box__contents__items__one__image__price
               = "¥#{item.price}"
             .main_contents__box__contents__items__one__title
