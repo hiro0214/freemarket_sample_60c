@@ -7,6 +7,10 @@ class User < ApplicationRecord
           omniauth_providers: %i[facebook google_oauth2]
 
   has_many :sns_credentials, dependent: :destroy
+  has_one :credit_card
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
 
   # omniauthのコールバック時に呼ばれるメソッド
 

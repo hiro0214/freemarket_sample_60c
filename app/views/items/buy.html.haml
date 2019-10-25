@@ -28,6 +28,9 @@
         .edit__top__box__buy
           = form_for @trading, url: "/items/#{@item.id}" ,method: :patch do |f|
             = f.submit "購入する"
+          -# = form_with url: pay_items_path, local: true,class: "card_form" do
+          -#   %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_86e37e6b853b899184ff5e47"}
+
 
     .edit__middle
       .edit__middle__box
