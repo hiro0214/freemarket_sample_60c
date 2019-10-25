@@ -2,6 +2,7 @@
   background-color: rgb(34, 34, 34);
   color: #ffffff;
   padding-bottom:30px;
+  position:relative;
   &__img{
     width:99vw;
   }
@@ -47,4 +48,14 @@
       }
     }
   }
+}
+
+.fortunetelling {
+  width:68px;
+  height:68px;
+  border-radius:13px;
+  position:absolute;
+  left:338px;
+  top:143px;
+  cursor:grab;
 }
