@@ -1,4 +1,7 @@
 class SignupController < ApplicationController
+
+  skip_before_action :authenticate_user!
+
   # コメントアウトしている箇所は、userテーブルに保存するカラム名を作成したら外していきます。無い状態だとエラーがでるため
   # ウィザードフォーム用コントローラー
   # 各アクションごとに新規インスタンスを作成します
