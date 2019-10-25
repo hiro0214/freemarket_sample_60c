@@ -1,0 +1,58 @@
+.registration__header
+  = render "progress"
+
+.registration__first
+  .registration__first__box
+    = form_for "", url: signup_index_path, method: :post, html: {class: 'step2_kari'} do |f|
+      %h2.registration__first__box__top 支払い方法
+      %form.registration__first__box__middle{action: "#"}
+        .registration__first__box__middle__input
+          .registration__first__box__middle__input__name
+            カード番号
+            %span 必須
+          %input{placeholder: "  半角数字のみ"}
+          =image_tag "card_list.png", class: "card_list"
+        .registration__first__box__middle__input
+          .registration__first__box__middle__input__name
+            有効期限
+            %span 必須
+          .registration__first__box__middle__input__double__card
+            %select
+              %option 01
+              %option 02
+              %option 03
+              %option 04
+              %option 05
+              %option 06
+              %option 07
+              %option 08
+              %option 09
+              %option 10
+              %option 11
+              %option 12
+            %span 月
+            %select
+              %option 19
+              %option 20
+              %option 21
+              %option 22
+              %option 23
+              %option 24
+              %option 25
+              %option 26
+              %option 27
+              %option 28
+              %option 29
+            %span 年
+        .registration__first__box__middle__input
+          .registration__first__box__middle__input__name
+            セキュリティコード
+            %span 必須
+          %input{placeholder: "カード背面4桁もしくは3桁の番号"}
+          %a{href: "#"} カード裏面の番号とは？
+          -# %button{type: "submit", onclick: "location.href='#"} 次へ進む
+        .registration__first__box__middle__input
+          .actions
+            = f.submit "次へ進む", class: 'last_submit'
+
+  = render partial: "devise/layout/footer"
