@@ -6,7 +6,9 @@
 
 = render "header"
 
-=image_tag "top_img1.jpg", class: ".main_contents__img"
+.main__image
+  =image_tag "top_img1.png", class: "main__img1"
+  =image_tag "top_img2.png", class: "main__img2"
 .main_contents
   .main_contents__box
     .main_contents__box__header
@@ -173,11 +175,11 @@
     -#           %span
     -#             = link_to "items/#{item.id}", method: :get do
     -#               = item.item_name
-
+  -# = link_to new_item_path do
 .exhibit__btn
-  = link_to new_item_path do
-    .exhibit__btn__box
-      %p.exhibit__btn__name 出品
-      %i.exhibit__btn__icon.fa.fa-camera
+  .exhibit__btn__box
+    %p.exhibit__btn__name 出品
+    %i.exhibit__btn__icon.fa.fa-camera
+  .exhibit__btn__circle
 
 = render "footer"
