@@ -29,7 +29,4 @@
 # 画像がgithubにコミットされないように追加
 public/uploads/*
 
-
-/config/credentials.yml.enc
-
 .env
