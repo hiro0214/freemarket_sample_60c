@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
 
 
-  validates :item_name, presence: true, length: { maximum: 40 }
+  validates :item_name, presence: true, length: { in: 1..40 }
   validates :description, presence: true, length:{maximum: 1000 , message: "must be given please" }
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to:300, less_than:9999999 }
   validates :category_index,presence:true
