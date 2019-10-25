@@ -1,29 +1,32 @@
 $(document).on('turbolinks:load', function() {
 
-  $(".up-image").change(function(){
-    var file = $(this).prop('files')[0];
-    if(!file.type.match('image.*')){
+  $('.up-image').change(function(){
+    if ( !this.files.length ) {
       return;
     }
-    var fileReader = new FileReader();
-    var result = $(".exhibit__upload_image_field")
+    $('#image_list').text('');
 
-    var btn = `<div class="btn_list">
-                <input type="button" value="編集" class="edit_btn"></button>
-                <input type="button" value="削除" class="remove_btn"></button>
-              </div>`
+    var $files = $(this).prop('files');
+    var len = $files.length;
+    for ( var i = 0; i < len; i++ ) {
+      var file = $files[i];
+      var fr = new FileReader();
 
-    fileReader.onloadend = function() {
-      result.html('<img class="img_preview" src="' + fileReader.result + '"/>');
-      result.append(btn)
+      fr.onload = function(e) {
+        var src = e.target.result;
+        var img = '<img src="'+ src +'"><div class="btn_list"><input type="button" value="編集" class="edit_btn"><input type="button" value="削除" class="remove_btn"></div>';
+        $('#image_list').append(img);
+      }
+      fr.readAsDataURL(file);
     }
-    fileReader.readAsDataURL(file);
-  })
 
-  // $(document).on("click", ".remove_btn", function(){
-  //   $(this).parent().remove()
-  //   $(".img_preview").remove()
-  //   $(".exhibit__upload_image_field").append(html)
-  // })
+    $('#image_list').css('display','block');
+  });
+
+  $(document).on("click", ".remove_btn", function(){
+    $(this).parent().prev().remove()
+    $(this).parent().remove()
+    return false;
+  })
 
 });
