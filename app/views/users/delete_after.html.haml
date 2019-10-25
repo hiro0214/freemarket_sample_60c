@@ -1,0 +1,7 @@
+.exhibit__after
+  .exhibit__after__box
+    .exhibit__after__box__name
+      %p 削除しました
+    .exhibit__after__box__text
+      %p あなたが出品した商品は「出品した商品一覧」からいつでも見る事ができます。
+      = link_to "マイページに戻る", "/users/#{@user.id}" ,class: "exhibit__after__box__next"

@@ -1,25 +1,58 @@
 = render "header"
 
+.breadcrumb
+  %ul
+    %li
+      = link_to "メルカリ", "/"
+      %span >
+    %li
+      = link_to "カテゴリー一覧", "#"
+    %li
+      -if @parent != nil
+        %span >
+        = link_to "#{@parent.name}", "/more/#{@parent.id}"
+    %li
+      -if (@category_c != nil)
+        %span >
+        = link_to "#{@category_c.name}", "/more/#{@category_c.id}"
+    %li
+      -if (@category_gc != nil)
+        %span >
+        = link_to "#{@category_gc.name}", "/more/#{@category_gc.id}"
+
+- if @category_list
+  .categories
+    %ul
+      - @category_list.each do |list|
+        %li
+          = link_to "#{list.name}", "/more/#{list.id}"
+
 .main_contents
   .main_contents__box
     .main_contents__box__contents
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
-          %h2#1 レディース新着アイテム
+          %h2#1
+            - if @category_gc != nil
+              = "#{@category_gc.name}の商品一覧"
+            - elsif (@category_gc == nil) && (@category_c != nil)
+              = "#{@category_c.name}の商品一覧"
+            -else
+              = "#{@parent.name}の商品一覧"
       .main_contents__box__contents__items
-        - @items.each do |item|
+        - @item_list.zip(@trade,@image).each do |item,trade,image|
           .main_contents__box__contents__items__one
-            - if item.sale_state == "trade"
+            - if trade.sale_state == "trade"
               .sold_item
                 %p SOLD
-              %img.main_contents__box__contents__items__one__image{:src => ""}/
+              = image_tag image.url.url, class: "index_image"
             -else
-              %img.main_contents__box__contents__items__one__image{:src => ""}/
+              = image_tag image.url.url, class: "index_image"
             .main_contents__box__contents__items__one__image__price
               = "¥#{item.price}"
             .main_contents__box__contents__items__one__title
               %span
-                = link_to "items/#{item.item_id}", method: :get do
+                = link_to "/items/#{item.id}", method: :get do
                   = item.item_name
 
 = render "footer"

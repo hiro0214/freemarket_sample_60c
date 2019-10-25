@@ -1,4 +1,7 @@
 class SignupController < ApplicationController
+
+  skip_before_action :authenticate_user!
+
   # コメントアウトしている箇所は、userテーブルに保存するカラム名を作成したら外していきます。無い状態だとエラーがでるため
   # ウィザードフォーム用コントローラー
   # 各アクションごとに新規インスタンスを作成します
@@ -57,11 +60,8 @@ class SignupController < ApplicationController
       # ログインするための情報を保管
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
-
-      # クレジットカードの情報を保存と、ステップ１〜4まで
-      redirect_to root_path #ログイン後の遷移
-      # redirect_to controller: :credit_cards, action: :new
-      # new_credit_card GET    /credit_cards/new(.:format)    credit_cards#new
+      SnsCredential.update(user_id: @user.id)
+      redirect_to set_signup_index_path
     # else
     #   render '/signup/' #ログインできなかった場合の遷移
     end

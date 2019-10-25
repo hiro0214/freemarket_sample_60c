@@ -1,6 +1,7 @@
 -# コメントアウトしている箇所に関しては、保存するカラム名をuserテーブルに追加した後、外していきます
 
 .registration__header
+  = render "progress"
 
 .registration__first
   .registration__first__box
@@ -17,17 +18,23 @@
           = f.label :メールアドレス
           %span 必須
         = f.email_field :email,class:"aaaa", placeholder: " PC・携帯どちらでも可"
-      .registration__first__box__middle__input
-        .field-label.registration__first__box__middle__input__name
-          = f.label :パスワード
-          %span 必須
-        = f.password_field :password, autocomplete: "off",class:"aaaa", placeholder:" 英数字7文字以上"
-      .registration__first__box__middle__input
-        .field-label.registration__first__box__middle__input__name
-          = f.label :パスワード（確認）
-          %span 必須
-          = f.password_field :password_confirmation, autocomplete: "off",class:"aaaa", placeholder:" 英数字7文字以上"
-          %p ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+        - if session["devise.sns_id"].present?
+          = f.hidden_field :password
+          = f.hidden_field :password_confirmation
+        - else
+          .registration__first__box__middle__input
+            .field-label.registration__first__box__middle__input__name
+              = f.label :パスワード
+              %span 必須
+            = f.password_field :password, autocomplete: "off",class:"aaaa", placeholder:" 英数字7文字以上"
+          .registration__first__box__middle__input
+            .field-label.registration__first__box__middle__input__name
+              = f.label :パスワード（確認）
+              %span 必須
+              = f.password_field :password_confirmation, autocomplete: "off",class:"aaaa", placeholder:" 英数字7文字以上"
+              %p ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label :お名前（全角）

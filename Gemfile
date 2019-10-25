@@ -83,6 +83,15 @@ gem 'ancestry'
 gem "wicked"
 gem "active_hash"
 
+# SNS認証
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+# SNS認証/omniAuth脆弱性対策
+gem "omniauth-rails_csrf_protection"
+# 環境変数
+gem 'dotenv-rails'
+
 gem 'fog-aws'
 gem 'payjp'# Pay.jp決済
 
