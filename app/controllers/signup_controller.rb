@@ -57,7 +57,11 @@ class SignupController < ApplicationController
       # ログインするための情報を保管
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
+
+      # クレジットカードの情報を保存と、ステップ１〜4まで
       redirect_to root_path #ログイン後の遷移
+      # redirect_to controller: :credit_cards, action: :new
+      # new_credit_card GET    /credit_cards/new(.:format)    credit_cards#new
     # else
     #   render '/signup/' #ログインできなかった場合の遷移
     end

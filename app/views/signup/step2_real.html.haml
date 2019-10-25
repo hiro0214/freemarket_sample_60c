@@ -1,10 +1,3 @@
--# .registration__first
--#   .registration__first__box
--# = form_for @user, url: signup_index_path, method: :post, html: {class: 'step2_kari'} do |f|
--#       .field.registration__first__box__middle__input
--#         .field-label.registration__first__box__middle__input__name
--#           = f.submit "次へ進む", class: "last_submit"
-
 .registration__header
 
 .registration__first
@@ -23,8 +16,5 @@
         %button.last_submit{type: "submit"} SMSを送信する
         %p ＊電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         %a{href: "#"} 電話番号の確認が必要な理由＞
-      -# .registration__first__box__middle__input
-      -#   .actions
-      -#     = f.submit "次へ進む", class: 'last_submit'
-
+ 
   = render partial: "devise/layout/footer"
