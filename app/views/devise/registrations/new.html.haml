@@ -13,13 +13,13 @@
               %i.fa.fa-envelope.registration_icon
               メールアドレスで登録する
           %li
-            %button{onclick: "location.href='#'", class: "registration__fb"}
+            = button_to user_facebook_omniauth_authorize_path, class: "registration__fb" do
               %i.fa.fa-facebook-square.registration_icon
               Facebookで登録する
           %li
-            %button{onclick: "location.href='#'", class: "registration__go"}
+            = button_to user_google_oauth2_omniauth_authorize_path, class: "registration__go" do
               =image_tag "go_icon.png", class: "registration_go_icon"
               Googleで登録する
-
+  = render "devise/shared/links"   #SNS認証のリンク
   = render partial: "devise/layout/footer"
 
