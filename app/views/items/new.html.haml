@@ -17,7 +17,7 @@
         .exhibit__upload_image
           -# %input{:name => "image", :placeholder => "Image Url", :type => "text"}/
           %label
-            %div.exhibit__upload_image_field
+            .exhibit__upload_image_field
               = f.file_field :url, class: "up-image"
               %p ドラッグアンドドロップ
               %p またはクリックしてファイルをアップロード
