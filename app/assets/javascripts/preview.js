@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function() {
 
     fileReader.onloadend = function() {
       result.html('<img class="img_preview" src="' + fileReader.result + '"/>');
-      $(".exhibit__upload_image_field").append(btn)
+      result.append(btn)
     }
     fileReader.readAsDataURL(file);
   })
@@ -23,6 +23,7 @@ $(document).on('turbolinks:load', function() {
   $(document).on("click", ".remove_btn", function(){
     $(this).parent().remove()
     $(".img_preview").remove()
+    $(".exhibit__upload_image_field").append(html)
   })
 
 });
