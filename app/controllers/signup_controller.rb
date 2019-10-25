@@ -61,11 +61,15 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       sign_in User.find(session[:id]) unless user_signed_in?
       SnsCredential.update(user_id: @user.id)
-      redirect_to set_signup_index_path
+      redirect_to step4_signup_index_path
     # else
     #   render '/signup/' #ログインできなかった場合の遷移
     end
   end
+
+  def create_step4
+  end
+
 
 
 

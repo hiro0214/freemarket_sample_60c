@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'step3'
       get 'step4'
       get 'step5'
+      get 'set'
       get 'done'
     end
   end
@@ -49,18 +50,6 @@ Rails.application.routes.draw do
     get "exhibiting" => "users#exhibiting"
     get "identification" => "users#identification"
     get "delete_after" => "users#delete_after"
-  end
-
-  resources :signup do
-    collection do
-      get 'step1'
-      get 'step2'
-      get 'step3'
-      get 'step4'
-      get 'step5'
-      get 'set'
-      get 'done'
-    end
   end
 
   resources :credit_cards do

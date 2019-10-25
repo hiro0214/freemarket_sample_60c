@@ -6,7 +6,34 @@
 -#           = f.submit "次へ進む", class: "last_submit"
 
 .registration__header
-  = render "progress"
+  .progress
+    =link_to "/" do
+      =image_tag "header_logo.png", class: "progress__logo"
+    .progress__bar
+      .progress__bar__box
+        %p.step1 会員情報
+        .progress__bar__box__circle#step1
+        .step1_bar
+
+      .progress__bar__box
+        %p#step2_text 電話番号認証
+        .progress__bar__box__circle#step2_circle
+        .step2_bar#step2
+
+      .progress__bar__box
+        %p#step3_text お届け先住所入力
+        .progress__bar__box__circle#step3_circle
+        .step3_bar#step3
+
+      .progress__bar__box
+        %p#step4_text 支払い方法
+        .progress__bar__box__circle#step4_circle
+        .step4_bar#step4
+
+      .progress__bar__box
+        %p#step5_text 完了
+        .progress__bar__box__circle#step5_circle
+        .step5_bar#step5
 
 .registration__first
   .registration__first__box
