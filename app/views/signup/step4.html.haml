@@ -35,85 +35,33 @@
       %form.registration__first__box__middle{action: "regi_fifth"}
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
-            お名前
+            = f.label :お名前
             %span 必須
-          %input.aaaa
-          %input.aaaa
-          -# = f.telephone_field :last_name, autocomplete: "off",class:"aaaa", placeholder:""
-          -# = f.telephone_field :first_name, autocomplete: "off",class:"aaaa", placeholder:""
+            = f.telephone_field :last_name, autocomplete: "off",class:"aaaa", placeholder:""
+            = f.telephone_field :first_name, autocomplete: "off",class:"aaaa", placeholder:""
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
-            お名前カナ
+            = f.label :お名前カナ
             %span 必須
-          %input.aaaa
-          %input.aaaa
-          -# -ld :first_name_kana, autofocus: true,# = f.text_field :last_name_kana, autofocus: true, class:"aaaa", placeholder: "タニグチ"
-          -# = f.text_fie class:"aaaa", placeholder: "ヒロト"
+            = f.text_field :last_name_kana, autofocus: true, class:"aaaa", placeholder: "タニグチ"
+            = f.text_fie :first_name_kana, autofocus: true, class:"aaaa", placeholder: "ヒロト"
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
-            郵便番号
+            = f.label :郵便番号
             %span 必須
-          %input.aaaa{placeholder: "  例)123-4567"}
-          -# = f.telephone_field :, autocomplete: "off",class:"aaaa", placeholder:""
+            = f.telephon  :, autocomplete: "off",class:"aaaa", placeholder:"例)123-4567"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
-            都道府県
+            = f.label :都道府県
             %span 必須
           .registration__first__box__middle__input__area
-            = f.collection_select :region, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
-            -# %select
-            -#   %option 北海道
-            -#   %option 青森
-            -#   %option 岩手
-            -#   %option 宮城
-            -#   %option 秋田
-            -#   %option 山形
-            -#   %option 福島
-            -#   %option 茨城
-            -#   %option 栃木
-            -#   %option 群馬
-            -#   %option 埼玉
-            -#   %option 千葉
-            -#   %option 東京
-            -#   %option 神奈川
-            -#   %option 新潟
-            -#   %option 富山
-            -#   %option 石川
-            -#   %option 福井
-            -#   %option 山梨
-            -#   %option 長野
-            -#   %option 岐阜
-            -#   %option 静岡
-            -#   %option 愛知
-            -#   %option 三重
-            -#   %option 滋賀
-            -#   %option 京都
-            -#   %option 大阪
-            -#   %option 兵庫
-            -#   %option 奈良
-            -#   %option 和歌山
-            -#   %option 鳥取
-            -#   %option 島根
-            -#   %option 岡山
-            -#   %option 広島
-            -#   %option 山口
-            -#   %option 徳島
-            -#   %option 香川
-            -#   %option 愛媛
-            -#   %option 高知
-            -#   %option 福岡
-            -#   %option 佐賀
-            -#   %option 長崎
-            -#   %option 熊本
-            -#   %option 大分
-            -#   %option 宮崎
-            -#   %option 鹿児島
-            -#   %option 沖縄
+            = f.text_field :region, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
+
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
-            市区町村
+            = f.label :市区町村
             %span 必須
           %input.aaaa{placeholder: "  例) 横浜市緑区"}
           -# = f.telephone_field :last_name, autocomplete: "off",class:"aaaa", placeholder:""

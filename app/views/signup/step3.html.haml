@@ -38,12 +38,12 @@
         .registration__first__box__middle__input__name
           = f.label :'電話番号認証'
           %span 必須
-        = f.telephone_field :password, autocomplete: "off",class:"aaaa", placeholder:" 電話番号を入力してください"
+          = f.telephone_field :password, autocomplete: "off",class:"aaaa", placeholder:" 電話番号を入力してください"
 
       .registration__first__box__middle__input
         .registration__first__box__middle__input__name
           = f.label :'認証番号'
-        = f.telephone_field :password, autocomplete: "off",class:"aaaa", placeholder:" 認証番号を入力"
+          = f.telephone_field :password, autocomplete: "off",class:"aaaa", placeholder:" 認証番号を入力"
         -# %input{placeholder: "  認証番号を入力"}
         %p SMSで届いた認証番号を入力してください
         = f.submit "認証して完了", class: 'last_submit'

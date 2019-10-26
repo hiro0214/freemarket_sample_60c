@@ -39,7 +39,7 @@
         .field-label.registration__first__box__middle__input__name
           = f.label :ニックネーム
           %span 必須
-        = f.text_field :name, autofocus: true,class:"aaaa", placeholder: " 例)メルカリ太郎"
+        = f.text_field :name, autofocus: true, class:"aaaa", placeholder: " 例)メルカリ太郎"
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label :メールアドレス
@@ -67,20 +67,20 @@
           = f.label :お名前（全角）
           %span 必須
         .registration__first__box__middle__input__double
-          %input.aaaa{placeholder: " 谷口"}
-          %input.aaaa{placeholder: " 寛人"}
-          -# = f.text_field :last_name, autofocus: true, class:"aaaa", placeholder: "谷口"
-          -# = f.text_field :first_name, autofocus: true, class:"aaaa", placeholder: "寛人"
+          -# %input.aaaa{placeholder: " 谷口"}
+          -# %input.aaaa{placeholder: " 寛人"}
+          = f.text_field :last_name, autofocus: true, class:"aaaa", placeholder: "谷口"
+          = f.text_field :first_name, autofocus: true, class:"aaaa", placeholder: "寛人"
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label :お名前カナ（全角）
           %span 必須
         .registration__first__box__middle__input__double
-          %input.aaaa{placeholder: " タニグチ"}
-          %input.aaaa{placeholder: " ヒロト"}
+          -# %input.aaaa{placeholder: " タニグチ"}
+          -# %input.aaaa{placeholder: " ヒロト"}
 
-          -# = f.text_field :last_name_kana, autofocus: true, class:"aaaa", placeholder: "タニグチ"
-          -# = f.text_fie class:"aaaa", placeholder: "ヒロト"
+          = f.text_field :last_name_kana, autofocus: true, class:"aaaa", placeholder: "タニグチ"
+          = f.text_field :first_name_kana, autofocus: true, class:"aaaa", placeholder: "ヒロト"
       .registration__first__box__middle__input
         %p.robot
           私はロボットではありません。

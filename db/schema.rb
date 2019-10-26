@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 2019_10_26_044119) do
     t.string "sale_state", default: "exhibit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "buy_date"
     t.bigint "deliveries_id", null: false
     t.index ["deliveries_id"], name: "index_tradings_on_deliveries_id"
     t.index ["item_id"], name: "index_tradings_on_item_id"
@@ -98,6 +97,8 @@ ActiveRecord::Schema.define(version: 2019_10_26_044119) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
     t.datetime "birthday"
     t.string "first_name"
     t.string "last_name"
