@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
   def update
     @trading = Trading.find_by(item_id: "#{params[:id]}")
     if @trading.sale_state == "exhibit" && @trading.saler_id != current_user.id
-      @trading.update(sale_state: "trade", buyer_id: current_user.id)
+      @trading.update(sale_state: "trade", buyer_id: current_user.id, buy_date: Time.now)
       redirect_to buy_after_path
     else
       redirect_to root_path, flash: {buy_alert: "購入出来ませんでした"}
@@ -78,7 +78,6 @@ class ItemsController < ApplicationController
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
     @item.build_trading(saler_id: current_user.id)
-
     @category_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_array << parent.name
