@@ -55,6 +55,9 @@ Rails.application.routes.draw do
     get "exhibiting" => "users#exhibiting"
     get "identification" => "users#identification"
     get "delete_after" => "users#delete_after"
+    get "trade/:id" => "users#trade"
+    get "trade_after" => "users#trade_after"
+    get "sold/:id" => "users#sold"
   end
 
   resources :credit_cards do

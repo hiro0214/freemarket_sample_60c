@@ -1,0 +1,123 @@
+-# アイコン入れ替えと位置の微調整必要。
+-# %other_itemの７番と８番boxの中の調整必要
+= render "/items/header"
+
+.detail
+  .detail_container
+    %h1.item_name
+      = @item.item_name
+    %p.item_about
+    -#   『アニエスベー トートバッグ』は、45回の取引実績を持つasaさんから出品されました。アニエスベー（トートバッグ/レディース）の商品で、東京都から4~7日で発送されます。
+    .container_wrap
+      .item_container
+        .item_container__image
+        %ul.item_container__list
+          %li 画1
+          %li 画2
+          %li 画3
+          %li 画4
+          %li 画5
+      %table.item_table
+        %tr
+          %th 出品者
+          %td
+            = link_to "#{@user.name}", "/users/#{@user.id}",class:"owner_name"
+            .evaluation
+              %span.user_smile
+                =image_tag "logo_smile.png", class: "user_smile"
+                117
+              = fa_icon ' ', class: 'nomal'
+              %span.user_smile
+                =image_tag "logo_normal.png", class: "user_smile"
+                0
+              = fa_icon ' ', class: 'sad'
+              %span
+                =image_tag "logo_sad.png", class: "user_smile"
+                0
+        %tr
+          %th カテゴリー
+          %td
+            %p
+              = link_to "#{@category.name}", "#"
+            %p
+              = link_to ">#{@category_c.name}", "#"
+            %p
+              = link_to ">#{@category_gc.name}", "#"
+        %tr
+          %th ブランド
+          %td
+            = link_to 'オーチバル', " ",class:"table"
+        %tr
+          %th 商品の状態
+          %td
+            = @item.state
+        %tr
+          %th 配送料の負担
+          %td 送料込み(出品者負担)
+        %tr
+          %th 配送の方法
+          %td らくらくメルカリ便
+        %tr
+          %th 配送元地域
+          %td
+            = link_to "#", class:"table" do
+              = @item.region
+        %tr
+          %th 発送日の目安
+          %td
+            = @item.delivery_date
+    .item_pricebox
+      %span.item_pricebox__price
+        = "¥#{@item.price}"
+      %span.item_pricebox__tax
+        (税込)
+      %span.item_pricebox__fee
+        送料込み
+    - if @trading.sale_state == "exhibit"
+      .item_buy
+        = link_to "購入画面に進む", item_buy_path(@item), class: ""
+    - else
+      .sold_item__btn
+        %p 売り切れました
+    .item_description
+      = safe_join(@item.description.split("\n"), tag(:br))
+    .item_btn_container
+      .item_btn_container__btn_like
+        %span.item_btn_like__icon_heart
+          ♡
+        %span.item_btn_like__btn_like
+          いいね
+        %span.item_btn_like__like_num
+          46
+      .item_btn_container__btn_report
+        %span.item_btn_report__icon_flag
+          ▷
+        %span.item_btn_report__btn_report
+          不適切な商品の報告
+      .item_btn_container__btn_declaration
+        %span.item_btn_declaration__icon_lock
+          ◇
+        %span.item_btn_declaration__btn_lock
+          あんしん・あんぜんへの取り組み
+
+  .trade_bottom
+    .trade_bottom__top
+      取引画面
+    .trade_bottom__middle
+      .trade_bottom__middle__message
+        %i.fa.fa-truck
+        %span
+          商品を発送してください
+      .trade_bottom__middle__info
+        商品が購入され支払いされました。商品の発送を行ってください。
+    .trade_bottom__line
+      商品が売れた後の流れ ＞
+    .trade_bottom__bottom
+      = form_for @trading, url:"/items/#{@item.id}",method: :patch do |f|
+        = f.submit "商品の発送をしたので、発送通知をする", class: "trade_bottom__bottom__btn"
+        -# =link_to '商品の発送をしたので、発送通知をする',"/users/#{@user.id}/trade_after"
+    .trade_bottom__last_message
+      取引完了後、２週間経過または最新取引メッセージから２週間経過したため、取引メッセージを非公開にしました。
+
+
+= render "/items/footer"
