@@ -25,8 +25,8 @@ class UsersController < ApplicationController
     trading_now = trade.map {|t| t[:item_id]}
     @trading_items = Item.where(id: trading_now)
 
-    sale = Trading.where(saler_id: current_user.id, sale_state: "sale")
-    sold = trade.map {|t| t[:item_id]}
+    sale = Trading.where(saler_id: current_user.id, sale_state: "sold")
+    sold = sale.map {|t| t[:item_id]}
     @sold_items = Item.where(id: sold)
   end
 
@@ -41,6 +41,24 @@ class UsersController < ApplicationController
   end
 
   def delete_after
+  end
+
+  def trade
+    @item = Item.find(params[:id])
+    @category_gc= Category.find(@item[:category_index])
+    @category_c = @category_gc.parent
+    @category = @category_c.parent
+    @trading = Trading.find_by(item_id: params[:id])
+    @user = User.find(@trading.saler_id)
+  end
+
+  def trade_after
+    @user = User.find(current_user.id)
+  end
+
+  def sold
+    @user = User.find(current_user.id)
+    @item = Item.find(params[:id])
   end
 
   def puru

@@ -47,6 +47,9 @@ class ItemsController < ApplicationController
     if @trading.sale_state == "exhibit" && @trading.saler_id != current_user.id
       @trading.update(sale_state: "trade", buyer_id: current_user.id)
       redirect_to buy_after_path
+    elsif @trading.sale_state == "trade"
+      @trading.update(sale_state: "sold")
+      redirect_to "/users/#{current_user.id}/trade_after"
     else
       redirect_to root_path, flash: {buy_alert: "購入出来ませんでした"}
     end
