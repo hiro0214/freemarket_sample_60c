@@ -50,6 +50,7 @@ class UsersController < ApplicationController
     @category = @category_c.parent
     @trading = Trading.find_by(item_id: params[:id])
     @user = User.find(@trading.saler_id)
+    @image = Image.find_by(item_id: @item.id).url
   end
 
   def trade_after
