@@ -181,12 +181,21 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def search
+    if params[:search].length != 0
+      @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%")
+      @images = Image.where(item_id: @items.map{|i| i.id})
+    else
+      redirect_to root_path
+    end
+
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index, :url)
   end
-
 
 end
 

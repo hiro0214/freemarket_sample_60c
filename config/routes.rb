@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root "items#index"
+
   resources :signup do
     collection do
       get 'step1'
@@ -19,12 +20,13 @@ Rails.application.routes.draw do
     end
   end
 
+  # get "items/search" => "items#search"
   resources :items do
     get "buy" => "items#buy"
     collection do
       get 'category_children', defaults: { format: 'json' }
       get "category_grandchildren", defaults: { format: "json"}
-
+      get "search"
       # post 'items/:id' => 'items#pay', as: :pay#Pay.jp
     end
   end
