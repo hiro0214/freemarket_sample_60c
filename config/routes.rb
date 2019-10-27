@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :items do
+    resources :good, only: [:create, :destroy]
     get "buy" => "items#buy"
     collection do
       get 'category_children', defaults: { format: 'json' }

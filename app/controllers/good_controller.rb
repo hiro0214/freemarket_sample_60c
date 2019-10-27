@@ -1,0 +1,2 @@
+class GoodController < ApplicationController
+end
