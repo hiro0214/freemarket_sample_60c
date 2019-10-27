@@ -85,12 +85,12 @@
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
     .item_btn_container
-      %button.item_btn_container__btn_like#good-button
+      %button#good-button.item_btn_container__btn_like
         %span.item_btn_like__icon_heart
           ♡
         %span.item_btn_like__btn_like
           いいね
-        %span.item_btn_like__like_num
+        %span#item_btn_like__like_num
           = @item.goods_count
       .item_btn_container__btn_report
         %span.item_btn_report__icon_flag
