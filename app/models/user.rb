@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :sns_credentials, dependent: :destroy
   has_one :credit_card
+  has_one :delivery
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
@@ -20,7 +21,7 @@ class User < ApplicationRecord
     # snscredential = SnsCredential.where(uid: uid, provider: provider).first
     snscredential = SnsCredential.find_by(uid: uid, provider: provider)
     # binding.pry
-    
+
     if snscredential.present? #sns登録のみ完了してるユーザー
       user = User.find_by(id: snscredential.user_id)
       # binding.pry

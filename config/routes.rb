@@ -9,8 +9,11 @@ Rails.application.routes.draw do
     collection do
       get 'step1'
       get 'step2'
+      post 'step2'
       get 'step3'
+      post 'step3'
       get 'step4'
+      post 'create_step4' => "signup#create_step4"
       get 'step5'
       get 'set'
       get 'done'
