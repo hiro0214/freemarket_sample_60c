@@ -36,18 +36,16 @@
     = form_for "", url:signup_index_path, method: :post, html: {class: 'step2_kari'} do |f|
       .registration__first__box__middle__input
         .registration__first__box__middle__input__name
-          = f.label :'電話番号認証'
+          = f.label "電話番号認証"
           %span 必須
-        = f.telephone_field :password, autocomplete: "off",class:"aaaa", placeholder:" 電話番号を入力してください"
+          = f.text_field :'#', autocomplete: "off",class:"aaaa", placeholder:" 電話番号を入力してください"
 
       .registration__first__box__middle__input
         .registration__first__box__middle__input__name
-          = f.label :'認証番号'
-        = f.telephone_field :password, autocomplete: "off",class:"aaaa", placeholder:" 認証番号を入力"
-        -# %input{placeholder: "  認証番号を入力"}
-        %p SMSで届いた認証番号を入力してください
-        = f.submit "認証して完了", class: 'last_submit'
-        -# %button{type: "submit"} 認証して完了
+          = f.label "認証番号"
+          = f.text_field :'#' , autocomplete: "off",class:"aaaa", placeholder:" 認証番号を入力(このフォーム機能なし)"
+          %p SMSで届いた認証番号を入力してください
+          = f.submit "認証して完了", class: 'last_submit'
 
         -# %form.registration__first__box__middle
       .registration__first__box__middle
@@ -55,13 +53,20 @@
           .registration__first__box__middle__input__name
           %p 30秒たっても認証番号が届かない方へ
           %p 電話で認証番号を聞くこともできます。
-          = f.submit "電話で認証番号を聞く（通話無料)", class: 'last_submit'
-          -# %button{type: "submit"} 電話で認証番号を聞く（通話無料）
+          = f.button "電話で認証番号を聞く（通話無料)（機能なし）", class: 'last_submit'
 
       .registration__first__box__middle__input
-        .registration__first__box__middle__input__name 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+        .registration__first__box__middle__input__name
+          認証番号を再送することもできます。もう一度電話番号を入力して下さい。
         .registration__first__box__middle__info
           %a{href: "#"} 電話番号を再度入力する
           %p ※SMSが届かない場合はSMS受信設定を確認して、もう一度電話番号を入力してください。
+
+      -# 認証機能実装しないため、新たにスキップボタンを設置
+      .registration__first__box__middle
+        .registration__first__box__middle__input
+          *SMS認証を使用しない場合はスキップして次へ進んでください。
+          = f.submit "スキップして次へ", class: 'last_submit'
+
 
   = render partial: "devise/layout/footer"

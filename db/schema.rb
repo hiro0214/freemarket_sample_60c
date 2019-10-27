@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_044119) do
+ActiveRecord::Schema.define(version: 2019_10_27_073341) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_044119) do
     t.string "last_name"
     t.string "first_name_kana"
     t.string "last_name_kana"
-    t.integer "tel_number"
+    t.string "tel_number"
     t.string "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name"

@@ -9,8 +9,8 @@
           .registration__first__box__middle__input__name
             %label カード番号
             %span 必須
-          = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-          = image_tag "card_list.png", class: "card_list"
+            = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+            = image_tag "card_list.png", class: "card_list"
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             = label_tag "有効期限"
