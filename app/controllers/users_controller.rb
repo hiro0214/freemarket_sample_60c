@@ -20,6 +20,14 @@ class UsersController < ApplicationController
     tradings = Trading.where(saler_id: current_user.id, sale_state: "exhibit")
     trading = tradings.map {|t| t[:item_id]}
     @items = Item.where(id: trading)
+
+    trade = Trading.where(saler_id: current_user.id, sale_state: "trade")
+    trading_now = trade.map {|t| t[:item_id]}
+    @trading_items = Item.where(id: trading_now)
+
+    sale = Trading.where(saler_id: current_user.id, sale_state: "sale")
+    sold = trade.map {|t| t[:item_id]}
+    @sold_items = Item.where(id: sold)
   end
 
   def edit_item
