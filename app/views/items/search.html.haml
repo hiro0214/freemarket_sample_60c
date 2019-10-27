@@ -8,7 +8,7 @@
           %h2
             = "'#{params[:search]}' の検索結果"
       .main_contents__box__contents__items
-        - @items.each do |item|
+        - @items.zip(@images).each do |item, image|
           .main_contents__box__contents__items__one
             = image_tag image.url.url, class: "index_image"
             .main_contents__box__contents__items__one__image__price

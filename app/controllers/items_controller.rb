@@ -182,9 +182,9 @@ class ItemsController < ApplicationController
   end
 
   def search
-
     if params[:search].length != 0
       @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%")
+      @images = Image.where(item_id: @items.map{|i| i.id})
     else
       redirect_to root_path
     end
