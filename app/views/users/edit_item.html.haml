@@ -76,25 +76,23 @@
       = safe_join(@item.description.split("\n"), tag(:br))
     
       -#ここからitem_editページのみの表示
-    .item_edit_container_line
-    %ul.item_edit_container
-      %li.edit
-        -# =link_to "商品の編集","/users/#{@user.id}/edit_content"
-        =link_to "商品の編集","/items/#{@item.id}/edit"
-      %p or
-      %li
-        =link_to "商品の出品を一旦停止する",""
-      %li
-        -# =if user_signed_in? && current_user.id == item.user_id
-        =link_to "この商品を削除する","/items/#{@item.id}",method: :delete
+  %ul.item_edit_container
+    %li.edit
+      -# =link_to "商品の編集","/users/#{@user.id}/edit_content"
+      =link_to "商品の編集","/items/#{@item.id}/edit"
+    %p or
+    %li
+      =link_to "商品の出品を一旦停止する",""
+    %li
+      -# =if user_signed_in? && current_user.id == item.user_id
+      =link_to "この商品を削除する","/items/#{@item.id}",method: :delete
 
-    -#ここ後でform_forで書く部分
-    .item_edit_container_line
-    .item_comment_container
-      .item_comment_container__info
-        相手のことを考え丁寧なコメントを心がけましょう。
-        %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %input
-      .item_comment_container__btn
-        コメントする
+  -#ここ後でform_forで書く部分
+  .item_comment_container
+    .item_comment_container__info
+      相手のことを考え丁寧なコメントを心がけましょう。
+      %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %input
+    .item_comment_container__btn
+      コメントする
 = render "/items/footer"
