@@ -34,7 +34,6 @@ $(document).on('turbolinks:load', function() {
 
   $(".exhibit__btn").click(function(){
     $(".exhibit__btn__circle").animate({borderWidth: "10px"}, 200, function(){
-      // $(".exhibit__btn__circle").css("background", "white")
       $(".exhibit__btn__circle").animate({borderWidth: "0px"}, 200)
       setTimeout(move, 500)
     })

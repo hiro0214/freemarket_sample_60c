@@ -11,8 +11,7 @@
     .container_wrap
       .item_container
         .item_container__image
-          - if @image != nil
-            = image_tag @image.url, class: "item_image"
+          = image_tag @image.url, class: "item_image"
 
         %ul.item_container__list
           %li 画1
@@ -84,14 +83,10 @@
         %p 売り切れました
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
+    .balloon
+      %p Thank You!
     .item_btn_container
-      .item_btn_container__btn_like
-        %span.item_btn_like__icon_heart
-          ♡
-        %span.item_btn_like__btn_like
-          いいね
-        %span.item_btn_like__like_num
-          46
+      = render partial: "good/good", locals: {item: @item, good: @good}
       .item_btn_container__btn_report
         %span.item_btn_report__icon_flag
           ▷

@@ -61,13 +61,8 @@ class ItemsController < ApplicationController
     @category = @category_c.parent
     @trading = Trading.find_by(item_id: params[:id])
     @user = User.find(@trading.saler_id)
-
-    if Image.find_by(item_id: @item) != nil
-      @image = Image.find_by(item_id: params[:id]).url
-    else
-      @image = nil
-    end
-
+    @good = Good.where(item_id: params[:id])
+    @image = Image.find_by(item_id: params[:id]).url
   end
 
   def create
