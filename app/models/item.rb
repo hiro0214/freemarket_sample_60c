@@ -5,6 +5,9 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
 
   has_many :goods, dependent: :destroy
+  def good_user(user_id)
+    goods.find_by(user_id: user_id)
+  end
 
   validates :item_name, presence: true, length: { in: 1..40 }
   validates :description, presence: true, length:{maximum: 1000 , message: "must be given please" }
