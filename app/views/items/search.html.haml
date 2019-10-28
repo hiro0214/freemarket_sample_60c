@@ -1,0 +1,21 @@
+= render "header"
+
+.main_contents
+  .main_contents__box
+    .main_contents__box__contents
+      .main_contents__box__contents__title_box
+        .main_contents__box__contents__title_box__title
+          %h2
+            = "'#{params[:search]}' の検索結果"
+      .main_contents__box__contents__items
+        - @items.zip(@images).each do |item, image|
+          .main_contents__box__contents__items__one
+            = image_tag image.url.url, class: "index_image"
+            .main_contents__box__contents__items__one__image__price
+              = "¥#{item.price}"
+            .main_contents__box__contents__items__one__title
+              %span
+                = link_to "items/#{item[:item_id]}", method: :get do
+                  = item.item_name
+
+= render "footer"

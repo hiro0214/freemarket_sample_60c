@@ -47,6 +47,9 @@ class ItemsController < ApplicationController
     if @trading.sale_state == "exhibit" && @trading.saler_id != current_user.id
       @trading.update(sale_state: "trade", buyer_id: current_user.id, buy_date: Time.now)
       redirect_to buy_after_path
+    elsif @trading.sale_state == "trade"
+      @trading.update(sale_state: "sold")
+      redirect_to "/users/#{current_user.id}/trade_after"
     else
       redirect_to root_path, flash: {buy_alert: "購入出来ませんでした"}
     end
@@ -176,12 +179,21 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def search
+    if params[:search].length != 0
+      @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%")
+      @images = Image.where(item_id: @items.map{|i| i.id})
+    else
+      redirect_to root_path
+    end
+
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index, :url)
   end
-
 
 end
 

@@ -1,0 +1,21 @@
+= render "/items/header"
+
+.wrapper_mypage
+  .wrapper_box
+    = render 'side_bar'
+    
+    .trade_main
+      .trade_main__top
+        取引画面
+      .trade_main__middle
+        .trade_main__middle__message
+          %i.fa.fa-check
+          %span
+            商品の発送を通知しました
+        .trade_main__middle__info
+          商品の発送には平均で2〜4日かかります。購入者からの受取評価をお待ちください。
+      .trade_main__line
+      .trade_main__bottom
+        .trade_main__bottom__btn
+          =link_to '出品した商品に戻る',"/users/#{@user.id}/exhibiting"
+= render "/items/footer" 

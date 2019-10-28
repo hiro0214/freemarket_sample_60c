@@ -14,13 +14,13 @@ $(document).on('turbolinks:load', function() {
   function image1(){
     $(".main__img1").animate({opacity: 0},800)
     $(".main__img2").animate({opacity: 1},800)
-    setTimeout(image2, 6000)
+    setTimeout(image2, 6400)
   }
 
   function image2(){
     $(".main__img1").animate({opacity: 1},800)
     $(".main__img2").animate({opacity: 0},800)
-    setTimeout(image1, 6000)
+    setTimeout(image1, 6400)
   }
 
   setTimeout(image1, 6000)
