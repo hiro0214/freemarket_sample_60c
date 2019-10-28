@@ -53,28 +53,28 @@
             =f.label "郵便番号"
             %span 必須
           .registration__first__box__middle__input__area
-            = f.text_field :postal_code, autocomplete: "on", class:"aaaa", placeholder:" 例) 123-4567"
+            = f.text_field :postal_code, autocomplete: "on", class:"aaaa jip", placeholder:" 例) 123-4567"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "都道府県"
             %span 必須
           .registration__first__box__middle__input__area
-            = f.text_field :area, autocomplete: "on", class:"aaaa", placeholder:" 例) コロラド州"
+            = f.text_field :area, autocomplete: "on", class:"aaaa prefecture", placeholder:" 例) コロラド州"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "市区町村"
             %span 必須
           .registration__first__box__middle__input__area
-            = f.text_field :city, autocomplete: "on", class:"aaaa", placeholder:" 例) 横浜市緑区"
+            = f.text_field :city, autocomplete: "on", class:"aaaa city", placeholder:" 例) 横浜市緑区"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "番地"
             %span 必須
           .registration__first__box__middle__input__area
-            = f.text_field :address, autocomplete: "on", class:"aaaa", placeholder:" 例) 青山1-1-1"
+            = f.text_field :address, autocomplete: "on", class:"aaaa town", placeholder:" 例) 青山1-1-1"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name

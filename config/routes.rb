@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'step3'
       post 'step3'
       get 'step4'
+      get "/jip" => "signup#jip"
       post 'create_step4' => "signup#create_step4"
       get 'step5'
       get 'set'

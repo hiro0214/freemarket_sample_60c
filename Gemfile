@@ -82,6 +82,7 @@ gem "haml-rails"
 gem 'ancestry'
 gem "wicked"
 gem "active_hash"
+gem 'jipcode'
 
 # SNS認証
 gem 'omniauth'
