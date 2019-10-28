@@ -305,3 +305,35 @@
     }
   }
 }
+
+.balloon {
+  position: relative;
+  left:10px;
+  top:20px;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 90px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: rgb(255, 184, 184);
+  border-radius: 15px;
+  opacity:0;
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid rgb(255, 184, 184);
+}
+
+.balloon p {
+  margin: 0;
+  padding: 0;
+  color:rgb(255, 109, 109);
+}

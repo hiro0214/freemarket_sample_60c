@@ -5,7 +5,7 @@
     <button class="item__goods good_now">
       <div class="item_btn_container__btn">
         <span class="item_btn_like__icon_heart good_now_heart">
-          <i class="fa fa-heart "></i> 
+          <i class="fa fa-heart "></i>
         </span>
         <span class="item_btn_like__btn_like">
           いいね済
@@ -18,7 +18,7 @@
     <% end %>
 
   <% else %>
-    <%= link_to item_good_index_path(item.id), method: :post, id: "good-button", remote: true do %>
+    <%= link_to item_good_index_path(item.id), method: :post, id: "good-button", class:"good_btn", remote: true do %>
     <button class="item__goods">
       <div class="item_btn_container__btn">
         <span class="item_btn_like__icon_heart">

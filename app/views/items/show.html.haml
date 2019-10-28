@@ -83,6 +83,8 @@
         %p 売り切れました
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
+    .balloon
+      %p Thank You!
     .item_btn_container
       = render partial: "good/good", locals: {item: @item, good: @good}
       .item_btn_container__btn_report
