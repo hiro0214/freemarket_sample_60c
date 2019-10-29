@@ -1,5 +1,3 @@
--# アイコン入れ替えと位置の微調整必要。
--# %other_itemの７番と８番boxの中の調整必要
 = render "header"
 
 .detail
@@ -13,12 +11,12 @@
         .item_container__image
           = image_tag @image.url, class: "item_image"
 
-        %ul.item_container__list
-          %li 画1
-          %li 画2
-          %li 画3
-          %li 画4
-          %li 画5
+        -# %ul.item_container__list
+        -#   %li 画1
+        -#   %li 画2
+        -#   %li 画3
+        -#   %li 画4
+        -#   %li 画5
       %table.item_table
         %tr
           %th 出品者
@@ -48,7 +46,7 @@
         %tr
           %th ブランド
           %td
-            = link_to 'オーチバル', " ",class:"table"
+            = link_to '', " ",class:"table"
         %tr
           %th 商品の状態
           %td
