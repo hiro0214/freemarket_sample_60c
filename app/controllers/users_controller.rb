@@ -9,6 +9,13 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def update
+    if @user.id == current_user.id
+      @user.update(profile: params[:user][:profile])
+      redirect_to "/users/#{current_user.id}"
+    end
+  end
+
   def logout
   end
 
@@ -68,5 +75,11 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(current_user.id)
   end
+
+  # private
+
+  # def user_params
+  #   params.permit(:profile)
+  # end
 
 end
