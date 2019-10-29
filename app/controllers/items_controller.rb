@@ -62,12 +62,11 @@ class ItemsController < ApplicationController
     @trading = Trading.find_by(item_id: params[:id])
     @user = User.find(@trading.saler_id)
 
-# ここオンオフ
-    # if Image.find_by(item_id: @item) != nil
-    #   @image = Image.find_by(item_id: params[:id]).url
-    # else
-    #   @image = nil
-    # end
+    if Image.find_by(item_id: @item) != nil
+      @image = Image.find_by(item_id: params[:id]).url
+    else
+      @image = nil
+    end
 
   end
 

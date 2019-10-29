@@ -34,8 +34,7 @@
       .main_contents__box__contents__items.fadeout
         - @ladies_items.zip(@la_image).each do |item, image|
           .main_contents__box__contents__items__one
-            -# # ここオンオフ
-            -# = image_tag image.url.url, class: "index_image"
+            = image_tag image.url.url, class: "index_image"
             .main_contents__box__contents__items__one__image__price
               = "¥#{item.price}"
             .main_contents__box__contents__items__one__title
