@@ -89,11 +89,9 @@
     position: relative;
     overflow:hidden;
     &__image{
-      background:goldenrod;
       height:188px;
       width:188px;
       &__price{
-        background:goldenrod;
         padding: 0 12px;
         position: absolute;
         bottom: 80px;
@@ -121,7 +119,6 @@
   font-size: 14px;
   font-weight: 600;
   color: rgb(0, 149,238);
-  text-decoration: none;
 }
 
 .exhibit__btn {

@@ -35,7 +35,7 @@
                 0
         %tr
           %th カテゴリー
-          %td 
+          %td
             %p
               = link_to "#{@category.name}", "#"
             %p
@@ -74,7 +74,7 @@
         送料込み
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
-    
+
       -#ここからitem_editページのみの表示
   %ul.item_edit_container
     %li.edit
