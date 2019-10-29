@@ -12,7 +12,8 @@
       .item_container
         .item_container__image
           - if @image != nil
-            = image_tag @image.url, class: "item_image"
+            -# # ここオンオフ
+            -# = image_tag @image.url, class: "item_image"
 
         %ul.item_container__list
           %li 画1
