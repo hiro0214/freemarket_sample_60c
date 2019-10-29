@@ -40,20 +40,22 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:item_id])
     @trading = Trading.find_by(item_id: "#{params[:item_id]}")
     @image = Image.find_by(item_id: @item.id).url
+
+
+    # 配送先の表示
+    @delivery = Delivery.find_by(user_id: current_user.id)
+
+    # カード情報の表示
+    @card = CreditCard.find_by(user_id: current_user.id)
+
+    Payjp.api_key = 'sk_test_f98999ddca480c61d3498ee7'
+    customer = Payjp::Customer.retrieve(@card.customer_id,)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
+
+
   end
 
-  def update
-    @trading = Trading.find_by(item_id: "#{params[:id]}")
-    if @trading.sale_state == "exhibit" && @trading.saler_id != current_user.id
-      @trading.update(sale_state: "trade", buyer_id: current_user.id, buy_date: Time.now)
-      redirect_to buy_after_path
-    elsif @trading.sale_state == "trade"
-      @trading.update(sale_state: "sold")
-      redirect_to "/users/#{current_user.id}/trade_after"
-    else
-      redirect_to root_path, flash: {buy_alert: "購入出来ませんでした"}
-    end
-  end
+
 
   def show
     @category_gc= Category.find(@item[:category_index])
