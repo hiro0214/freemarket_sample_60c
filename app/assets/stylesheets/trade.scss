@@ -1,0 +1,174 @@
+.trade_bottom{
+  width:700px;
+  height:568px;
+  margin:40px auto;
+  cursor: pointer;
+  &__top{
+    background:white;
+    height:50px;
+    padding:8px 24px;
+    font-size:24px;
+    font-weight:bold;
+    text-align: center;
+  }
+  &__middle{
+    background:#fff6de;
+    width:700px;
+    height:156px;
+    padding:30px 8px;
+    display:block;
+
+    &__message{
+      width:685px;
+      height:35px;
+      font-size:18px;
+      font-weight: bold;
+      text-align: center;
+      color:#ea352d;
+      >i {
+        font-size:40px;
+      }
+    }
+
+    &__info{
+      width:685px;
+      height:30px;
+      padding-top:10px 16px 8px;
+      text-align: center;
+      margin:8px;     
+    }
+  }
+  
+  &__line{
+    background:white;
+    height:50px;
+    padding:8px 24px;
+    font-size:14px;
+    color:#0099e8;
+    text-align: right;
+    border-bottom: #ccc solid 1px;
+  }
+  &__bottom{
+    background: #ffffff;
+    height:150px;
+    padding:10px;
+    &__btn{
+      background: #ea352d;
+      color: #fff;
+      width:600px;
+      height:50px;
+      margin:40px auto;
+      display:block;
+      font-size:18px;
+      line-height: 50px;
+      text-align: center;
+      a{
+        color:#fff;
+      }
+    }
+  }
+
+  &__last_message{
+    background:white;
+    height:120px;
+    padding:20px 40px;
+    font-size:14px;
+    text-align: left;
+  }
+}
+
+
+
+// ここからtrade_afterとsold
+.trade_main{
+  width:700px;
+  height:568px;
+  margin:40px 0;
+  cursor: pointer;
+  &__top{
+    background:white;
+    height:50px;
+    padding:8px 24px;
+    font-size:24px;
+    font-weight:bold;
+    text-align: center;
+  }
+  &__middle{
+    background:#fff6de;
+    width:700px;
+    height:156px;
+    padding:30px 8px;
+    display:block;
+
+    &__message{
+      width:685px;
+      height:35px;
+      font-size:18px;
+      font-weight: bold;
+      text-align: center;
+      color:#ea352d;
+      >i {
+        font-size:40px;
+      }
+    }
+
+    &__info{
+      width:685px;
+      height:30px;
+      padding:16px 8px;
+      text-align: center;
+      margin:8px;     
+    }
+  }
+  
+  &__line{
+    background:white;
+    height:50px;
+    padding:8px 24px;
+    font-size:14px;
+    color:#0099e8;
+    text-align: right;
+    border-bottom: #ccc solid 1px;
+  }
+  &__bottom{
+    background: #ffffff;
+    height:150px;
+    padding:10px;
+    &__btn{
+      background: #aaa;
+      color: #fff;
+      width:400px;
+      height:50px;
+      margin:40px auto;
+      display:block;
+      font-size:16px;
+      line-height: 50px;
+      text-align: center;
+      a{
+        color:#fff;
+      }
+    }
+    &__btn_sold{
+      background:#ea352d;
+      color: #fff;
+      width:600px;
+      height:50px;
+      margin:40px auto;
+      display:block;
+      font-size:16px;
+      line-height: 50px;
+      text-align: center;
+      a{
+        color:#fff;
+      }
+    }
+  }
+
+  &__last_message{
+    background:white;
+    height:120px;
+    padding:20px 40px;
+    font-size:14px;
+    text-align: left;
+  }
+}

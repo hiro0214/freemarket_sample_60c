@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_073341) do
+
+ActiveRecord::Schema.define(version: 2019_10_27_095811) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_073341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category_index"
+    t.integer "goods_count"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -91,7 +93,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_073341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "buy_date"
-    t.bigint "deliveries_id", null: false
+    t.integer "deliveries_id"
     t.index ["deliveries_id"], name: "index_tradings_on_deliveries_id"
     t.index ["item_id"], name: "index_tradings_on_item_id"
   end

@@ -41,6 +41,7 @@ class ItemsController < ApplicationController
     @trading = Trading.find_by(item_id: "#{params[:item_id]}")
     @image = Image.find_by(item_id: @item.id).url
 
+
     # 配送先の表示
     @delivery = Delivery.find_by(user_id: current_user.id)
 
@@ -50,6 +51,7 @@ class ItemsController < ApplicationController
     Payjp.api_key = 'sk_test_f98999ddca480c61d3498ee7'
     customer = Payjp::Customer.retrieve(@card.customer_id,)
     @default_card_information = customer.cards.retrieve(@card.card_id)
+
 
   end
 
@@ -61,13 +63,8 @@ class ItemsController < ApplicationController
     @category = @category_c.parent
     @trading = Trading.find_by(item_id: params[:id])
     @user = User.find(@trading.saler_id)
-
-    if Image.find_by(item_id: @item) != nil
-      @image = Image.find_by(item_id: params[:id]).url
-    else
-      @image = nil
-    end
-
+    @good = Good.where(item_id: params[:id])
+    @image = Image.find_by(item_id: params[:id]).url
   end
 
   def create

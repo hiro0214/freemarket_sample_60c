@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'step3'
       post 'step3'
       get 'step4'
+      get "/jip" => "signup#jip"
       post 'create_step4' => "signup#create_step4"
       get 'step5'
       get 'set'
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
 
   # get "items/search" => "items#search"
   resources :items do
+    resources :good, only: [:create, :destroy]
     get "buy" => "items#buy"
     collection do
       get 'category_children', defaults: { format: 'json' }
@@ -52,9 +54,13 @@ Rails.application.routes.draw do
     get "edit_item/:id" => "users#edit_item"
     get "logout" => "users#logout"
     get "profile" => "users#profile"
+    get "profile" => "users#profile"
     get "exhibiting" => "users#exhibiting"
     get "identification" => "users#identification"
     get "delete_after" => "users#delete_after"
+    get "trade/:id" => "users#trade"
+    get "trade_after" => "users#trade_after"
+    get "sold/:id" => "users#sold"
   end
 
   resources :credit_cards do

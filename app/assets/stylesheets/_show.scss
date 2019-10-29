@@ -88,7 +88,7 @@
         padding : 20px 10px;
       }
     }
-  } 
+  }
   .item_pricebox{
     margin: 24px 0 0;
     text-align: center;
@@ -131,11 +131,12 @@
     display: flex;
     font-size: 14px;
     display: flex;
-      &__btn_like{
-        background:#f5f5f5;
-        display: inline-block;
-        padding: 8px 16px;
-        border-radius: 40px;
+      &__btn {
+        display: block;
+        width:100px;
+        line-height:33px;
+        border-radius:40px;
+        // border:solid 1px red;
       }
       &__btn_report{
       background: #f5f5f5;
@@ -247,8 +248,6 @@
       font-size: 16px;
       font-weight: 400;
     }
-    &__price{
-    }
   }
 }
 
@@ -273,4 +272,66 @@
 .item_image {
   width:300px;
   height:300px;
+}
+
+
+.item__goods {
+  background:#f5f5f5;
+  border-radius:40px;
+  &:hover {
+    background:rgb(255, 185, 185);
+    transition: .4s;
+    border:solid 1px rgb(0, 30, 129);
+    color:#fff;
+    border:solid 1px rgb(255, 126, 126);
+  }
+    a {
+    color:#333;
+    &:hover {
+      color:#fff;
+      transition: .4s;
+    }
+  }
+}
+
+.good_now {
+  border:solid 1px rgb(255, 126, 126);
+  * {
+    color:rgb(255, 78, 78);
+  }
+  &_heart {
+    font-size:20px;
+  }
+}
+
+.balloon {
+  position: relative;
+  left:10px;
+  top:20px;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 90px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: rgb(255, 184, 184);
+  border-radius: 15px;
+  opacity:0;
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid rgb(255, 184, 184);
+}
+
+.balloon p {
+  margin: 0;
+  padding: 0;
+  color:rgb(255, 109, 109);
 }

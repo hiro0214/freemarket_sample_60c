@@ -1,3 +1,5 @@
+-# アイコン入れ替えと位置の微調整必要。
+-# %other_itemの７番と８番boxの中の調整必要
 = render "/items/header"
 
 .detail
@@ -10,17 +12,17 @@
       .item_container
         .item_container__image
           = image_tag @image.url, class: "item_image"
-        -# %ul.item_container__list
-        -#   %li 画1
-        -#   %li 画2
-        -#   %li 画3
-        -#   %li 画4
-        -#   %li 画5
+        %ul.item_container__list
+          %li 画1
+          %li 画2
+          %li 画3
+          %li 画4
+          %li 画5
       %table.item_table
         %tr
           %th 出品者
           %td
-            = link_to "#{@user.name}", "#",class:"owner_name"
+            = link_to "#{@user.name}", "/users/#{@user.id}",class:"owner_name"
             .evaluation
               %span.user_smile
                 =image_tag "logo_smile.png", class: "user_smile"
@@ -72,27 +74,51 @@
         (税込)
       %span.item_pricebox__fee
         送料込み
+    - if @trading.sale_state == "exhibit"
+      .item_buy
+        = link_to "購入画面に進む", item_buy_path(@item), class: ""
+    - else
+      .sold_item__btn
+        %p 売り切れました
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
+    .item_btn_container
+      .item_btn_container__btn_like
+        %span.item_btn_like__icon_heart
+          ♡
+        %span.item_btn_like__btn_like
+          いいね
+        %span.item_btn_like__like_num
+          46
+      .item_btn_container__btn_report
+        %span.item_btn_report__icon_flag
+          ▷
+        %span.item_btn_report__btn_report
+          不適切な商品の報告
+      .item_btn_container__btn_declaration
+        %span.item_btn_declaration__icon_lock
+          ◇
+        %span.item_btn_declaration__btn_lock
+          あんしん・あんぜんへの取り組み
 
-      -#ここからitem_editページのみの表示
-  %ul.item_edit_container
-    %li.edit
-      -# =link_to "商品の編集","/users/#{@user.id}/edit_content"
-      =link_to "商品の編集","/items/#{@item.id}/edit"
-    %p or
-    %li
-      =link_to "商品の出品を一旦停止する",""
-    %li
-      -# =if user_signed_in? && current_user.id == item.user_id
-      =link_to "この商品を削除する","/items/#{@item.id}",method: :delete
+  .trade_bottom
+    .trade_bottom__top
+      取引画面
+    .trade_bottom__middle
+      .trade_bottom__middle__message
+        %i.fa.fa-truck
+        %span
+          商品を発送してください
+      .trade_bottom__middle__info
+        商品が購入され支払いされました。商品の発送を行ってください。
+    .trade_bottom__line
+      商品が売れた後の流れ ＞
+    .trade_bottom__bottom
+      = form_for @trading, url:"/items/#{@item.id}",method: :patch do |f|
+        = f.submit "商品の発送をしたので、発送通知をする", class: "trade_bottom__bottom__btn"
+        -# =link_to '商品の発送をしたので、発送通知をする',"/users/#{@user.id}/trade_after"
+    .trade_bottom__last_message
+      取引完了後、２週間経過または最新取引メッセージから２週間経過したため、取引メッセージを非公開にしました。
 
-  -#ここ後でform_forで書く部分
-  .item_comment_container
-    .item_comment_container__info
-      相手のことを考え丁寧なコメントを心がけましょう。
-      %br 不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %input
-    .item_comment_container__btn
-      コメントする
+
 = render "/items/footer"
