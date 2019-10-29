@@ -8,7 +8,6 @@
     .exhibit__infomation
       %p 商品の情報を入力
 
-    -# = form_for [@item] do |f|
     = form_for(@item, url: item_edit_update_path(@item)) do |f|
       .exhibit__upload
         .exhibit__upload_head
