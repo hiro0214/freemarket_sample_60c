@@ -30,5 +30,11 @@ $(document).on('turbolinks:load', function() {
       $(".town").val("")
     }
   })
+
+  $(".bbttnn").click(function(){
+    $(".registration__first__box__middle__input input").val("テスト")
+    $(".bbb").val("micky@mouse.com")
+    $(".ccc").val("12345678")
+  })
 });
 
