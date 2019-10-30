@@ -116,6 +116,8 @@ class SignupController < ApplicationController
   end
 
   def create_step4
+    @user = User.find(current_user.id)
+    @@user_id = current_user.id
     @delivery = Delivery.new(
     user_id: @@user_id,
     last_name: delivery_params[:last_name],
@@ -130,6 +132,7 @@ class SignupController < ApplicationController
     if @delivery.save
       redirect_to step5_signup_index_path
     end
+    render '/signup/step4' unless @delivery.valid?
   end
 
   private
