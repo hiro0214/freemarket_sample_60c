@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def exhibiting
     @user = User.find(current_user.id)
     tradings = Trading.where(saler_id: current_user.id, sale_state: "exhibit")
-    trading = tradings.map {|t| t[:item_id]}
+    trading = tradings.map {|t| t[:item_id]}#item_idを元に変数tradings(tradingsテーブルのレコードから指定したカラム)の情報をゲット
     @items = Item.where(id: trading)
 
     trade = Trading.where(saler_id: current_user.id, sale_state: "trade")

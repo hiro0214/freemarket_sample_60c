@@ -13,14 +13,14 @@
         .exhibit__upload_head
           %p 出品画像
           %span.exhibit_span 必須
-        %p 最大10枚までアップロードできます
+        -# %p 最大10枚までアップロードできます
         .exhibit__upload_image
           %label
             .exhibit__upload_image_preview
               = f.file_field :url, class: "up-image"
               .exhibit__upload_image_field#image_list
-                %p ドラッグアンドドロップ
-                %p またはクリックしてファイルをアップロード
+                -# %p ドラッグアンドドロップ
+                %p クリックしてファイルをアップロード
             -# %input.sell-upload-drop-file{:multiple => "", :name => "image1", :type => "file"}/
 
       .exhibit__explanation
