@@ -39,7 +39,7 @@
           = f.label "携帯電話の番号"
           %span 必須
           = f.telephone_field :tel_number, autocomplete: "off",class:"aaaa", placeholder:" 電話番号を入力してください"
-
+          = render partial:'error_message_signup', locals: {user: @user, column: "tel_number"}
       .registration__first__box__middle__input
         = f.submit "SMSを送信する", class: 'last_submit'
         %p ＊電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
