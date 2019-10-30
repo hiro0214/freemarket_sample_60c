@@ -109,7 +109,7 @@
 |------|----|-------|
 |id|integer|null: false|
 |item_id|integer|null: false, foreign_key: true|
-|url|string||
+|url|string|null: false|
 
 ### Association
 - belongs_to :item
