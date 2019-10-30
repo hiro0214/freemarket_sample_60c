@@ -54,7 +54,6 @@ Rails.application.routes.draw do
     get "edit_item/:id" => "users#edit_item"
     get "logout" => "users#logout"
     get "profile" => "users#profile"
-    get "profile" => "users#profile"
     get "exhibiting" => "users#exhibiting"
     get "identification" => "users#identification"
     get "delete_after" => "users#delete_after"
