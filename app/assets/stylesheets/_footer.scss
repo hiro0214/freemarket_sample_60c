@@ -1,8 +1,14 @@
 @media screen and (max-width:767px) {
   /*スマホ用のcssを記述*/
 
-  .footer__list_wrap{
-    width: 100%;
+  .footer__list__guide{
+    width: 40%;
+  }
+  .footer__list__privacy_and_rule{
+    width: 40%;
+  }
+  .footer__list__country{
+    width: 40%;
   }
 
 
@@ -20,15 +26,16 @@
       width:100%;
     }
     &__mid {
-      width:50vw;
+      background: rgb(34, 34, 34);
+      width:80%;
       display:flex;
-      
+      flex-wrap: wrap;
+      // flex-direction:column;
       margin:0 auto;
       padding-top:10px;
     }
     & ul {
       margin:5px 10px 0;
-      width:50%;
     }
     & li {
       font-size:12px;
@@ -94,7 +101,7 @@
     &__mid {
       width:1000px;
       display:flex;
-      
+
       margin:0 auto;
       padding-top:10px;
     }
