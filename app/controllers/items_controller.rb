@@ -40,11 +40,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:item_id])
     @trading = Trading.find_by(item_id: "#{params[:item_id]}")
     @image = Image.find_by(item_id: @item.id).url
-    
-        # 配送先の表示
     @delivery = Delivery.find_by(user_id: current_user.id)
-
-    # カード情報の表示
     @card = CreditCard.find_by(user_id: current_user.id)
 
     Payjp.api_key = 'sk_test_f98999ddca480c61d3498ee7'
@@ -61,7 +57,6 @@ class ItemsController < ApplicationController
   end
 
 
-
   def show
     @category_gc= Category.find(@item[:category_index])
     @category_c = @category_gc.parent
@@ -70,6 +65,13 @@ class ItemsController < ApplicationController
     @user = User.find(@trading.saler_id)
     @good = Good.where(item_id: params[:id])
     @image = Image.find_by(item_id: params[:id]).url
+
+    category_id = Category.where("ancestry like ?", "#{@category.id}/%")
+    @item_list = Item.where(category_index: category_id).limit(6).where.not(id: params[:id])
+    item_id = @item_list.map{|dd| dd[:id]}
+    @trade_list = Trading.where(item_id: item_id)
+    @image_list = Image.where(item_id: item_id)
+
   end
 
   def create
@@ -118,7 +120,6 @@ class ItemsController < ApplicationController
                 region: item_params[:region],
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
-    # redirect_to root_path
     @category_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_array << parent.name
@@ -129,8 +130,6 @@ class ItemsController < ApplicationController
     else
       render action: :edit
     end
-    # redirect_to "/users/#{current_user.id}"
-    # ここ↑今はマイページに飛ぶが後で訂正する。「変更しました」を挟むか、商品編集ページに飛ぶようにする。
   end
 
 

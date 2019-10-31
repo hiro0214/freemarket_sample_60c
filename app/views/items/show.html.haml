@@ -21,7 +21,7 @@
         %tr
           %th 出品者
           %td
-            = link_to "#{@user.name}", "/users/#{@user.id}",class:"owner_name"
+            = link_to "#{@user.name}", "#",class:"owner_name"
             .evaluation
               %span.user_smile
                 =image_tag "logo_smile.png", class: "user_smile"
@@ -115,131 +115,26 @@
         = link_to "#" do
           %li.icon_pinterest
             %i.fa.fa-pinterest-square
+
     .other_item_container_big
-      = link_to "#{@user.name}さんのその他の商品", " ",class:"other_item_user"
+      = link_to "#{@category.name}のその他の商品", "/more/#{@category.id}", class:"other_item_title"
       .other_item_container
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-    .other_item_container_big
-      = link_to 'オーチバルのトートバッグ その他の商品', " ",class:"other_item_title"
-      .other_item_container
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
-        .other_item_container__other_item
-          .other_item__image
-          .other_item__contents
-            .other_item__contents__other_item__name
-            トートバッグ
-            .other_item__contents__price
-            ¥4,000
-            %i.fa.fa-heart
-            %span.other_item__contents__like_num
-              46
+        - @item_list.zip(@trade_list, @image_list).each do |item, trade, image|
+          .other_item_container__other_item
+            .other_item__image
+              - if trade.sale_state == "trade"
+                .sold_item
+                  %p SOLD
+                = image_tag image.url.url, class: "show_image"
+              - else
+                = image_tag image.url.url, class: "show_image"
+            .other_item__contents
+              .other_item__contents__other_item__name
+                = link_to "#{item.item_name}", "/items/#{item.id}"
+              .other_item__contents__price
+                = "¥#{item.price}"
+              %i.fa.fa-heart
+              %span.other_item__contents__like_num
+                = item.goods_count
 
 = render "footer"
