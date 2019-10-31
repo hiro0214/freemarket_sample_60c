@@ -3,7 +3,7 @@
 .wrapper_mypage
   .wrapper_box
     = render 'side_bar'
-    
+
     .exhibiting_main
       .exhibiting_main__title
         出品した商品
@@ -21,7 +21,7 @@
             %li.panel1.show
               - @items.zip(@exhibit_images).each do |item ,image|
                 .exhibit__list
-                  = image_tag image.url.url, class: "exhibiting"
+                  = image_tag image.url.url, class: "exhibiting_image"
                   .exhibit__list__content__box
                     .exhibit__list__content__box__message
                       = link_to "#{item.item_name}", "edit_item/#{item.id}"
@@ -35,46 +35,41 @@
                       %span.blue_message
                         出品中
                   %i.fa.fa-chevron-right
-            
+
             %li.panel2
-              - @trading_items.each do |item|
-                - @items.zip(@trade_images).each do |item ,image|
-                  .exhibit__list
-                    = image_tag image.url.url, class: "exhibiting"
-                    .exhibit__list__content__box
-                      .exhibit__list__content__box__message
-                        = link_to "#{item.item_name}", "trade/#{item.id}"
-                      .exhibit__list__content__box__time_box
-                        %i.fa.fa-heart-o
-                        %span
-                          30
-                        %i.fa.fa-comment-o
-                        %span
-                          6
-                        %span.red_message
-                          取引中
-                    %i.fa.fa-chevron-right
+              - @trading_items.zip(@trade_images).each do |item ,image|
+                .exhibit__list
+                  = image_tag image.url.url, class: "exhibiting_image"
+                  .exhibit__list__content__box
+                    .exhibit__list__content__box__message
+                      = link_to "#{item.item_name}", "trade/#{item.id}"
+                    .exhibit__list__content__box__time_box
+                      %i.fa.fa-heart-o
+                      %span
+                        30
+                      %i.fa.fa-comment-o
+                      %span
+                        6
+                      %span.red_message
+                        取引中
+                  %i.fa.fa-chevron-right
             %li.panel3
-              - @sold_items.each do |item|
-                - @items.zip(@sold_images).each do |item ,image|
-                  .exhibit__list
-                    -# =image_tag "mypage_logo.png", class: "mercari_logo"
-                    = image_tag image.url.url, class: "exhibiting_image"
-                    .exhibit__list__content__box
-                      .exhibit__list__content__box__message
-                        = link_to "#{item.item_name}", "sold/#{item.id}"
-                      .exhibit__list__content__box__time_box
-                        %i.fa.fa-heart-o
-                        %span
-                          30
-                        %i.fa.fa-comment-o
-                        %span
-                          6
-                        %span.gray_message
-                          売却済
-                    %i.fa.fa-chevron-right
+              - @sold_items.zip(@sold_images).each do |item ,image|
+                .exhibit__list
+                  -# =image_tag "mypage_logo.png", class: "mercari_logo"
+                  = image_tag image.url.url, class: "exhibiting_image"
+                  .exhibit__list__content__box
+                    .exhibit__list__content__box__message
+                      = link_to "#{item.item_name}", "sold/#{item.id}"
+                    .exhibit__list__content__box__time_box
+                      %i.fa.fa-heart-o
+                      %span
+                        30
+                      %i.fa.fa-comment-o
+                      %span
+                        6
+                      %span.gray_message
+                        売却済
+                  %i.fa.fa-chevron-right
 
-
-
-
-= render "/items/footer" 
+= render "/items/footer"

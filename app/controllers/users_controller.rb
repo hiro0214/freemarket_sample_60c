@@ -37,8 +37,8 @@ class UsersController < ApplicationController
     @sold_items = Item.where(id: sold)
 
     @exhibit_images = Image.where(item_id: @items.map{|a| a.id})
-    @trade_images = Image.where(item_id: @items.map{|a|a.id})
-    @sold_images = Image.where(item_id: @items.map{|a|a.id})
+    @trade_images = Image.where(item_id: @trading_items.map{|a|a.id})
+    @sold_images = Image.where(item_id: @sold_items.map{|a|a.id})
   end
 
   def edit_item
