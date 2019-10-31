@@ -38,12 +38,12 @@
         .field-label.registration__first__box__middle__input__name
           = f.label "ニックネーム"
           %span 必須
-        = f.text_field :name, autofocus: true, class:"aaaa", placeholder: " 例)メルカリ太郎"
+        = f.text_field :name, autofocus: true, class:"signup_input_defaul1t", placeholder: " 例)メルカリ太郎"
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label "メールアドレス"
           %span 必須
-        = f.email_field :email, class:"aaaa", placeholder: " PC・携帯どちらでも可"
+        = f.email_field :email, class:"signup_input_defaul1t", placeholder: " PC・携帯どちらでも可"
 
         - if session["devise.sns_id"].present?
           = f.hidden_field :password
@@ -53,12 +53,12 @@
             .field-label.registration__first__box__middle__input__name
               = f.label "パスワード"
               %span 必須
-              = f.password_field :password, autocomplete: "off", class:"aaaa", placeholder: "英数字7文字以上"
+              = f.password_field :password, autocomplete: "off", class:"signup_input_defaul1t", placeholder: "英数字7文字以上"
           .registration__first__box__middle__input
             .field-label.registration__first__box__middle__input__name
               = f.label "パスワード（確認）"
               %span 必須
-              = f.password_field :password_confirmation, autocomplete: "off", class:"aaaa", placeholder: "英数字7文字以上"
+              = f.password_field :password_confirmation, autocomplete: "off", class:"signup_input_defaul1t", placeholder: "英数字7文字以上"
               %p ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
       .registration__first__box__middle__input
@@ -66,15 +66,15 @@
           = f.label "お名前（全角）"
           %span 必須
         .registration__first__box__middle__input__double
-          = f.text_field :last_name, autofocus: true, class:"aaaa", placeholder: "谷口"
-          = f.text_field :first_name, autofocus: true, class:"aaaa", placeholder: "寛人"
+          = f.text_field :last_name, autofocus: true, class:"signup_input_defaul1t", placeholder: "谷口"
+          = f.text_field :first_name, autofocus: true, class:"signup_input_defaul1t", placeholder: "寛人"
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label "お名前カナ（全角）"
           %span 必須
         .registration__first__box__middle__input__double
-          = f.text_field :last_name_kana, autofocus: true, placeholder: "タニグチ"
-          = f.text_field :first_name_kana, autofocus: true, placeholder: "ヒロト"
+          = f.text_field :last_name_kana, autofocus: true, class:"signup_input_defaul1t", placeholder: "タニグチ"
+          = f.text_field :first_name_kana, autofocus: true, class:"signup_input_defaul1t", placeholder: "ヒロト"
 
       .registration__first__box__middle__input
         .registration__first__box__middle__input__name

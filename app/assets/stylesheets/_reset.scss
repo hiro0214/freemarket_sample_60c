@@ -14,8 +14,12 @@ html{
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
+
 }
+// a:link, a:visited, a:hover, a:active {
+// 	color: pink;
+// }
 
 /*
 	TODO remove settings on BODY since we can't namespace it.

@@ -38,7 +38,7 @@
         .registration__first__box__middle__input__name
           = f.label "携帯電話の番号"
           %span 必須
-          = f.telephone_field :tel_number, autocomplete: "off",class:"aaaa", placeholder:" 電話番号を入力してください"
+          = f.telephone_field :tel_number, autocomplete: "off",class:"signup_input_defaul1t", placeholder:" 電話番号を入力してください"
 
       .registration__first__box__middle__input
         = f.submit "SMSを送信する", class: 'last_submit'

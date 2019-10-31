@@ -16,7 +16,5 @@
       = form_tag(delete_credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
         %input{ type: "hidden", name: "card_id", value: "" }
         %button 削除する
-
-
-      -# = link_to delete_cards_path ,method: :delete, class:"customer-card__content--btn" do
-      -#   %button{type: "submit", value: "削除する", class: "btn-red"}
+      = link_to ,"/users/#{@user.id}/show"
+        %p マイページに戻る

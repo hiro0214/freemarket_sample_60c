@@ -38,57 +38,57 @@
           .registration__first__box__middle__input__name
             = f.label "お名前（全角）"
             %span 必須
-            = f.text_field :last_name, autocomplete: "on", class:"aaaa", placeholder: "谷口"
-            = f.text_field :first_name, autocomplete: "on", class:"aaaa", placeholder: "寛人"
+            = f.text_field :last_name, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "谷口"
+            = f.text_field :first_name, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "寛人"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             = f.label "お名前カナ（全角）"
             %span 必須
-            = f.text_field :last_name_kana, autocomplete: "on", class:"aaaa", placeholder: "タニグチ"
-            = f.text_field :first_name_kana, autocomplete: "on", class:"aaaa", placeholder: "ヒロト"
+            = f.text_field :last_name_kana, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "タニグチ"
+            = f.text_field :first_name_kana, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "ヒロト"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "郵便番号"
             %span 必須
           .registration__first__box__middle__input__area
-            = f.text_field :postal_code, autocomplete: "on", class:"aaaa jip", placeholder:" 例) 123-4567"
+            = f.text_field :postal_code, autocomplete: "on", class:"signup_input_defaul1t jip", placeholder:" 例) 123-4567"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "都道府県"
             %span 必須
           .registration__first__box__middle__input__area
-            = f.text_field :area, autocomplete: "on", class:"aaaa prefecture", placeholder:" 例) コロラド州"
+            = f.text_field :area, autocomplete: "on", class:"signup_input_defaul1t prefecture", placeholder:" 例) コロラド州"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "市区町村"
             %span 必須
           .registration__first__box__middle__input__area
-            = f.text_field :city, autocomplete: "on", class:"aaaa city", placeholder:" 例) 横浜市緑区"
+            = f.text_field :city, autocomplete: "on", class:"signup_input_defaul1t city", placeholder:" 例) 横浜市緑区"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "番地"
             %span 必須
           .registration__first__box__middle__input__area
-            = f.text_field :address, autocomplete: "on", class:"aaaa town", placeholder:" 例) 青山1-1-1"
+            = f.text_field :address, autocomplete: "on", class:"signup_input_defaul1t town", placeholder:" 例) 青山1-1-1"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "建物名"
             %span.any 任意
           .registration__first__box__middle__input__area
-            = f.text_field :building, autocomplete: "on", class:"aaaa", placeholder:" 例) 柳ビル103"
+            = f.text_field :building, autocomplete: "on", class:"signup_input_defaul1t", placeholder:" 例) 柳ビル103"
 
         -# カラム作成してなかったため 項目削除
         -# .registration__first__box__middle__input
         -#   .registration__first__box__middle__input__name
         -#     =f.label "電話"
         -#     %span.any 任意
-        -#     = f.telephone_field :tel_number, autocomplete: "off",class:"aaaa", placeholder:"  例) 09012345678"
+        -#     = f.telephone_field :tel_number, autocomplete: "off",class:"signup_input_defaul1t", placeholder:"  例) 09012345678"
 
         .registration__first__box__middle__input
           .actions
