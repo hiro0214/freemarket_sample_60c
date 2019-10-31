@@ -21,7 +21,6 @@ class SignupController < ApplicationController
     session[:first_name] = user_params[:first_name]
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
-    # session[:birthday] = user_params[:birthday]
 
     # バリデーション用に、仮でインスタンスを作成する
     @user = User.new(
@@ -29,9 +28,9 @@ class SignupController < ApplicationController
       email: session[:email],
       password: session[:password],
       last_name: session[:last_name], # 入力前の情報は、バリデーションに通る値を仮で入れる
-      first_name: session[:first_name], 
-      last_name_kana: session[:last_name_kana], 
-      first_name_kana: session[:first_name_kana], 
+      first_name: session[:first_name],
+      last_name_kana: session[:last_name_kana],
+      first_name_kana: session[:first_name_kana],
       tel_number: "00000000000"
     )
     # 仮で作成したインスタンスのバリデーションチェックを行う
@@ -60,14 +59,14 @@ class SignupController < ApplicationController
       email: session[:email],
       password: session[:password],
       last_name: session[:last_name], # 入力前の情報は、バリデーションに通る値を仮で入れる
-      first_name: session[:first_name], 
-      last_name_kana: session[:last_name_kana], 
-      first_name_kana: session[:first_name_kana], 
+      first_name: session[:first_name],
+      last_name_kana: session[:last_name_kana],
+      first_name_kana: session[:first_name_kana],
       tel_number: session[:tel_number], # sessionに保存された値をインスタンスに渡す
       )
     # 仮で作成したインスタンスのバリデーションチェックを行う
     render '/signup/step2' unless @user.valid?
-  end 
+  end
 
 
   def step3
@@ -90,7 +89,7 @@ class SignupController < ApplicationController
       name: session[:name],
       email: session[:email],
       password: session[:password],
-      birthday: session[:birthday],
+      birthday: @@birthday,
       tel_number: session[:tel_number],
       last_name: session[:last_name],
       first_name: session[:first_name],
@@ -138,6 +137,14 @@ class SignupController < ApplicationController
   private
 
   def user_params
+    if params[:user]["birthday(1i)"] != nil
+      year = params[:user]["birthday(1i)"].to_s
+      month = params[:user]["birthday(2i)"].to_s
+      day = params[:user]["birthday(3i)"].to_s
+
+      @@birthday = "#{year}/#{month}/#{day}"
+    end
+
     params.require(:user).permit(
       :name,
       :email,

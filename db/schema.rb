@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_095811) do
+ActiveRecord::Schema.define(version: 2019_10_31_042132) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 2019_10_27_095811) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "birthday"
+    t.string "birthday"
     t.string "first_name"
     t.string "last_name"
     t.string "first_name_kana"

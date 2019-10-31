@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', function() {
   }
 
   function step4(){
-    $(".step4_bar").animate({width: "97px"},2000 ,function(){
+    $(".step4_bar").animate({width: "98px"},2000 ,function(){
       $("#step5_circle").css("background", "#ea352d")
       $("#step5_text").css("color", "#ea352d")
     })
