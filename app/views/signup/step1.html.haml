@@ -2,6 +2,7 @@
   .progress
     = link_to "/" do
       =image_tag "header_logo.png", class: "progress__logo"
+      
     .progress__bar
       .progress__bar__box
         %p.step1 会員情報
@@ -27,7 +28,7 @@
         %p#step5_text 完了
         .progress__bar__box__circle#step5_circle
         .step5_bar#step5
-
+%button.bbttnn
 .registration__first
   .registration__first__box
     %h2.registration__first__box__top
@@ -39,11 +40,14 @@
           = f.label "ニックネーム"
           %span 必須
         = f.text_field :name, autofocus: true, class:"signup_input_defaul1t", placeholder: " 例)メルカリ太郎"
+        = render partial:'error_message_signup', locals: {user: @user, column: "name"}
+
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label "メールアドレス"
           %span 必須
-        = f.email_field :email, class:"signup_input_defaul1t", placeholder: " PC・携帯どちらでも可"
+        = f.email_field :email, class:"signup_input_defaul1t bbb", placeholder: " PC・携帯どちらでも可"
+        = render partial:'error_message_signup', locals: {user: @user, column: "email"}
 
         - if session["devise.sns_id"].present?
           = f.hidden_field :password
@@ -53,12 +57,15 @@
             .field-label.registration__first__box__middle__input__name
               = f.label "パスワード"
               %span 必須
-              = f.password_field :password, autocomplete: "off", class:"signup_input_defaul1t", placeholder: "英数字7文字以上"
+              = f.password_field :password, autocomplete: "off", class:"signup_input_defaul1t ccc", placeholder: "英数字7文字以上"
+              = render partial:'error_message_signup', locals: {user: @user, column: "password"}
+
           .registration__first__box__middle__input
             .field-label.registration__first__box__middle__input__name
               = f.label "パスワード（確認）"
               %span 必須
-              = f.password_field :password_confirmation, autocomplete: "off", class:"signup_input_defaul1t", placeholder: "英数字7文字以上"
+              = f.password_field :password_confirmation, autocomplete: "off", class:"signup_input_defaul1t ccc", placeholder: "英数字7文字以上"
+              = render partial:'error_message_signup', locals: {user: @user, column: "password"}
               %p ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
       .registration__first__box__middle__input
@@ -68,6 +75,10 @@
         .registration__first__box__middle__input__double
           = f.text_field :last_name, autofocus: true, class:"signup_input_defaul1t", placeholder: "谷口"
           = f.text_field :first_name, autofocus: true, class:"signup_input_defaul1t", placeholder: "寛人"
+        .error_adjustment
+          = render partial:'error_message_signup', locals: {user: @user, column: "last_name"}
+          = render partial:'error_message_signup', locals: {user: @user, column: "first_name"}
+
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label "お名前カナ（全角）"
@@ -75,6 +86,9 @@
         .registration__first__box__middle__input__double
           = f.text_field :last_name_kana, autofocus: true, class:"signup_input_defaul1t", placeholder: "タニグチ"
           = f.text_field :first_name_kana, autofocus: true, class:"signup_input_defaul1t", placeholder: "ヒロト"
+        .error_adjustment
+          = render partial:'error_message_signup', locals: {user: @user, column: "last_name"}
+          = render partial:'error_message_signup', locals: {user: @user, column: "first_name"}
 
       .registration__first__box__middle__input
         .registration__first__box__middle__input__name
@@ -84,7 +98,6 @@
 
       .registration__first__box__middle__input
         = image_tag "robo.png", class: "robo_image"
-
 
       .registration__first__box__middle__input
         %p.registration__first__box__middle__input__info

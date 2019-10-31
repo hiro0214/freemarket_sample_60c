@@ -8,7 +8,7 @@ class CreditCardsController < ApplicationController
     card = CreditCard.where(user_id: current_user.id).first
 
     if card.present?
-      redirect_to action: "index"
+      redirect_to root_path
     end
 
   end
@@ -28,9 +28,12 @@ class CreditCardsController < ApplicationController
 
     @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
 
-    if @card.save
-        redirect_to action: "show"
-
+      if @card.save
+         if request.referer&.include?("/signup/step5")
+             redirect_to set_signup_index_path
+         else
+             redirect_to action: "show"
+         end
       else
         redirect_to action: "pay"
       end

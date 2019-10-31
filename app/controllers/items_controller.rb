@@ -40,9 +40,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:item_id])
     @trading = Trading.find_by(item_id: "#{params[:item_id]}")
     @image = Image.find_by(item_id: @item.id).url
-
-
-    # 配送先の表示
+    
+        # 配送先の表示
     @delivery = Delivery.find_by(user_id: current_user.id)
 
     # カード情報の表示
@@ -51,8 +50,14 @@ class ItemsController < ApplicationController
     Payjp.api_key = 'sk_test_f98999ddca480c61d3498ee7'
     customer = Payjp::Customer.retrieve(@card.customer_id,)
     @default_card_information = customer.cards.retrieve(@card.card_id)
+  end
 
-
+  def update
+    @trading = Trading.find_by(item_id: "#{params[:id]}")
+    if @trading.sale_state == "trade"
+      @trading.update(sale_state: "sold")
+      redirect_to "/users/#{current_user.id}/trade_after"
+    end
   end
 
 

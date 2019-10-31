@@ -38,15 +38,16 @@
           .registration__first__box__middle__input__name
             = f.label "お名前（全角）"
             %span 必須
-            = f.text_field :last_name, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "谷口"
-            = f.text_field :first_name, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "寛人"
+            = f.text_field :last_name, value: @user.last_name, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "谷口"
+            = f.text_field :first_name, value: @user.first_name, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "寛人"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             = f.label "お名前カナ（全角）"
             %span 必須
-            = f.text_field :last_name_kana, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "タニグチ"
-            = f.text_field :first_name_kana, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "ヒロト"
+
+            = f.text_field :last_name_kana, value: @user.last_name_kana ,autocomplete: "on", class:"signup_input_defaul1t", placeholder: "タニグチ"
+            = f.text_field :first_name_kana, value: @user.first_name_kana, autocomplete: "on", class:"signup_input_defaul1t", placeholder: "ヒロト"
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
@@ -54,6 +55,7 @@
             %span 必須
           .registration__first__box__middle__input__area
             = f.text_field :postal_code, autocomplete: "on", class:"signup_input_defaul1t jip", placeholder:" 例) 123-4567"
+            = render partial:'error_message_signup', locals: {user: @user, column: ""}
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
@@ -75,7 +77,8 @@
             %span 必須
           .registration__first__box__middle__input__area
             = f.text_field :address, autocomplete: "on", class:"signup_input_defaul1t town", placeholder:" 例) 青山1-1-1"
-
+            = render partial:'error_message_signup', locals: {user: @user, column: "address"}
+            
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
             =f.label "建物名"
@@ -83,16 +86,8 @@
           .registration__first__box__middle__input__area
             = f.text_field :building, autocomplete: "on", class:"signup_input_defaul1t", placeholder:" 例) 柳ビル103"
 
-        -# カラム作成してなかったため 項目削除
-        -# .registration__first__box__middle__input
-        -#   .registration__first__box__middle__input__name
-        -#     =f.label "電話"
-        -#     %span.any 任意
-        -#     = f.telephone_field :tel_number, autocomplete: "off",class:"signup_input_defaul1t", placeholder:"  例) 09012345678"
-
         .registration__first__box__middle__input
           .actions
             = f.submit "次へ進む", class: 'last_submit'
-
 
   = render partial: "devise/layout/footer"
