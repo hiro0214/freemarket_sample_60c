@@ -205,17 +205,6 @@ button {
 }
 
 
-.robo_image{
-  width: 305px;
-  height: 80px;
-  border-radius: 4.5px;
-  opacity: 1;
-}
-.robo_image:hover{
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
 
 .card_list {
   width: 260px;
@@ -244,9 +233,45 @@ button {
 .registration__first__box__middle__input__birthday_area select{
   margin: 0 3px 0;
 }
-.saba:after{
-  color:#777;
-  content:" *なるべくサバをよまずにご記入ください";
+
+// pay.jp マイページより編集、削除画面
+
+h3{
+  font-size:18px;
+  font-weight:600;
+}
+.pay_number{
+  margin:10px;
+  font-size:16px;
+  font-weight:400;
 }
 
-// pay.jp
+
+
+  .pay_buttons > button {
+    background: #ffffff;
+    width:140px;
+    height:50px;
+    margin:40px 5px;
+    font-size: 14px;
+    border-radius:5px;
+  }
+  .pay_buttons > button:hover {
+    background:#0099e8;
+    color:#fff;
+    transition: 0.4s;
+  }
+
+  .pay_button{
+    background: #ffffff;
+    width:140px;
+    height:50px;
+    margin:40px 5px 0;
+    font-size: 14px;
+    border-radius:5px;
+  }
+  .pay_button:hover {
+    background:#0099e8;
+    color:#fff;
+    transition: 0.4s;
+  }

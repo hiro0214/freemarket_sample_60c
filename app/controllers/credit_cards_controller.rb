@@ -29,11 +29,11 @@ class CreditCardsController < ApplicationController
     @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
 
       if @card.save
-         if request.referer&.include?("/signup/step5")
-             redirect_to set_signup_index_path
-         else
-             redirect_to action: "show"
-         end
+        if request.referer&.include?("/signup/step5")
+          redirect_to set_signup_index_path
+        else
+          redirect_to action: "show"
+        end
       else
         redirect_to action: "pay"
       end
@@ -46,7 +46,7 @@ class CreditCardsController < ApplicationController
   def delete  #PayjpとCardデータベースを削除します
     card = CreditCard.where(user_id: current_user.id).first
     if card.blank?
-
+      redirect_to root_path
     else
 
       Payjp.api_key = 'sk_test_f98999ddca480c61d3498ee7'
@@ -67,7 +67,7 @@ class CreditCardsController < ApplicationController
     card = CreditCard.where(user_id: current_user.id).first
 
     if card.blank?
-      # redirect_to action: "new"
+      redirect_to action: "new"
 
     else
 
@@ -76,7 +76,6 @@ class CreditCardsController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
 
     end
-    # binding.pry
   end
 
   private
