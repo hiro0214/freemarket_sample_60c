@@ -57,7 +57,7 @@
           -# %button{type: "submit", onclick: "location.href='#"} 次へ進む
         .registration__first__box__middle__input
           #card_token
-            = submit_tag "追加する", class: "last_submit" id: "token_submit"
+            = submit_tag "追加する", class: "last_submit", id: "token_submit"
             -# = submit_tag "カードを追加する", id: "token_submit", class:"last_submit"
           -# %button{id: "token"}
   = render partial: "devise/layout/footer"
