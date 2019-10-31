@@ -5,21 +5,22 @@
   .trim {
     overflow: hidden;
     // width: 100vwpx;/* トリミングしたい枠の幅 */
-    height:170px;
+    height:200px;
     position:relative;
   }
   .main__image {
-    height:170px;
+    height:200px;
     position:relative;
     img {
-      height:170px;
+      height:200px;
     }
   }
   .main__img2 {
     opacity:0;
     position:absolute;
     top:0px;
-    right:0px;
+    left:0px;
+
   }
   // メインイメージここまで
 
@@ -109,7 +110,7 @@
   .index_image {
     width:100%;
     // min-width:150px;
-    // min-height:150px;
+    max-height:150px;
     // height:124px;
   }
 
@@ -271,7 +272,7 @@
     height:50px;
     border-bottom:solid 1px rgb(224, 224, 224);
     ul {
-      width: 100%;
+      width: 80%;
       margin:0 auto;
       line-height:50px;
       font-size:14px;
@@ -297,11 +298,11 @@
 
 
   .categories {
-    width:100vw;
-    height:80px;
+    width:100%;
+    height:140px;
     background:rgb(239, 239, 239);
     ul {
-      width: 1020px;
+      width: 80%;
       margin:0 auto;
       padding-top: 30px;
       line-height:30px;
@@ -588,7 +589,7 @@
     height:50px;
     border-bottom:solid 1px rgb(224, 224, 224);
     ul {
-      width: 1020px;
+      width: 80%;
       margin:0 auto;
       line-height:50px;
       font-size:14px;
@@ -615,10 +616,10 @@
 
   .categories {
     width:100vw;
-    height:80px;
+    height:100px;
     background:rgb(239, 239, 239);
     ul {
-      width: 1020px;
+      width: 80%;
       margin:0 auto;
       padding-top: 30px;
       line-height:30px;
@@ -666,7 +667,7 @@
 .main__img2 {
   opacity:0;
   top:0px;
-  right:0px;
+  left:0px;
   position:absolute;
 
 }
