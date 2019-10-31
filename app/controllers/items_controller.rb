@@ -188,10 +188,13 @@ class ItemsController < ApplicationController
   def search
     if params[:search].length != 0
       @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%").order("created_at desc")
+      if @items == []
+        redirect_to root_path, flash: {search_alert: "検索結果がありませんでした"}
+      end
       @images = Image.where(item_id: @items.map{|i| i.id}).order("created_at desc")
       @trade = Trading.where(item_id: @items.map{|i| i.id}).order("created_at desc")
     else
-      redirect_to root_path
+      redirect_to root_path, flash: {search_alert: "検索結果がありませんでした"}
     end
     @q = Item.ransack(params[:q])
     @item = @q.result(distinct: true)
@@ -201,6 +204,9 @@ class ItemsController < ApplicationController
     @item_name = params[:q][:item_name_cont]
     @q = Item.ransack(params[:q])
     @items = @q.result(distinct: true).order("created_at desc")
+    if @items == []
+      redirect_to root_path, flash: {search_alert: "検索結果がありませんでした"}
+    end
     @images = Image.where(item_id: @items.map{|i| i.id}).order("created_at desc")
     @trade = Trading.where(item_id: @items.map{|i| i.id}).order("created_at desc")
   end
