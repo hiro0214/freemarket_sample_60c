@@ -1,0 +1,89 @@
+// 検索のviewについての内容はここから
+.main_contents__box__contents__items_search{
+  height:100%;
+  display:flex;
+  flex-wrap: wrap;
+  padding: 0 44px;
+}
+
+.main_contents__box__contents__search{
+  display:flex;
+  background: rgb(239, 239, 239);
+  width: 1020px;
+  height: 100%;
+  margin:0 auto 50px;
+
+  &__right{
+  background: rgb(239, 239, 239);
+  width: 700px;
+  height: 100%;
+  padding-top:30px;
+  margin:0 auto 50px;
+  }
+  &__left{
+    height: 100%;
+    width: 280px;
+    margin-right:40px;
+    padding-top:30px;
+    .search{
+      &__list{
+        background: white;
+        height: 100%;
+        padding: 10px 16px;
+        > h3 {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__detail{
+          margin-top: 40px;
+          font-size: 14px;
+          &__price{
+            display: flex;
+            > span {
+              line-height: 46px;
+              margin: 0 10px;
+            }
+            .price-select{
+              display: block;
+              width: 110px;
+              border-radius: 5px;
+            }
+          }
+          &__state_box{
+            display:flex;
+            flex-wrap: wrap;
+            &__one{
+            width:124px;
+            font-size: 13px;
+            display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.search-more-default{
+  height: 46px;
+  width:100%;
+  display:inline-block;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background:white;
+}
+.search-more-button{
+  height: 46px;
+  width:50%;
+  color:white;
+  background:red;
+  margin: 30px auto;
+  display:block;
+  border: 1px solid gray;
+}
+
+// h3 {
+//   border-bottom: 1px;
+//   font-weight: bold;
+// }
+
+// searchの内容についてはここまで

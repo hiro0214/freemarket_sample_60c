@@ -183,19 +183,28 @@ class ItemsController < ApplicationController
   end
 
   def search
-
     if params[:search].length != 0
       @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%")
     else
       redirect_to root_path
     end
 
+    # ransackの記述
+    @q = Item.ransack(params[:q])
+    @item = @q.result(distinct: true)
+  end
+
+  def search_more
+    # ransackの記述
+    @item_name = params[:q][:item_name_cont]
+    @q = Item.ransack(params[:q])
+    @items = @q.result(distinct: true)
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index, :url)
+    params.require(:item).permit(:item_name, :description, :price, :state, :size, :fee_size, :region, :delivery_date, :category_index, :url, :item_name_cont)
   end
 
 end
