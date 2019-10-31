@@ -205,18 +205,6 @@ button {
 }
 
 
-
-.card_list {
-  width: 260px;
-}
-
-
-.signup_input_default{
-  width:100%;
-  height:50px;
-  padding: 10px 16px 8px;
-  margin-bottom:10px;
-}
 #new_user{
   height:100%;
 }
@@ -247,7 +235,6 @@ h3{
 }
 
 
-
   .pay_buttons > button {
     background: #ffffff;
     width:140px;
@@ -274,4 +261,31 @@ h3{
     background:#0099e8;
     color:#fff;
     transition: 0.4s;
+  }
+
+  // pay.jp STEP5
+
+
+
+  .card_list {
+    width: 260px;
+  }
+
+  .signup_input_default{
+    width:100%;
+    height:50px;
+    padding: 10px 16px 8px;
+    margin-bottom:10px;
+  }
+  .registration__first__box__middle__input__name .number {
+    width:250px;
+    height:40px;
+    padding: 10px 16px 8px;
+    margin-bottom:10px;
+  }
+  .registration__first__box__middle__input .cvc {
+    width:250px;
+    height:40px;
+    padding: 10px 16px 8px;
+    margin-bottom:10px;
   }
