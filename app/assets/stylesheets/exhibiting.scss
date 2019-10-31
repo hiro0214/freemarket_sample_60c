@@ -20,83 +20,111 @@
       > :hover{
         color: rgba(48, 46, 46, 0.461);
       }
-      > .infomation{
-        width:33%;
-        font-size:16px;
-        font-weight: bold;
-        line-height: 72px;
-        text-align: center;
-        display:block;
-        border-top:solid 2px red;
-      }
-      > .to_do{
-        background:gainsboro;
-        width:33%;
-        font-size:16px;
-        font-weight: bold;
-        line-height: 72px;
-        text-align: center;
-        display:block;
-      }
     }
-    &__list{
-      // display:flex;
-      // flex-direction:column;
+    &__contents{
       height:1120px;
       overflow:scroll;
       & a{
         display:block;
       }
-
-
       > ul{
         background:#fff;
         > :hover{
           background:#f5f5f580;
         }
-        > li{
-          height:80px;
-          padding:16px;
-          border-bottom: solid 1px #eee;
-          display:block;
-          display:flex;
-          justify-content:space-between;
-          >i{
-            margin:auto 0;
-            font-size:18px;
-          }
-          >a{
-            width:100%;
-            display:block;
-          }
-        }
-      }
-      &__mercari_logo {
-        width:48px;
-        height:48px;
-      }
-      &__box{
-        width:560px;
-        height:39px;
-        display:block;
-        & i{
-          font-size:16px;
-          color:rgb(151, 150, 150);
-        }
-        & span{
-          padding:5px;
-          color:rgb(151, 150, 150);
-        }
-        & .blue_message{
-          background:#0099e8;
-          width:38px;
-          height:12px;
-          padding:5px 6px;
-          color:white;
-          font-weight: bold;
-          border-radius: 2px;
-        }
       }
     }
   } 
+}
+
+.exhibit__list {
+  height:80px;
+  padding:16px;
+  border-bottom: solid 1px #eee;
+  display:flex;
+  &__content__box {
+    width:100%;
+    &__message {
+      width:100%;
+      display:block;
+    }
+    &__time_box {
+      width:560px;
+      height:39px;
+      display:block;
+      >i{
+        margin:auto 0;
+        font-size:16px;
+        color:rgb(151, 150, 150);
+      }
+      & span{
+        padding:5px;
+        color:rgb(151, 150, 150);
+      }
+      & .blue_message {
+        background:#0099e8;
+        width:38px;
+        height:12px;
+        padding:5px 6px;
+        color:white;
+        font-weight: bold;
+        border-radius: 2px;
+      }
+      & .red_message {
+        background:#ea352d;
+        width:38px;
+        height:12px;
+        padding:5px 6px;
+        color:white;
+        font-weight: bold;
+        border-radius: 2px;
+      }
+      & .gray_message {
+        background:gray;
+        width:38px;
+        height:12px;
+        padding:5px 6px;
+        color:white;
+        font-weight: bold;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+
+.menu_item{
+  background:gainsboro;
+  width:33%;
+  font-size:16px;
+  font-weight: bold;
+  line-height: 72px;
+  text-align: center;
+}
+
+.active {
+  background:#fff;
+  border-top:solid 2px red;
+}
+
+.panel1 {
+  display:none;
+}
+
+.panel2 {
+  display:none;
+}
+
+.panel3 {
+  display:none;
+}
+
+.show {
+  display:block;
+}
+
+.mercari_logo {
+  width:48px;
+  height:48px;
+  margin-right:10px;
 }

@@ -15,7 +15,7 @@
       .main__top_contents
         =image_tag "mypage_background.jpg"
         .main__top_contents__box
-          .main__top_contents__box__image
+          = image_tag "avatar.png",class:"main__top_contents__box__image"
           .main__top_contents__box__nickname
             = current_user.name
           .main__top_contents__box__status

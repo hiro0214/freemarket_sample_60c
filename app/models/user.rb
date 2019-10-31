@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :sns_credentials, dependent: :destroy
   has_one :credit_card
+  has_one :delivery
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
@@ -19,11 +20,9 @@ class User < ApplicationRecord
     provider = auth.provider
     # snscredential = SnsCredential.where(uid: uid, provider: provider).first
     snscredential = SnsCredential.find_by(uid: uid, provider: provider)
-    # binding.pry
-    
+
     if snscredential.present? #sns登録のみ完了してるユーザー
       user = User.find_by(id: snscredential.user_id)
-      # binding.pry
       unless user.present? #ユーザーが存在しないなら
         password = Devise.friendly_token[0, 8]#パスワード生成
         user = User.new(
@@ -35,7 +34,6 @@ class User < ApplicationRecord
           )
 
           # return { user: user , sns_id: sns.id }
-          # binding.pry
     end
     sns = snscredential
 
@@ -56,16 +54,31 @@ class User < ApplicationRecord
           password: password,
           password_confirmation: password
         )
-        # binding.pry
         sns = SnsCredential.create(
           uid: uid,
           provider: provider
         )
-        # binding.pry
       end
     end
-    # binding.pry
     # hashでsnsのidを返り値として保持しておく
     return { user: user , sns_id: sns.id }
   end
+
+
+  VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :name,presence: true, length: {maximum: 20}
+  validates :email,presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
+  validates :password,presence: true
+  validates :last_name,presence: true
+  validates :first_name,presence: true
+  validates :last_name_kana,presence: true
+  validates :first_name_kana,presence: true
+  # validates :birthday, presence: true
+  validates :tel_number, presence: true
+
+
+
+
+
+
 end

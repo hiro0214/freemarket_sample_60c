@@ -49,7 +49,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
 
-
 end
 
 group :development do
@@ -83,6 +82,7 @@ gem 'ancestry'
 gem "wicked"
 gem "active_hash"
 gem 'ransack'
+gem 'jipcode'
 
 # SNS認証
 gem 'omniauth'

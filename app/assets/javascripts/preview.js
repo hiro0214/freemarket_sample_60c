@@ -1,32 +1,39 @@
 $(document).on('turbolinks:load', function() {
 
-  $('.up-image').change(function(){
-    if ( !this.files.length ) {
-      return;
-    }
-    $('#image_list').text('');
+  var view_box = $('.exhibit__upload_image_field');
+  $(".up-image").on('change', function(){
+    var fileprop = $(this).prop('files')[0],
+        find_img = $(this).next('img'),
+        fileRdr = new FileReader();
 
-    var $files = $(this).prop('files');
-    var len = $files.length;
-    for ( var i = 0; i < len; i++ ) {
-      var file = $files[i];
-      var fr = new FileReader();
-
-      fr.onload = function(e) {
-        var src = e.target.result;
-        var img = '<img src="'+ src +'"><div class="btn_list"><input type="button" value="編集" class="edit_btn"><input type="button" value="削除" class="remove_btn"></div>';
-        $('#image_list').append(img);
-      }
-      fr.readAsDataURL(file);
+    if (find_img.length) {
+        find_img.nextAll().remove();
+        find_img.remove();
     }
 
-    $('#image_list').css('display','block');
+    var img = '<img class="img_view"><br><button class="img_del">削除</button>';
+
+    $(".exhibit__upload_image_field").text("")
+    view_box.append(img);
+
+    fileRdr.onload = function() {
+      view_box.find('img').attr('src', fileRdr.result);
+      img_del(view_box);
+    }
+    fileRdr.readAsDataURL(fileprop);
   });
 
-  $(document).on("click", ".remove_btn", function(){
-    $(this).parent().prev().remove()
-    $(this).parent().remove()
-    return false;
-  })
+  function img_del(target){
+    target.find("button.img_del").on('click',function(){
 
+    if (window.confirm('サーバーから画像を削除します。\nよろしいですか？')) {
+      $(this).parent().find('input[type=file]').val('');
+      $(this).parent().find('.img_view, br').remove();
+      $(this).remove();
+      var p = `<p>クリックしてファイルをアップロード</p>`
+      $(".exhibit__upload_image_field").append(p)
+      }
+      return false;
+    });
+  }
 });

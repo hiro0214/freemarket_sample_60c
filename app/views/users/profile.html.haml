@@ -8,16 +8,13 @@
       .profile_main__top
         プロフィール
       .profile_main__middle
-        .profile_main__middle__image
-          img
+        = image_tag "avatar.png",class:"profile_main__middle__image"
         .profile_main__middle__nickname
           = current_user.name
-      .profile_main__bottom
-        .profile_main__bottom__introduce
-          こんにちは！メリカリはまだ始めたばかりですが心をこめてご対応いたします。
-          あなたの探し物やお気に入りが見つかりますように☆   
-          すみません！「コメントをいただいてから」とか「早い者勝ち」などのシステムを知りませんでした!なかなか返信できないこともあるのでメルカリ慣れるまではコメントなし購入可能といたします。
-        .profile_main__bottom__btn
-          =link_to '変更する'
+      .profile_main__bottom      
+        = form_for [@user] do |f|
+          = f.text_area :profile, value:@user.profile, placeholder: "例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",class: "profile_main__bottom__introduce"
+          = f.submit "変更する",class:"profile_main__bottom__btn"
+
 
 = render "/items/footer" 

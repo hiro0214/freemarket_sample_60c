@@ -1,0 +1,50 @@
+<% if user_signed_in? %>
+
+  <% if item.good_user(current_user.id) %>
+    <%= link_to item_good_path(good, item_id: item.id), method: :delete, id: "good-button", remote: true do %>
+    <button class="item__goods good_now">
+      <div class="item_btn_container__btn">
+        <span class="item_btn_like__icon_heart good_now_heart">
+          <i class="fa fa-heart "></i>
+        </span>
+        <span class="item_btn_like__btn_like">
+          いいね済
+        </span>
+        <span class="item_btn_like__like_num">
+          <%= item.goods_count %>
+        </span>
+      </div>
+    </button>
+    <% end %>
+
+  <% else %>
+    <%= link_to item_good_index_path(item.id), method: :post, id: "good-button", class:"good_btn", remote: true do %>
+    <button class="item__goods">
+      <div class="item_btn_container__btn">
+        <span class="item_btn_like__icon_heart">
+          ♡
+        </span>
+        <span class="item_btn_like__btn_like">
+          いいね
+        </span>
+        <span class="item_btn_like__like_num">
+          <%= item.goods_count %>
+        </span>
+      </div>
+    </button>
+    <% end %>
+  <% end %>
+
+<% else %>
+  <div class="item_btn_container__btn">
+    <span class="item_btn_like__icon_heart">
+      ♡
+    </span>
+    <span class="item_btn_like__btn_like">
+      いいね
+    </span>
+    <span class="item_btn_like__like_num">
+      <%= item.goods_count %>
+    </span>
+  </div>
+<% end %>

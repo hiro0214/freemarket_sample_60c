@@ -1,61 +1,214 @@
-.footer{
-  background-color: rgb(34, 34, 34);
-  color: #ffffff;
-  padding-bottom:30px;
-  position:relative;
-  &__img{
-    width:99vw;
+@media screen and (max-width:767px) {
+  /*スマホ用のcssを記述*/
+
+  .footer__list_wrap{
+    width: 100%;
   }
-  h2{
-    font-size:16px;
-  }
-  &__mid {
-    width:1000px;
-    display:flex;
-    margin:0 auto;
-    padding-top:10px;
-  }
-  & ul {
-    margin:5px 10px 0;
-  }
-  & li {
-    font-size:12px;
-    opacity: 0.7;
-    padding:7px 0;
-  }
-  &__lower {
-    width:1020px;
-    margin:30px auto 20px;
-    span {
-      display:block;
-      width:83px;
-      font-size:12px;
+
+
+  .footer{
+    width:100%;
+    background-color: rgb(34, 34, 34);
+    color: #ffffff;
+    padding-bottom:30px;
+    position:relative;
+    &__img{
+      width:100vw;
+    }
+    h2{
+      font-size:16px;
+      width:100%;
+    }
+    &__mid {
+      width:50vw;
+      display:flex;
       margin:0 auto;
+      padding-top:10px;
     }
-  }
-  &__logo {
-    width:140px;
-    float:left;
-    &:hover {
-      opacity:0.7;
+    & ul {
+      margin:5px 10px 0;
+      width:50%;
     }
-    &__sns {
-      font-size:35px;
-      margin-top:10px;
-      i {
-        color:#fff;
-        margin-right:10px;
+    & li {
+      font-size:12px;
+      opacity: 0.7;
+      padding:7px 0;
+    }
+    &__lower {
+      width:100%;
+      margin:30px auto 20px;
+      span {
+        display:block;
+        width:83px;
+        font-size:12px;
+        margin:0 auto;
+      }
+    }
+    &__logo {
+      width:140px;
+      float:left;
+      &:hover {
+        opacity:0.7;
+      }
+      &__sns {
+        font-size:35px;
+        margin-top:10px;
+        i {
+          color:#fff;
+          margin-right:10px;
+        }
       }
     }
   }
+
+  .fortunetelling {
+    width:68px;
+    height:68px;
+    border-radius:13px;
+    position:absolute;
+    left:338px;
+    top:143px;
+    cursor:grab;
+  }
 }
 
-.fortunetelling {
-  width:68px;
-  height:68px;
-  border-radius:13px;
-  position:absolute;
-  left:338px;
-  top:143px;
-  cursor:grab;
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+@media only screen and (min-width:768px) and (max-width:1023px) {
+  /*tablet用のcssを記述*/
+
+  .footer{
+    background-color: rgb(34, 34, 34);
+    color: #ffffff;
+    padding-bottom:30px;
+    position:relative;
+    &__img{
+      width:99vw;
+    }
+    h2{
+      font-size:16px;
+    }
+    &__mid {
+      width:1000px;
+      display:flex;
+      
+      margin:0 auto;
+      padding-top:10px;
+    }
+    & ul {
+      margin:5px 10px 0;
+    }
+    & li {
+      font-size:12px;
+      opacity: 0.7;
+      padding:7px 0;
+    }
+    &__lower {
+      width:1020px;
+      margin:30px auto 20px;
+      span {
+        display:block;
+        width:83px;
+        font-size:12px;
+        margin:0 auto;
+      }
+    }
+    &__logo {
+      width:140px;
+      float:left;
+      &:hover {
+        opacity:0.7;
+      }
+      &__sns {
+        font-size:35px;
+        margin-top:10px;
+        i {
+          color:#fff;
+          margin-right:10px;
+        }
+      }
+    }
+  }
+
+  .fortunetelling {
+    width:68px;
+    height:68px;
+    border-radius:13px;
+    position:absolute;
+    left:338px;
+    top:143px;
+    cursor:grab;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+@media screen and (min-width:1024px) {
+  /*pc用のcssを記述*/
+
+
+  .footer{
+    background-color: rgb(34, 34, 34);
+    color: #ffffff;
+    padding-bottom:30px;
+    position:relative;
+    &__img{
+      width:99vw;
+    }
+    h2{
+      font-size:16px;
+    }
+    &__mid {
+      width:1000px;
+      display:flex;
+      margin:0 auto;
+      padding-top:10px;
+    }
+    & ul {
+      margin:5px 10px 0;
+    }
+    & li {
+      font-size:12px;
+      opacity: 0.7;
+      padding:7px 0;
+    }
+    &__lower {
+      width:1020px;
+      margin:30px auto 20px;
+      span {
+        display:block;
+        width:83px;
+        font-size:12px;
+        margin:0 auto;
+      }
+    }
+    &__logo {
+      width:140px;
+      float:left;
+      &:hover {
+        opacity:0.7;
+      }
+      &__sns {
+        font-size:35px;
+        margin-top:10px;
+        i {
+          color:#fff;
+          margin-right:10px;
+        }
+      }
+    }
+  }
+
+  .fortunetelling {
+    width:68px;
+    height:68px;
+    border-radius:13px;
+    position:absolute;
+    left:338px;
+    top:143px;
+    cursor:grab;
+  }
 }
