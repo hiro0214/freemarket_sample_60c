@@ -35,6 +35,10 @@ class UsersController < ApplicationController
     sale = Trading.where(saler_id: current_user.id, sale_state: "sold")
     sold = sale.map {|t| t[:item_id]}
     @sold_items = Item.where(id: sold)
+
+    @exhibit_images = Image.where(item_id: @items.map{|a| a.id})
+    @trade_images = Image.where(item_id: @items.map{|a|a.id})
+    @sold_images = Image.where(item_id: @items.map{|a|a.id})
   end
 
   def edit_item
