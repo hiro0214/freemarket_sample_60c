@@ -36,14 +36,8 @@
     = form_for "", url:signup_index_path, method: :post, html: {class: 'step2_kari'} do |f|
       .registration__first__box__middle__input
         .registration__first__box__middle__input__name
-          = f.label "電話番号認証"
-          %span 必須
-        = f.text_field :'#', autocomplete: "off",class:"signup_input_defaul1t", placeholder:" 電話番号を入力してください"
-
-      .registration__first__box__middle__input
-        .registration__first__box__middle__input__name
           = f.label "認証番号"
-          = f.text_field :'#' , autocomplete: "off",class:"signup_input_defaul1t", placeholder:" 認証番号を入力(このフォーム機能なし)"
+          = f.text_field :'#' , autocomplete: "off",class:"signup_input_default", placeholder:" 認証番号を入力(このフォーム機能なし)"
           %p SMSで届いた認証番号を入力してください
         = f.submit "認証して完了", class: 'last_submit'
 
