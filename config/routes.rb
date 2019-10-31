@@ -21,7 +21,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # get "items/search" => "items#search"
   resources :items do
     resources :good, only: [:create, :destroy]
     get "buy" => "items#buy"
@@ -29,6 +28,7 @@ Rails.application.routes.draw do
       get 'category_children', defaults: { format: 'json' }
       get "category_grandchildren", defaults: { format: "json"}
       get "search"
+      get "search_more"
       # post 'items/:id' => 'items#pay', as: :pay#Pay.jp
     end
   end

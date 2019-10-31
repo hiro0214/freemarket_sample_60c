@@ -59,7 +59,7 @@
         .main_contents__box__contents__title_box
           .main_contents__box__contents__title_box__title
             %h2
-              = "'#{params[:search]}' の検索結果"
+              = "'#{params[:q][:item_name_or_description_cont]}'の検索結果"
         .main_contents__box__contents__items_search
           - @items.each do |item|
             .main_contents__box__contents__items__one
