@@ -67,10 +67,10 @@ class ItemsController < ApplicationController
     @image = Image.find_by(item_id: params[:id]).url
 
     category_id = Category.where("ancestry like ?", "#{@category.id}/%")
-    @item_list = Item.where(category_index: category_id).limit(6).where.not(id: params[:id])
+    @item_list = Item.where(category_index: category_id).limit(6).order("created_at desc").where.not(id: params[:id])
     item_id = @item_list.map{|dd| dd[:id]}
-    @trade_list = Trading.where(item_id: item_id)
-    @image_list = Image.where(item_id: item_id)
+    @trade_list = Trading.where(item_id: item_id).order("created_at desc")
+    @image_list = Image.where(item_id: item_id).order("created_at desc")
 
   end
 
@@ -144,13 +144,13 @@ class ItemsController < ApplicationController
       @category_gc = nil
       category_id = Category.where("ancestry like ?", "#{@parent.id}/%")
       @category_list = @parent.children
-      @item_list = Item.where(category_index: category_id)
+      @item_list = Item.where(category_index: category_id).order("created_at desc")
 
     elsif (@category_gc[:ancestry].match("\/"))       #第3世代を引いたとき
       @category_gc = Category.find(params[:id])
       @category_c = @category_gc.parent
       @parent = @category_c.parent
-      @item_list = Item.where(category_index: @category_gc)
+      @item_list = Item.where(category_index: @category_gc).order("created_at desc")
 
     elsif (@category_gc.children != nil) && (@category_gc.parent != nil)   #第2世代を引いた時
       @category_c = @category_gc
@@ -159,12 +159,12 @@ class ItemsController < ApplicationController
       @items = Item.where(category_index: @category_c)
       @category_list = @category_c.children
       category_id = @category_list.map{|i| i.id}
-      @item_list = Item.where(category_index: category_id)
+      @item_list = Item.where(category_index: category_id).order("created_at desc")
     end
 
     item_id = @item_list.map{|dd| dd[:id]}
-    @trade = Trading.where(item_id: item_id)
-    @image = Image.where(item_id: item_id)
+    @trade = Trading.where(item_id: item_id).order("created_at desc")
+    @image = Image.where(item_id: item_id).order("created_at desc")
 
   end
 
@@ -187,9 +187,9 @@ class ItemsController < ApplicationController
 
   def search
     if params[:search].length != 0
-      @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%")
-      @images = Image.where(item_id: @items.map{|i| i.id})
-      @trade = Trading.where(item_id: @items.map{|i| i.id})
+      @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%").order("created_at desc")
+      @images = Image.where(item_id: @items.map{|i| i.id}).order("created_at desc")
+      @trade = Trading.where(item_id: @items.map{|i| i.id}).order("created_at desc")
     else
       redirect_to root_path
     end
@@ -200,9 +200,9 @@ class ItemsController < ApplicationController
   def search_more
     @item_name = params[:q][:item_name_cont]
     @q = Item.ransack(params[:q])
-    @items = @q.result(distinct: true)
-    @images = Image.where(item_id: @items.map{|i| i.id})
-    @trade = Trading.where(item_id: @items.map{|i| i.id})
+    @items = @q.result(distinct: true).order("created_at desc")
+    @images = Image.where(item_id: @items.map{|i| i.id}).order("created_at desc")
+    @trade = Trading.where(item_id: @items.map{|i| i.id}).order("created_at desc")
   end
 
   private
