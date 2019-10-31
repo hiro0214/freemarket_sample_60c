@@ -21,7 +21,8 @@
             %li.panel1.show
               - @items.each do |item|
                 .exhibit__list
-                  =image_tag "mypage_logo.png", class: "mercari_logo"
+                  -# =image_tag "mypage_logo.png", class: "mercari_logo"
+                  = image_tag image.url.url, class: "exhibiting"
                   .exhibit__list__content__box
                     .exhibit__list__content__box__message
                       = link_to "#{item.item_name}", "edit_item/#{item.id}"
@@ -39,7 +40,8 @@
             %li.panel2
               - @trading_items.each do |item|
                 .exhibit__list
-                  =image_tag "mypage_logo.png", class: "mercari_logo"
+                  -# =image_tag "mypage_logo.png", class: "mercari_logo"
+                  = image_tag image.url.url, class: "exhibiting"
                   .exhibit__list__content__box
                     .exhibit__list__content__box__message
                       = link_to "#{item.item_name}", "trade/#{item.id}"
@@ -56,7 +58,8 @@
             %li.panel3
               - @sold_items.each do |item|
                 .exhibit__list
-                  =image_tag "mypage_logo.png", class: "mercari_logo"
+                  -# =image_tag "mypage_logo.png", class: "mercari_logo"
+                  = image_tag image.url.url, class: "exhibiting_image"
                   .exhibit__list__content__box
                     .exhibit__list__content__box__message
                       = link_to "#{item.item_name}", "sold/#{item.id}"
