@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :show, :more]
+  before_action :authenticate_user!, except: [:index, :show, :more, :search, :search_more]
   before_action :puru
   before_action :set_item, only: [:show, :edit, :destroy]
 
@@ -190,20 +190,20 @@ class ItemsController < ApplicationController
     if params[:search].length != 0
       @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%")
       @images = Image.where(item_id: @items.map{|i| i.id})
+      @trade = Trading.where(item_id: @items.map{|i| i.id})
     else
       redirect_to root_path
     end
-
-    # ransackの記述
     @q = Item.ransack(params[:q])
     @item = @q.result(distinct: true)
   end
 
   def search_more
-    # ransackの記述
     @item_name = params[:q][:item_name_cont]
     @q = Item.ransack(params[:q])
     @items = @q.result(distinct: true)
+    @images = Image.where(item_id: @items.map{|i| i.id})
+    @trade = Trading.where(item_id: @items.map{|i| i.id})
   end
 
   private

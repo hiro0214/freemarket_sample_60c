@@ -28,7 +28,7 @@
               = f.label :state, "商品の状態"
               .search__list__detail__state_box
                 .search__list__detail__state_box__one
-                  = f.radio_button :state_eq,  '', {:checked => true}
+                  = f.radio_button :state_eq,  '', checked: true
                   %span すべて
                 .search__list__detail__state_box__one
                   = f.radio_button :state_eq, '新品、未使用'
@@ -61,14 +61,19 @@
             %h2
               = "'#{params[:q][:item_name_or_description_cont]}'の検索結果"
         .main_contents__box__contents__items_search
-          - @items.each do |item|
+          - @items.zip(@images, @trade).each do |item, image, trade|
             .main_contents__box__contents__items__one
-              -# = image_tag image.url.url, class: "index_image"
+              - if trade.sale_state == "trade"
+                .sold_item
+                  %p SOLD
+                = image_tag image.url.url, class: "index_image"
+              -else
+                = image_tag image.url.url, class: "index_image"
               .main_contents__box__contents__items__one__image__price
                 = "¥#{item.price}"
               .main_contents__box__contents__items__one__title
                 %span
-                  = link_to "items/#{item[:item_id]}", method: :get do
+                  = link_to "/items/#{item.id}", method: :get do
                     = item.item_name
 
 = render "footer"
