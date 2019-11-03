@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(version: 2019_10_27_095811) do
     t.string "sale_state", default: "exhibit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "buy_date"
     t.integer "deliveries_id"
     t.index ["deliveries_id"], name: "index_tradings_on_deliveries_id"
     t.index ["item_id"], name: "index_tradings_on_item_id"
