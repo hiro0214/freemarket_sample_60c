@@ -52,10 +52,11 @@
             .exhibit__detail__container__title__category
               = f.label "カテゴリー"
               %span.exhibit_span 必須
+              - if flash[:category_alert]
+                %span.alert
+                  = flash[:category_alert]
               .exhibit__detail__container__title_field
                 = f.select :category_index, @category_array, {}, {class: "select-default", id: "chose-category"}
-                = render partial: 'error_messages', locals: {item: @item, column: "category_index"}
-
 
             .exhibit__detail__container__title__shoes
               = f.label "サイズ"
