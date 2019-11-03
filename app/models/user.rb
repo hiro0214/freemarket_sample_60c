@@ -13,12 +13,11 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
-  # omniauthのコールバック時に呼ばれるメソッド
 
-  def self.find_oauth(auth)
+
+  def self.find_oauth(auth) # omniauthのコールバック時に呼ばれるメソッド
     uid = auth.uid
     provider = auth.provider
-    # snscredential = SnsCredential.where(uid: uid, provider: provider).first
     snscredential = SnsCredential.find_by(uid: uid, provider: provider)
 
     if snscredential.present? #sns登録のみ完了してるユーザー
@@ -33,21 +32,19 @@ class User < ApplicationRecord
           password_confirmation: password
           )
 
-          # return { user: user , sns_id: sns.id }
-    end
+        end
     sns = snscredential
 
-    else #sns登録 未
+    else #sns登録 未 の場合
       user = User.find_by(email: auth.info.email)
-      if user.present? #会員登録 済
+      if user.present? #会員登録 済 の場合
         sns = SnsCredential.new(
           uid: uid,
           provider: provider,
           user_id: user.id
           )
-        else #会員登録 未
-          # binding.pry
-          password = Devise.friendly_token[0, 8]#パスワード生成
+        else #会員登録 未 の場合
+          password = Devise.friendly_token[0, 8]#パスワードを生成(hidden_fieldに入力)
         user = User.new(
           name: auth.info.name,
           email: auth.info.email,
@@ -65,7 +62,7 @@ class User < ApplicationRecord
   end
 
 
-  VALID_EMAIL_REGEX =                 /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :name,presence: true, length: {maximum: 20}
   validates :email,presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :password,presence: true
@@ -73,12 +70,7 @@ class User < ApplicationRecord
   validates :first_name,presence: true
   validates :last_name_kana,presence: true
   validates :first_name_kana,presence: true
-  # validates :birthday, presence: true
+  validates :birthday, presence: true
   validates :tel_number, presence: true
-
-
-
-
-
 
 end

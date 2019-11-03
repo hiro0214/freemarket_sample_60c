@@ -3,11 +3,13 @@ class Item < ApplicationRecord
   has_one :trading, dependent: :destroy
   has_one :categories
   has_many :images, dependent: :destroy
-
   has_many :goods, dependent: :destroy
+
+
   def good_user(user_id)
     goods.find_by(user_id: user_id)
   end
+
 
   validates :item_name, presence: true, length: { in: 1..40 }
   validates :description, presence: true, length:{maximum: 1000 , message: "must be given please" }
@@ -20,10 +22,7 @@ class Item < ApplicationRecord
   validates :category_index, exclusion: { in: %w(---) }
 
 
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
-  # 上記の２行は、prefectureモデルを使用するための記述、
-  # 関連付けたいテーブルに対応するモデルに記入
 
 end

@@ -17,8 +17,3 @@ class Prefecture < ActiveHash::Base
     {id: "熊本県", name: '熊本県'}, {id: "大分県", name: '大分県'}, {id: "宮崎県", name: '宮崎県'},
     {id: "鹿児島", name: '鹿児島県'}, {id: "沖縄県", name: '沖縄県'}]
 end
-
-# modelを作って継承元をActiveHash::Baseに指定
-# 上記のモデルは、ターミナルで modelコマンド を利用しないで作成
-
-# 上記のidをそれぞれ、県名に変えてあげると対応したnameが保存される
