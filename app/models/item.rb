@@ -17,6 +17,9 @@ class Item < ApplicationRecord
   validates :fee_size, presence: true
   validates :region, presence: true
   validates :delivery_date, presence: true
+  validates :category_index, exclusion: { in: %w(---) }
+
+
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
