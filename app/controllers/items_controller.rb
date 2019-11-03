@@ -191,12 +191,17 @@ class ItemsController < ApplicationController
 
     # ransackの記述
     @q = Item.ransack(params[:q])
-    @item = @q.result(distinct: true)
+    @items = @q.result(distinct: true)
   end
 
   def search_more
     # ransackの記述
     @item_name = params[:q][:item_name_cont]
+
+    if params[:q][:category_index_in] !=  ""
+    params[:q][:category_index_in] = Category.find(params[:q][:category_index_in]).descendant_ids
+    end
+
     @q = Item.ransack(params[:q])
     @items = @q.result(distinct: true)
   end
