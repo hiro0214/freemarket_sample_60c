@@ -1,6 +1,6 @@
 .sign_in__page
   .registration__header__logo
-    =link_to "/" do
+    =link_to root_path do
       =image_tag "header_logo.png"
 
 .registration__first
@@ -39,7 +39,7 @@
           %p #{@delivery.building}
           %p #{@user.name}
 
-        = link_to "変更する >", "#"
+        = link_to "変更する >","#"
 
     .edit__bottom
       .edit__bottom__box
