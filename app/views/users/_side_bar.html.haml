@@ -1,34 +1,34 @@
 .side_bar
-  .side_bar__main 
-    %ul 
+  .side_bar__main
+    %ul
       %li
         = link_to 'マイページ', "/users/#{@user.id}"
         %i.fa.fa-chevron-right
-      %li 
+      %li
         = link_to 'お知らせ', " "
         %i.fa.fa-chevron-right
-      %li 
+      %li
         =link_to 'やることリスト'," "
         %i.fa.fa-chevron-right
-      %li 
+      %li
         =link_to 'いいね！一覧', " "
         %i.fa.fa-chevron-right
-      %li 
+      %li
         =link_to '出品する', " "
         %i.fa.fa-chevron-right
-      %li 
+      %li
         =link_to '出品した商品 - 出品中',"/users/#{@user.id}/exhibiting"
         %i.fa.fa-chevron-right
-      %li 
+      %li
         =link_to '出品した商品 - 取引中', " "
         %i.fa.fa-chevron-right
-      %li 
+      %li
         =link_to'出品した商品 - 売却済み', " "
         %i.fa.fa-chevron-right
       %li
         =link_to'購入した商品 - 取引中'," "
         %i.fa.fa-chevron-right
-      %li 
+      %li
         =link_to'購入した商品 - 過去の取引'," "
         %i.fa.fa-chevron-right
       %li
@@ -43,7 +43,7 @@
       %li
         =link_to'お問い合わせ'," "
         %i.fa.fa-chevron-right
-      
+
   %p メルペイ
   .side_bar__middle
     %ul
@@ -68,7 +68,7 @@
       %li
         =link_to'メール/パスワード'," "
         %i.fa.fa-chevron-right
-      %li 
+      %li
         =link_to'本人情報',"/users/#{@user.id}/identification"
         %i.fa.fa-chevron-right
       %li

@@ -1,7 +1,7 @@
 %header
   .wrap
     .header_top
-      =link_to "/" do
+      =link_to root_path do
         =image_tag "header_logo.png", class: "header_logo"
       = form_tag(search_items_path, method: :get, class: 'header_search') do
         - if flash[:search_alert]
