@@ -1,27 +1,688 @@
-.top_image{
+@media screen and (max-width:767px) {
+//   /*スマホ用のcssを記述*/
+//   }
+// メインイメージ(フェードして切り替え)
+  .trim {
+    overflow: hidden;
+    // width: 100vwpx;/* トリミングしたい枠の幅 */
+    height:170px;
+    position:relative;
+  }
+  .main__image {
+    height:170px;
+    position:relative;
+    img {
+      height:170px;
+    }
+  }
+  .main__img2 {
+    opacity:0;
+    position:absolute;
+    top:0px;
+    right:0px;
+  }
+  // メインイメージここまで
+
+  // Wrap
+  .main{
+    margin:0 auto 0;
+
+  }
+
+  // 人気のカテゴリー Links
+
+  .main_contents{
+    background:rgb(239, 239, 239);
+    height:100%;
+    // padding:0 100px 50px;
+    &__box{
+      width:100vw;
+      &__header{
+        background:white;
+        height:134px;
+        padding: 56px 0 30px;
+        &_tittle{
+          margin-bottom:16px;
+          text-align: center;
+          font-size: 22px;
+          font-weight:600;
+          line-height: 22px;
+        }
+        &_category{
+          &_list{
+            display:flex;
+            justify-content: center;
+            &_num{
+            background: rgb(239, 239, 239);
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 15px;
+            padding: 4px 16px;
+            margin:10px 0 0 10px;
+            cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 人気のカテゴリー Linksここまで
+
+      //--新着アイテムたち  ここから--//
+  // タイトル・もっとみる
+  .main_contents__box__contents{
+    background: rgb(239, 239, 239);
+    width: 100%;
+    height: 100%;
+    padding-top:30px;
+    margin:0 auto 50px;
+    &__title_box{
+      width: 100%;
+      height: 33px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom:15px;
+      &__title{
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.4em;
+      }
+      &__motto{
+        width: 100px;
+        padding:5px 16px 5px 5px;
+        font-size: 12px;
+        font-weight: 600;
+        color: rgb(0, 149,238);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .link{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(0, 149,238);
+  }
+
+  // item
+
+  .index_image {
+    width:100%;
+    // min-width:150px;
+    // min-height:150px;
+    // height:124px;
+  }
+
+
+  .main_contents__box__contents__items{
+    height:100%;
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+
+    &__one{
+      background:white;
+      width:33.3%;
+      // min-height:150px;
+      flex: 3 0 150px;
+      margin:0 10px 15px;
+      // padding:0 3px 15px;
+      position: relative;
+      overflow:hidden;
+      box-shadow: #cccccc 1px 2px 3px 1px;
+      outline: inset rgba(0,149,238,0) 1px;
+      transition: outline 200ms ease-in;
+
+      &:hover{
+        outline: inset rgba(0,149,238,1) 1px;
+        transition: outline 100ms ease-out;
+      }
+
+      & > img{
+        width:100%;
+        min-width:150px;
+        min-height:150px;
+        border-style: none;
+      }
+
+      &__image__price{
+        padding: 0 12px;
+        position: absolute;
+        bottom: 80px;
+        border-radius:0 14px 14px 0;
+        color:#fff;
+        background-color:rgba(0, 0, 0,0.25);
+        font-size:17px;
+      }
+      &__title{
+        height: 62px;
+        span {
+          // width:100%;
+          height:100%;
+          display:block;
+          font-size:15px;
+          padding: 7px 12px 7px;
+        }
+      }
+    }
+  }
+
+  .main_contents__box__contents__items__one__title a{
+    color: inherit;
+    }
+
+
+  // 新着ここまで
+
+
+  // ページ内リンク（テキスト）群
+
+  .main_contents__box__header_tittle > h2{
+    font-size: 28px;
+    font-weight: 600;
+    }
+  .main_contents__box__header_category_list_num {
+    color: inherit;
+    }
+
+
+
+
+
+  // 出品ページへLinkするカメラ
+  .exhibit__btn {
+    background: rgb(234, 53, 45);
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    text-align:center;
+    position: fixed;
+    right:20px;
+    bottom:20px;
+    z-index:100;
+    cursor:pointer;
+    &__box {
+      width:100%;
+      height:100%;
+    }
+    &__name {
+      color:#fff;
+      font-size:15px;
+      padding-top:12px;
+    }
+    &__icon {
+      color:#fff;
+      font-size:29px !important;
+    }
+    &__circle {
+      width:13px;
+      height:13px;
+      border-radius:50%;
+      position:relative;
+      left:33px;
+      bottom:36px;
+      background: rgb(234, 53, 45);
+      border:solid 0px #fff;
+    }
+  }
+  // カメラここまで
+
+  // SOLDの帯
+  .sold_item {
+    width:140px;
+    height:140px;
+    background:#ea352d;
+    transform:rotate(315deg);
+    position:absolute;
+    top:-70px;
+    left:-70px;
+      p {
+      color:#fff;
+      font-size:22px;
+      text-align:center;
+      line-height:240px;
+      font-weight:600;
+      letter-spacing: 2px;
+    }
+  }
+  // SOLDの帯ここまで
+
+
+  // itemのフェード
+  .fadeout {
+    opacity: 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1.3s;
+    transform: translate3d(100px, 0, 0);
+  }
+
+  .fadein {
+    opacity: 1.0;
+    transform: translate3d(0,0,0);
+  }
+  // itemのフェード ここまで
+
+  // パンくず
+  .breadcrumb {
+    width:100vw;
+    height:50px;
+    border-bottom:solid 1px rgb(224, 224, 224);
+    ul {
+      width: 100%;
+      margin:0 auto;
+      line-height:50px;
+      font-size:14px;
+      display:flex;
+      li {
+        margin-right:5px;
+        a {
+          color: #333;
+          &:hover {
+            color:rgba(51, 51, 51, 0.596);
+            border-bottom:solid 1px gray;
+          }
+        }
+        span {
+          margin-left:5px;
+          font-size:12px;
+          color:#333;
+        }
+      }
+    }
+  }
+  // パンくず ここまで
+
+
+  .categories {
+    width:100vw;
+    height:80px;
+    background:rgb(239, 239, 239);
+    ul {
+      width: 1020px;
+      margin:0 auto;
+      padding-top: 30px;
+      line-height:30px;
+      font-size:14px;
+      display:flex;
+      flex-wrap: wrap;
+      a {
+        color: rgb(0, 149,238);
+        width:50px;
+        margin-right:20px;
+      }
+    }
+  }
+
+}
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+
+
+  @media only screen and (min-width:768px) and (max-width:1023px) {
+  /*tablet用のcssを記述*/
+// メインイメージ(フェードして切り替え)
+  .trim {
+    overflow: hidden;
+    width: 1023px;/* トリミングしたい枠の幅 */
+    height:290px;
+    position:relative;
+  }
+  .main__image {
+    height:290px;
+    position:relative;
+    img {
+      height:290px;
+    }
+  }
+  .main__img2 {
+    opacity:0;
+    position:absolute;
+    top:0px;
+    right:0px;
+  }
+  // メインイメージここまで
+
+  // Wrap
+  .main{
+    margin:0 auto 0;
+
+  }
+
+  // 人気のカテゴリー Links
+
+  .main_contents{
+    background:rgb(239, 239, 239);
+    height:100%;
+    // padding:0 100px 50px;
+    &__box{
+      width:100vw;
+      &__header{
+        background:white;
+        height:170px;
+        padding: 56px 0 30px;
+        &_tittle{
+          margin-bottom:16px;
+          text-align: center;
+          font-size: 28px;
+          font-weight:600;
+          line-height: 28px;
+        }
+        &_category{
+          &_list{
+            display:flex;
+            justify-content: center;
+            &_num{
+            background: rgb(239, 239, 239);
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 15px;
+            padding: 4px 16px;
+            margin:10px 0 0 10px;
+            cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 人気のカテゴリー Linksここまで
+
+      //--新着アイテムたち  ここから--//
+  // タイトル・もっとみる
+  .main_contents__box__contents{
+    background: rgb(239, 239, 239);
+    width: 700px;
+    height: 100%;
+    padding-top:30px;
+    margin:0 auto 50px;
+    &__title_box{
+      width: 100%;
+      height: 33px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom:15px;
+      &__title{
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.4em;
+      }
+      &__motto{
+        width: 100px;
+        padding:5px 16px 5px 5px;
+        font-size: 14px;
+        font-weight: 600;
+        color: rgb(0, 149,238);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .link{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(0, 149,238);
+  }
+
+  // item
+
+  .index_image {
+    width:124px;
+    height:124px;
+  }
+
+
+  .main_contents__box__contents__items{
+    height:100%;
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+
+    &__one{
+      background:white;
+      width:124px;
+      height:188px;
+      margin:0 8px 15px;
+      position: relative;
+      overflow:hidden;
+      box-shadow: #cccccc 1px 2px 3px 1px;
+      outline: inset rgba(0,149,238,0) 1px;
+      transition: outline 200ms ease-in;
+
+      &:hover{
+        outline: inset rgba(0,149,238,1) 1px;
+        transition: outline 100ms ease-out;
+      }
+
+      & > img{
+        border-style: none;
+      }
+
+      &__image__price{
+        padding: 0 12px;
+        position: absolute;
+        bottom: 80px;
+        border-radius:0 14px 14px 0;
+        color:#fff;
+        background-color:rgba(0, 0, 0,0.25);
+        font-size:17px;
+      }
+      &__title{
+        height: 62px;
+        span {
+          width:100%;
+          height:100%;
+          display:block;
+          font-size:15px;
+          padding: 7px 12px 7px;
+        }
+      }
+    }
+  }
+
+  .main_contents__box__contents__items__one__title a{
+    color: inherit;
+    }
+
+
+  // 新着ここまで
+
+
+  // ページ内リンク（テキスト）群
+
+  .main_contents__box__header_tittle > h2{
+    font-size: 28px;
+    font-weight: 600;
+    }
+  .main_contents__box__header_category_list_num {
+    color: inherit;
+    }
+
+
+
+
+
+  // 出品ページへLinkするカメラ
+  .exhibit__btn {
+    background: rgb(234, 53, 45);
+    width:160px;
+    height:160px;
+    border-radius: 50%;
+    text-align:center;
+    position: fixed;
+    right:40px;
+    bottom:40px;
+    z-index:100;
+    cursor:pointer;
+    &__box {
+      width:100%;
+      height:100%;
+    }
+    &__name {
+      color:#fff;
+      font-size:22px;
+      padding-top:32px;
+    }
+    &__icon {
+      color:#fff;
+      font-size:60px !important;
+    }
+    &__circle {
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      position:relative;
+      left:69px;
+      bottom:74.5px;
+      background: rgb(234, 53, 45);
+      border:solid 0px #fff;
+    }
+  }
+  // カメラここまで
+
+  // SOLDの帯
+  .sold_item {
+    width:140px;
+    height:140px;
+    background:#ea352d;
+    transform:rotate(315deg);
+    position:absolute;
+    top:-70px;
+    left:-70px;
+      p {
+      color:#fff;
+      font-size:22px;
+      text-align:center;
+      line-height:240px;
+      font-weight:600;
+      letter-spacing: 2px;
+    }
+  }
+  // SOLDの帯ここまで
+
+
+  // itemのフェード
+  .fadeout {
+    opacity: 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1.3s;
+    transform: translate3d(100px, 0, 0);
+  }
+
+  .fadein {
+    opacity: 1.0;
+    transform: translate3d(0,0,0);
+  }
+  // itemのフェード ここまで
+
+  // パンくず
+  .breadcrumb {
+    width:100vw;
+    height:50px;
+    border-bottom:solid 1px rgb(224, 224, 224);
+    ul {
+      width: 1020px;
+      margin:0 auto;
+      line-height:50px;
+      font-size:14px;
+      display:flex;
+      li {
+        margin-right:5px;
+        a {
+          color: #333;
+          &:hover {
+            color:rgba(51, 51, 51, 0.596);
+            border-bottom:solid 1px gray;
+          }
+        }
+        span {
+          margin-left:5px;
+          font-size:12px;
+          color:#333;
+        }
+      }
+    }
+  }
+  // パンくず ここまで
+
+
+  .categories {
+    width:100vw;
+    height:80px;
+    background:rgb(239, 239, 239);
+    ul {
+      width: 1020px;
+      margin:0 auto;
+      padding-top: 30px;
+      line-height:30px;
+      font-size:14px;
+      display:flex;
+      flex-wrap: wrap;
+      a {
+        color: rgb(0, 149,238);
+        width:50px;
+        margin-right:20px;
+      }
+    }
+  }
+
+}
+
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+
+
+  @media screen and (min-width:1024px) {
+  /*pc用のcssを記述*/
+
+// メインイメージ(フェードして切り替え)
+.trim {
+  overflow: hidden;
+  max-width: 100%;/* トリミングしたい枠の幅 */
   height:390px;
-  width:100vw;
+  position:relative;
 }
 
 .main__image {
-  width:100vw;
-  max-height:390px;
-
+  max-width:100%;
+  height:390px;
+  position:relative;
   img {
-    width:100vw;
-    max-height:390px;
+    // width:100vw;
+    margin:0 auto 0;
+    height:390px;
   }
 }
-
 .main__img2 {
   opacity:0;
-  position:relative;
-  bottom:394px;
+  top:0px;
+  right:0px;
+  position:absolute;
+
 }
+// メインイメージここまで
+
+// Wrap
+.main{
+  margin:0 auto 0;
+}
+
+// 人気のカテゴリー Links
 
 .main_contents{
   background:rgb(239, 239, 239);
   height:100%;
+
   &__box{
     width:100vw;
     &__header{
@@ -44,7 +705,7 @@
           font-size: 14px;
           font-weight: 600;
           border-radius: 15px;
-          padding: 8px 16px;
+          padding: 4px 16px;
           margin:10px 0 0 10px;
           cursor: pointer;
           }
@@ -53,7 +714,10 @@
     }
   }
 }
+// 人気のカテゴリー Linksここまで
+
     //--新着アイテムたち  ここから--//
+// タイトル・もっとみる
 .main_contents__box__contents{
   background: rgb(239, 239, 239);
   width: 1020px;
@@ -82,13 +746,26 @@
   }
 }
 
+.link{
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(0, 149,238);
+}
+
+// item
+
+.index_image {
+  width:188px;
+  height:188px;
+}
+
+
 .main_contents__box__contents__items{
   height:100%;
   display:flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
-  // align-content: space-around;
   margin-bottom: 18px;
+
   &__one{
     background:white;
     width:188px;
@@ -96,20 +773,27 @@
     margin:0 8px 15px;
     position: relative;
     overflow:hidden;
-    &__image{
-      background:goldenrod;
-      height:188px;
-      width:188px;
-      &__price{
-        background:goldenrod;
-        padding: 0 12px;
-        position: absolute;
-        bottom: 80px;
-        border-radius:0 14px 14px 0;
-        color:#fff;
-        background-color:rgba(0, 0, 0,0.25);
-        font-size:17px;
-      }
+    box-shadow: #cccccc 1px 2px 3px 1px;
+    outline: inset rgba(0,149,238,0) 1px;
+    transition: outline 200ms ease-in;
+
+    &:hover{
+      outline: inset rgba(0,149,238,1) 1px;
+      transition: outline 100ms ease-out;
+    }
+
+    & > img{
+      border-style: none;
+    }
+
+    &__image__price{
+      padding: 0 12px;
+      position: absolute;
+      bottom: 80px;
+      border-radius:0 14px 14px 0;
+      color:#fff;
+      background-color:rgba(0, 0, 0,0.25);
+      font-size:17px;
     }
     &__title{
       height: 62px;
@@ -124,14 +808,29 @@
   }
 }
 
+.main_contents__box__contents__items__one__title a{
+  color: inherit;
+  }
 
-.link{
-  font-size: 14px;
+
+// 新着ここまで
+
+
+// ページ内リンク（テキスト）群
+
+.main_contents__box__header_tittle > h2{
+  font-size: 28px;
   font-weight: 600;
-  color: rgb(0, 149,238);
-  text-decoration: none;
-}
+  }
+.main_contents__box__header_category_list_num {
+  color: inherit;
+  }
 
+
+
+
+
+// 出品ページへLinkするカメラ
 .exhibit__btn {
   background: rgb(234, 53, 45);
   width:160px;
@@ -167,7 +866,9 @@
     border:solid 0px #fff;
   }
 }
+// カメラここまで
 
+// SOLDの帯
 .sold_item {
   width:140px;
   height:140px;
@@ -185,8 +886,10 @@
     letter-spacing: 2px;
   }
 }
+// SOLDの帯ここまで
 
 
+// itemのフェード
 .fadeout {
   opacity: 0;
   -webkit-transition: all 1s;
@@ -201,7 +904,9 @@
   opacity: 1.0;
   transform: translate3d(0,0,0);
 }
+// itemのフェード ここまで
 
+// パンくず
 .breadcrumb {
   width:100vw;
   height:50px;
@@ -229,6 +934,8 @@
     }
   }
 }
+// パンくず ここまで
+
 
 .categories {
   width:100vw;
@@ -250,12 +957,4 @@
   }
 }
 
-.index_image {
-  width:188px;
-  height:188px;
-}
-
-.buy_image {
-  width:80px;
-  height:100px;
 }

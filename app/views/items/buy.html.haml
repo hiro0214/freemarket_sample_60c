@@ -26,29 +26,31 @@
           %p
             = "¥#{@item.price}"
         .edit__top__box__buy
-          = form_for @trading, url: "/items/#{@item.id}" ,method: :patch do |f|
-            = f.submit "購入する"
-          -# = form_with url: pay_items_path, local: true,class: "card_form" do
-          -#   %script.payjp-button{:src => "https://checkout.pay.jp", :type => "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_86e37e6b853b899184ff5e47"}
 
+          = link_to pay_purchase_index_path(@item),method: :post do
+            %button 購入する
 
     .edit__middle
       .edit__middle__box
         %p 配送先
         .edit__middle__box__address
-          %p 〒150-0041
-          %p 東京都 渋谷区 神南1丁目18-2
-          %p
-            = @user.name
+          %p 〒 #{@delivery.postal_code}
+          %p #{@delivery.area} #{@delivery.city} #{@delivery.address}
+          %p #{@delivery.building}
+          %p #{@user.name}
+
         = link_to "変更する >", "#"
 
     .edit__bottom
       .edit__bottom__box
         %p 支払い方法
         .edit__bottom__box__pay
-          %p **********1234
-          %p 08/22
+          %p= "**** **** **** " + @default_card_information.last4
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          %p= exp_month + " / " + exp_year
           %p VISA
+
         = link_to "変更する >", "#"
 
   = render partial: "devise/layout/footer"

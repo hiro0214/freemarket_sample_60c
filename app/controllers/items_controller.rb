@@ -40,17 +40,27 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:item_id])
     @trading = Trading.find_by(item_id: "#{params[:item_id]}")
     @image = Image.find_by(item_id: @item.id).url
+    
+        # 配送先の表示
+    @delivery = Delivery.find_by(user_id: current_user.id)
+
+    # カード情報の表示
+    @card = CreditCard.find_by(user_id: current_user.id)
+
+    Payjp.api_key = 'sk_test_f98999ddca480c61d3498ee7'
+    customer = Payjp::Customer.retrieve(@card.customer_id,)
+    @default_card_information = customer.cards.retrieve(@card.card_id)
   end
 
   def update
     @trading = Trading.find_by(item_id: "#{params[:id]}")
-    if @trading.sale_state == "exhibit" && @trading.saler_id != current_user.id
-      @trading.update(sale_state: "trade", buyer_id: current_user.id)
-      redirect_to buy_after_path
-    else
-      redirect_to root_path, flash: {buy_alert: "購入出来ませんでした"}
+    if @trading.sale_state == "trade"
+      @trading.update(sale_state: "sold")
+      redirect_to "/users/#{current_user.id}/trade_after"
     end
   end
+
+
 
   def show
     @category_gc= Category.find(@item[:category_index])
@@ -58,13 +68,8 @@ class ItemsController < ApplicationController
     @category = @category_c.parent
     @trading = Trading.find_by(item_id: params[:id])
     @user = User.find(@trading.saler_id)
-
-    if Image.find_by(item_id: @item) != nil
-      @image = Image.find_by(item_id: params[:id]).url
-    else
-      @image = nil
-    end
-
+    @good = Good.where(item_id: params[:id])
+    @image = Image.find_by(item_id: params[:id]).url
   end
 
   def create
@@ -78,7 +83,6 @@ class ItemsController < ApplicationController
                 delivery_date: item_params[:delivery_date],
                 category_index: item_params[:category_index])
     @item.build_trading(saler_id: current_user.id)
-
     @category_array = ["---"]
     Category.where(ancestry: nil).each do |parent|
       @category_array << parent.name
@@ -185,6 +189,7 @@ class ItemsController < ApplicationController
   def search
     if params[:search].length != 0
       @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%")
+      @images = Image.where(item_id: @items.map{|i| i.id})
     else
       redirect_to root_path
     end

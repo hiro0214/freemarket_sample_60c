@@ -8,33 +8,70 @@
       .exhibiting_main__title
         出品した商品
       .exhibiting_main__middle_menu
-        .exhibiting_main__middle_menu__tabs
-          %p.infomation
+        %ul.exhibiting_main__middle_menu__tabs
+          %li.menu_item.active
             出品中
-          %p.to_do
+          %li.menu_item
             取引中
-          %p.to_do
+          %li.menu_item
             売却済
 
-        .exhibiting_main__middle_menu__list
+        .exhibiting_main__middle_menu__contents
           %ul
-            - @items.each do |item|
-              %li.exhibiting_main__middle_menu__list__content
-                //ここに商品イメージが入る。↓のロゴは仮置き。
-                =image_tag "mypage_logo.png", class: "exhibiting_main__middle_menu__list__mercari_logo"
-                .exhibiting_main__middle_menu__list__box
-                  .exhibiting_main__middle_menu__list__message
-                    = link_to "#{item.item_name}", "edit_item/#{item.id}"
-                  .exhibiting_main__middle_menu__list__time_box
-                    %i.fa.fa-heart-o
-                    %span
-                      30
-                    %i.fa.fa-comment-o
-                    %span
-                      6
-                    %span.blue_message
-                      出品中
-                %i.fa.fa-chevron-right
+            %li.panel1.show
+              - @items.each do |item|
+                .exhibit__list
+                  =image_tag "mypage_logo.png", class: "mercari_logo"
+                  .exhibit__list__content__box
+                    .exhibit__list__content__box__message
+                      = link_to "#{item.item_name}", "edit_item/#{item.id}"
+                    .exhibit__list__content__box__time_box
+                      %i.fa.fa-heart-o
+                      %span
+                        30
+                      %i.fa.fa-comment-o
+                      %span
+                        6
+                      %span.blue_message
+                        出品中
+                  %i.fa.fa-chevron-right
             
+            %li.panel2
+              - @trading_items.each do |item|
+                .exhibit__list
+                  =image_tag "mypage_logo.png", class: "mercari_logo"
+                  .exhibit__list__content__box
+                    .exhibit__list__content__box__message
+                      = link_to "#{item.item_name}", "trade/#{item.id}"
+                    .exhibit__list__content__box__time_box
+                      %i.fa.fa-heart-o
+                      %span
+                        30
+                      %i.fa.fa-comment-o
+                      %span
+                        6
+                      %span.red_message
+                        取引中
+                  %i.fa.fa-chevron-right
+            %li.panel3
+              - @sold_items.each do |item|
+                .exhibit__list
+                  =image_tag "mypage_logo.png", class: "mercari_logo"
+                  .exhibit__list__content__box
+                    .exhibit__list__content__box__message
+                      = link_to "#{item.item_name}", "sold/#{item.id}"
+                    .exhibit__list__content__box__time_box
+                      %i.fa.fa-heart-o
+                      %span
+                        30
+                      %i.fa.fa-comment-o
+                      %span
+                        6
+                      %span.gray_message
+                        売却済
+                  %i.fa.fa-chevron-right
+
+
+
 
 = render "/items/footer" 

@@ -5,7 +5,8 @@
 
   .registration__first
     .registration__first__box
-      %h2.registration__first__box__top 新規会員登録
+      %h2.registration__first__box__top
+        新規会員登録
       .registration__first__box__middle__input
         %ul
           %li
@@ -18,6 +19,6 @@
               Facebookで登録する
           %li
             = button_to user_google_oauth2_omniauth_authorize_path, class: "registration__go" do
-              =image_tag "go_icon.png", class: "registration_go_icon"
+              = image_tag "go_icon.png", class: "registration_go_icon"
               Googleで登録する
   = render partial: "devise/layout/footer"
