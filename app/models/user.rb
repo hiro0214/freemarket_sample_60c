@@ -13,8 +13,6 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
-
-
   def self.find_oauth(auth) # omniauthのコールバック時に呼ばれるメソッド
     uid = auth.uid
     provider = auth.provider
@@ -60,7 +58,6 @@ class User < ApplicationRecord
     # hashでsnsのidを返り値として保持しておく
     return { user: user , sns_id: sns.id }
   end
-
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :name,presence: true, length: {maximum: 20}
