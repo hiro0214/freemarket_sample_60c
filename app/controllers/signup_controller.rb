@@ -130,8 +130,13 @@ class SignupController < ApplicationController
     building: delivery_params[:building])
     if @delivery.save
       redirect_to step5_signup_index_path
+    else
+      flash[:postal_code_alert] = "郵便番号を入力して下さい"
+      flash[:area_alert] = "都道府県を入力して下さい"
+      flash[:city_alert] = "市町区村を入力して下さい"
+      flash[:address_alert] = "番地を入力して下さい"
+      render '/signup/step4' unless @delivery.valid?
     end
-    render '/signup/step4' unless @delivery.valid?
   end
 
   private

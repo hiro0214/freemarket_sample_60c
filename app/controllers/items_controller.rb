@@ -94,6 +94,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to new_after_path
     else
+      flash[:img_alert] = "画像を添付して下さい"
       render action: :new
     end
   end

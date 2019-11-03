@@ -55,7 +55,10 @@
             %span 必須
           .registration__first__box__middle__input__area
             = f.text_field :postal_code, autocomplete: "on", class:"signup_input_default jip", placeholder:" 例) 123-4567"
-            = render partial:'error_message_signup', locals: {user: @user, column: ""}
+
+          -if flash[:postal_code_alert]
+            %p.alert
+              = flash[:postal_code_alert]
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
@@ -63,6 +66,10 @@
             %span 必須
           .registration__first__box__middle__input__area
             = f.text_field :area, autocomplete: "on", class:"signup_input_default prefecture", placeholder:" 例) 神奈川県"
+          -if flash[:area_alert]
+            %p.alert
+              = flash[:area_alert]
+
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
@@ -70,6 +77,9 @@
             %span 必須
           .registration__first__box__middle__input__area
             = f.text_field :city, autocomplete: "on", class:"signup_input_default city", placeholder:" 例) 横浜市緑区"
+          -if flash[:city_alert]
+            %p.alert
+              = flash[:city_alert]
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
@@ -77,7 +87,9 @@
             %span 必須
           .registration__first__box__middle__input__area
             = f.text_field :address, autocomplete: "on", class:"signup_input_default town", placeholder:" 例) 青山1-1-1"
-            = render partial:'error_message_signup', locals: {user: @user, column: "address"}
+          -if flash[:address_alert]
+            %p.alert
+              = flash[:address_alert]
 
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
