@@ -1,5 +1,4 @@
 .exhibit__main
-
   .registration__header__logo
     =link_to "/" do
       =image_tag "header_logo.png"
@@ -13,20 +12,16 @@
         .exhibit__upload_head
           %p 出品画像
           %span.exhibit_span 必須
-        -# %p 最大10枚までアップロードできます
         .exhibit__upload_image
           %label
             .exhibit__upload_image_preview
               = f.file_field :url, class: "up-image"
               %br
               .exhibit__upload_image_field#image_list
-                -# %p ドラッグアンドドロップ
                 %p クリックしてファイルをアップロード
-            -# %input.sell-upload-drop-file{:multiple => "", :name => "image1", :type => "file"}/
           -if flash[:img_alert]
             %p.alert
               = flash[:img_alert]
-
 
       .exhibit__explanation
         .exhibit__explanation__title
@@ -87,7 +82,6 @@
               %br
               = render partial: 'error_messages', locals: {item: @item, column: "state"}
 
-
       .exhibit__delivery.clearfix
         %p 配送について
         .exhibit__delivery__container
@@ -101,7 +95,6 @@
               %br
               = render partial: 'error_messages', locals: {item: @item, column: "fee_size"}
 
-
           .exhibit__delivery__container__shipping_region
             .exhibit__delivery__container__shipping_region_head
               %p  発送元の地域
@@ -110,7 +103,6 @@
               = f.collection_select :region, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
               %br
               = render partial: 'error_messages', locals: {item: @item, column: "region"}
-
 
           .exhibit__delivery__container__day
             .exhibit__delivery__container__day_head
@@ -121,7 +113,6 @@
                                           ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]],{}, {class: "select-default"}
               %br
               = render partial: 'error_messages', locals: {item: @item, column: "delivery_date"}
-
 
       .exhibit__price.clearfix
         %span 販売価格(300~9,999,999)
@@ -136,7 +127,6 @@
               = f.text_field :price, placeholder: "例）300",class:"price_form"
               %br
               = render partial: 'error_messages', locals: {item: @item, column: "price"}
-
 
           .exhibit__price__container__sale_fee.clearfix
             .exhibit__price__container__sale_fee_head
@@ -155,14 +145,5 @@
           = f.submit "出品する"
         .exhibit__confirmation__button__back
           = link_to "戻る", "/"
-      -# 商品の詳細
-      -# カテゴリー必須
-      -# 商品の状態必須
-      -# 配送について?
-      -# 配送料の負担必須
-      -# 発送元の地域必須
-      -# 発送までの日数必須
-      -# 出品する
-      -# もどる
 
   = render partial: "devise/layout/footer"

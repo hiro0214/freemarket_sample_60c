@@ -39,24 +39,6 @@ describe User do
       expect(user.errors[:tel_number]).to include("can't be blank")
     end
 
-    # it "アバターが空だと登録できないか" do
-    #   user = build(:user, avatar: "")
-    #   user.valid?
-    #   expect(user.errors[:avatar]).to include("can't be blank")
-    # end
-    # it "パスワードが７文字以下だと登録できないか" do
-    #   user = build(:user, password: "123456", password_confirmation: "123456")
-    #   user.valid?
-    #   expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
-    # end
-
-    # it "パスワードが8文字以上だと登録できるか" do
-    #   user = build(:user, password: "123456789", password_confirmation: "123456789")
-    #   user.valid?
-    #   expect(user).to be_valid
-    # end
-
-
     it "重複したemailが存在する場合登録できないか" do
       user = create(:user)
       another_user = build(:user, email: user.email)

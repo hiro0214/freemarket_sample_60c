@@ -10,12 +10,6 @@
       .item_container
         .item_container__image
           = image_tag @image.url, class: "item_image"
-        -# %ul.item_container__list
-        -#   %li 画1
-        -#   %li 画2
-        -#   %li 画3
-        -#   %li 画4
-        -#   %li 画5
       %table.item_table
         %tr
           %th 出品者
@@ -45,7 +39,6 @@
         %tr
           %th ブランド
           %td
-            -# = link_to 'オーチバル', " ",class:"table"
         %tr
           %th 商品の状態
           %td
@@ -75,19 +68,15 @@
     .item_description
       = safe_join(@item.description.split("\n"), tag(:br))
 
-      -#ここからitem_editページのみの表示
   %ul.item_edit_container
     %li.edit
-      -# =link_to "商品の編集","/users/#{@user.id}/edit_content"
       =link_to "商品の編集","/items/#{@item.id}/edit"
     %p or
     %li
       =link_to "商品の出品を一旦停止する",""
     %li
-      -# =if user_signed_in? && current_user.id == item.user_id
       =link_to "この商品を削除する","/items/#{@item.id}",method: :delete
 
-  -#ここ後でform_forで書く部分
   .item_comment_container
     .item_comment_container__info
       相手のことを考え丁寧なコメントを心がけましょう。
@@ -95,4 +84,5 @@
     %input
     .item_comment_container__btn
       コメントする
+
 = render "/items/footer"

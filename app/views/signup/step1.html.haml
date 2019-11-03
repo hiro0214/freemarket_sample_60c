@@ -32,7 +32,6 @@
     %h2.registration__first__box__top
       会員情報登録
     = form_for @user, url: step2_signup_index_path, method: :post, html: {class: ".registration__first__box__middle"} do |f|
-      -# = devise_error_messages!
       .registration__first__box__middle__input
         .field-label.registration__first__box__middle__input__name
           = f.label "ニックネーム"

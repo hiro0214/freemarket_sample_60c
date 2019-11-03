@@ -3,7 +3,6 @@
   .registration__header__logo
     =link_to "/" do
       =image_tag "header_logo.png"
-
   .exhibit__contents
     .exhibit__infomation
       %p 商品の情報を入力
@@ -15,12 +14,10 @@
           %span.exhibit_span 必須
         %p 最大10枚までアップロードできます
         .exhibit__upload_image
-          -# %input{:name => "image", :placeholder => "Image Url", :type => "text"}/
           %label
             %div.exhibit__upload_image_field
               %p ドラッグアンドドロップ
               %p またはクリックしてファイルをアップロード
-            -# %input.sell-upload-drop-file{:multiple => "", :name => "image1", :type => "file"}/
 
       .exhibit__explanation
         .exhibit__explanation__title
@@ -58,14 +55,6 @@
                                   ["21.5cm", "21.5cm"], ["22cm", "22cm"], ["22.5cm", "22.5cm"], ["23cm", "23cm"],
                                   ["23.5cm", "23.5cm"], ["24cm", "24cm"], ["24.5cm", "24.5cm"], ["25cm", "25cm"],
                                   ["25.5cm", "25.5cm"], ["26cm", "26cm"], ["26.5cm", "26.5cm"], ["27cm", "27cm"], ["27.5cm以上", "27.5cm以上"]], {}, {class: "select-default"}
-
-            -# .exhibit__detail__container__title__clothes
-            -#   = f.label "サイズ"
-            -#   %span.exhibit_span 必須
-            -#   .exhibit__detail__container__title__clothes__chose
-            -#     = f.select :size, [["---",""], ["XXS以下", "XXS以下"], ["XS(SS)", "XS(SS)"], ["S", "S"],
-            -#                       ["M", "M"], ["L", "L"], ["XL(LL)", "XL(LL)"], ["2XL(3L)", "2XL(3L)"],
-            -#                       ["3XL(4L)", "3XL(4L)"], ["4XL(5L)以上", "4XL(5L)以上"], ["FREE SIZE", "FREE SIZE"]], {}, {class: "select-default"}
 
           .exhibit__detail__container__detail
             .exhibit__detail__container__detail_head
@@ -142,14 +131,5 @@
           = f.submit "変更する"
         .exhibit__confirmation__button__back
           %a( href='')戻る
-      -# 商品の詳細
-      -# カテゴリー必須
-      -# 商品の状態必須
-      -# 配送について?
-      -# 配送料の負担必須
-      -# 発送元の地域必須
-      -# 発送までの日数必須
-      -# 出品する
-      -# もどる
 
   = render partial: "devise/layout/footer"

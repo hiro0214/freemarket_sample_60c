@@ -15,7 +15,6 @@ $(document).on('turbolinks:load', function() {
 
     $(".exhibit__upload_image_field").text("")
     view_box.append(img);
-
     fileRdr.onload = function() {
       view_box.find('img').attr('src', fileRdr.result);
       img_del(view_box);

@@ -3,7 +3,6 @@ require 'rails_helper'
 describe Item do
   describe '#create' do
 
-    # it ~ doの間にあるものが何のテストを実行するか。do ~ endの間にあるものがテスト実行するための記述。
     it "商品名が空だと登録できないか" do
       item = build(:item, item_name: "")
       item.valid?
@@ -31,7 +30,6 @@ describe Item do
       item = build(:item, price: "")
       expect(:item => '300').to include(:item => '300')
     end
-
 
     it "カテゴリーが空だと登録できないか" do
       item = build(:item,category_index: "")

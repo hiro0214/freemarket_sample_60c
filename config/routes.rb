@@ -29,7 +29,6 @@ Rails.application.routes.draw do
       get "category_grandchildren", defaults: { format: "json"}
       get "search"
       get "search_more"
-      # post 'items/:id' => 'items#pay', as: :pay#Pay.jp
     end
   end
 
@@ -42,11 +41,9 @@ Rails.application.routes.draw do
   end
 
   get "new_after" => "items#new_after"
-
   get "mypage" => "items#mypage"
   get "logout" => "items#logout"
   get "profile" => "items#profile"
-
   get "more/:id" => "items#more"
   get "buy_after" => "items#buy_after"
 
@@ -77,8 +74,5 @@ Rails.application.routes.draw do
       get 'done', to: 'purchase#done'
     end
   end
-
-  get 'purchase/index'
-  get 'purchase/done'
 
 end

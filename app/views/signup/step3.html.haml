@@ -31,8 +31,6 @@
 .registration__first
   .registration__first__box
     %h2.registration__first__box__top 電話番号認証
-    -# = form_for @user, url: step4_signup_index_path, method: :get, html: {class: ".registration__first__box__middle"} do |f|
-    -# = form_for "", url: step4_signup_index_path, method: :get, html: {class: ".registration__first__box__middle"} do |f|
     = form_for "", url:signup_index_path, method: :post, html: {class: 'step2_kari'} do |f|
       .registration__first__box__middle__input
         .registration__first__box__middle__input__name
@@ -41,7 +39,6 @@
           %p SMSで届いた認証番号を入力してください
         = f.submit "認証して完了", class: 'last_submit'
 
-        -# %form.registration__first__box__middle
       .registration__first__box__middle
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
@@ -56,11 +53,9 @@
           %a{href: "#"} 電話番号を再度入力する
           %p ※SMSが届かない場合はSMS受信設定を確認して、もう一度電話番号を入力してください。
 
-      -# 認証機能実装しないため、新たにスキップボタンを設置
       .registration__first__box__middle
         .registration__first__box__middle__input
           *SMS認証を使用しない場合はスキップして次へ進んでください。
           = f.submit "スキップして次へ", class: 'last_submit'
-
 
   = render partial: "devise/layout/footer"

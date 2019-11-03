@@ -3,7 +3,6 @@
 .main_contents
   .main_contents__box
     .main_contents__box__contents__search
-      -# ここから左のサイドの詳細検索の記述
       .main_contents__box__contents__search__left
         = search_form_for @q, url: search_more_items_path do |f|
           .search__list
@@ -50,10 +49,8 @@
                   = f.radio_button :state_eq, '全体的に状態が悪い'
                   %span 全体的に状態
                   %br が悪い
-
             = f.submit "検索", class: "search-more-button"
 
-      -# 右側に表示されるアイテム一覧
       .main_contents__box__contents__search__right
         .main_contents__box__contents__title_box
           .main_contents__box__contents__title_box__title

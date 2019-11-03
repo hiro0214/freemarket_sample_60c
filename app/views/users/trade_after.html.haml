@@ -3,7 +3,7 @@
 .wrapper_mypage
   .wrapper_box
     = render 'side_bar'
-    
+
     .trade_main
       .trade_main__top
         取引画面
@@ -18,4 +18,4 @@
       .trade_main__bottom
         .trade_main__bottom__btn
           =link_to '出品した商品に戻る',"/users/#{@user.id}/exhibiting"
-= render "/items/footer" 
+= render "/items/footer"
