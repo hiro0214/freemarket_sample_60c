@@ -18,6 +18,8 @@
       font-weight: bold;
     }
   }
+
+  // 商品のアップロード２段目
   &__upload{
     height: 301px;
     padding: 40px;
@@ -45,6 +47,8 @@
       }
     }
   }
+
+  // 商品の説明３段目
   &__explanation{
     min-height: 352px;
     padding: 40px;
@@ -84,6 +88,8 @@
       }
     }
   }
+
+  // 商品の詳細４段目
   &__detail{
   padding: 40px;
   border-top: solid 1px rgb(236, 236, 236);
@@ -132,6 +138,8 @@
       }
     }
   }
+  
+  // 商品の配送方法について 5段目
   &__delivery{
   padding: 40px;
   border-top: solid 1px rgb(236, 236, 236);
@@ -188,6 +196,8 @@
       }
     }
   }
+
+  // 商品の価格設定
   &__price{
   padding: 40px 40px 10px;
   border-top: solid 1px rgb(236, 236, 236);
@@ -241,6 +251,8 @@
           border: 1px solid #ccc;
         }
       }
+
+      
       &__sale_profit{
         margin-top: 15px;
         &_head{

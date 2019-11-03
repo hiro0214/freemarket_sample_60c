@@ -1,6 +1,7 @@
 @media screen  and (max-width:559px) {
   /*スマホ用のcss2を記述*/
 
+
   header {
     width:98%;
     height:170px;
@@ -8,7 +9,6 @@
     margin:0 auto;
     & .wrap {
       width:100%;
-
     }
   }
 
@@ -96,7 +96,6 @@
         li {
           background:#fff;
           padding:8px 0px;
-
           &:hover {
             background:#ea352d;
             color:#fff;
@@ -138,10 +137,7 @@
         }
         span{
           line-height:26px;
-          // margin-right:5vw;
-          // display:inline-block;
         }
-
       }
     }
     &_sign_up {
@@ -186,12 +182,18 @@
       }
     }
   }
+
 }
+
+
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+
 @media screen and (min-width:560px)  and (max-width:767px) {
-  /*スマホ用のcssを記述*/
+  /*タブレット~スマホ用のcssを記述*/
+
 
   header {
     width:80%;
@@ -200,7 +202,6 @@
     margin:0 auto;
     & .wrap {
       width:100%;
-
     }
   }
 
@@ -293,7 +294,6 @@
         li {
           background:#fff;
           padding:8px 0px;
-
           &:hover {
             background:#ea352d;
             color:#fff;
@@ -302,6 +302,7 @@
         }
       }
     }
+
     &__icon {
       width:24px;
       position:relative;
@@ -332,6 +333,7 @@
         }
       }
     }
+
     &_sign_up {
       background: rgb(234, 53, 45);
       height:30px;
@@ -342,7 +344,6 @@
       border-radius:5px;
       border:none;
       margin-right:10px;
-
     }
     &__sign_in {
       background:white;
@@ -374,13 +375,16 @@
       }
     }
   }
+
 }
+
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 @media only screen and (min-width:768px) and (max-width:1023px) {
-  /*tablet用のcssを記述*/
+  /*小PC~tablet用のcssを記述*/
+
 
   header {
     width:100%;
@@ -474,7 +478,6 @@
         li {
           background:#fff;
           padding:8px 0px;
-
           &:hover {
             background:#ea352d;
             color:#fff;
@@ -483,6 +486,7 @@
         }
       }
     }
+
     &__icon {
       width:24px;
       position:relative;
@@ -509,6 +513,7 @@
         }
       }
     }
+
     &_sign_up {
       background: rgb(234, 53, 45);
       height:30px;
@@ -550,13 +555,19 @@
       }
     }
   }
+
 }
+
+
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+
 @media screen and (min-width:1024px) {
   /*pc用のcssを記述*/
+
+
   header {
     width:100%;
     height:90px;
@@ -649,7 +660,6 @@
         li {
           background:#fff;
           padding:8px 0px;
-
           &:hover {
             background:#ea352d;
             color:#fff;
@@ -658,6 +668,7 @@
         }
       }
     }
+
     &__icon {
       width:24px;
       position:relative;
@@ -684,6 +695,7 @@
         }
       }
     }
+
     &_sign_up {
       background: rgb(234, 53, 45);
       height:30px;
@@ -725,4 +737,5 @@
       }
     }
   }
+
 }
