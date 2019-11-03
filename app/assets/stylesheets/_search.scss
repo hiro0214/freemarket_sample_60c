@@ -71,14 +71,24 @@
   border-radius: 5px;
   background:white;
 }
+#q_category_index_in{
+  height: 46px;
+  width:100%;
+  display:inline-block;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background:white;
+}
+
 .search-more-button{
   height: 46px;
   width:50%;
   color:white;
-  background:red;
+  background:#ea352d;
   margin: 30px auto;
   display:block;
-  border: 1px solid gray;
+  border: none;
+  font-size:14px;
 }
 
 // h3 {

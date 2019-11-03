@@ -14,8 +14,8 @@
 
             .search__list__detail
               = f.label :category_index, "カテゴリーを選択する"
-              = f.select :category_index_eq, [ ["---", ""], ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3 ] ,["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6],["コスメ・香水・美容",7], ["家電・スマホ・カメラ",8],
-                ["スポーツ・レジャー",9], ["ハンドメイド",10], ["チケット",11], ["自動車・オートバイ",12], ["その他",13]] ,{},{class: "search-more-default"}
+              = f.collection_select :category_index_in, Category.where(ancestry:nil), :id, :name, include_blank: "---"
+
 
             .search__list__detail
               = f.label :price, "価格"
@@ -52,7 +52,7 @@
                   %span 全体的に状態
                   %br が悪い
 
-            = f.submit "完了", class: "search-more-button"
+            = f.submit "検索", class: "search-more-button"
 
       -# 右側に表示されるアイテム一覧
       .main_contents__box__contents__search__right

@@ -197,11 +197,16 @@ class ItemsController < ApplicationController
       redirect_to root_path, flash: {search_alert: "検索結果がありませんでした"}
     end
     @q = Item.ransack(params[:q])
-    @item = @q.result(distinct: true)
+    @items = @q.result(distinct: true)
   end
 
   def search_more
     @item_name = params[:q][:item_name_cont]
+
+    if params[:q][:category_index_in] !=  ""
+    params[:q][:category_index_in] = Category.find(params[:q][:category_index_in]).descendant_ids
+    end
+
     @q = Item.ransack(params[:q])
     @items = @q.result(distinct: true).order("created_at desc")
     if @items == []
