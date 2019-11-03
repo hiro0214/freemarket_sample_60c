@@ -1,12 +1,5 @@
 = render "/items/header"
 
--# 以下、細かい未処理カ所
--# サイドバーにhoverした時の＞の動き
--# メインメニューの背景画像とユーザ画像設置
--# メインメニュータブの切り替え
--# middle_menu_listにメルカリアイコン設置
--# 取引中にメルカリのアイコン設置
-
 .wrapper_mypage
   .wrapper_box
     = render 'side_bar'
@@ -41,7 +34,7 @@
                 .main__middle_menu__list__message
                   事務局から個別メッセージ「Googleログイン通知」
                 .main__middle_menu__list__time_box
-                  %i.fa.fa-clock-o
+                  %i.fa.fa-clock-o#i1
                   %span
                     5 時間前
               %i.fa.fa-chevron-right
@@ -92,17 +85,10 @@
       .main__bottom_menu
         .main__bottom_menu__title
           購入した商品
-          -# = @items.Item.find(current_user.id)
         .main__bottom_menu__tabs
           %p.transaction_now
             取引中
           %p.transaction_before
             過去の取引
-      -# = fa_icon 'fa-chevron-right',class:"side_bar_icon"
-      -# %i.fa.fa-chevron-right
-          -# =link_to "", class: "side_menu_content" do
-          -#   .side_bar_box
-          -#     %li.side_bar_box__name マイページ
-          -#     = fa_icon 'chevron-right',class:"migi"
 
-= render "/items/footer" 
+= render "/items/footer"

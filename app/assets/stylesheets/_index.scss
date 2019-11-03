@@ -1,6 +1,6 @@
 @media screen and (max-width:559px) {
 //   /*スマホ用のcssを記述*/
-//   }
+
 // メインイメージ(フェードして切り替え)
   .trim {
     height:170px;
@@ -27,7 +27,6 @@
   // Wrap
   .main{
     margin:0 auto 0;
-
   }
 
   // 人気のカテゴリー Links
@@ -111,8 +110,6 @@
   // item
 
   .index_image {
-
-    // width:100%;
     max-width:240px;
     flex: 5 5 150px;
     max-height:180px;
@@ -864,11 +861,10 @@
     .clear{
       background: rgb(255,255,255);
       background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1)66%);
-      // background:linear-gradient(#F89174, #FFC778);
       width:100px;
       height:20px;
       position: absolute;
-      bottom:5px;
+      bottom:12px;
       right:0px;
     }
 
