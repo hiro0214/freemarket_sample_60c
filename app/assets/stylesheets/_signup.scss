@@ -41,10 +41,6 @@
               padding:2px 5px 0px;
               border-radius:2px;
             }
-            // カード番号・セキュリティーコードCSSあたらず
-            // > input{
-            //   width: 500px;
-            // }
           }
           &__double {
             display: flex;
@@ -71,18 +67,6 @@
               }
             }
           }
-          // &__birth > select {
-          //    height:48px;
-          //    border:solid 1px #ccc;
-          //  }
-          //  &__birth > span {
-          //    font-size: 14px;
-          //  }
-          //  &__birth > p {
-          //    font-size:14px;
-          //    color:rgb(170, 170, 170);
-          //    margin-top: 5px;
-          //  }
           &__info {
             font-size:14px;
           }
@@ -102,16 +86,6 @@
         }
         &__info {
           padding-bottom:40px;
-          // > button{
-          //    background:#ea352d;
-          //    color:#fff;
-          //    width:100%;
-          //    height:50px;
-          //    font-size:14px;
-          //    border:none;
-          //    margin-top:20px;
-          //    margin-bottom:10px;
-           // }
           > a {
             color: #0099e8;
             font-size:14px;
@@ -124,7 +98,6 @@
       }
     }
   }
-
   &__sign_up {
     width:100vw;
     height:100vh;
@@ -218,10 +191,10 @@ button {
   cursor: pointer;
   display:flex;
 }
+
 .registration__first__box__middle__input__birthday_area select{
   margin: 0 3px 0;
 }
-
 
 .signup_input_default{
   width:100%;
@@ -229,8 +202,6 @@ button {
   padding: 10px 16px 8px;
   margin-bottom:10px;
 }
-
-// pay.jp マイページより編集、削除画面
 
 h3{
   font-size:18px;
@@ -242,52 +213,49 @@ h3{
   font-weight:400;
 }
 
+.pay_buttons > button {
+  background: #ffffff;
+  width:140px;
+  height:50px;
+  margin:40px 5px;
+  font-size: 14px;
+  border-radius:5px;
+}
 
-  .pay_buttons > button {
-    background: #ffffff;
-    width:140px;
-    height:50px;
-    margin:40px 5px;
-    font-size: 14px;
-    border-radius:5px;
-  }
-  .pay_buttons > button:hover {
-    background:#0099e8;
-    color:#fff;
-    transition: 0.4s;
-  }
+.pay_buttons > button:hover {
+  background:#0099e8;
+  color:#fff;
+  transition: 0.4s;
+}
 
-  .pay_button{
-    background: #ffffff;
-    width:140px;
-    height:50px;
-    margin:40px 5px 0;
-    font-size: 14px;
-    border-radius:5px;
-  }
-  .pay_button:hover {
-    background:#0099e8;
-    color:#fff;
-    transition: 0.4s;
-  }
+.pay_button{
+  background: #ffffff;
+  width:140px;
+  height:50px;
+  margin:40px 5px 0;
+  font-size: 14px;
+  border-radius:5px;
+}
+.pay_button:hover {
+  background:#0099e8;
+  color:#fff;
+  transition: 0.4s;
+}
 
-  // pay.jp STEP5
+.card_list {
+  width: 260px;
+}
 
+.registration__first__box__middle__input__name .number {
+  width:250px;
+  height:40px;
+  padding: 10px 16px 8px;
+  margin-bottom:10px;
+}
 
-
-  .card_list {
-    width: 260px;
-  }
-
-  .registration__first__box__middle__input__name .number {
-    width:250px;
-    height:40px;
-    padding: 10px 16px 8px;
-    margin-bottom:10px;
-  }
-  .registration__first__box__middle__input .cvc {
-    width:250px;
-    height:40px;
-    padding: 10px 16px 8px;
-    margin-bottom:10px;
-  }
+.registration__first__box__middle__input .cvc {
+  width:250px;
+  height:40px;
+  padding: 10px 16px 8px;
+  margin-bottom:10px;
+}

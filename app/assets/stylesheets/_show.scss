@@ -4,14 +4,14 @@
   height: 100%;
   margin:0 auto;
   padding:40px 0;
-} 
-//--アイテム ここから--//
+}
+
 .detail_container {
   background: white;
   width:700px;
   height: 100%;
   margin:0px auto 40px;
-  padding: 24px 35px 40px; 
+  padding: 24px 35px 40px;
   .item_name {
     background: white;
     font-size: 24px;
@@ -25,7 +25,7 @@
     color: #888;
     line-height: 1.5;
   }
-//--アイテム  ここから--//
+
   .container_wrap{
     display:flex;
       .item_container{
@@ -33,21 +33,17 @@
       display: flex;
       flex-direction:column;
       &__image{
-        background-color:khaki;
         width: 100%;
         height: 300px;
         position: relative;
         margin: 0 auto;
         float: left;
-        // justify-content: flex-start;
       }
       &__list{
         width: 100%;
         height: 30px;
-        // background: #888;
         display:flex;
         li{
-          // flex-direction: row;
           background:#f5f5f5;
           width: 60px;
           height:60px;
@@ -136,7 +132,6 @@
         width:100px;
         line-height:33px;
         border-radius:40px;
-        // border:solid 1px red;
       }
       &__btn_report{
       background: #f5f5f5;
@@ -181,7 +176,6 @@
 }
 .media_box {
   background:white;
-  // width: 700px;
   margin: 24px auto;
   padding: 32px 0 24px;
   &__center{
@@ -289,7 +283,6 @@
   width:195px;
   height:180px;
 }
-
 
 .item__goods {
   background:#f5f5f5;

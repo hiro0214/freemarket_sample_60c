@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
     @hobby_items = Item.find_by_sql(ho_query)
     ho_item_id = Trading.where(id: @hobby_items.map{|a| a[:id]}).map{|a| a[:item_id]}
     @ho_image = Image.where(item_id: ho_item_id).order("created_at desc")
-
   end
 
   def new
@@ -56,7 +55,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def show
     @category_gc= Category.find(@item[:category_index])
     @category_c = @category_gc.parent
@@ -71,7 +69,6 @@ class ItemsController < ApplicationController
     item_id = @item_list.map{|dd| dd[:id]}
     @trade_list = Trading.where(item_id: item_id).order("created_at desc")
     @image_list = Image.where(item_id: item_id).order("created_at desc")
-
   end
 
   def create
@@ -167,7 +164,6 @@ class ItemsController < ApplicationController
     item_id = @item_list.map{|dd| dd[:id]}
     @trade = Trading.where(item_id: item_id).order("created_at desc")
     @image = Image.where(item_id: item_id).order("created_at desc")
-
   end
 
   def category_children
@@ -177,7 +173,6 @@ class ItemsController < ApplicationController
   def category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
-
 
   def puru
     @parents = Category.where(ancestry: nil)
@@ -204,11 +199,9 @@ class ItemsController < ApplicationController
 
   def search_more
     @item_name = params[:q][:item_name_cont]
-
     if params[:q][:category_index_in] !=  ""
-    params[:q][:category_index_in] = Category.find(params[:q][:category_index_in]).descendant_ids
+      params[:q][:category_index_in] = Category.find(params[:q][:category_index_in]).descendant_ids
     end
-
     @q = Item.ransack(params[:q])
     @items = @q.result(distinct: true).order("created_at desc")
     if @items == []

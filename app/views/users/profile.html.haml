@@ -3,7 +3,7 @@
 .wrapper_mypage
   .wrapper_box
     = render 'side_bar'
-    
+
     .profile_main
       .profile_main__top
         プロフィール
@@ -11,10 +11,9 @@
         = image_tag "avatar.png",class:"profile_main__middle__image"
         .profile_main__middle__nickname
           = current_user.name
-      .profile_main__bottom      
+      .profile_main__bottom
         = form_for [@user] do |f|
           = f.text_area :profile, value:@user.profile, placeholder: "例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",class: "profile_main__bottom__introduce"
           = f.submit "変更する",class:"profile_main__bottom__btn"
 
-
-= render "/items/footer" 
+= render "/items/footer"

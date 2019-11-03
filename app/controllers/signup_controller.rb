@@ -1,13 +1,8 @@
 class SignupController < ApplicationController
-  before_action :validates_step1, only: :step2 # step1のバリデーション
-  before_action :validates_step2, only: :step3 # step2のバリデーション
-  before_action :validates_step4, only: :create_step5 # step4のバリデーション
+  before_action :validates_step1, only: :step2
+  before_action :validates_step2, only: :step3
+  before_action :validates_step4, only: :create_step5
   skip_before_action :authenticate_user!
-
-  # コメントアウトしている箇所は、userテーブルに保存するカラム名を作成したら外していきます。無い状態だとエラーがでるため
-  # ウィザードフォーム用コントローラー
-  # 各アクションごとに新規インスタンスを作成します
-  # 各アクションごとに、遷移元のページのデータをsessionに保管していきます
 
   def step1
     @user = User.new
@@ -22,18 +17,16 @@ class SignupController < ApplicationController
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:first_name_kana] = user_params[:first_name_kana]
 
-    # バリデーション用に、仮でインスタンスを作成する
     @user = User.new(
-      name: session[:name], # sessionに保存された値をインスタンスに渡す
+      name: session[:name],
       email: session[:email],
       password: session[:password],
-      last_name: session[:last_name], # 入力前の情報は、バリデーションに通る値を仮で入れる
+      last_name: session[:last_name],
       first_name: session[:first_name],
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
       tel_number: "00000000000"
     )
-    # 仮で作成したインスタンスのバリデーションチェックを行う
     render '/signup/step1' unless @user.valid?
   end
 
@@ -51,26 +44,21 @@ class SignupController < ApplicationController
   end
 
   def validates_step2
-    # step2で入力された値をsessionに保存
     session[:tel_number] = user_params[:tel_number]
-    # バリデーション用に、仮でインスタンスを作成する
     @user = User.new(
-      name: session[:name], # sessionに保存された値をインスタンスに渡す
+      name: session[:name],
       email: session[:email],
       password: session[:password],
-      last_name: session[:last_name], # 入力前の情報は、バリデーションに通る値を仮で入れる
+      last_name: session[:last_name],
       first_name: session[:first_name],
       last_name_kana: session[:last_name_kana],
       first_name_kana: session[:first_name_kana],
-      tel_number: session[:tel_number], # sessionに保存された値をインスタンスに渡す
+      tel_number: session[:tel_number],
       )
-    # 仮で作成したインスタンスのバリデーションチェックを行う
     render '/signup/step2' unless @user.valid?
   end
 
-
   def step3
-    # step2で入力された値をsessionに保存(step3のフォームの urlで指定したパス(=ここ) で、ページを読み込む際に行って欲しいアクション)
     session[:tel_number] = user_params[:tel_number]
     @user = User.new
   end
@@ -79,7 +67,6 @@ class SignupController < ApplicationController
     @delivery = Delivery.new
     @user = User.find(current_user.id)
   end
-
 
   def step5
   end
@@ -105,8 +92,6 @@ class SignupController < ApplicationController
 
       @@user_id = current_user.id
       redirect_to step4_signup_index_path
-    # else
-    #   render 'signup' #ログインできなかった場合の遷移
     end
   end
 
@@ -189,8 +174,7 @@ class SignupController < ApplicationController
     address: delivery_params[:address],
     building: delivery_params[:building]
     )
-    # 仮で作成したインスタンスのバリデーションチェックを行う
     render '/signup/step4' unless @user.valid?
-  end 
+  end
 
 end

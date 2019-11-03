@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+
   $('a[href^="#"]').click(function(){
     var href= $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
@@ -25,9 +26,6 @@ $(document).on('turbolinks:load', function() {
 
   setTimeout(image1, 6000)
 
-
-
-
   function move(){
     window.location.href = "/items/new"
   }
@@ -39,21 +37,18 @@ $(document).on('turbolinks:load', function() {
     })
   })
 
-$(".fortunetelling").click(function(){
-  var val = Math.round( Math.random()*5 );
-  if (val == 5){
-    alert("大吉")
-  } else if(val == 4) {
-    alert("中吉")
-  } else if(val == 3) {
-    alert("小吉")
-  } else if(val == 2) {
-    alert("吉")
-  } else {
-    alert("大凶")
-  }
-})
-
-
-
+  $(".fortunetelling").click(function(){
+    var val = Math.round( Math.random()*5 );
+    if (val == 5){
+      alert("大吉")
+    } else if(val == 4) {
+      alert("中吉")
+    } else if(val == 3) {
+      alert("小吉")
+    } else if(val == 2) {
+      alert("吉")
+    } else {
+      alert("大凶")
+    }
+  })
 });

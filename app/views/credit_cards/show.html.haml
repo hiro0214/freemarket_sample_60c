@@ -10,7 +10,6 @@
       .registration__first__box__middle
         .registration__first__box__middle__input
           .registration__first__box__middle__input__name
-
             %h3 カード番号
             .pay_number
               = "**** **** **** " + @default_card_information.last4
@@ -31,4 +30,5 @@
                 %button.pay_button 削除する
               = link_to user_path do
                 %button.pay_button マイページに戻る
+
   = render partial: "devise/layout/footer"

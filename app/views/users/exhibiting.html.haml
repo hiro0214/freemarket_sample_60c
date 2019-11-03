@@ -50,7 +50,6 @@
             %li.panel3
               - @sold_items.zip(@sold_images).each do |item ,image|
                 .exhibit__list
-                  -# =image_tag "mypage_logo.png", class: "mercari_logo"
                   = image_tag image.url.url, class: "exhibiting_image"
                   .exhibit__list__content__box
                     .exhibit__list__content__box__message

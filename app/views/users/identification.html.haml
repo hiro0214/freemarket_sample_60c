@@ -3,9 +3,8 @@
 .wrapper_mypage
   .wrapper_box
     = render 'side_bar'
-    
-    .identification_main
 
+    .identification_main
       .identification_main__top
         本人情報の登録
       .identification_main__middle
@@ -18,20 +17,19 @@
           .identification_main__middle__form__label
             お名前
           %p
-            川俣寿子
+            山田太郎
 
         .identification_main__middle__form
           .label
             お名前カナ
           %p
-            カワマタヒサコ
+            ヤマダタロウ
 
         .identification_main__middle__form
           .label
             生年月日
           %p
             1982/06/30
-        
 
         .identification_main__middle__form
           .label
@@ -39,21 +37,21 @@
             %span
               任意
           %input
-            
+
         .identification_main__middle__form
           .label
             都道府県
             %span
               任意
           %input
-            
+
         .identification_main__middle__form
           .label
             地区町村
             %span
               任意
           %input
-            
+
         .identification_main__middle__form
           .label
             番地
@@ -71,5 +69,5 @@
         .identification_main__middle__btn
           =link_to '登録する'
 
-= render "/items/footer" 
+= render "/items/footer"
 

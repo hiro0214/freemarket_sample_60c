@@ -3,9 +3,6 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
-    # @item = Item.find(params[:item_id])
-    # @trading = Trading.find_by(item_id: "#{params[:item_id]}")
-
     card = CreditCard.where(user_id: current_user.id).first  #テーブルからpayjpの顧客IDを検索しレコードをゲット
 
     if card.blank?  #登録された情報がない場合にカード登録画面に移動
@@ -38,9 +35,7 @@ class PurchaseController < ApplicationController
         buy_date: Time.now,
         deliveries_id: @delivery.id,
       )
-
-      redirect_to buy_after_path  #完了画面に移動
-
+      redirect_to buy_after_path
     else
       redirect_to root_path, flash: {buy_alert: "購入出来ませんでした"}
     end
