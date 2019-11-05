@@ -59,7 +59,7 @@
         .main_contents__box__contents__items_search
           - @items.zip(@images, @trade).each do |item, image, trade|
             .main_contents__box__contents__items__one
-              - if trade.sale_state == "trade"
+              - if trade.sale_state != "exhibit"
                 .sold_item
                   %p SOLD
                 = image_tag image.url.url, class: "index_image"

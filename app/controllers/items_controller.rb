@@ -186,7 +186,7 @@ class ItemsController < ApplicationController
     if params[:search].length != 0
       @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%").order("created_at desc")
       if @items == []
-        redirect_to root_path, flash: {search_alert: "検索結果がありませんでした"}
+        redirect_to root_path, flash: {search_alert: "検索結果がありませんでしたああああああああああああああ"}
       end
       @images = Image.where(item_id: @items.map{|i| i.id}).order("created_at desc")
       @trade = Trading.where(item_id: @items.map{|i| i.id}).order("created_at desc")
