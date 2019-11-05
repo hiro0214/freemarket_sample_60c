@@ -183,8 +183,9 @@ class ItemsController < ApplicationController
   end
 
   def search
-    if params[:search].length != 0
-      @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%").order("created_at desc")
+    input = params[:search].to_s
+    if input.length != 0
+      @items = Item.where(' item_name LIKE(?) or description LIKE(?)', "%#{input}%", "%#{input}%").order("created_at desc")
       if @items.length == 0
         redirect_to root_path, flash: {search_alert: "検索結果がありませんでしたああああああああああああああ"}
       else
