@@ -119,9 +119,11 @@
               - if trade.sale_state == "trade"
                 .sold_item
                   %p SOLD
-                = image_tag image.url.url, class: "show_image"
+                = link_to "/items/#{item.id}" do
+                  = image_tag image.url.url, class: "show_image"
               - else
-                = image_tag image.url.url, class: "show_image"
+                = link_to "/items/#{item.id}" do
+                  = image_tag image.url.url, class: "show_image"
             .other_item__contents
               .other_item__contents__other_item__name
                 = link_to "#{item.item_name}", "/items/#{item.id}"

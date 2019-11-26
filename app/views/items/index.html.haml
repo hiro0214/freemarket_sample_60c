@@ -31,16 +31,16 @@
           .main_contents__box__contents__title_box__title
             %h2#1 レディース新着アイテム
           .main_contents__box__contents__title_box__motto
-            = link_to "もっとみる", "/more/1",class:"link"
+            = link_to "もっとみる", "/more/1", class: "link"
         .main_contents__box__contents__items.fadeout
           - @ladies_items.zip(@la_image).each do |item, image|
-            .main_contents__box__contents__items__one
-              = image_tag image.url.url, class: "index_image"
-              .main_contents__box__contents__items__one__image__price
-                = "¥#{item.price}"
-              .main_contents__box__contents__items__one__title
-                %span
-                  = link_to "items/#{item[:item_id]}", method: :get do
+            = link_to "items/#{item[:item_id]}" do
+              .main_contents__box__contents__items__one
+                = image_tag image.url.url, class: "index_image"
+                .main_contents__box__contents__items__one__image__price
+                  = "¥#{item.price}"
+                .main_contents__box__contents__items__one__title
+                  %span
                     = item.item_name
                     .clear
 
@@ -49,16 +49,16 @@
           .main_contents__box__contents__title_box__title
             %h2#2 メンズ新着アイテム
           .main_contents__box__contents__title_box__motto
-            = link_to "もっとみる", "/more/138",class:"link"
+            = link_to "もっとみる", "/more/138", class: "link"
         .main_contents__box__contents__items.fadeout
           - @mens_items.zip(@me_image).each do |item, image|
-            .main_contents__box__contents__items__one
-              = image_tag image.url.url, class: "index_image"
-              .main_contents__box__contents__items__one__image__price
-                = "¥#{item.price}"
-              .main_contents__box__contents__items__one__title
-                %span
-                  = link_to "items/#{item[:item_id]}", method: :get do
+            = link_to "items/#{item[:item_id]}" do
+              .main_contents__box__contents__items__one
+                = image_tag image.url.url, class: "index_image"
+                .main_contents__box__contents__items__one__image__price
+                  = "¥#{item.price}"
+                .main_contents__box__contents__items__one__title
+                  %span
                     = item.item_name
                     .clear
 
@@ -67,16 +67,16 @@
           .main_contents__box__contents__title_box__title
             %h2#3 家電・スマホ・カメラ新着アイテム
           .main_contents__box__contents__title_box__motto
-            = link_to "もっとみる", "/more/781",class:"link"
+            = link_to "もっとみる", "/more/781", class: "link"
         .main_contents__box__contents__items.fadeout
           - @machine_items.zip(@ma_image).each do |item, image|
-            .main_contents__box__contents__items__one
-              = image_tag image.url.url, class: "index_image"
-              .main_contents__box__contents__items__one__image__price
-                = "¥#{item.price}"
-              .main_contents__box__contents__items__one__title
-                %span
-                  = link_to "items/#{item[:item_id]}", method: :get do
+            = link_to "items/#{item[:item_id]}" do
+              .main_contents__box__contents__items__one
+                = image_tag image.url.url, class: "index_image"
+                .main_contents__box__contents__items__one__image__price
+                  = "¥#{item.price}"
+                .main_contents__box__contents__items__one__title
+                  %span
                     = item.item_name
                     .clear
 
@@ -85,16 +85,16 @@
           .main_contents__box__contents__title_box__title
             %h2#4 おもちゃ・ホビー・グッズ新着アイテム
           .main_contents__box__contents__title_box__motto
-            = link_to "もっとみる", "/more/576",class:"link"
+            = link_to "もっとみる", "/more/576", class: "link"
         .main_contents__box__contents__items.fadeout
           - @hobby_items.zip(@ho_image).each do |item, image|
-            .main_contents__box__contents__items__one
-              = image_tag image.url.url, class: "index_image"
-              .main_contents__box__contents__items__one__image__price
-                = "¥#{item.price}"
-              .main_contents__box__contents__items__one__title
-                %span
-                  = link_to "items/#{item[:item_id]}", method: :get do
+            = link_to "items/#{item[:item_id]}" do
+              .main_contents__box__contents__items__one
+                = image_tag image.url.url, class: "index_image"
+                .main_contents__box__contents__items__one__image__price
+                  = "¥#{item.price}"
+                .main_contents__box__contents__items__one__title
+                  %span
                     = item.item_name
                     .clear
 
