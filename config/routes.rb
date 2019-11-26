@@ -40,10 +40,6 @@ Rails.application.routes.draw do
     patch "edit_update" => "items#edit_update"
   end
 
-  get "new_after" => "items#new_after"
-  get "mypage" => "items#mypage"
-  get "logout" => "items#logout"
-  get "profile" => "items#profile"
   get "more/:id" => "items#more"
   get "buy_after" => "items#buy_after"
 
@@ -53,7 +49,6 @@ Rails.application.routes.draw do
     get "profile" => "users#profile"
     get "exhibiting" => "users#exhibiting"
     get "identification" => "users#identification"
-    get "delete_after" => "users#delete_after"
     get "trade/:id" => "users#trade"
     get "trade_after" => "users#trade_after"
     get "sold/:id" => "users#sold"

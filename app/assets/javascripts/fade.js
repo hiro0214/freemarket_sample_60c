@@ -1,11 +1,10 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function () {
 
-  $(window).scroll(function(){
-    $(".main_contents__box__contents__items").each(function(){
-      var imgPos = $(this).offset().top;
+  $(window).scroll(function () {
+    $(".main_contents__box__contents__items").each(function () {
+      var itemPos = $(this).offset().top;
       var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll > imgPos - windowHeight + windowHeight/5){
+      if (scroll > itemPos - 580) {
         $(this).addClass("fadein");
       }
     })

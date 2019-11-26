@@ -8,9 +8,8 @@
     %li
       = link_to "カテゴリー一覧", "#"
     %li
-      -if @parent != nil
-        %span >
-        = link_to "#{@parent.name}", "/more/#{@parent.id}"
+      %span >
+      = link_to "#{@parent.name}", "/more/#{@parent.id}"
     %li
       -if (@category_c != nil)
         %span >
@@ -33,26 +32,26 @@
       .main_contents__box__contents__title_box
         .main_contents__box__contents__title_box__title
           %h2#1
-            - if @category_gc != nil
+            - if (@category_gc != nil)
               = "#{@category_gc.name}の商品一覧"
             - elsif (@category_gc == nil) && (@category_c != nil)
               = "#{@category_c.name}の商品一覧"
-            -else
+            - else
               = "#{@parent.name}の商品一覧"
       .main_contents__box__contents__items
         - @item_list.zip(@trade,@image).each do |item,trade,image|
-          .main_contents__box__contents__items__one
-            - if trade.sale_state != "exhibit"
-              .sold_item
-                %p SOLD
-              = image_tag image.url.url, class: "index_image"
-            -else
-              = image_tag image.url.url, class: "index_image"
-            .main_contents__box__contents__items__one__image__price
-              = "¥#{item.price}"
-            .main_contents__box__contents__items__one__title
-              %span
-                = link_to "/items/#{item.id}", method: :get do
+          = link_to "/items/#{item.id}" do
+            .main_contents__box__contents__items__one
+              - if trade.sale_state != "exhibit"
+                .sold_item
+                  %p SOLD
+                = image_tag image.url.url, class: "index_image"
+              - else
+                = image_tag image.url.url, class: "index_image"
+              .main_contents__box__contents__items__one__image__price
+                = "¥#{item.price}"
+              .main_contents__box__contents__items__one__title
+                %span
                   = item.item_name
 
 = render "footer"

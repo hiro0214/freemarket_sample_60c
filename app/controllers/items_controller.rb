@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show, :more, :search, :search_more]
-  before_action :puru
+  before_action :pull
   before_action :set_item, only: [:show, :edit, :destroy]
 
   def index
@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
 
     category_id = Category.where("ancestry like ?", "#{@category.id}/%")
     @item_list = Item.where(category_index: category_id).limit(6).order("created_at desc").where.not(id: params[:id])
-    item_id = @item_list.map{|dd| dd[:id]}
+    item_id = @item_list.map{|a| a[:id]}
     @trade_list = Trading.where(item_id: item_id).order("created_at desc")
     @image_list = Image.where(item_id: item_id).order("created_at desc")
   end
@@ -89,7 +89,7 @@ class ItemsController < ApplicationController
 
     @item.images.build(url: item_params[:url])
     if @item.save
-      redirect_to new_after_path
+      # redirect_to new_after_path
     else
       flash[:category_alert] = "カテゴリーを選択してください"
       flash[:img_alert] = "画像を添付してください"
@@ -98,8 +98,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to "/users/#{current_user.id}/delete_after"
+    render action: :edit unless @item.destroy
   end
 
   def edit
@@ -139,14 +138,12 @@ class ItemsController < ApplicationController
 
     if (@category_gc[:ancestry] == nil)       #第1世代を引いた時
       @parent = @category_gc
-      @category_c = nil
       @category_gc = nil
       category_id = Category.where("ancestry like ?", "#{@parent.id}/%")
       @category_list = @parent.children
       @item_list = Item.where(category_index: category_id).order("created_at desc")
 
     elsif (@category_gc[:ancestry].match("\/"))       #第3世代を引いたとき
-      @category_gc = Category.find(params[:id])
       @category_c = @category_gc.parent
       @parent = @category_c.parent
       @item_list = Item.where(category_index: @category_gc).order("created_at desc")
@@ -161,7 +158,7 @@ class ItemsController < ApplicationController
       @item_list = Item.where(category_index: category_id).order("created_at desc")
     end
 
-    item_id = @item_list.map{|dd| dd[:id]}
+    item_id = @item_list.map{|a| a[:id]}
     @trade = Trading.where(item_id: item_id).order("created_at desc")
     @image = Image.where(item_id: item_id).order("created_at desc")
   end
@@ -174,7 +171,7 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
-  def puru
+  def pull
     @parents = Category.where(ancestry: nil)
   end
 
