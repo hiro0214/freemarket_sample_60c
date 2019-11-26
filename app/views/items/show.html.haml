@@ -116,7 +116,7 @@
         - @item_list.zip(@trade_list, @image_list).each do |item, trade, image|
           .other_item_container__other_item
             .other_item__image
-              - if trade.sale_state == "trade"
+              - if trade.sale_state != "exhibit"
                 .sold_item
                   %p SOLD
                 = link_to "/items/#{item.id}" do
