@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :puru
+  before_action :pull
   before_action :set_user
 
   def update
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def puru
+  def pull
     @parents = Category.where(ancestry: nil)
   end
 
