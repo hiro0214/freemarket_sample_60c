@@ -1,4 +1,12 @@
-@media screen and (max-width:767px) {
+@media screen and (max-width:559px) {
+  .footer__lower {
+    span {
+      height:16px;
+    }
+  }
+}
+
+@media screen and (min-width:560px) and (max-width:767px) {
   /*スマホ（小画面デバイス）用のcssを記述*/
 
 
