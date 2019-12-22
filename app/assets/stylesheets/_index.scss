@@ -11,7 +11,7 @@
   }
   .main__image {
     height:170px;
-    left:-30vw;
+    left:-30%;
     position:relative;
     img {
       height:170px;
@@ -39,7 +39,7 @@
     width: 100%;
     padding-bottom:30px;
     &__box{
-      width:100vw;
+      width:100%;
       &__header{
         background:white;
         height:170px;
@@ -280,7 +280,7 @@
 
   // パンくず
   .breadcrumb {
-    width:100vw;
+    width:100%;
     height:50px;
     border-bottom:solid 1px rgb(224, 224, 224);
     ul {
@@ -377,7 +377,7 @@
     width: 100%;
     padding-bottom:30px;
     &__box{
-      width:100vw;
+      width:100%;
       &__header{
         background:white;
         height:134px;
@@ -613,7 +613,7 @@
 
   // パンくず
   .breadcrumb {
-    width:100vw;
+    width:100%;
     height:50px;
     border-bottom:solid 1px rgb(224, 224, 224);
     ul {
@@ -677,7 +677,7 @@
 // メインイメージ(フェードして切り替え)
   .trim {
     overflow: hidden;
-    width: 100vw;/* トリミングしたい枠の幅 */
+    width: 100%;/* トリミングしたい枠の幅 */
     height:290px;
     position:relative;
   }
@@ -709,7 +709,7 @@
     height:100%;
     padding-bottom:30px;
     &__box{
-      width:100vw;
+      width:100%;
       &__header{
         background:white;
         height:170px;
@@ -942,7 +942,7 @@
 
   // パンくず
   .breadcrumb {
-    width:100vw;
+    width:100%;
     height:50px;
     border-bottom:solid 1px rgb(224, 224, 224);
     ul {
@@ -972,7 +972,7 @@
 
 
   .categories {
-    width:100vw;
+    width:100%;
     height:100px;
     background:rgb(239, 239, 239);
     ul {
@@ -1007,13 +1007,13 @@
 // メインイメージ(フェードして切り替え)
   .trim {
     overflow: hidden;
-    max-width: 100vw;/* トリミングしたい枠の幅 */
+    max-width: 100%;/* トリミングしたい枠の幅 */
     height:390px;
     position:relative;
   }
 
   .main__image {
-    width:100vw;
+    width:100%;
     height:390px;
     position:relative;
     img {
@@ -1043,7 +1043,7 @@
     padding-bottom:30px;
 
     &__box{
-      width:100vw;
+      width:100%;
       &__header{
         background:white;
         height:170px;
@@ -1275,7 +1275,7 @@
 
   // パンくず
   .breadcrumb {
-    width:100vw;
+    width:100%;
     height:50px;
     border-bottom:solid 1px rgb(224, 224, 224);
     ul {
@@ -1305,7 +1305,7 @@
 
 
   .categories {
-    width:100vw;
+    width:100%;
     height:80px;
     background:rgb(239, 239, 239);
     ul {
